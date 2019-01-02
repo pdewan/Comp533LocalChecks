@@ -20,7 +20,7 @@ import util.trace.Tracer;
 
 @MaxValue(20)
 //@Group("Test group name")
-public class OneClientCorrectConnectionTestCase extends PassFailJUnitTestCase {
+public class OneClientConnection extends PassFailJUnitTestCase {
 	
 	
 //	public OneClientCorrectConnectionTestCase() {
@@ -54,7 +54,7 @@ public class OneClientCorrectConnectionTestCase extends PassFailJUnitTestCase {
 
 			// Get the output when we have no input from the user
 //			RunningProject noInputRunningProject = RunningProjectUtils.runProject(project, 1);
-			OneClientCorrectConnectionTestInputGenerator anOutputBasedInputGenerator = new OneClientCorrectConnectionTestInputGenerator();
+			OneClientConnectionInputGenerator anOutputBasedInputGenerator = new OneClientConnectionInputGenerator();
 			RunningProject interactiveInputProject = null;
 			try {
 				interactiveInputProject = RunningProjectUtils.runProject(project, 20,
@@ -96,8 +96,8 @@ public class OneClientCorrectConnectionTestCase extends PassFailJUnitTestCase {
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcesses("DistributedProgram", Arrays.asList("Server", "Client"));
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Server", Arrays.asList("Server"));
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Client", Arrays.asList("Client"));
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Server", StaticArgumentsTestCase.DEFAULT_SERVER_ARGS);
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client", StaticArgumentsTestCase.DEFAULT_CLIENT_ARGS);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Server", StaticArguments.DEFAULT_SERVER_ARGS);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client", StaticArguments.DEFAULT_CLIENT_ARGS);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Server", 2000);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Client", 5000);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessTeams().forEach(team -> System.out.println("### " + team));

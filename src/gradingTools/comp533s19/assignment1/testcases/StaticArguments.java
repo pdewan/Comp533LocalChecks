@@ -15,9 +15,10 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.utils.RunningProjectUtils;
+import util.annotations.MaxValue;
 import util.trace.Tracer;
-
-public class StaticArgumentsTestCase extends PassFailJUnitTestCase {
+@MaxValue(20)
+public class StaticArguments extends PassFailJUnitTestCase {
 	public static final List<String> DEFAULT_CLIENT_ARGS = Arrays.asList("localhost", ""+ServerPort.SERVER_PORT, ClientArgsProcessor.DEFAULT_CLIENT_NAME, "true");
 	public static final List<String> DEFAULT_SERVER_ARGS = Arrays.asList(""+ServerPort.SERVER_PORT, "localhost");
 
@@ -28,7 +29,7 @@ public class StaticArgumentsTestCase extends PassFailJUnitTestCase {
 	private static final String TEST_PORT = "4242";
 	
 	
-	public StaticArgumentsTestCase() {
+	public StaticArguments() {
 //		super("Prompt printer test case");
 //		super("Static arguments test case");
 

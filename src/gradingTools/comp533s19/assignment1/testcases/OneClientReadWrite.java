@@ -13,10 +13,10 @@ import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.utils.RunningProjectUtils;
 import util.trace.Tracer;
 
-public class OneClientCorrectReadWriteTestCase extends PassFailJUnitTestCase {
+public class OneClientReadWrite extends PassFailJUnitTestCase {
 	private boolean atomic;
 	
-	public OneClientCorrectReadWriteTestCase(boolean atomic) {
+	public OneClientReadWrite(boolean atomic) {
 //		super("Prompt printer test case");
 //		super("One client correct read write - " + (atomic ? "Atomic" : "Non-atomic") + " test case");
 		this.atomic = atomic;
@@ -96,8 +96,8 @@ public class OneClientCorrectReadWriteTestCase extends PassFailJUnitTestCase {
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcesses("DistributedProgram", Arrays.asList("Server", "Client"));
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Server", Arrays.asList("Server"));
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Client", Arrays.asList("Client"));
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Server", StaticArgumentsTestCase.DEFAULT_SERVER_ARGS);
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client", StaticArgumentsTestCase.DEFAULT_CLIENT_ARGS);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Server", StaticArguments.DEFAULT_SERVER_ARGS);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client", StaticArguments.DEFAULT_CLIENT_ARGS);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Server", 2000);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Client", 5000);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessTeams().forEach(team -> System.out.println("### " + team));

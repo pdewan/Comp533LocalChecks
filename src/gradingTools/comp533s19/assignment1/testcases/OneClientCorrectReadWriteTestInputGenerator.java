@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 import util.pipe.AnAbstractInputGenerator;
 
-public class OneClientCorrectReadWriteTestInputGenerator extends OneClientCorrectConnectionTestInputGenerator {
+public class OneClientCorrectReadWriteTestInputGenerator extends OneClientConnectionInputGenerator {
 	private static final String TRACER_PREFIX = "I***";
 	
 	private static final String MAIN_THREAD = "\\{main\\}";

@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 import util.pipe.AnAbstractInputGenerator;
 import util.trace.Tracer;
 
-public class OneClientCorrectConnectionTestInputGenerator extends AnAbstractInputGenerator {
+public class OneClientConnectionInputGenerator extends AnAbstractInputGenerator {
 private static final String TRACER_PREFIX = "I***";
 	
 	private static final String MAIN_THREAD = "\\{main\\}";
@@ -78,7 +78,7 @@ private static final String TRACER_PREFIX = "I***";
 		return Pattern.compile(".*?(" + thread1 + ".*?" + check1 + "|" + thread2 + ".*?" + check2 + ").*", Pattern.DOTALL);
 	}
 	
-	public OneClientCorrectConnectionTestInputGenerator() {
+	public OneClientConnectionInputGenerator() {
 	}
 	
 	@Override
