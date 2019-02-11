@@ -30,15 +30,21 @@ public class OneClientCorrectThreadsTestInputGenerator extends AnAbstractInputGe
 	private int acceptStage = 0;
 	
 	private static final Pattern[] acceptStages = {
-			checkStr(SELECT_THREAD, "SelectUnblocked"),
+//			checkStr(SELECT_THREAD, "SelectUnblocked"),
 			checkStr(SELECT_THREAD, "SocketChannelAccepted"),
-			checkStr(SELECT_THREAD, "ReadListenerAdded"),
-			checkStr(SELECT_THREAD, "SocketChannelRegistered"),
+			multipleCheckStr(SELECT_THREAD, "SocketChannelRegistered", SELECT_THREAD, "ReadListenerAdded"),
+			multipleCheckStr(SELECT_THREAD, "SocketChannelRegistered", SELECT_THREAD, "ReadListenerAdded"),
+//			checkStr(SELECT_THREAD, "ReadListenerAdded"),
+//			checkStr(SELECT_THREAD, "SocketChannelRegistered"),
 			checkStr(SELECT_THREAD, "SelectCalled")
 	};
 
 	private static final Pattern checkStr(String thread, String check) {
 		return Pattern.compile(".*?" + thread + ".*?" + check + ".*", Pattern.DOTALL);
+	}
+	
+	private static final Pattern multipleCheckStr(String thread1, String check1, String thread2, String check2) {
+		return Pattern.compile(".*?(" + thread1 + ".*?" + check1 + "|" + thread2 + ".*?" + check2 + ").*", Pattern.DOTALL);
 	}
 	
 	public OneClientCorrectThreadsTestInputGenerator(boolean atomic) {

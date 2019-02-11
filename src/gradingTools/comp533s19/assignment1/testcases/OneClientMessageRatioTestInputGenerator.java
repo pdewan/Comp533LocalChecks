@@ -31,15 +31,19 @@ public class OneClientMessageRatioTestInputGenerator extends AnAbstractInputGene
 	
 
 	private static final Pattern[] acceptStages = {
-			checkStr(SELECT_THREAD, "SelectUnblocked"),
+//			checkStr(SELECT_THREAD, "SelectUnblocked"),
 			checkStr(SELECT_THREAD, "SocketChannelAccepted"),
-			checkStr(SELECT_THREAD, "ReadListenerAdded"),
-			checkStr(SELECT_THREAD, "SocketChannelRegistered"),
+			multipleCheckStr(SELECT_THREAD, "SocketChannelRegistered", SELECT_THREAD, "ReadListenerAdded"),
+			multipleCheckStr(SELECT_THREAD, "SocketChannelRegistered", SELECT_THREAD, "ReadListenerAdded"),
 			checkStr(SELECT_THREAD, "SelectCalled")
 	};
 
 	private static final Pattern checkStr(String thread, String check) {
 		return Pattern.compile(".*?" + thread + ".*?" + check + ".*", Pattern.DOTALL);
+	}
+	
+	private static final Pattern multipleCheckStr(String thread1, String check1, String thread2, String check2) {
+		return Pattern.compile(".*?(" + thread1 + ".*?" + check1 + "|" + thread2 + ".*?" + check2 + ").*", Pattern.DOTALL);
 	}
 	
 	public OneClientMessageRatioTestInputGenerator(boolean atomic) {
@@ -49,11 +53,13 @@ public class OneClientMessageRatioTestInputGenerator extends AnAbstractInputGene
 	@Override
 	public void newOutputLine(String aProcessName, String anOutputLine) {
 		if (setupServer == false && SERVER_NAME.equals(aProcessName)) {
-			notifyNewInputLine(SERVER_NAME, "a " + atomic);
+			notifyNewInputLine(SERVER_NAME, "s \"#" + (atomic ? "" : "non") + "atomic\"");
+//			notifyNewInputLine(SERVER_NAME, "a " + atomic);
 			setupServer = true;
 		}
 		if (setupClient == false && CLIENT_NAME.equals(aProcessName)) {
-			notifyNewInputLine(CLIENT_NAME, "a " + atomic);
+			notifyNewInputLine(CLIENT_NAME, "s \"#" + (atomic ? "" : "non") + "atomic\"");
+//			notifyNewInputLine(CLIENT_NAME, "a " + atomic);
 			setupClient = true;
 		}
 
