@@ -53,13 +53,13 @@ public class OneClientMessageRatioTestInputGenerator extends AnAbstractInputGene
 	@Override
 	public void newOutputLine(String aProcessName, String anOutputLine) {
 		if (setupServer == false && SERVER_NAME.equals(aProcessName)) {
-			notifyNewInputLine(SERVER_NAME, "s \"#" + (atomic ? "" : "non") + "atomic\"");
-//			notifyNewInputLine(SERVER_NAME, "a " + atomic);
+//			notifyNewInputLine(SERVER_NAME, "s \"#" + (atomic ? "" : "non") + "atomic\"");
+			notifyNewInputLine(SERVER_NAME, "a " + atomic);
 			setupServer = true;
 		}
 		if (setupClient == false && CLIENT_NAME.equals(aProcessName)) {
-			notifyNewInputLine(CLIENT_NAME, "s \"#" + (atomic ? "" : "non") + "atomic\"");
-//			notifyNewInputLine(CLIENT_NAME, "a " + atomic);
+//			notifyNewInputLine(CLIENT_NAME, "s \"#" + (atomic ? "" : "non") + "atomic\"");
+			notifyNewInputLine(CLIENT_NAME, "a " + atomic);
 			setupClient = true;
 		}
 
