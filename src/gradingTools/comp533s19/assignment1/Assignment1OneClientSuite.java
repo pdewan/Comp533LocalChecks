@@ -6,6 +6,7 @@ import java.util.List;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+import grader.basics.execution.BasicExecutionSpecificationSelector;
 import grader.basics.junit.BasicJUnitUtils;
 import grader.basics.project.BasicProjectIntrospection;
 import gradingTools.comp533s19.assignment1.testcases.OneClientReadWrite;
@@ -21,6 +22,7 @@ import gradingTools.comp533s19.assignment1.testcases.OneClientConnection;
 import gradingTools.comp533s19.assignment1.testcases.OneClientMessageRatioAtomic;
 import gradingTools.comp533s19.assignment1.testcases.OneClientMessageRatioNonAtomic;
 import gradingTools.comp533s19.assignment1.testcases.ServerTagged;
+import gradingTools.comp533s19.assignment1.testcases.StaticArguments;
 //import gradingTools.comp533s19.assignment1.testcases;
 import gradingTools.comp533s19.assignment1.testcases.TwoClientConnection;
 import gradingTools.comp533s19.assignment1.testcases.TwoClientMessageRatioAtomic;
@@ -34,32 +36,38 @@ import util.tags.DistributedTags;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	Assignment1OneClientSuite.class,
-	Assignment1TwoClientSuite.class,
-
+	ClientTagged.class,
+	ServerTagged.class,
+	StaticArguments.class,
+	OneClientConnection.class,
+	OneClientReadWriteNonAtomic.class,
+	OneClientReadWriteAtomic.class,
+	OneClientThreadsAtomic.class,
+	OneClientThreadsNonAtomic.class,
+	OneClientMessageRatioAtomic.class,
+	OneClientMessageRatioNonAtomic.class,
+	// update ordering
+	ReadWriteUpdateOrderNonAtomic.class,
+	ReadWriteUpdateOrderAtomic.class
 
 })
 	
 
 	
-public class Assignment1Suite {
-	public static final String[] clientTags = {DistributedTags.NIO, DistributedTags.CLIENT};
-	public static final String[] serverTags = {DistributedTags.NIO, DistributedTags.SERVER};
-	public static final  List<String> clientTagsList = Arrays.asList(clientTags);
-	public static final List<String> serverTagsList = Arrays.asList(serverTags);
+public class Assignment1OneClientSuite {
 
-	public static void main (String[] args) {
-		try {
-			
-			BasicJUnitUtils.interactiveTest(Assignment1Suite.class);
-
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	public static void oneClientSetupProcesses() {
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList("DistributedProgram"));
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setTerminatingProcesses("DistributedProgram", Arrays.asList("Client"));
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcesses("DistributedProgram", Arrays.asList("Server", "Client"));
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Server", Assignment1Suite.serverTagsList);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Client", Assignment1Suite.clientTagsList);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Server", StaticArguments.DEFAULT_SERVER_ARGS);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client", StaticArguments.DEFAULT_CLIENT_ARGS);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Server", 2000);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Client", 5000);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessTeams().forEach(team -> System.out.println("### " + team));
+	
 	}
-	static {
-		BasicProjectIntrospection.setCheckAllSpecifiedTags(true);
-
-	}
+	
 }
