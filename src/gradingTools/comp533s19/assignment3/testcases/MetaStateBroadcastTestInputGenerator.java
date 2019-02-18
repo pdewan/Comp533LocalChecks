@@ -1,11 +1,12 @@
-package gradingTools.comp533s18.assignment3.testcases;
+package gradingTools.comp533s19.assignment3.testcases;
 
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
+import gradingTools.comp533s19.assignment3.testcases.FlexibleTwoClientCorrectConnectionTestInputGenerator;
 import util.trace.Tracer;
 
-public class MetaStateBroadcastTestInputGenerator extends TwoClientCorrectConnectionTestInputGenerator {
+public class MetaStateBroadcastTestInputGenerator extends FlexibleTwoClientCorrectConnectionTestInputGenerator {
 	private static final boolean PRINT_CHECKED_REGEX = true;
 	
 	private static final String SERVER_NAME = "Server";

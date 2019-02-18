@@ -1,4 +1,4 @@
-package gradingTools.comp533s18.assignment3.testcases;
+package gradingTools.comp533s19.assignment3.testcases;
 
 import java.util.Arrays;
 
@@ -9,11 +9,12 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.comp533s19.assignment3.testcases.FlexibleOneClientCorrectReadWriteTestInputGenerator;
 import gradingTools.comp533s19.assignment1.Assignment1OneClientSuite;
 import gradingTools.utils.RunningProjectUtils;
 import util.trace.Tracer;
 
-public class OneClientCorrectReadWriteTestCase extends PassFailJUnitTestCase {
+public class FlexibleOneClientCorrectReadWriteTestCase extends PassFailJUnitTestCase {
 	private boolean atomic;
 	private final boolean doNIO;
 	private final boolean doRMI;
@@ -51,7 +52,7 @@ public class OneClientCorrectReadWriteTestCase extends PassFailJUnitTestCase {
 		return sb.toString();
 	}
 	
-	public OneClientCorrectReadWriteTestCase(boolean atomic, boolean doNIO, boolean doRMI, boolean doGIPC) {
+	public FlexibleOneClientCorrectReadWriteTestCase(boolean atomic, boolean doNIO, boolean doRMI, boolean doGIPC) {
 //		super(formatName(atomic, doNIO, doRMI, doGIPC));
 		this.atomic = atomic;
 
@@ -68,7 +69,7 @@ public class OneClientCorrectReadWriteTestCase extends PassFailJUnitTestCase {
 
 			// Get the output when we have no input from the user
 //			RunningProject noInputRunningProject = RunningProjectUtils.runProject(project, 1);
-			OneClientCorrectReadWriteTestInputGenerator anOutputBasedInputGenerator = new OneClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC);
+			FlexibleOneClientCorrectReadWriteTestInputGenerator anOutputBasedInputGenerator = new FlexibleOneClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC);
 			RunningProject interactiveInputProject = null;
 			try {
 				interactiveInputProject = RunningProjectUtils.runProject(project, RUNTIME,

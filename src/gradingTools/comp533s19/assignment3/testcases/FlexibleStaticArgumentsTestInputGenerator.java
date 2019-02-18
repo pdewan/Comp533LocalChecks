@@ -1,4 +1,4 @@
-package gradingTools.comp533s18.assignment3.testcases;
+package gradingTools.comp533s19.assignment3.testcases;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 import util.pipe.AnAbstractInputGenerator;
 import util.trace.Tracer;
 
-public class StaticArgumentsTestInputGenerator extends AnAbstractInputGenerator {
+public class FlexibleStaticArgumentsTestInputGenerator extends AnAbstractInputGenerator {
 	private static final boolean PRINT_CHECKED_REGEX = true;
 
 	private static final String TRACER_PREFIX = "I***";
@@ -77,7 +77,7 @@ public class StaticArgumentsTestInputGenerator extends AnAbstractInputGenerator 
 	private String clientGIPCRemotePort;
 	private String clientGIPCLocalName;
 	
-	public StaticArgumentsTestInputGenerator(boolean doNIO, boolean doRMI, boolean doGIPC) {
+	public FlexibleStaticArgumentsTestInputGenerator(boolean doNIO, boolean doRMI, boolean doGIPC) {
 		this.doNIO = doNIO;
 		this.doRMI = doRMI;
 		this.doGIPC = doGIPC;

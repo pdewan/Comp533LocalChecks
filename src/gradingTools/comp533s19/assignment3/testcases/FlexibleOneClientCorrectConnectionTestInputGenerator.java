@@ -1,11 +1,11 @@
-package gradingTools.comp533s18.assignment3.testcases;
+package gradingTools.comp533s19.assignment3.testcases;
 
 import java.util.regex.Pattern;
 
 import util.pipe.AnAbstractInputGenerator;
 import util.trace.Tracer;
 
-public class OneClientCorrectConnectionTestInputGenerator extends AnAbstractInputGenerator {
+public class FlexibleOneClientCorrectConnectionTestInputGenerator extends AnAbstractInputGenerator {
 	private static final boolean PRINT_CHECKED_REGEX = false;
 
 	private static final String TRACER_PREFIX = "I***";
@@ -202,7 +202,7 @@ public class OneClientCorrectConnectionTestInputGenerator extends AnAbstractInpu
 		return Pattern.compile(".*?(" + thread1 + ".*?" + check1 + "|" + thread2 + ".*?" + check2 + ").*", Pattern.DOTALL);
 	}
 	
-	public OneClientCorrectConnectionTestInputGenerator(boolean doNIO, boolean doRMI, boolean doGIPC) {
+	public FlexibleOneClientCorrectConnectionTestInputGenerator(boolean doNIO, boolean doRMI, boolean doGIPC) {
 		this.doNIO = doNIO;
 		this.doRMI = doRMI;
 		this.doGIPC = doGIPC;

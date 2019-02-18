@@ -1,10 +1,11 @@
-package gradingTools.comp533s18.assignment3.testcases;
+package gradingTools.comp533s19.assignment3.testcases;
 
 import java.util.regex.Pattern;
 
+import gradingTools.comp533s19.assignment3.testcases.FlexibleOneClientCorrectConnectionTestInputGenerator;
 import util.trace.Tracer;
 
-public class OneClientCorrectReadWriteTestInputGenerator extends OneClientCorrectConnectionTestInputGenerator {
+public class FlexibleOneClientCorrectReadWriteTestInputGenerator extends FlexibleOneClientCorrectConnectionTestInputGenerator {
 	private static final boolean PRINT_CHECKED_REGEX = false;
 
 	private static final String TRACER_PREFIX = "I***";
@@ -199,7 +200,7 @@ public class OneClientCorrectReadWriteTestInputGenerator extends OneClientCorrec
 	}
 	
 	
-	public OneClientCorrectReadWriteTestInputGenerator(boolean atomic, boolean doNIO, boolean doRMI, boolean doGIPC) {
+	public FlexibleOneClientCorrectReadWriteTestInputGenerator(boolean atomic, boolean doNIO, boolean doRMI, boolean doGIPC) {
 		super(doNIO, doRMI, doGIPC);
 		this.atomic = atomic;
 	}

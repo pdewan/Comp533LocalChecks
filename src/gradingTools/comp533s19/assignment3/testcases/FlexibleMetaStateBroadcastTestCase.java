@@ -1,4 +1,4 @@
-package gradingTools.comp533s18.assignment3.testcases;
+package gradingTools.comp533s19.assignment3.testcases;
 
 import java.util.Arrays;
 import java.util.concurrent.TimeoutException;
@@ -15,7 +15,8 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import grader.basics.execution.BasicExecutionSpecificationSelector;
-import gradingTools.comp533s18.assignment2.Assignment2TwoClientSuite;
+import gradingTools.comp533s19.assignment3.testcases.MetaStateBroadcastTestInputGenerator;
+import gradingTools.comp533s19.assignment2.Assignment2TwoClientSuite;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.Group;
 import util.annotations.MaxValue;
@@ -23,7 +24,7 @@ import util.trace.Tracer;
 
 @MaxValue(20)
 //@Group("Test group name")
-public class MetaStateBroadcastTestCase extends PassFailJUnitTestCase {
+public class FlexibleMetaStateBroadcastTestCase extends PassFailJUnitTestCase {
 	
 	private final boolean doNIO;
 	private final boolean doRMI;
@@ -31,7 +32,7 @@ public class MetaStateBroadcastTestCase extends PassFailJUnitTestCase {
 	private final boolean atomic;
 	private final boolean clientIsSource;
 	
-	public MetaStateBroadcastTestCase(boolean atomic, boolean clientIsSource, boolean doNIO, boolean doRMI, boolean doGIPC) {
+	public FlexibleMetaStateBroadcastTestCase(boolean atomic, boolean clientIsSource, boolean doNIO, boolean doRMI, boolean doGIPC) {
 //		super("Meta state broadcast test case - " +(atomic ? "Atomic" : "Non-atomic") + " from " + (clientIsSource ? "Client" : "Server"));
 		
 		this.atomic = atomic;

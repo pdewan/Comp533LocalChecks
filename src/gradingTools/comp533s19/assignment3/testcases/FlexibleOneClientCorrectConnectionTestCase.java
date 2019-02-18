@@ -1,4 +1,4 @@
-package gradingTools.comp533s18.assignment3.testcases;
+package gradingTools.comp533s19.assignment3.testcases;
 
 import java.util.Arrays;
 import java.util.concurrent.TimeoutException;
@@ -14,6 +14,7 @@ import grader.basics.project.CurrentProjectHolder;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.comp533s19.assignment3.testcases.FlexibleOneClientCorrectConnectionTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.Group;
 import util.annotations.MaxValue;
@@ -21,13 +22,13 @@ import util.trace.Tracer;
 
 @MaxValue(20)
 //@Group("Test group name")
-public class OneClientCorrectConnectionTestCase extends PassFailJUnitTestCase {
+public class FlexibleOneClientCorrectConnectionTestCase extends PassFailJUnitTestCase {
 	
 	private final boolean doNIO;
 	private final boolean doRMI;
 	private final boolean doGIPC;
 	
-	public OneClientCorrectConnectionTestCase(boolean doNIO, boolean doRMI, boolean doGIPC) {
+	public FlexibleOneClientCorrectConnectionTestCase(boolean doNIO, boolean doRMI, boolean doGIPC) {
 //		super("One client correct connection test case");
 
 		this.doNIO = doNIO;
@@ -61,7 +62,7 @@ public class OneClientCorrectConnectionTestCase extends PassFailJUnitTestCase {
 
 			// Get the output when we have no input from the user
 //			RunningProject noInputRunningProject = RunningProjectUtils.runProject(project, 1);
-			OneClientCorrectConnectionTestInputGenerator anOutputBasedInputGenerator = new OneClientCorrectConnectionTestInputGenerator(doNIO, doRMI, doGIPC);
+			FlexibleOneClientCorrectConnectionTestInputGenerator anOutputBasedInputGenerator = new FlexibleOneClientCorrectConnectionTestInputGenerator(doNIO, doRMI, doGIPC);
 			RunningProject interactiveInputProject = null;
 			try {
 				interactiveInputProject = RunningProjectUtils.runProject(project, 25,

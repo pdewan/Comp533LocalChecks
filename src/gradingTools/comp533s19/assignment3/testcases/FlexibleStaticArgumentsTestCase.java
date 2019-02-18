@@ -1,4 +1,4 @@
-package gradingTools.comp533s18.assignment3.testcases;
+package gradingTools.comp533s19.assignment3.testcases;
 
 import java.rmi.registry.Registry;
 import java.util.Arrays;
@@ -16,11 +16,12 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.comp533s18.assignment2.Assignment2OneClientSuite;
+import gradingTools.comp533s19.assignment3.testcases.FlexibleStaticArgumentsTestInputGenerator;
+import gradingTools.comp533s19.assignment2.Assignment2OneClientSuite;
 import gradingTools.utils.RunningProjectUtils;
 import util.trace.Tracer;
 
-public class StaticArgumentsTestCase extends PassFailJUnitTestCase {
+public class FlexibleStaticArgumentsTestCase extends PassFailJUnitTestCase {
 	private static final int HEADLESS_RUNTIME = 7;
 	private static final int GUI_RUNTIME = 20;
 	private static final int INTER_TEST_DELAY = 5000;
@@ -114,7 +115,7 @@ public class StaticArgumentsTestCase extends PassFailJUnitTestCase {
 	private final boolean doGIPC;
 	
 	
-	public StaticArgumentsTestCase(boolean doNIO, boolean doRMI, boolean doGIPC) {
+	public FlexibleStaticArgumentsTestCase(boolean doNIO, boolean doRMI, boolean doGIPC) {
 //		super("Static arguments test case");
 
 		this.doNIO = doNIO;
@@ -209,7 +210,7 @@ public class StaticArgumentsTestCase extends PassFailJUnitTestCase {
 
 		// Get the output when we have no input from the user
 		RunningProject interactiveInputProject = null;
-		StaticArgumentsTestInputGenerator inputGenerator = new StaticArgumentsTestInputGenerator(doNIO, doRMI, doGIPC);
+		FlexibleStaticArgumentsTestInputGenerator inputGenerator = new FlexibleStaticArgumentsTestInputGenerator(doNIO, doRMI, doGIPC);
 		try {
 			interactiveInputProject = RunningProjectUtils.runProject(project, 5, inputGenerator);
 			interactiveInputProject.await();
@@ -233,7 +234,7 @@ public class StaticArgumentsTestCase extends PassFailJUnitTestCase {
 
 		// Get the output when we have no input from the user
 		interactiveInputProject = null;
-		inputGenerator = new StaticArgumentsTestInputGenerator(doNIO, doRMI, doGIPC);
+		inputGenerator = new FlexibleStaticArgumentsTestInputGenerator(doNIO, doRMI, doGIPC);
 		try {
 			interactiveInputProject = RunningProjectUtils.runProject(project, 5, inputGenerator);
 			interactiveInputProject.await();
@@ -337,7 +338,7 @@ public class StaticArgumentsTestCase extends PassFailJUnitTestCase {
 
 		// Get the output when we have no input from the user
 		RunningProject interactiveInputProject = null;
-		StaticArgumentsTestInputGenerator inputGenerator = new StaticArgumentsTestInputGenerator(doNIO, doRMI, doGIPC);
+		FlexibleStaticArgumentsTestInputGenerator inputGenerator = new FlexibleStaticArgumentsTestInputGenerator(doNIO, doRMI, doGIPC);
 		try {
 			boolean shouldNotDisplayGUI = Boolean.parseBoolean(testHeadless) || Boolean.parseBoolean(System.getProperty("java.awt.headless"));
 			int runtime = shouldNotDisplayGUI ? HEADLESS_RUNTIME : GUI_RUNTIME;
