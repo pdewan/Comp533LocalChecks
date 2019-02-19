@@ -7,11 +7,14 @@ import java.util.List;
 import java.util.concurrent.TimeoutException;
 import java.util.stream.Collectors;
 
+import org.junit.Assert;
+
 import assignments.util.mainArgs.ClientArgsProcessor;
 import assignments.util.mainArgs.ServerPort;
 import grader.basics.execution.NotRunnableException;
 import grader.basics.execution.RunningProject;
 import grader.basics.junit.NotAutomatableException;
+import grader.basics.junit.NotesAndScore;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
@@ -346,7 +349,9 @@ public class FlexibleStaticArgumentsTestCase extends PassFailJUnitTestCase {
 			interactiveInputProject.await();
 		} catch (Exception e){
 			if (!(e instanceof TimeoutException)) {
-				return "Couldn't run code.";
+				Assert.assertTrue("Couldn't run code." + NotesAndScore.PERCENTAGE_MARKER + 0, false);
+
+//				return "Couldn't run code.";
 			}
 		}
 		if (interactiveInputProject != null) {
