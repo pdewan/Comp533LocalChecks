@@ -15,6 +15,7 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp533s19.assignment1.Assignment1OneClientSuite;
+import gradingTools.comp533s19.assignment1.Assignment1Suite;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
 import util.trace.Tracer;
@@ -58,7 +59,7 @@ public class OneClientConnection extends PassFailJUnitTestCase {
 			OneClientConnectionInputGenerator anOutputBasedInputGenerator = new OneClientConnectionInputGenerator();
 			RunningProject interactiveInputProject = null;
 			try {
-				interactiveInputProject = RunningProjectUtils.runProject(project, 20,
+				interactiveInputProject = RunningProjectUtils.runProject(project, Assignment1Suite.getProcessTimeOut(),
 						anOutputBasedInputGenerator);
 				String incOutput = interactiveInputProject.await();
 			} catch (Exception e){

@@ -10,6 +10,7 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.comp533s19.assignment1.Assignment1Suite;
 import gradingTools.comp533s19.assignment1.Assignment1TwoClientSuite;
 import gradingTools.utils.RunningProjectUtils;
 import util.trace.Tracer;
@@ -34,7 +35,9 @@ public class TwoClientReadWrite extends PassFailJUnitTestCase {
 			TwoClientCorrectReadWriteTestInputGenerator anOutputBasedInputGenerator = new TwoClientCorrectReadWriteTestInputGenerator(atomic);
 			RunningProject interactiveInputProject = null;
 			try {
-				interactiveInputProject = RunningProjectUtils.runProject(project, 45,
+//				interactiveInputProject = RunningProjectUtils.runProject(project, 45,
+//						anOutputBasedInputGenerator);
+				interactiveInputProject = RunningProjectUtils.runProject(project, Assignment1Suite.getProcessTimeOut(),
 						anOutputBasedInputGenerator);
 				String incOutput = interactiveInputProject.await();
 			} catch (Exception e){

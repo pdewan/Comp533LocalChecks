@@ -47,7 +47,14 @@ public class Assignment1Suite {
 	public static final String[] serverTags = {DistributedTags.NIO, DistributedTags.SERVER};
 	public static final  List<String> clientTagsList = Arrays.asList(clientTags);
 	public static final List<String> serverTagsList = Arrays.asList(serverTags);
+	static int processTimeOut = 45;
 
+	public static int getProcessTimeOut() {
+		return processTimeOut;
+	}
+	public static void setProcessTimeOut(int processTimeOut) {
+		Assignment1Suite.processTimeOut = processTimeOut;
+	}
 	public static void main (String[] args) {
 		try {
 			
