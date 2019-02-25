@@ -132,7 +132,7 @@ public class FlexibleOneClientCorrectReadWriteTestCase extends PassFailJUnitTest
 	}
 	
 	private static void setupProcesses() {
-		Assignment2OneClientSuite.setupProcesses();
+		Assignment2OneClientSuite.oneClientSetupProcessesRMI();;
 //		Assignment1OneClientSuite.oneClientSetupProcesses();
 //		ExecutionSpecificationSelector.getExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
 //		ExecutionSpecificationSelector.getExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client"));

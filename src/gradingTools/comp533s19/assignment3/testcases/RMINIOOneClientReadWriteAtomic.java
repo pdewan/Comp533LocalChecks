@@ -12,8 +12,9 @@ import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp533s19.assignment3.testcases.FlexibleOneClientCorrectReadWriteTestInputGenerator;
 import gradingTools.comp533s19.assignment1.Assignment1OneClientSuite;
 import gradingTools.utils.RunningProjectUtils;
+import util.annotations.MaxValue;
 import util.trace.Tracer;
-
+@MaxValue(20)
 public class RMINIOOneClientReadWriteAtomic extends FlexibleOneClientCorrectReadWriteTestCase {
 	public RMINIOOneClientReadWriteAtomic() {
 		super(true, true, true, false);

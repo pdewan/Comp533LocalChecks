@@ -98,7 +98,7 @@ public class FlexibleOneClientCorrectConnectionTestCase extends PassFailJUnitTes
 	}
 	
 	private static void setupProcesses() {
-		Assignment2OneClientSuite.oneClientSetupProcesses();
+		Assignment2OneClientSuite.oneClientSetupProcessesRMI();
 
 //		Assignment2OneClientSuite.oneClientSetupProcesses(
 //				FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS.toArray(new String[] {}), 
