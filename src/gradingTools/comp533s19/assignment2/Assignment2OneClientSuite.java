@@ -10,11 +10,11 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 import grader.basics.execution.BasicExecutionSpecificationSelector;
-import gradingTools.comp533s19.assignment3.testcases.FlexibleStaticArgumentsTestCase;
-import gradingTools.comp533s19.assignment3.testcases.RMINIOOneClientConnection;
-import gradingTools.comp533s19.assignment3.testcases.RMINIOOneClientReadWriteAtomic;
-import gradingTools.comp533s19.assignment3.testcases.RMINIOOneClientReadWriteNonAtomic;
-import gradingTools.comp533s19.assignment3.testcases.RMINIOStaticArguments;
+import gradingTools.comp533s19.assignment2.testcases.RMINIOOneClientConnection;
+import gradingTools.comp533s19.assignment2.testcases.RMINIOOneClientReadWriteAtomic;
+import gradingTools.comp533s19.assignment2.testcases.RMINIOOneClientReadWriteNonAtomic;
+import gradingTools.comp533s19.assignment2.testcases.RMINIOStaticArguments;
+import gradingTools.comp533s19.flexible.testcases.FlexibleStaticArgumentsTestCase;
 import util.tags.DistributedTags;
 
 

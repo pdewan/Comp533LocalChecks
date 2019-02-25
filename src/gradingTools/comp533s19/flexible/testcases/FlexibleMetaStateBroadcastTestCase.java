@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment3.testcases;
+package gradingTools.comp533s19.flexible.testcases;
 
 import java.util.Arrays;
 import java.util.concurrent.TimeoutException;
@@ -15,8 +15,9 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import grader.basics.execution.BasicExecutionSpecificationSelector;
-import gradingTools.comp533s19.assignment3.testcases.MetaStateBroadcastTestInputGenerator;
+import gradingTools.comp533s19.assignment2.Assignment2Suite;
 import gradingTools.comp533s19.assignment2.Assignment2TwoClientSuite;
+import gradingTools.comp533s19.flexible.testcases.MetaStateBroadcastTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.Group;
 import util.annotations.MaxValue;
@@ -54,7 +55,9 @@ public class FlexibleMetaStateBroadcastTestCase extends PassFailJUnitTestCase {
 			MetaStateBroadcastTestInputGenerator anOutputBasedInputGenerator = new MetaStateBroadcastTestInputGenerator(atomic, clientIsSource, doNIO, doRMI, doGIPC);
 			RunningProject interactiveInputProject = null;
 			try {
-				interactiveInputProject = RunningProjectUtils.runProject(project, 17,
+//				interactiveInputProject = RunningProjectUtils.runProject(project, 17,
+//						anOutputBasedInputGenerator);
+				interactiveInputProject = RunningProjectUtils.runProject(project, Assignment2Suite.getProcessTimeOut(),
 						anOutputBasedInputGenerator);
 				String incOutput = interactiveInputProject.await();
 			} catch (Exception e){

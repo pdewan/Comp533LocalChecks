@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment3.testcases;
+package gradingTools.comp533s19.flexible.testcases;
 
 import java.util.Arrays;
 import java.util.concurrent.TimeoutException;
@@ -15,7 +15,8 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp533s19.assignment2.Assignment2OneClientSuite;
-import gradingTools.comp533s19.assignment3.testcases.FlexibleOneClientCorrectConnectionTestInputGenerator;
+import gradingTools.comp533s19.assignment2.Assignment2Suite;
+import gradingTools.comp533s19.flexible.testcases.FlexibleOneClientCorrectConnectionTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.Group;
 import util.annotations.MaxValue;
@@ -66,7 +67,7 @@ public class FlexibleOneClientCorrectConnectionTestCase extends PassFailJUnitTes
 			FlexibleOneClientCorrectConnectionTestInputGenerator anOutputBasedInputGenerator = new FlexibleOneClientCorrectConnectionTestInputGenerator(doNIO, doRMI, doGIPC);
 			RunningProject interactiveInputProject = null;
 			try {
-				interactiveInputProject = RunningProjectUtils.runProject(project, 25,
+				interactiveInputProject = RunningProjectUtils.runProject(project, /*25,*/ Assignment2Suite.getProcessTimeOut(),
 						anOutputBasedInputGenerator);
 				String incOutput = interactiveInputProject.await();
 			} catch (Exception e){

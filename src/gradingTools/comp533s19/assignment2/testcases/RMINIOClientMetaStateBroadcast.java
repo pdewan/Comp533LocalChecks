@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment3.testcases;
+package gradingTools.comp533s19.assignment2.testcases;
 
 import java.util.Arrays;
 import java.util.concurrent.TimeoutException;
@@ -14,7 +14,10 @@ import grader.basics.project.CurrentProjectHolder;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.comp533s19.assignment3.testcases.FlexibleOneClientCorrectConnectionTestInputGenerator;
+import grader.basics.execution.BasicExecutionSpecificationSelector;
+import gradingTools.comp533s19.assignment2.Assignment2TwoClientSuite;
+import gradingTools.comp533s19.flexible.testcases.FlexibleMetaStateBroadcastTestCase;
+import gradingTools.comp533s19.flexible.testcases.MetaStateBroadcastTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.Group;
 import util.annotations.MaxValue;
@@ -22,15 +25,11 @@ import util.trace.Tracer;
 
 @MaxValue(20)
 //@Group("Test group name")
-public class RMINIOOneClientConnection extends FlexibleOneClientCorrectConnectionTestCase {
-	
-	
-	public RMINIOOneClientConnection() {
-//		super("One client correct connection test case");
+public class RMINIOClientMetaStateBroadcast extends FlexibleMetaStateBroadcastTestCase {
 
-		super(true, true, false);
-
+	public RMINIOClientMetaStateBroadcast() {
+		super(true, true, true, true, false);
 	}
 	
-
+	
 }

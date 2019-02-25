@@ -12,7 +12,7 @@ import gradingTools.comp533s19.assignment1.testcases.OneClientConnection;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	Assignment2OneClientSuite.class,
-	Assignment2OneClientSuite.class
+	Assignment2TwoClientSuite.class
 })
 public class Assignment2Suite extends Assignment1Suite{
 	public static void main (String[] args) {

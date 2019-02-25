@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment3.testcases;
+package gradingTools.comp533s19.flexible.testcases;
 
 import java.rmi.registry.Registry;
 import java.util.Arrays;
@@ -19,8 +19,9 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.comp533s19.assignment3.testcases.FlexibleStaticArgumentsTestInputGenerator;
 import gradingTools.comp533s19.assignment2.Assignment2OneClientSuite;
+import gradingTools.comp533s19.assignment2.Assignment2Suite;
+import gradingTools.comp533s19.flexible.testcases.FlexibleStaticArgumentsTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 import util.trace.Tracer;
 
@@ -215,7 +216,7 @@ public class FlexibleStaticArgumentsTestCase extends PassFailJUnitTestCase {
 		RunningProject interactiveInputProject = null;
 		FlexibleStaticArgumentsTestInputGenerator inputGenerator = new FlexibleStaticArgumentsTestInputGenerator(doNIO, doRMI, doGIPC);
 		try {
-			interactiveInputProject = RunningProjectUtils.runProject(project, 5, inputGenerator);
+			interactiveInputProject = RunningProjectUtils.runProject(project, /*5*/ Assignment2Suite.getProcessTimeOut(), inputGenerator);
 			interactiveInputProject.await();
 		} catch (Exception e){
 			if (!(e instanceof TimeoutException)) {
@@ -239,7 +240,7 @@ public class FlexibleStaticArgumentsTestCase extends PassFailJUnitTestCase {
 		interactiveInputProject = null;
 		inputGenerator = new FlexibleStaticArgumentsTestInputGenerator(doNIO, doRMI, doGIPC);
 		try {
-			interactiveInputProject = RunningProjectUtils.runProject(project, 5, inputGenerator);
+			interactiveInputProject = RunningProjectUtils.runProject(project, /*5*/ Assignment2Suite.getProcessTimeOut(), inputGenerator);
 			interactiveInputProject.await();
 		} catch (Exception e){
 			if (!(e instanceof TimeoutException)) {
@@ -345,7 +346,7 @@ public class FlexibleStaticArgumentsTestCase extends PassFailJUnitTestCase {
 		try {
 			boolean shouldNotDisplayGUI = Boolean.parseBoolean(testHeadless) || Boolean.parseBoolean(System.getProperty("java.awt.headless"));
 			int runtime = shouldNotDisplayGUI ? HEADLESS_RUNTIME : GUI_RUNTIME;
-			interactiveInputProject = RunningProjectUtils.runProject(project, runtime, inputGenerator);
+			interactiveInputProject = RunningProjectUtils.runProject(project, /*runtime*/ Assignment2Suite.getProcessTimeOut(), inputGenerator);
 			interactiveInputProject.await();
 		} catch (Exception e){
 			if (!(e instanceof TimeoutException)) {

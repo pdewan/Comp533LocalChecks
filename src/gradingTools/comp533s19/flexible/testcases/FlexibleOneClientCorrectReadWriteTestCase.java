@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment3.testcases;
+package gradingTools.comp533s19.flexible.testcases;
 
 import java.util.Arrays;
 
@@ -9,21 +9,24 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.comp533s19.assignment3.testcases.FlexibleTwoClientCorrectReadWriteTestInputGenerator;
+import gradingTools.comp533s19.assignment1.Assignment1OneClientSuite;
+import gradingTools.comp533s19.assignment2.Assignment2OneClientSuite;
+import gradingTools.comp533s19.assignment2.Assignment2Suite;
 import gradingTools.comp533s19.assignment2.Assignment2TwoClientSuite;
+import gradingTools.comp533s19.flexible.testcases.FlexibleOneClientCorrectReadWriteTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 import util.trace.Tracer;
 
-public class FlexibleTwoClientCorrectReadWriteTestCase extends PassFailJUnitTestCase {
+public class FlexibleOneClientCorrectReadWriteTestCase extends PassFailJUnitTestCase {
 	private boolean atomic;
 	private final boolean doNIO;
 	private final boolean doRMI;
 	private final boolean doGIPC;
 	
-	private static int RUNTIME = 60;
+	private static int RUNTIME = /*40*/  Assignment2Suite.getProcessTimeOut();
 	
 	private static String formatName(boolean atomic, boolean doNIO, boolean doRMI, boolean doGIPC) {
-		StringBuilder sb = new StringBuilder("Two client correct read write test case - ");
+		StringBuilder sb = new StringBuilder("One client correct read write test case - ");
 		if (atomic) {
 			sb.append("Atomic");
 		} else {
@@ -52,7 +55,7 @@ public class FlexibleTwoClientCorrectReadWriteTestCase extends PassFailJUnitTest
 		return sb.toString();
 	}
 	
-	public FlexibleTwoClientCorrectReadWriteTestCase(boolean atomic, boolean doNIO, boolean doRMI, boolean doGIPC) {
+	public FlexibleOneClientCorrectReadWriteTestCase(boolean atomic, boolean doNIO, boolean doRMI, boolean doGIPC) {
 //		super(formatName(atomic, doNIO, doRMI, doGIPC));
 		this.atomic = atomic;
 
@@ -69,7 +72,7 @@ public class FlexibleTwoClientCorrectReadWriteTestCase extends PassFailJUnitTest
 
 			// Get the output when we have no input from the user
 //			RunningProject noInputRunningProject = RunningProjectUtils.runProject(project, 1);
-			FlexibleTwoClientCorrectReadWriteTestInputGenerator anOutputBasedInputGenerator = new FlexibleTwoClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC);
+			FlexibleOneClientCorrectReadWriteTestInputGenerator anOutputBasedInputGenerator = new FlexibleOneClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC);
 			RunningProject interactiveInputProject = null;
 			try {
 				interactiveInputProject = RunningProjectUtils.runProject(project, RUNTIME,
@@ -85,33 +88,27 @@ public class FlexibleTwoClientCorrectReadWriteTestCase extends PassFailJUnitTest
 			int possible = atomic ? 4 : 2;
 			int[] scoring = new int[] {0,0};
 			if (doNIO) {
-				check(scoring, anOutputBasedInputGenerator.isClient0NIOWriteComplete());
-				check(scoring, anOutputBasedInputGenerator.isServerNIORead0Complete());
-				check(scoring, anOutputBasedInputGenerator.isServerNIOWrite1Complete());
-				check(scoring, anOutputBasedInputGenerator.isClient1NIOReadComplete());
+				check(scoring, anOutputBasedInputGenerator.isClientNIOWriteComplete());
+				check(scoring, anOutputBasedInputGenerator.isServerNIOReadComplete());
 				if (atomic) {
-					check(scoring, anOutputBasedInputGenerator.isServerNIOWrite0Complete());
-					check(scoring, anOutputBasedInputGenerator.isClient0NIOReadComplete());
+					check(scoring, anOutputBasedInputGenerator.isServerNIOWriteComplete());
+					check(scoring, anOutputBasedInputGenerator.isClientNIOReadComplete());
 				}
 			}
 			if (doRMI) {
-				check(scoring, anOutputBasedInputGenerator.isClient0RMIWriteComplete());
-				check(scoring, anOutputBasedInputGenerator.isServerRMIRead0Complete());
-				check(scoring, anOutputBasedInputGenerator.isServerRMIWrite1Complete());
-				check(scoring, anOutputBasedInputGenerator.isClient1RMIReadComplete());
+				check(scoring, anOutputBasedInputGenerator.isClientRMIWriteComplete());
+				check(scoring, anOutputBasedInputGenerator.isServerRMIReadComplete());
 				if (atomic) {
-					check(scoring, anOutputBasedInputGenerator.isServerRMIWrite0Complete());
-					check(scoring, anOutputBasedInputGenerator.isClient0RMIReadComplete());
+					check(scoring, anOutputBasedInputGenerator.isServerRMIWriteComplete());
+					check(scoring, anOutputBasedInputGenerator.isClientRMIReadComplete());
 				}
 			}
 			if (doGIPC) {
-				check(scoring, anOutputBasedInputGenerator.isClient0GIPCWriteComplete());
-				check(scoring, anOutputBasedInputGenerator.isServerGIPCRead0Complete());
-				check(scoring, anOutputBasedInputGenerator.isServerGIPCWrite1Complete());
-				check(scoring, anOutputBasedInputGenerator.isClient1GIPCReadComplete());
+				check(scoring, anOutputBasedInputGenerator.isClientGIPCWriteComplete());
+				check(scoring, anOutputBasedInputGenerator.isServerGIPCReadComplete());
 				if (atomic) {
-					check(scoring, anOutputBasedInputGenerator.isServerGIPCWrite0Complete());
-					check(scoring, anOutputBasedInputGenerator.isClient0GIPCReadComplete());
+					check(scoring, anOutputBasedInputGenerator.isServerGIPCWriteComplete());
+					check(scoring, anOutputBasedInputGenerator.isClientGIPCReadComplete());
 				}
 			}
 			correct = scoring[0];
@@ -136,22 +133,20 @@ public class FlexibleTwoClientCorrectReadWriteTestCase extends PassFailJUnitTest
 	}
 	
 	private static void setupProcesses() {
-		Assignment2TwoClientSuite.twoClientSetupProcesses();
+		Assignment2OneClientSuite.oneClientSetupProcessesRMI();;
+//		Assignment1OneClientSuite.oneClientSetupProcesses();
 //		ExecutionSpecificationSelector.getExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
-//		ExecutionSpecificationSelector.getExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client_0", "Client_1"));
-//		ExecutionSpecificationSelector.getExecutionSpecification().setProcesses("RegistryBasedDistributedProgram", Arrays.asList("Registry", "Server", "Client_0", "Client_1"));
+//		ExecutionSpecificationSelector.getExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client"));
+//		ExecutionSpecificationSelector.getExecutionSpecification().setProcesses("RegistryBasedDistributedProgram", Arrays.asList("Registry", "Server", "Client"));
 //		ExecutionSpecificationSelector.getExecutionSpecification().setEntryTags("Registry", Arrays.asList("Registry"));
 //		ExecutionSpecificationSelector.getExecutionSpecification().setEntryTags("Server", Arrays.asList("Server"));
-//		ExecutionSpecificationSelector.getExecutionSpecification().setEntryTags("Client_0", Arrays.asList("Client"));
-//		ExecutionSpecificationSelector.getExecutionSpecification().setEntryTags("Client_1", Arrays.asList("Client"));
+//		ExecutionSpecificationSelector.getExecutionSpecification().setEntryTags("Client", Arrays.asList("Client"));
 //		ExecutionSpecificationSelector.getExecutionSpecification().setArgs("Registry", StaticArgumentsTestCase.TEST_REGISTRY_ARGS);
 //		ExecutionSpecificationSelector.getExecutionSpecification().setArgs("Server", StaticArgumentsTestCase.TEST_SERVER_ARGS);
-//		ExecutionSpecificationSelector.getExecutionSpecification().setArgs("Client_0", StaticArgumentsTestCase.TEST_CLIENT_0_ARGS);
-//		ExecutionSpecificationSelector.getExecutionSpecification().setArgs("Client_1", StaticArgumentsTestCase.TEST_CLIENT_1_ARGS);
+//		ExecutionSpecificationSelector.getExecutionSpecification().setArgs("Client", StaticArgumentsTestCase.TEST_CLIENT_0_ARGS);
 //		ExecutionSpecificationSelector.getExecutionSpecification().setSleepTime("Registry", 500);
 //		ExecutionSpecificationSelector.getExecutionSpecification().setSleepTime("Server", 2000);
-//		ExecutionSpecificationSelector.getExecutionSpecification().setSleepTime("Client_0", 5000);
-//		ExecutionSpecificationSelector.getExecutionSpecification().setSleepTime("Client_1", 5000);
+//		ExecutionSpecificationSelector.getExecutionSpecification().setSleepTime("Client", 5000);
 //		ExecutionSpecificationSelector.getExecutionSpecification().getProcessTeams().forEach(team -> System.out.println("### " + team));
 	}
 }

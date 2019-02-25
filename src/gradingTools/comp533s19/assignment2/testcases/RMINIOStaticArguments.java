@@ -1,5 +1,6 @@
-package gradingTools.comp533s19.assignment3.testcases;
+package gradingTools.comp533s19.assignment2.testcases;
 
+import gradingTools.comp533s19.flexible.testcases.FlexibleStaticArgumentsTestCase;
 import util.annotations.MaxValue;
 
 @MaxValue(20)

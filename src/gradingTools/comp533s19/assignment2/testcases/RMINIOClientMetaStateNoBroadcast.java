@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment3.testcases;
+package gradingTools.comp533s19.assignment2.testcases;
 
 import java.util.Arrays;
 import java.util.concurrent.TimeoutException;
@@ -15,8 +15,9 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import grader.basics.execution.BasicExecutionSpecificationSelector;
-import gradingTools.comp533s19.assignment3.testcases.MetaStateBroadcastTestInputGenerator;
 import gradingTools.comp533s19.assignment2.Assignment2TwoClientSuite;
+import gradingTools.comp533s19.flexible.testcases.FlexibleMetaStateBroadcastTestCase;
+import gradingTools.comp533s19.flexible.testcases.MetaStateBroadcastTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.Group;
 import util.annotations.MaxValue;
@@ -24,10 +25,10 @@ import util.trace.Tracer;
 
 @MaxValue(20)
 //@Group("Test group name")
-public class ClientMetaStateBroadcast extends FlexibleMetaStateBroadcastTestCase {
+public class RMINIOClientMetaStateNoBroadcast extends FlexibleMetaStateBroadcastTestCase {
 
-	public ClientMetaStateBroadcast() {
-		super(true, true, true, true, false);
+	public RMINIOClientMetaStateNoBroadcast() {
+		super(false, true, true, true, false);
 	}
 	
 	

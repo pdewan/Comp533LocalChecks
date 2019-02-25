@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment3.testcases;
+package gradingTools.comp533s19.flexible.testcases;
 
 import java.util.regex.Pattern;
 

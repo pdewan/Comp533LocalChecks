@@ -1,8 +1,8 @@
-package gradingTools.comp533s19.assignment3.testcases;
+package gradingTools.comp533s19.flexible.testcases;
 
 import java.util.regex.Pattern;
 
-import gradingTools.comp533s19.assignment3.testcases.FlexibleTwoClientCorrectConnectionTestInputGenerator;
+import gradingTools.comp533s19.flexible.testcases.FlexibleTwoClientCorrectConnectionTestInputGenerator;
 import util.trace.Tracer;
 
 public class FlexibleTwoClientCorrectReadWriteTestInputGenerator extends FlexibleTwoClientCorrectConnectionTestInputGenerator {
