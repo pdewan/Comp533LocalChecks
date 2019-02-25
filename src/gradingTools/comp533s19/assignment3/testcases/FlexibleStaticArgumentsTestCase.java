@@ -209,7 +209,7 @@ public class FlexibleStaticArgumentsTestCase extends PassFailJUnitTestCase {
 	private void testHeadless(Project project, StringBuilder message, int[] scoring, String testServerNIOPort, String testServerRegistryHost, String testServerRMIPort, String testServerGIPCPort, String testNIOHost, String testClientNIOPort, String testName, String testClientRegistryHost, String testClientRMIPort, String testClientGIPCPort) throws NotRunnableException {
 		
 		String runHeadless = "false";
-		setupProcesses(new String[] {testServerNIOPort, testServerRegistryHost, testServerRMIPort, testServerGIPCPort}, new String[] {testNIOHost, testClientNIOPort, testName, runHeadless, testClientRegistryHost, testClientRMIPort, testClientGIPCPort}, doRMI);
+		setupProcesses(new String[] {testServerNIOPort, testServerRegistryHost, testServerRMIPort, testServerGIPCPort}, new String[] {testNIOHost, testClientNIOPort, testName, runHeadless, testClientRegistryHost, testClientRMIPort, testClientGIPCPort}, doRMI, doGIPC);
 
 		// Get the output when we have no input from the user
 		RunningProject interactiveInputProject = null;
@@ -233,7 +233,7 @@ public class FlexibleStaticArgumentsTestCase extends PassFailJUnitTestCase {
 		}
 		
 		runHeadless = "true";
-		setupProcesses(new String[] {testServerNIOPort, testServerRegistryHost, testServerRMIPort, testServerGIPCPort}, new String[] {testNIOHost, testClientNIOPort, testName, runHeadless, testClientRegistryHost, testClientRMIPort, testClientGIPCPort}, doRMI);
+		setupProcesses(new String[] {testServerNIOPort, testServerRegistryHost, testServerRMIPort, testServerGIPCPort}, new String[] {testNIOHost, testClientNIOPort, testName, runHeadless, testClientRegistryHost, testClientRMIPort, testClientGIPCPort}, doRMI, doGIPC);
 
 		// Get the output when we have no input from the user
 		interactiveInputProject = null;
@@ -337,7 +337,7 @@ public class FlexibleStaticArgumentsTestCase extends PassFailJUnitTestCase {
 		StringBuilder nioMessageServer = new StringBuilder();
 		StringBuilder rmiMessageServer = new StringBuilder();
 		StringBuilder gipcMessageServer = new StringBuilder();
-		setupProcesses(new String[] {testServerNIOPort, testServerRegistryHost, testServerRMIPort, testServerGIPCPort}, new String[] {testNIOHost, testClientNIOPort, testName, testHeadless, testClientRegistryHost, testClientRMIPort, testClientGIPCPort}, doRMI);
+		setupProcesses(new String[] {testServerNIOPort, testServerRegistryHost, testServerRMIPort, testServerGIPCPort}, new String[] {testNIOHost, testClientNIOPort, testName, testHeadless, testClientRegistryHost, testClientRMIPort, testClientGIPCPort}, doRMI, doGIPC);
 
 		// Get the output when we have no input from the user
 		RunningProject interactiveInputProject = null;
@@ -619,8 +619,8 @@ public class FlexibleStaticArgumentsTestCase extends PassFailJUnitTestCase {
 		return message;
 	}
 	
-	private static void setupProcesses(String[] serverArgs, String[] clientArgs, boolean doRMI) {
-		Assignment2OneClientSuite.oneClientSetupProcesses(serverArgs, clientArgs, doRMI);
+	private static void setupProcesses(String[] serverArgs, String[] clientArgs, boolean doRMI, boolean doGIPC) {
+		Assignment2OneClientSuite.oneClientSetupProcesses(serverArgs, clientArgs, doRMI, doGIPC);
 //		List<String> serverArgList = Arrays.stream(serverArgs).filter(s -> !s.isEmpty()).collect(Collectors.toList());
 //		List<String> registryArgList = (serverArgList.size() >= 3 && !serverArgList.get(2).equals(DEFAULT_PORT_RMI)) ? serverArgList.subList(2, 3) : Collections.emptyList();
 //		List<String> clientArgList = Arrays.stream(clientArgs).filter(s -> !s.isEmpty()).collect(Collectors.toList());
