@@ -14,6 +14,7 @@ import grader.basics.project.CurrentProjectHolder;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.comp533s19.assignment2.Assignment2OneClientSuite;
 import gradingTools.comp533s19.assignment3.testcases.FlexibleOneClientCorrectConnectionTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.Group;
@@ -97,6 +98,11 @@ public class FlexibleOneClientCorrectConnectionTestCase extends PassFailJUnitTes
 	}
 	
 	private static void setupProcesses() {
+		Assignment2OneClientSuite.oneClientSetupProcesses();
+
+//		Assignment2OneClientSuite.oneClientSetupProcesses(
+//				FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS.toArray(new String[] {}), 
+//				FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS.toArray(new String[] {}), true, false);
 		
 //		ExecutionSpecificationSelector.getExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
 //		ExecutionSpecificationSelector.getExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client"));

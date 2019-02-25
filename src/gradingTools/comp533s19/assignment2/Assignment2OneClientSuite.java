@@ -12,7 +12,7 @@ import org.junit.runners.Suite;
 import grader.basics.execution.BasicExecutionSpecificationSelector;
 import gradingTools.comp533s19.assignment3.testcases.FlexibleStaticArgumentsTestCase;
 import gradingTools.comp533s19.assignment3.testcases.RMINIOOneClientConnection;
-import gradingTools.comp533s19.assignment3.testcases.RMINIOOneClientCorrectReadWriteAtomic;
+import gradingTools.comp533s19.assignment3.testcases.RMINIOOneClientReadWriteAtomic;
 import gradingTools.comp533s19.assignment3.testcases.RMINIOOneClientReadWriteNonAtomic;
 import gradingTools.comp533s19.assignment3.testcases.RMINIOStaticArguments;
 import util.tags.DistributedTags;
@@ -23,7 +23,7 @@ import util.tags.DistributedTags;
 	RMINIOStaticArguments.class,
 	RMINIOOneClientConnection.class,
 	RMINIOOneClientReadWriteNonAtomic.class,
-	RMINIOOneClientCorrectReadWriteAtomic.class
+	RMINIOOneClientReadWriteAtomic.class
 
 
 })
@@ -83,5 +83,10 @@ public static void oneClientSetupProcesses(String[] serverArgs, String[] clientA
 	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Server", 1000);
 	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Client", 2000);
 	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessTeams().forEach(team -> System.out.println("### " + team));
+}
+public static void setupProcesses() {
+	Assignment2OneClientSuite.oneClientSetupProcesses(
+			FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS.toArray(new String[] {}), 
+			FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS.toArray(new String[] {}), true, false);
 }
 }

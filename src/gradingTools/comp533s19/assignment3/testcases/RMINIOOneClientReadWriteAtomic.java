@@ -14,8 +14,8 @@ import gradingTools.comp533s19.assignment1.Assignment1OneClientSuite;
 import gradingTools.utils.RunningProjectUtils;
 import util.trace.Tracer;
 
-public class RMINIOOneClientCorrectReadWriteAtomic extends FlexibleOneClientCorrectReadWriteTestCase {
-	public RMINIOOneClientCorrectReadWriteAtomic() {
+public class RMINIOOneClientReadWriteAtomic extends FlexibleOneClientCorrectReadWriteTestCase {
+	public RMINIOOneClientReadWriteAtomic() {
 		super(true, true, true, false);
 	}	
 }

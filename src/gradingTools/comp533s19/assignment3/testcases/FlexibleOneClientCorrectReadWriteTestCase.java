@@ -11,6 +11,8 @@ import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp533s19.assignment3.testcases.FlexibleOneClientCorrectReadWriteTestInputGenerator;
 import gradingTools.comp533s19.assignment1.Assignment1OneClientSuite;
+import gradingTools.comp533s19.assignment2.Assignment2OneClientSuite;
+import gradingTools.comp533s19.assignment2.Assignment2TwoClientSuite;
 import gradingTools.utils.RunningProjectUtils;
 import util.trace.Tracer;
 
@@ -130,7 +132,8 @@ public class FlexibleOneClientCorrectReadWriteTestCase extends PassFailJUnitTest
 	}
 	
 	private static void setupProcesses() {
-		Assignment1OneClientSuite.oneClientSetupProcesses();
+		Assignment2OneClientSuite.setupProcesses();
+//		Assignment1OneClientSuite.oneClientSetupProcesses();
 //		ExecutionSpecificationSelector.getExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
 //		ExecutionSpecificationSelector.getExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client"));
 //		ExecutionSpecificationSelector.getExecutionSpecification().setProcesses("RegistryBasedDistributedProgram", Arrays.asList("Registry", "Server", "Client"));
