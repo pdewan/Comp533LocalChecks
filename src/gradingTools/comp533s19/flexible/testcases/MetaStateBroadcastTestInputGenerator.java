@@ -242,13 +242,13 @@ public class MetaStateBroadcastTestInputGenerator extends FlexibleTwoClientCorre
 		StringBuilder message = new StringBuilder();
 		if (observed[0]) {
 			if (!expected[0]) {
-				message.append("Server recieved unexpected notification");
+				message.append("Server received unexpected notification");
 			}
 		} else {
 			if (!clientIsSource) {
-				message.append("Source server did not print state chagne");
+				message.append("Source server did not print state change");
 			} else if (expected[0]) {
-				message.append("Server did not recieve expected notification");
+				message.append("Server did not receive expected notification");
 			}
 		}
 		if (observed[1]) {
@@ -256,7 +256,7 @@ public class MetaStateBroadcastTestInputGenerator extends FlexibleTwoClientCorre
 				if (message.length() > 0) {
 					message.append(", ");
 				}
-				message.append("Client 0 recieved unexpected notification");
+				message.append("Client 0 received unexpected notification");
 			}
 		} else {
 			if (clientIsSource) {
@@ -268,19 +268,19 @@ public class MetaStateBroadcastTestInputGenerator extends FlexibleTwoClientCorre
 				if (message.length() > 0) {
 					message.append(", ");
 				}
-				message.append("Client 0 did not recieve expected notification");
+				message.append("Client 0 did not receive expected notification");
 			}
 		}
 		if (observed[2]) {
 			if (!expected[2]) {
-				message.append("Client 1 recieved unexpected notification");
+				message.append("Client 1 received unexpected notification");
 			}
 		} else {
 			if (expected[2]) {
 				if (message.length() > 0) {
 					message.append(", ");
 				}
-				message.append("Client 1 did not recieve expected notification");
+				message.append("Client 1 did not receive expected notification");
 			}
 		}
 		return message.toString();
