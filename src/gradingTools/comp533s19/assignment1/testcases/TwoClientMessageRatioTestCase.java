@@ -44,6 +44,7 @@ public class TwoClientMessageRatioTestCase extends PassFailJUnitTestCase {
 				interactiveInputProject.getProcessOutput().forEach((name, output) -> System.out.println("*** " + name + " ***\n" + output));
 			}
 			int correct = 0;
+			int correctAssumingBroadcast = 0;
 			int possible = 6;
 			int numSeen = anOutputBasedInputGenerator.getClient0WriteCount();
 			int expected = 1;
@@ -51,6 +52,9 @@ public class TwoClientMessageRatioTestCase extends PassFailJUnitTestCase {
 			if (numSeen == expected) {
 				correct++;
 			} else {
+				if (numSeen == expected + 1) {
+					correctAssumingBroadcast ++;
+				}
 				message.append("Incorrect number of client 0 writes (saw " + numSeen + ", expected " + expected + ").");
 			}
 			numSeen = anOutputBasedInputGenerator.getClient0ReadCount();
@@ -58,36 +62,48 @@ public class TwoClientMessageRatioTestCase extends PassFailJUnitTestCase {
 			if (numSeen == expected) {
 				correct++;
 			} else {
+				if (numSeen == expected + 2) {
+					correctAssumingBroadcast ++;
+				}
 				if (message.length() > 0) {
 					message.append(" ");
 				}
-				message.append("Incorrect number of client 1 reads (saw " + numSeen + ", expected " + expected + ").");
+				message.append("Incorrect number of client 0 reads (saw " + numSeen + ", expected " + expected + ").");
 			}
 			numSeen = anOutputBasedInputGenerator.getClient1ReadCount();
 			expected = 1;
 			if (numSeen == expected) {
 				correct++;
 			} else {
+				if (numSeen == expected + 2) {
+					correctAssumingBroadcast ++;
+				}
 				if (message.length() > 0) {
 					message.append(" ");
 				}
-				message.append("Incorrect number of client 1 writes (saw " + numSeen + ", expected " + expected + ").");
+				message.append("Incorrect number of client 1 reads (saw " + numSeen + ", expected " + expected + ").");
 			}
 			numSeen = anOutputBasedInputGenerator.getClient1WriteCount();
 			expected = 0;
 			if (numSeen == expected) {
 				correct++;
 			} else {
+				if (numSeen == expected + 1) {
+					correctAssumingBroadcast ++;
+				}
 				if (message.length() > 0) {
 					message.append(" ");
 				}
-				message.append("Incorrect number of client 0 reads (saw " + numSeen + ", expected " + expected + ").");
+				message.append("Incorrect number of client 1 writes (saw " + numSeen + ", expected " + expected + ").");
 			}
 			numSeen = anOutputBasedInputGenerator.getServerWriteCount();
 			expected = atomic ? 2 : 1;
 			if (numSeen == expected) {
 				correct++;
 			} else {
+				if (numSeen == expected + 4) {
+					correctAssumingBroadcast ++;
+				}
 				if (message.length() > 0) {
 					message.append(" ");
 				}
@@ -98,10 +114,16 @@ public class TwoClientMessageRatioTestCase extends PassFailJUnitTestCase {
 			if (numSeen == expected) {
 				correct++;
 			} else {
+				if (numSeen == expected + 2) {
+					correctAssumingBroadcast ++;
+				}
 				if (message.length() > 0) {
 					message.append(" ");
 				}
 				message.append("Incorrect number of server reads (saw " + numSeen + ", expected " + expected + ").");
+			}
+			if (correctAssumingBroadcast == possible) {
+				correct = possible;
 			}
 			if (correct == possible) {
 				return pass();
