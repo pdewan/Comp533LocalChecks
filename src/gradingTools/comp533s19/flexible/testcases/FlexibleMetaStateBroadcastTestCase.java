@@ -17,6 +17,7 @@ import grader.basics.testcase.PassFailJUnitTestCase;
 import grader.basics.execution.BasicExecutionSpecificationSelector;
 import gradingTools.comp533s19.assignment2.Assignment2Suite;
 import gradingTools.comp533s19.assignment2.Assignment2TwoClientSuite;
+import gradingTools.comp533s19.assignment3.Assignment3TwoClientSuite;
 import gradingTools.comp533s19.flexible.testcases.MetaStateBroadcastTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.Group;
@@ -100,8 +101,8 @@ public class FlexibleMetaStateBroadcastTestCase extends PassFailJUnitTestCase {
 		}
 	}
 	
-	private static void setupProcesses() {
-		Assignment2TwoClientSuite.twoClientSetupProcesses();
+	  protected void setupProcesses() {
+		Assignment2TwoClientSuite.twoClientSetupProcesses(doGIPC);
 //		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
 //		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client_0", "Client_1"));
 //		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcesses("RegistryBasedDistributedProgram", Arrays.asList("Registry", "Server", "Client_0", "Client_1"));

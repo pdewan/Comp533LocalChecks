@@ -136,8 +136,8 @@ public class FlexibleTwoClientCorrectReadWriteTestCase extends PassFailJUnitTest
 		}
 	}
 	
-	private static void setupProcesses() {
-		Assignment2TwoClientSuite.twoClientSetupProcesses();
+	protected  void setupProcesses() {
+		Assignment2TwoClientSuite.twoClientSetupProcesses(doGIPC);
 //		ExecutionSpecificationSelector.getExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
 //		ExecutionSpecificationSelector.getExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client_0", "Client_1"));
 //		ExecutionSpecificationSelector.getExecutionSpecification().setProcesses("RegistryBasedDistributedProgram", Arrays.asList("Registry", "Server", "Client_0", "Client_1"));

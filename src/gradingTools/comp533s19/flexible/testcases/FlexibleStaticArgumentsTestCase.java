@@ -350,7 +350,7 @@ public class FlexibleStaticArgumentsTestCase extends PassFailJUnitTestCase {
 			interactiveInputProject.await();
 		} catch (Exception e){
 			if (!(e instanceof TimeoutException)) {
-				Assert.assertTrue("Couldn't run code." + NotesAndScore.PERCENTAGE_MARKER + 0, false);
+				Assert.assertTrue("Couldn't run code:" + e.getMessage() + ":" + NotesAndScore.PERCENTAGE_MARKER + 0, false);
 
 //				return "Couldn't run code.";
 			}
