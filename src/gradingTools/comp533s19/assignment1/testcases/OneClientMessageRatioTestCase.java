@@ -45,7 +45,7 @@ public class OneClientMessageRatioTestCase extends PassFailJUnitTestCase {
 				interactiveInputProject.getProcessOutput().forEach((name, output) -> Tracer.info(this, "*** " + name + " ***\n" + output));
 			}
 			int correct = 0;
-			int offByOneCorrect = 0;
+			int correctAssumingBroadcast = 0;
 			int possible = 4;
 			
 			int numSeen = anOutputBasedInputGenerator.getClientWriteCount();
@@ -55,7 +55,7 @@ public class OneClientMessageRatioTestCase extends PassFailJUnitTestCase {
 				correct++;
 			} else {
 				if (numSeen == expected+1) {
-					offByOneCorrect ++;
+					correctAssumingBroadcast ++;
 				} 
 				message.append("Incorrect number of client writes (saw " + numSeen + ", expected " + expected + ").");
 			}
@@ -66,7 +66,7 @@ public class OneClientMessageRatioTestCase extends PassFailJUnitTestCase {
 				correct++;
 			} else {
 				if (numSeen == expected+1) {
-					offByOneCorrect ++;
+					correctAssumingBroadcast ++;
 				}
 				if (message.length() > 0) {
 					message.append(" ");
@@ -80,7 +80,7 @@ public class OneClientMessageRatioTestCase extends PassFailJUnitTestCase {
 				correct++;
 			} else {
 				if (numSeen == expected+1) {
-					offByOneCorrect ++;
+					correctAssumingBroadcast ++;
 				} 
 				if (message.length() > 0) {
 					message.append(" ");
@@ -94,14 +94,14 @@ public class OneClientMessageRatioTestCase extends PassFailJUnitTestCase {
 				correct++;
 			} else {
 				if (numSeen == expected+1) {
-					offByOneCorrect ++;
+					correctAssumingBroadcast ++;
 				} 
 				if (message.length() > 0) {
 					message.append(" ");
 				}
 				message.append("Incorrect number of server reads (saw " + numSeen + ", expected " + expected + ").");
 			}
-			if (offByOneCorrect == possible) {
+			if (correctAssumingBroadcast == possible) {
 				correct = possible;
 			}
 			if (correct == possible) {

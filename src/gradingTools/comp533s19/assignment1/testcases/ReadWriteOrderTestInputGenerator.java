@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 import util.pipe.AnAbstractInputGenerator;
 
-public class ReadWriteOrderTestInputGenerator extends AnAbstractInputGenerator {
+public class ReadWriteOrderTestInputGenerator extends OneClientConnectionInputGenerator {
 	private static final String TRACER_PREFIX = "I***";
 	
 	private static final String MAIN_THREAD = "\\{main\\}";
@@ -23,30 +23,25 @@ public class ReadWriteOrderTestInputGenerator extends AnAbstractInputGenerator {
 	private int acceptStage = 0;
 	private int updateStage = 0;
 
-	private static final Pattern[] acceptStages = {
-			checkStr(SELECT_THREAD, "SelectUnblocked"),
-			checkStr(SELECT_THREAD, "SocketChannelAccepted"),
-			checkStr(SELECT_THREAD, "ReadListenerAdded"),
-			checkStr(SELECT_THREAD, "SocketChannelRegistered"),
-			checkStr(SELECT_THREAD, "SelectCalled")
-	};
-
 	private static final Pattern[] atomicClient = {
 			checkStr(MAIN_THREAD, "SetProperty"),
-			checkStr(MAIN_THREAD, "NotifiedPropertyChangeEvent"),
+			checkStr(MAIN_THREAD, "SocketChannelWriteRequested"),
 			checkStr(READ_THREAD, "CommandSubmitted")
 	};
 
 	private static final Pattern[] nonAtomicClient = {
 			checkStr(MAIN_THREAD, "SetProperty"),
 			checkStr(MAIN_THREAD, "CommandSubmitted"),
-			checkStr(MAIN_THREAD, "NotifiedPropertyChangeEvent")
+			checkStr(MAIN_THREAD, "SocketChannelWriteRequested")
 	};
 	 
 	private static final Pattern checkStr(String thread, String check) {
 		return Pattern.compile(".*?" + thread + ".*?" + check + ".*", Pattern.DOTALL);
 	}
 	
+	private static final Pattern multipleCheckStr(String thread1, String check1, String thread2, String check2) {
+		return Pattern.compile(".*?(" + thread1 + ".*?" + check1 + "|" + thread2 + ".*?" + check2 + ").*", Pattern.DOTALL);
+	}
 	
 	public ReadWriteOrderTestInputGenerator(boolean atomic) {
 		this.atomic = atomic;
@@ -83,21 +78,21 @@ public class ReadWriteOrderTestInputGenerator extends AnAbstractInputGenerator {
 		}
 	}
 	
-	public boolean isAcceptComplete() {
-		return acceptStage == acceptStages.length;
-	}
+//	public boolean isAcceptComplete() {
+//		return acceptStage == acceptStages.length;
+//	}
 	
 	public boolean isUpdateCorrect() {
 		return updateStage == (atomic ? atomicClient.length : nonAtomicClient.length);
 	}
 
-	public boolean checkAccept(String line) {
-		if (line.startsWith(TRACER_PREFIX) && acceptStages[acceptStage].matcher(line).matches()) {
-			acceptStage++;
-			return true;
-		}
-		return false;
-	}
+//	public boolean checkAccept(String line) {
+//		if (line.startsWith(TRACER_PREFIX) && acceptStages[acceptStage].matcher(line).matches()) {
+//			acceptStage++;
+//			return true;
+//		}
+//		return false;
+//	}
 	
 	public boolean checkUpdate(String line) {
 		if (line.startsWith(TRACER_PREFIX)) {
