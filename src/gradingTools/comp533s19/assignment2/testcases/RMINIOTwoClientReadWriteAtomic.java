@@ -13,8 +13,9 @@ import gradingTools.comp533s19.assignment2.Assignment2TwoClientSuite;
 import gradingTools.comp533s19.flexible.testcases.FlexibleTwoClientCorrectReadWriteTestCase;
 import gradingTools.comp533s19.flexible.testcases.FlexibleTwoClientCorrectReadWriteTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
+import util.annotations.MaxValue;
 import util.trace.Tracer;
-
+@MaxValue(20)
 public class RMINIOTwoClientReadWriteAtomic extends FlexibleTwoClientCorrectReadWriteTestCase {
 
 	public RMINIOTwoClientReadWriteAtomic() {
