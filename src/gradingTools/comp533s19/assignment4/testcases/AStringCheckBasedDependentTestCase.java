@@ -15,6 +15,7 @@ import org.junit.Test;
 import grader.basics.execution.NotRunnableException;
 import grader.basics.execution.RunningProject;
 import grader.basics.junit.BasicJUnitUtils;
+import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.CurrentProjectHolder;
@@ -22,6 +23,7 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import gradingTools.comp533s19.assignment4.testcases.DistributedCounterTestInputGenerator;
 import gradingTools.comp533s19.assignment4.testcases.SubstringSequenceChecker;
+import gradingTools.comp533s19.assignment4.testcases.explicit_receive.ExplicitReceiveServerCounterRegularOutput;
 //import grader.execution.ExecutionSpecificationSelector;
 //import gradingTools.comp110.assignment1.testcases.PromptTestCase;
 //import gradingTools.comp110.assignment4.Assignment4Requirements;
@@ -43,7 +45,7 @@ import grader.basics.testcase.PassFailJUnitTestCase;
 
 @MaxValue(20)
 //@Group("Test group name ")
-public class AStringCheckBasedDependentTestCase extends PassFailJUnitTestCase {
+public class AStringCheckBasedDependentTestCase extends TagCaseDependentTestCase {
 	
 	
 //	protected SubstringSequenceChecker checker = new ARegularCounterServerChecker(0.1);	
@@ -77,6 +79,34 @@ public class AStringCheckBasedDependentTestCase extends PassFailJUnitTestCase {
 //		super (aCheckName);	
 		init(aProcessName, aChecker, aCheckTrue, anOutputGeneratingTestcase);
 	}
+	public AStringCheckBasedDependentTestCase(
+			) {
+//		super (aCheckName);	
+		init(processName(), checker(), checkTrue(), outputGeneratingTestCase());
+	}
+	
+	protected String processName() {
+		return null;
+	}
+	protected boolean checkTrue() {
+		return true;
+	}
+	
+	protected SubstringSequenceChecker checker() {
+		return null;
+	}
+//	protected JUnitTestCase outputGeneratingTestCase() {
+//		return null;
+//	}
+	protected Class outputgeneratingTestCaseClass() {
+		return null;
+	}
+	protected JUnitTestCase outputGeneratingTestCase() {
+		Class aTestClass = outputgeneratingTestCaseClass();
+		if (aTestClass == null) return null;
+		return JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest( aTestClass);
+//		return null;
+	}
 	
 
 	public void init (String aProcessName,
@@ -88,13 +118,16 @@ public class AStringCheckBasedDependentTestCase extends PassFailJUnitTestCase {
 		checker = aChecker;
 		checkTrue = aCheckTrue;		
 	}
-
-	
-	
-	
-
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
+	NotGradableException {
+		return dependentTest(project, autoGrade);
+	}
+	
+	
+
+	
+	public TestCaseResult dependentTest(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
 		
 	

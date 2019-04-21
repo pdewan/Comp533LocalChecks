@@ -65,7 +65,7 @@ public class TwoClientCorrectReadWriteTestCase extends PassFailJUnitTestCase {
 		this.doNIO = doNIO;
 		this.doRMI = doRMI;
 		this.doGIPC = doGIPC;
-		outputBasedInputGenerator = new TwoClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC);
+		setOutputBasedInputGenerator(new TwoClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC));
 
 	}
 	
@@ -79,8 +79,8 @@ public class TwoClientCorrectReadWriteTestCase extends PassFailJUnitTestCase {
 //			RunningProject noInputRunningProject = RunningProjectUtils.runProject(project, 1);
 //			TwoClientCorrectReadWriteTestInputGenerator aTwoClientOutputGenerator = new TwoClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC);
 //			outputBasedInputGenerator = new TwoClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC);
-			outputBasedInputGenerator.clear();
-			TwoClientCorrectReadWriteTestInputGenerator aTwoClientOutputGenerator = (TwoClientCorrectReadWriteTestInputGenerator) outputBasedInputGenerator;
+			getOutputBasedInputGenerator().clear();
+			TwoClientCorrectReadWriteTestInputGenerator aTwoClientOutputGenerator = (TwoClientCorrectReadWriteTestInputGenerator) getOutputBasedInputGenerator();
 
 			interactiveInputProject = null;
 			try {

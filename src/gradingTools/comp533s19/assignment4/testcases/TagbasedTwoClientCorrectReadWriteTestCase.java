@@ -74,7 +74,7 @@ public class TagbasedTwoClientCorrectReadWriteTestCase extends TagCaseDependentT
 		this.doNIO = doNIO;
 		this.doRMI = doRMI;
 		this.doGIPC = doGIPC;
-		outputBasedInputGenerator = new TwoClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC);
+		setOutputBasedInputGenerator(new TwoClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC));
 		
 
 	}
@@ -97,8 +97,8 @@ public class TagbasedTwoClientCorrectReadWriteTestCase extends TagCaseDependentT
 //			RunningProject noInputRunningProject = RunningProjectUtils.runProject(project, 1);
 //			TwoClientCorrectReadWriteTestInputGenerator aTwoClientOutputGenerator = new TwoClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC);
 //			outputBasedInputGenerator = new TwoClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC);
-			outputBasedInputGenerator.clear();
-			TwoClientCorrectReadWriteTestInputGenerator aTwoClientOutputGenerator = (TwoClientCorrectReadWriteTestInputGenerator) outputBasedInputGenerator;
+			getOutputBasedInputGenerator().clear();
+			TwoClientCorrectReadWriteTestInputGenerator aTwoClientOutputGenerator = (TwoClientCorrectReadWriteTestInputGenerator) getOutputBasedInputGenerator();
 
 			interactiveInputProject = null;
 			try {

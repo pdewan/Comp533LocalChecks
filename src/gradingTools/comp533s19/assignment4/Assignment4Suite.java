@@ -32,21 +32,14 @@ import gradingTools.comp533s19.assignment1.testcases.TwoClientThreadsNonAtomic;
 import gradingTools.comp533s19.assignment3.Assignment3Suite;
 import gradingTools.comp533s19.assignment4.testcases.explicit_receive.ExplicitReceiveClient1Tagged;
 import gradingTools.comp533s19.assignment4.testcases.explicit_receive.ExplicitReceiveClient2Tagged;
-import gradingTools.comp533s19.assignment4.testcases.explicit_receive.ExplicitReceiveServerRegularOutput;
+import gradingTools.comp533s19.assignment4.testcases.explicit_receive.ExplicitReceiveServerCounterRegularOutput;
 import gradingTools.comp533s19.assignment4.testcases.explicit_receive.ExplicitReceiveServerTagged;
 import util.tags.DistributedTags;
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	ExplicitReceiveServerTagged.class,
-	ExplicitReceiveClient1Tagged.class,
-	ExplicitReceiveClient2Tagged.class,
-	ExplicitReceiveServerRegularOutput.class
-//	Assignment1OneClientSuite.class,
-//	Assignment1TwoClientSuite.class,
-
-
+	ExplicitReceiveSuite.class
 })
 	
 

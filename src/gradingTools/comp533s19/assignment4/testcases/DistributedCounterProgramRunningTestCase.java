@@ -39,7 +39,7 @@ import grader.basics.testcase.PassFailJUnitTestCase;
 
 @MaxValue(20)
 //@Group("Test group name ")
-public class DistributedCounterProgramRunningTestCase extends TagCaseDependentTestCase {
+public class DistributedCounterProgramRunningTestCase extends AStringCheckBasedDependentTestCase {
 	
 	
 	protected SubstringSequenceChecker stringChecker ;	
@@ -67,7 +67,7 @@ public class DistributedCounterProgramRunningTestCase extends TagCaseDependentTe
 			SingleClassTagListTestCase aServerTaggedTestCase, 
 			SingleClassTagListTestCase aClient1TaggedTestCase,
 			SingleClassTagListTestCase aClient2TaggedTestCase) {
-		super("A4 Program Running Test Case");
+//		super("A4 Program Running Test Case");
 		init(aChecker, aServerTaggedTestCase, aClient1TaggedTestCase, aClient2TaggedTestCase);
 //		serverTaggedTestCase = aServerTaggedTestCase;
 //		client1TaggedTestCase = aClient1TaggedTestCase;
@@ -79,7 +79,7 @@ public class DistributedCounterProgramRunningTestCase extends TagCaseDependentTe
 
 	}
 	public DistributedCounterProgramRunningTestCase() {
-		super("A4 Program Running Test Case");
+//		super("A4 Program Running Test Case");
 
 	}
 	public void init(
@@ -92,7 +92,8 @@ public class DistributedCounterProgramRunningTestCase extends TagCaseDependentTe
 		client1TaggedTestCase = aClient1TaggedTestCase;
 		client2TaggedTestCase = aClient2TaggedTestCase;
 		stringChecker = aChecker;
-		outputBasedInputGenerator = new DistributedCounterTestInputGenerator();
+		setOutputBasedInputGenerator(new DistributedCounterTestInputGenerator());
+//		outputBasedInputGenerator = new DistributedCounterTestInputGenerator();
 //		outputBasedInputGenerator = anOutputBufferingTestInputGenerator;
 
 
@@ -104,9 +105,14 @@ public class DistributedCounterProgramRunningTestCase extends TagCaseDependentTe
 //    public static boolean check (SingleClassTagListTestCase aTestCase) {
 //    	return (aTestCase == null || aTestCase.getLastResult().isPass()) ;
 //    }
-
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
+			NotGradableException {
+		return independentTest(project, autoGrade);
+	}
+
+	
+	public TestCaseResult independentTest(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
 //		if (
 //				!serverTaggedTestCase.getLastResult().isPass() ||

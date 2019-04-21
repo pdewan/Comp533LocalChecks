@@ -47,6 +47,9 @@ public abstract class TagCaseDependentTestCase extends PassFailJUnitTestCase {
     public TagCaseDependentTestCase(String string) {
 //		super(string);
 	}
+    public TagCaseDependentTestCase() {
+//		super(string);
+	}
 
 	public static boolean check (JUnitTestCase aTestCase) {
     	return (aTestCase == null || aTestCase.getLastResult().isPass()) ;
