@@ -39,7 +39,8 @@ import util.tags.DistributedTags;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	ExplicitReceiveSuite.class
+	ExplicitReceiveSuite.class,
+	CustomRPCSuite.class
 })
 	
 

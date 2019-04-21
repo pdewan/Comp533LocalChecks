@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment4.testcases.explicit_receive;
+package gradingTools.comp533s19.assignment4.testcases.custom_rpc;
 
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
@@ -12,34 +12,22 @@ import gradingTools.comp533s19.assignment4.testcases.ARegularCounterClientChecke
 import gradingTools.comp533s19.assignment1.testcases.SingleClassTagListTestCase;
 import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;
 import gradingTools.comp533s19.assignment4.testcases.SubstringSequenceChecker;
+import gradingTools.comp533s19.assignment4.testcases.explicit_receive.ExplicitReceiveClient1CounterRegularOutput;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
 @MaxValue(5)
-@Explanation("Checks for expected client1 counter output when explicit receive is implemented.")
-public class ExplicitReceiveClient1CounterRegularOutput extends AStringCheckBasedDependentTestCase {
+@Explanation("Checks for expected client1 counter output when custom rpc is implemented.")
+public class CustomRPCClient1CounterRegularOutput extends ExplicitReceiveClient1CounterRegularOutput {
 
 	
-	protected SubstringSequenceChecker outputChecker() {
-		return new  ARegularCounterClientChecker(); 
-	}
-	@Override
-	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
-	NotGradableException {
-		return dependentTest(project, autoGrade);
-	}
-	protected String processName() {
-		return DistributedCounterProgramRunningTestCase.CLIENT_1_NAME;
-	}
-	protected boolean checkTrue() {
-		return true;
-	}
-	protected SubstringSequenceChecker checker() {
-		return new ARegularCounterClientChecker();
-	}
+	
+//	protected String processName() {
+//		return DistributedCounterProgramRunningTestCase.CLIENT_1_NAME;
+//	}
+	
 	protected Class outputgeneratingTestCaseClass() {
-		return ExplicitReceiveServerCounterRegularOutput.class;
+		return CustomRPCServerCounterRegularOutput.class;
 	}
-//	@Override
 //	protected JUnitTestCase outputGeneratingTestCase() {
 //		return JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest( outputgeneratingTestCaseClass());
 ////		return null;
