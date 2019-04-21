@@ -1,0 +1,32 @@
+package gradingTools.comp533s19.assignment4.testcases.explicit_receive;
+
+import grader.basics.junit.JUnitTestsEnvironment;
+import grader.basics.testcase.JUnitTestCase;
+import gradingTools.comp533s19.assignment4.testcases.ARegularCounterServerChecker;
+import gradingTools.comp533s19.assignment1.testcases.SingleClassTagListTestCase;
+import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;
+import gradingTools.comp533s19.assignment4.testcases.SubstringSequenceChecker;
+import util.annotations.MaxValue;
+@MaxValue(5)
+public class ExplicitReceiveServerRegularOutput extends DistributedCounterProgramRunningTestCase {
+
+	public ExplicitReceiveServerRegularOutput() {
+//		SingleClassTagListTestCase aServerTaggedTestCase = (SingleClassTagListTestCase) JUnitTestsEnvironment.getPassFailJUnitTest(ExplicitReceiveServerTagged.class);
+//		
+//		SingleClassTagListTestCase aClient1TaggedTestCase = (SingleClassTagListTestCase) JUnitTestsEnvironment.getPassFailJUnitTest(ExplicitReceiveClient1Tagged.class);
+//		SingleClassTagListTestCase aClient2TaggedTestCase = (SingleClassTagListTestCase) JUnitTestsEnvironment.getPassFailJUnitTest(ExplicitReceiveClient2Tagged.class);
+//		SubstringSequenceChecker aServerCheck = new ARegularCounterServerChecker();
+//		init(aServerCheck, aServerTaggedTestCase, aClient1TaggedTestCase, aClient2TaggedTestCase);
+	}
+	@Override
+	public void defaultTest() {
+		SingleClassTagListTestCase aServerTaggedTestCase = (SingleClassTagListTestCase) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ExplicitReceiveServerTagged.class);
+
+		SingleClassTagListTestCase aClient1TaggedTestCase = (SingleClassTagListTestCase) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ExplicitReceiveClient1Tagged.class);
+		SingleClassTagListTestCase aClient2TaggedTestCase = (SingleClassTagListTestCase) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ExplicitReceiveClient2Tagged.class);
+		SubstringSequenceChecker aServerCheck = new ARegularCounterServerChecker();
+		init(aServerCheck, aServerTaggedTestCase, aClient1TaggedTestCase, aClient2TaggedTestCase);
+		super.defaultTest();
+	}
+
+}
