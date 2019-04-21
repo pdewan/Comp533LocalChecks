@@ -90,10 +90,10 @@ public class FlexibleTwoClientCorrectReadWriteTestInputGenerator extends Flexibl
 			checkStr(MAIN_THREAD, "WriteRequestEnqueued"),
 			checkStr(MAIN_THREAD, "WriteRequestEnqueued"),
 			checkStr(MAIN_THREAD, "SelectorWokenUp"),
-			checkStr(SELECT_THREAD, "SelectUnblocked"),
+//			checkStr(SELECT_THREAD, "SelectUnblocked"),
 			checkStr(SELECT_THREAD, "SocketChannelInterestOp"),
-			checkStr(SELECT_THREAD, "SelectCalled"),
-			checkStr(SELECT_THREAD, "SelectUnblocked"),
+//			checkStr(SELECT_THREAD, "SelectCalled"),
+//			checkStr(SELECT_THREAD, "SelectUnblocked"),
 			checkStr(SELECT_THREAD, "SocketChannelWritten"),
 			checkStr(SELECT_THREAD, "WriteRequestDequeued"),
 			checkStr(SELECT_THREAD, "SocketChannelWritten"),
@@ -115,19 +115,19 @@ public class FlexibleTwoClientCorrectReadWriteTestInputGenerator extends Flexibl
 			checkStr(MAIN_THREAD, "WriteRequestEnqueued"),
 			checkStr(MAIN_THREAD, "WriteRequestEnqueued"),
 			checkStr(MAIN_THREAD, "SelectorWokenUp"),
-			checkStr(SELECT_THREAD, "SelectUnblocked"),
+//			checkStr(SELECT_THREAD, "SelectUnblocked"),
 			checkStr(SELECT_THREAD, "SocketChannelInterestOp"),
-			checkStr(SELECT_THREAD, "SelectCalled"),
-			checkStr(SELECT_THREAD, "SelectUnblocked"),
+//			checkStr(SELECT_THREAD, "SelectCalled"),
+//			checkStr(SELECT_THREAD, "SelectUnblocked"),
 			checkStr(SELECT_THREAD, "SocketChannelWritten"),
 			checkStr(SELECT_THREAD, "WriteRequestDequeued"),
 			checkStr(SELECT_THREAD, "SocketChannelWritten"),
 			checkStr(SELECT_THREAD, "WriteRequestDequeued"),
 			checkStr(SELECT_THREAD, "SocketChannelInterestOp"),
-			checkStr(SELECT_THREAD, "WriteBufferIsEmpty"),
+			checkStr(SELECT_THREAD, "WriteBufferIsEmpty")
 //			checkStr(SELECT_THREAD, "ReadsEnabled"),
 //			checkStr(SELECT_THREAD, "SocketChannelInterestOp"),
-			checkStr(SELECT_THREAD, "SelectCalled")
+//			checkStr(SELECT_THREAD, "SelectCalled")
 	};
 	
 	private static final Pattern[] serverNIOWriteStages = {
@@ -158,10 +158,10 @@ public class FlexibleTwoClientCorrectReadWriteTestInputGenerator extends Flexibl
 			checkStr(GIPC_THREAD, "WriteRequestEnqueued"),
 			checkStr(GIPC_THREAD, "WriteRequestEnqueued"),
 			checkStr(GIPC_THREAD, "SelectorWokenUp"),
-			checkStr(SELECT_THREAD, "SelectUnblocked"),
+//			checkStr(SELECT_THREAD, "SelectUnblocked"),
 			checkStr(SELECT_THREAD, "SocketChannelInterestOp"),
-			checkStr(SELECT_THREAD, "SelectCalled"),
-			checkStr(SELECT_THREAD, "SelectUnblocked"),
+//			checkStr(SELECT_THREAD, "SelectCalled"),
+//			checkStr(SELECT_THREAD, "SelectUnblocked"),
 			checkStr(SELECT_THREAD, "SocketChannelWritten"),
 			checkStr(SELECT_THREAD, "WriteRequestDequeued"),
 			checkStr(SELECT_THREAD, "SocketChannelWritten"),
@@ -170,7 +170,7 @@ public class FlexibleTwoClientCorrectReadWriteTestInputGenerator extends Flexibl
 			checkStr(SELECT_THREAD, "WriteBufferIsEmpty"),
 			checkStr(SELECT_THREAD, "ReadsEnabled"),
 			checkStr(SELECT_THREAD, "SocketChannelInterestOp"),
-			checkStr(SELECT_THREAD, "SelectCalled")
+//			checkStr(SELECT_THREAD, "SelectCalled")
 	};
 	
 	private static final Pattern[] nioReadStages = {
