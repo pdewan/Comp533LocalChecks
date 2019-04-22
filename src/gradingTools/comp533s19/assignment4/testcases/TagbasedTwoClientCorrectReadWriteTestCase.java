@@ -2,34 +2,45 @@ package gradingTools.comp533s19.assignment4.testcases;
 
 import java.util.Arrays;
 
+import grader.basics.execution.BasicExecutionSpecificationSelector;
 //import framework.grading.testing.BasicTestCase;
 import grader.basics.execution.NotRunnableException;
-import grader.basics.execution.RunningProject;
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
-import gradingTools.comp533s19.assignment4.testcases.TagCaseDependentTestCase;
-import gradingTools.comp533s19.assignment4.testcases.TwoClientCorrectReadWriteTestInputGenerator;
-import gradingTools.comp533s19.flexible.testcases.FlexibleStaticArgumentsTestCase;
 //import grader.execution.ExecutionSpecificationSelector;
 import gradingTools.comp533s19.assignment1.testcases.SingleClassTagListTestCase;
-import gradingTools.comp533s19.assignment3.testcases.GIPCRMINIOStaticArguments;
+import gradingTools.comp533s19.flexible.testcases.FlexibleStaticArgumentsTestCase;
 import gradingTools.utils.RunningProjectUtils;
-import util.annotations.Comp533Tags;
 import util.trace.Tracer;
-import grader.basics.execution.BasicExecutionSpecificationSelector;
-import grader.basics.testcase.PassFailJUnitTestCase;
 
-public class TagbasedTwoClientCorrectReadWriteTestCase extends TagCaseDependentTestCase {
+public class TagbasedTwoClientCorrectReadWriteTestCase extends AStringCheckBasedDependentTestCase {
 	private boolean atomic;
-	private final boolean doNIO;
-	private final boolean doRMI;
-	private final boolean doGIPC;
+	private  boolean doNIO;
+	private  boolean doRMI;
+	private  boolean doGIPC;
 	
 	private static int RUNTIME = 60;
 	protected SingleClassTagListTestCase registryTaggedTestCase, serverTaggedTestCase, clientTaggedTestCase;
+	public TagbasedTwoClientCorrectReadWriteTestCase(boolean atomic, boolean doNIO, boolean doRMI, boolean doGIPC, 
+			SingleClassTagListTestCase aRegistryTagTest,
+			SingleClassTagListTestCase aServerTagTest,
+			SingleClassTagListTestCase aClientTagTest) {
+//		super(formatName(atomic, doNIO, doRMI, doGIPC));
+		init(atomic, doNIO, doRMI, doGIPC, aRegistryTagTest, aServerTagTest, aClientTagTest);
+//		registryTaggedTestCase = aRegistryTagTest;
+//		serverTaggedTestCase = aServerTagTest;
+//		clientTaggedTestCase = aClientTagTest;
+//		this.atomic = atomic;
+//
+//		this.doNIO = doNIO;
+//		this.doRMI = doRMI;
+//		this.doGIPC = doGIPC;
+//		setOutputBasedInputGenerator(new TwoClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC));
+		
 
+	}
 	
 	private static String formatName(boolean atomic, boolean doNIO, boolean doRMI, boolean doGIPC) {
 		StringBuilder sb = new StringBuilder("Two client correct read write test case - ");
@@ -60,12 +71,45 @@ public class TagbasedTwoClientCorrectReadWriteTestCase extends TagCaseDependentT
 		
 		return sb.toString();
 	}
+	protected boolean atomic() {
+		return true;
+	}
+	protected boolean doNIO() {
+		return false;
+	}
+	protected boolean doRMI() {
+		return true;
+	}
+	protected boolean doGIPC() {
+		return true;
+	}
+	protected SingleClassTagListTestCase registryTagTest() {
+		return null;
+	}
+	protected SingleClassTagListTestCase serverTagTest() {
+		return null;
+	}
+	protected SingleClassTagListTestCase clientTagTest() {
+		return null;
+	}
+	public TagbasedTwoClientCorrectReadWriteTestCase() {
+//		init(
+//				atomic(),
+//				doNIO(),
+//				doRMI(),
+//				doGIPC(),
+//				registryTagTest(),
+//				serverTagTest(),
+//				clientTagTest()
+//				);
 	
-	public TagbasedTwoClientCorrectReadWriteTestCase(boolean atomic, boolean doNIO, boolean doRMI, boolean doGIPC, 
+		
+	}
+	public void init(boolean atomic, boolean doNIO, boolean doRMI, boolean doGIPC, 
 			SingleClassTagListTestCase aRegistryTagTest,
 			SingleClassTagListTestCase aServerTagTest,
 			SingleClassTagListTestCase aClientTagTest) {
-		super(formatName(atomic, doNIO, doRMI, doGIPC));
+//		super(formatName(atomic, doNIO, doRMI, doGIPC));
 		registryTaggedTestCase = aRegistryTagTest;
 		serverTaggedTestCase = aServerTagTest;
 		clientTaggedTestCase = aClientTagTest;
@@ -78,9 +122,16 @@ public class TagbasedTwoClientCorrectReadWriteTestCase extends TagCaseDependentT
 		
 
 	}
-	
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
+			NotGradableException {
+		return independentTest(project, autoGrade);
+	}
+	
+	
+	
+	
+	public TestCaseResult independentTest(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
 		if (
 				!check(registryTaggedTestCase) ||

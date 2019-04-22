@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment4.testcases.blocking_rpc;
+package gradingTools.comp533s19.assignment4.testcases.simulation.blocking_rpc;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,13 +12,14 @@ import gradingTools.comp533s19.assignment4.testcases.ARegularCounterServerChecke
 import gradingTools.comp533s19.assignment1.testcases.SingleClassTagListTestCase;
 import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;
 import gradingTools.comp533s19.assignment4.testcases.SubstringSequenceChecker;
+import gradingTools.comp533s19.assignment4.testcases.TagbasedTwoClientCorrectReadWriteTestCase;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
 @MaxValue(5)
-@Explanation("Checks for expected server counter output when blocking procedures are implemented.")
-public class BlockingRPCServerCounterRegularOutput extends DistributedCounterProgramRunningTestCase {
+@Explanation("Checks for expected server simulation output when blocking procedures are implemented.")
+public class BlockingRPCServerSimulationRegularOutput extends TagbasedTwoClientCorrectReadWriteTestCase {
 
-	public BlockingRPCServerCounterRegularOutput() {
+	public BlockingRPCServerSimulationRegularOutput() {
 //		SingleClassTagListTestCase aServerTaggedTestCase = (SingleClassTagListTestCase) JUnitTestsEnvironment.getPassFailJUnitTest(ExplicitReceiveServerTagged.class);
 //		
 //		SingleClassTagListTestCase aClient1TaggedTestCase = (SingleClassTagListTestCase) JUnitTestsEnvironment.getPassFailJUnitTest(ExplicitReceiveClient1Tagged.class);
@@ -26,21 +27,36 @@ public class BlockingRPCServerCounterRegularOutput extends DistributedCounterPro
 //		SubstringSequenceChecker aServerCheck = new ARegularCounterServerChecker();
 //		init(aServerCheck, aServerTaggedTestCase, aClient1TaggedTestCase, aClient2TaggedTestCase);
 	}
-	protected SubstringSequenceChecker outputChecker() {
-		return new ARegularCounterServerChecker(); 
-	}
+//	protected SubstringSequenceChecker outputChecker() {
+//		return new ARegularCounterServerChecker(); 
+//	}
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 			NotGradableException {
 		return independentTest(project, autoGrade);
 	}
+	protected SingleClassTagListTestCase registryTagTest() {
+		return (SingleClassTagListTestCase) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(BlockingRPCSimulationRegistryTagged.class);
+	}
+	protected SingleClassTagListTestCase serverTagTest() {
+		return (SingleClassTagListTestCase) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(BlockingRPCSimulationServerTagged.class);
+	}
+	protected SingleClassTagListTestCase clientTagTest() {
+		return (SingleClassTagListTestCase) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(BlockingRPCSimulationClientTagged.class);
+	}
 	public void taggedDefaultTest() {
-		SingleClassTagListTestCase aServerTaggedTestCase = (SingleClassTagListTestCase) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(BlockingRPCCounterServerTagged.class);
-
-		SingleClassTagListTestCase aClient1TaggedTestCase = (SingleClassTagListTestCase) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(BlockingRPCCounterClient1Tagged.class);
-		SingleClassTagListTestCase aClient2TaggedTestCase = (SingleClassTagListTestCase) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(BlockingRPCCounterClient2Tagged.class);
-		SubstringSequenceChecker aServerCheck = outputChecker();
-		init(aServerCheck, aServerTaggedTestCase, aClient1TaggedTestCase, aClient2TaggedTestCase);
+//		
+//		SubstringSequenceChecker aServerCheck = outputChecker();
+		init(
+		atomic(),
+		doNIO(),
+		doRMI(),
+		doGIPC(),
+		registryTagTest(),
+		serverTagTest(),
+		clientTagTest()
+		);
+//		init(atomic, doNIO, doRMI, doGIPC, aRegistryTagTest, aServerTagTest, aClientTagTest);
 		super.defaultTest();
 	}
 	

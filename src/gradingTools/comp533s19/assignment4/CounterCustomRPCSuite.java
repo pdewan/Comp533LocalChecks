@@ -7,13 +7,13 @@ import gradingTools.comp533s19.assignment4.testcases.explicit_receive.ExplicitRe
 import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCClient1CounterNoGIPCReturnQueue;
 import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCClient1CounterReturnValue;
 import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCClient1CounterRegularOutput;
-import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCClient1Tagged;
+import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCCounterClient1Tagged;
 import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCClient2CounterNoGIPCReturnQueue;
 import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCClient2CounterReturnValue;
 import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCClient2CounterRegularOutput;
-import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCClient2Tagged;
+import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCCounterClient2Tagged;
 import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCServerCounterRegularOutput;
-import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCServerTagged;
+import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCCounterServerTagged;
 import gradingTools.comp533s19.assignment4.testcases.explicit_receive.ExplicitReceiveClient1CounterReceives;
 import gradingTools.comp533s19.assignment4.testcases.explicit_receive.ExplicitReceiveClient1Tagged;
 import gradingTools.comp533s19.assignment4.testcases.explicit_receive.ExplicitReceiveClient2CounterRegularOutput;
@@ -25,9 +25,9 @@ import gradingTools.comp533s19.assignment4.testcases.explicit_receive.ExplicitRe
 import gradingTools.comp533s19.assignment4.testcases.explicit_receive.ExplicitReceiveServerTagged;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	CustomRPCServerTagged.class,
-	CustomRPCClient1Tagged.class,
-	CustomRPCClient2Tagged.class,
+	CustomRPCCounterServerTagged.class,
+	CustomRPCCounterClient1Tagged.class,
+	CustomRPCCounterClient2Tagged.class,
 	CustomRPCServerCounterRegularOutput.class,
 	CustomRPCClient1CounterRegularOutput.class,
 	CustomRPCClient2CounterRegularOutput.class,

@@ -35,10 +35,10 @@ public class CustomRPCServerCounterRegularOutput extends DistributedCounterProgr
 		return independentTest(project, autoGrade);
 	}
 	public void taggedDefaultTest() {
-		SingleClassTagListTestCase aServerTaggedTestCase = (SingleClassTagListTestCase) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(CustomRPCServerTagged.class);
+		SingleClassTagListTestCase aServerTaggedTestCase = (SingleClassTagListTestCase) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(CustomRPCCounterServerTagged.class);
 
-		SingleClassTagListTestCase aClient1TaggedTestCase = (SingleClassTagListTestCase) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(CustomRPCClient1Tagged.class);
-		SingleClassTagListTestCase aClient2TaggedTestCase = (SingleClassTagListTestCase) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(CustomRPCClient2Tagged.class);
+		SingleClassTagListTestCase aClient1TaggedTestCase = (SingleClassTagListTestCase) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(CustomRPCCounterClient1Tagged.class);
+		SingleClassTagListTestCase aClient2TaggedTestCase = (SingleClassTagListTestCase) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(CustomRPCCounterClient2Tagged.class);
 		SubstringSequenceChecker aServerCheck = outputChecker();
 		init(aServerCheck, aServerTaggedTestCase, aClient1TaggedTestCase, aClient2TaggedTestCase);
 		super.defaultTest();

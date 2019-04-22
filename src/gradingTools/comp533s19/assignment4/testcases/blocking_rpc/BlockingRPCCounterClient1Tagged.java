@@ -6,9 +6,9 @@ import util.annotations.Comp533Tags;
 import util.annotations.MaxValue;
 import util.tags.DistributedTags;
 @MaxValue(2)
-public class BlockingRPCClient1Tagged extends SingleClassTagListTestCase {
+public class BlockingRPCCounterClient1Tagged extends SingleClassTagListTestCase {
 
-	public BlockingRPCClient1Tagged() {
+	public BlockingRPCCounterClient1Tagged() {
 		super(Comp533Tags.BLOCKING_RPC_CLIENT1);
 	}
 

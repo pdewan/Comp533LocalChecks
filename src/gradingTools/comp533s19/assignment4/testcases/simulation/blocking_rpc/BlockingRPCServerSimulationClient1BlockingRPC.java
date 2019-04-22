@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment4.testcases.explicit_receive;
+package gradingTools.comp533s19.assignment4.testcases.simulation.blocking_rpc;
 
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
@@ -12,32 +12,37 @@ import gradingTools.comp533s19.assignment4.testcases.ARegularCounterClientChecke
 import gradingTools.comp533s19.assignment1.testcases.SingleClassTagListTestCase;
 import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;
 import gradingTools.comp533s19.assignment4.testcases.SubstringSequenceChecker;
+import gradingTools.comp533s19.assignment4.testcases.blocking_rpc.ABlockingRPCClientReceivesChecker;
+import gradingTools.comp533s19.assignment4.testcases.explicit_receive.ExplicitReceiveServerCounterRegularOutput;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
-@MaxValue(5)
-@Explanation("Checks for expected client1 counter output when explicit receive is implemented.")
-public class ExplicitReceiveClient1CounterRegularOutput extends AStringCheckBasedDependentTestCase {
+@MaxValue(25)
+@Explanation("Checks for dequeues in custom rpc server simulation output ")
+public class BlockingRPCServerSimulationClient1BlockingRPC extends AStringCheckBasedDependentTestCase {
 
 //	@Override
 //	protected SubstringSequenceChecker outputChecker() {
+//		return new  ABlockingRPCClientReceivesChecker(); 
+//	}
+//	protected SubstringSequenceChecker outputChecker() {
 //		return new  ARegularCounterClientChecker(); 
 //	}
-	@Override
-	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
-	NotGradableException {
-		return dependentTest(project, autoGrade);
-	}
+//	@Override
+//	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
+//	NotGradableException {
+//		return dependentTest(project, autoGrade);
+//	}
 	protected String processName() {
-		return DistributedCounterProgramRunningTestCase.CLIENT_1_NAME;
+		return "Client_0"; // fix this!
 	}
 	protected boolean checkTrue() {
 		return true;
 	}
 	protected SubstringSequenceChecker checker() {
-		return new ARegularCounterClientChecker();
+		return new ABlockingRPCClientReceivesChecker();
 	}
 	protected Class outputgeneratingTestCaseClass() {
-		return ExplicitReceiveServerCounterRegularOutput.class;
+		return BlockingRPCServerSimulationRegularOutput.class;
 	}
 //	@Override
 //	protected JUnitTestCase outputGeneratingTestCase() {
@@ -47,5 +52,8 @@ public class ExplicitReceiveClient1CounterRegularOutput extends AStringCheckBase
 //	public void defaultTest() {
 //    	passfailDefaultTest(); // do not want super test's default test which we want to bypass
 //    }
+	
+	
+	
 	
 }

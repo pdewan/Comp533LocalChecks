@@ -45,7 +45,7 @@ import grader.basics.testcase.PassFailJUnitTestCase;
 
 @MaxValue(20)
 //@Group("Test group name ")
-public class AStringCheckBasedDependentTestCase extends TagCaseDependentTestCase {
+public class AStringCheckBasedDependentTestCase extends TagCaseDependentTestCase { // do not make it subclass of Tagbased
 	
 	
 //	protected SubstringSequenceChecker checker = new ARegularCounterServerChecker(0.1);	
@@ -54,7 +54,7 @@ public class AStringCheckBasedDependentTestCase extends TagCaseDependentTestCase
 
 	protected JUnitTestCase outputGeneratingTestCase;
 	protected ABufferingTestInputGenerator outputBasedInputGenerator = new DistributedCounterTestInputGenerator();
-	protected RunningProject interactiveInputProject;
+//	protected RunningProject interactiveInputProject;
 	protected LinesMatcher linesMatcher;
 	protected StringBuffer programmingRunOutput;
 //	protected List<String> programmingRunOutputLinesList;
