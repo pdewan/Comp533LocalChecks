@@ -15,7 +15,10 @@ import gradingTools.comp533s19.flexible.testcases.FlexibleStaticArgumentsTestCas
 import gradingTools.utils.RunningProjectUtils;
 import util.trace.Tracer;
 
-public class TagbasedTwoClientCorrectReadWriteTestCase extends AStringCheckBasedDependentTestCase {
+public class TagbasedTwoClientCorrectReadWriteTestCase extends 
+TagCaseDependentTestCase
+//AStringCheckBasedDependentTestCase 
+{
 	private boolean atomic;
 	private  boolean doNIO;
 	private  boolean doRMI;
