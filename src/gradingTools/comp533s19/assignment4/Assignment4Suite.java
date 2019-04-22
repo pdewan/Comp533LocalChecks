@@ -39,8 +39,9 @@ import util.tags.DistributedTags;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	ExplicitReceiveSuite.class,
-	CustomRPCSuite.class
+	CounterExplicitReceiveSuite.class,
+	CounterCustomRPCSuite.class,
+	CounterBlockingRPCSuite.class
 })
 	
 

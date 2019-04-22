@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment4.testcases.custom_rpc;
+package gradingTools.comp533s19.assignment4.testcases.blocking_rpc;
 
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
@@ -14,13 +14,13 @@ import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRu
 import gradingTools.comp533s19.assignment4.testcases.SubstringSequenceChecker;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
-@MaxValue(10)
+@MaxValue(25)
 @Explanation("Checks for dequeues in custom rpc  client2 counter output ")
-public class CustomRPCClient1CounterReceives extends CustomRPCClient1CounterRegularOutput {
+public class BlockingRPCClient1CounterBlockingProcedure extends BlockingRPCClient1CounterRegularOutput {
 
 	@Override
 	protected SubstringSequenceChecker checker() {
-		return new  ACustomRPCClientReceivesChecker(); 
+		return new  ABlockingRPCClientReceivesChecker(); 
 	}
 	
 	

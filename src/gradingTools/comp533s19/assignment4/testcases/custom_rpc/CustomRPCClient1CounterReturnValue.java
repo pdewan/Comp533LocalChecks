@@ -15,12 +15,14 @@ import gradingTools.comp533s19.assignment4.testcases.SubstringSequenceChecker;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
 @MaxValue(10)
-@Explanation("Checks for dequeues  in custom rpc client2 counter output ")
-public class CustomRPCClient2CounterReceives extends CustomRPCClient1CounterReceives {
+@Explanation("Checks for dequeues in custom rpc  client2 counter output ")
+public class CustomRPCClient1CounterReturnValue extends CustomRPCClient1CounterRegularOutput {
 
-	protected String processName() {
-		return DistributedCounterProgramRunningTestCase.CLIENT_2_NAME;
+	@Override
+	protected SubstringSequenceChecker checker() {
+		return new  ACustomRPCClientReceivesChecker(); 
 	}
+	
 	
 	
 	

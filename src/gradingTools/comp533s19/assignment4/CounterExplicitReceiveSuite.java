@@ -30,6 +30,6 @@ import gradingTools.comp533s19.assignment4.testcases.explicit_receive.ExplicitRe
 
 
 })
-public class ExplicitReceiveSuite {
+public class CounterExplicitReceiveSuite {
 	
 }

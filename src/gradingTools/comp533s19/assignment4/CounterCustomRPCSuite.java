@@ -5,11 +5,11 @@ import org.junit.runners.Suite;
 
 import gradingTools.comp533s19.assignment4.testcases.explicit_receive.ExplicitReceiveClient1CounterRegularOutput;
 import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCClient1CounterNoGIPCReturnQueue;
-import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCClient1CounterReceives;
+import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCClient1CounterReturnValue;
 import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCClient1CounterRegularOutput;
 import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCClient1Tagged;
 import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCClient2CounterNoGIPCReturnQueue;
-import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCClient2CounterReceives;
+import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCClient2CounterReturnValue;
 import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCClient2CounterRegularOutput;
 import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCClient2Tagged;
 import gradingTools.comp533s19.assignment4.testcases.custom_rpc.CustomRPCServerCounterRegularOutput;
@@ -31,8 +31,8 @@ import gradingTools.comp533s19.assignment4.testcases.explicit_receive.ExplicitRe
 	CustomRPCServerCounterRegularOutput.class,
 	CustomRPCClient1CounterRegularOutput.class,
 	CustomRPCClient2CounterRegularOutput.class,
-	CustomRPCClient1CounterReceives.class,
-	CustomRPCClient2CounterReceives.class,
+	CustomRPCClient1CounterReturnValue.class,
+	CustomRPCClient2CounterReturnValue.class,
 	CustomRPCClient1CounterNoGIPCReturnQueue.class,
 	CustomRPCClient2CounterNoGIPCReturnQueue.class
 
@@ -48,6 +48,6 @@ import gradingTools.comp533s19.assignment4.testcases.explicit_receive.ExplicitRe
 
 
 })
-public class CustomRPCSuite {
+public class CounterCustomRPCSuite {
 	
 }
