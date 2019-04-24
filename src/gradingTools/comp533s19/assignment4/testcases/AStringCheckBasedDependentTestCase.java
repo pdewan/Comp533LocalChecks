@@ -149,8 +149,9 @@ public class AStringCheckBasedDependentTestCase extends PassFailJUnitTestCase
 			}
 			outputBasedInputGenerator = outputGeneratingTestCase.getOutputBasedInputGenerator();
 			 interactiveInputProject = outputGeneratingTestCase.getInteractiveInputProject();
-
-			if (outputBasedInputGenerator == null || interactiveInputProject == null) {
+//			 if (outputBasedInputGenerator == null || interactiveInputProject == null) {
+			 // we do not really use generator, let us keep it for future
+			if (outputBasedInputGenerator == null && interactiveInputProject == null) {
 				return fail("Problem running test case" + outputGeneratingTestCase.getName() );
 			}
 //			

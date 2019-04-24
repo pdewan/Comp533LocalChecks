@@ -2,8 +2,9 @@ package gradingTools.comp533s19.assignment0.interfaces;
 
 public interface TestMapReduceConfiguration {
 	// return instances of the classes named by getters
-		// use factory classes to return instances of the following three
-		Object getMapper(); 
+		// return instances of the following 
+		Object getTokenCountingMapper(); 
+		Object getIntSummingMapper(); 
 	    Object getReducer();
 	    Object getPartitioner();
 	    // return some instance of the Barrier and Joiner classes
