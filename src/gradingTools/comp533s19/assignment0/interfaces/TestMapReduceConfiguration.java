@@ -5,6 +5,7 @@ public interface TestMapReduceConfiguration {
 		// return instances of the following, you can use actual interfaces instead of 
 	    // Object as return type. So if your mapper interface is MyMapper, you can
 	    // have getTokenCountingMapper() return MyMapper instead of Object
+	    // return null if you have not defined the kind of object expected
 		Object getTokenCountingMapper(); 
 		Object getIntSummingMapper(); 
 	    Object getReducer();
@@ -13,6 +14,8 @@ public interface TestMapReduceConfiguration {
 	    Object getBarrier(int aNumThreads);
 	    Object getJoiner(int aNumThreads);
 	    // return <Class Name>.class in methods below
+	    // return null if you have not defined the kind of class expected
+
 	    Class getMapperFactory();
 	    Class getReducerFactory();
 	    Class getPartitionerFactory();
