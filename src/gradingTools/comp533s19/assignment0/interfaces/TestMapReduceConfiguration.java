@@ -2,7 +2,9 @@ package gradingTools.comp533s19.assignment0.interfaces;
 
 public interface TestMapReduceConfiguration {
 	// return instances of the classes named by getters
-		// return instances of the following 
+		// return instances of the following, you can use actual interfaces instead of 
+	    // Object as return type. So if your mapper interface is MyMapper, you can
+	    // have getTokenCountingMapper() return MyMapper instead of Object
 		Object getTokenCountingMapper(); 
 		Object getIntSummingMapper(); 
 	    Object getReducer();
