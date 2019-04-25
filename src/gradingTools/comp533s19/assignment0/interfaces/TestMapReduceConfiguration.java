@@ -22,6 +22,6 @@ public interface TestMapReduceConfiguration {
 	    Class getStandAloneTokenCounter(); // non distributed case
 	    Class getStandAloneIntegerSummer();
 	    Class getServerTokenCounter();
-	    Class getServerTokenSummer();
+	    Class getServerIntegerSummer();
 	    Class getClientTokenCounter();// client remains the same in both cases
 }
