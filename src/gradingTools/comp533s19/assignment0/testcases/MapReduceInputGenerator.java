@@ -8,9 +8,12 @@ import util.pipe.AnAbstractInputGenerator;
 import util.trace.Tracer;
 
 public class MapReduceInputGenerator extends ABufferingTestInputGenerator {
-	private static final boolean PRINT_CHECKED_REGEX = false;
-
-	private static final String TRACER_PREFIX = "I***";
+	String numThreads;
+	String[] inputLines;
+	public MapReduceInputGenerator (int aNumThreads, String[] anInputLines) {
+		numThreads = Integer.toString(aNumThreads);
+		inputLines = anInputLines;		
+	}
 	
 	
 	
@@ -19,9 +22,13 @@ public class MapReduceInputGenerator extends ABufferingTestInputGenerator {
 	public void newOutputLine(String aProcessName, String anOutputLine) {
 		super.newOutputLine(aProcessName, anOutputLine);
 		if (aProcessName.equals(GetConfiguration.MAP_REDUCE_CLIENT_2)) { // can give input to server
-			notifyNewInputLine(GetConfiguration.MAP_REDUCE_SERVER, "3");
-			notifyNewInputLine(GetConfiguration.MAP_REDUCE_SERVER, "aaa jjj sss zzzz aaa aaa jjj zzz aaa jjj");
-			notifyNewInputLine(GetConfiguration.MAP_REDUCE_SERVER, "bbb iii ttt yyy bbb bbb iii yyy bbb iii");
+			notifyNewInputLine(GetConfiguration.MAP_REDUCE_SERVER, numThreads);
+			for (String aLine:inputLines) {
+				notifyNewInputLine(GetConfiguration.MAP_REDUCE_SERVER, aLine);
+
+//			notifyNewInputLine(GetConfiguration.MAP_REDUCE_SERVER, "aaa jjj sss zzzz aaa aaa jjj zzz aaa jjj");
+//			notifyNewInputLine(GetConfiguration.MAP_REDUCE_SERVER, "bbb iii ttt yyy bbb bbb iii yyy bbb iii");
+			}
 			notifyNewInputLine(GetConfiguration.MAP_REDUCE_SERVER, "quit");
 		}
 		
