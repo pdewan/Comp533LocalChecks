@@ -2,10 +2,12 @@ package gradingTools.comp533s19.flexible.testcases;
 
 import java.util.regex.Pattern;
 
+import gradingTools.shared.testcases.utils.ABufferingTestInputGenerator;
 import util.pipe.AnAbstractInputGenerator;
 import util.trace.Tracer;
 
-public class FlexibleTwoClientCorrectConnectionTestInputGenerator extends AnAbstractInputGenerator {
+// used to extend AnAbstractInputgenerator
+public class FlexibleTwoClientCorrectConnectionTestInputGenerator extends ABufferingTestInputGenerator {
 	private static final boolean PRINT_CHECKED_REGEX = false;
 
 	private static final String TRACER_PREFIX = "I***";

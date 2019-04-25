@@ -12,6 +12,7 @@ import grader.basics.project.Project;
 //import grader.execution.ExecutionSpecificationSelector;
 import gradingTools.comp533s19.assignment1.testcases.SingleClassTagListTestCase;
 import gradingTools.comp533s19.flexible.testcases.FlexibleStaticArgumentsTestCase;
+import gradingTools.comp533s19.flexible.testcases.FlexibleTwoClientCorrectReadWriteTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 import util.trace.Tracer;
 
@@ -23,6 +24,7 @@ TagCaseDependentTestCase
 	private  boolean doNIO;
 	private  boolean doRMI;
 	private  boolean doGIPC;
+	
 	
 	private static int RUNTIME = 60;
 	protected SingleClassTagListTestCase registryTaggedTestCase, serverTaggedTestCase, clientTaggedTestCase;
@@ -121,7 +123,7 @@ TagCaseDependentTestCase
 		this.doNIO = doNIO;
 		this.doRMI = doRMI;
 		this.doGIPC = doGIPC;
-		setOutputBasedInputGenerator(new TwoClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC));
+		setOutputBasedInputGenerator(new FlexibleTwoClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC));
 		
 
 	}
@@ -152,7 +154,8 @@ TagCaseDependentTestCase
 //			TwoClientCorrectReadWriteTestInputGenerator aTwoClientOutputGenerator = new TwoClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC);
 //			outputBasedInputGenerator = new TwoClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC);
 			getOutputBasedInputGenerator().clear();
-			TwoClientCorrectReadWriteTestInputGenerator aTwoClientOutputGenerator = (TwoClientCorrectReadWriteTestInputGenerator) getOutputBasedInputGenerator();
+//			OldTwoClientCorrectReadWriteTestInputGenerator aTwoClientOutputGenerator = (OldTwoClientCorrectReadWriteTestInputGenerator) getOutputBasedInputGenerator();
+			FlexibleTwoClientCorrectReadWriteTestInputGenerator aTwoClientOutputGenerator = (FlexibleTwoClientCorrectReadWriteTestInputGenerator) getOutputBasedInputGenerator();
 
 			interactiveInputProject = null;
 			try {

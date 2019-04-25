@@ -8,8 +8,9 @@ import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
-import gradingTools.comp533s19.assignment4.testcases.TwoClientCorrectReadWriteTestInputGenerator;
+import gradingTools.comp533s19.assignment4.testcases.OldTwoClientCorrectReadWriteTestInputGenerator;
 import gradingTools.comp533s19.flexible.testcases.FlexibleStaticArgumentsTestCase;
+import gradingTools.comp533s19.flexible.testcases.FlexibleTwoClientCorrectReadWriteTestInputGenerator;
 //import grader.execution.ExecutionSpecificationSelector;
 //import gradingTools.comp533s18.assignment3.testcases.StaticArgumentsTestCase;
 import gradingTools.comp533s19.assignment1.testcases.SingleClassTagListTestCase;
@@ -65,7 +66,7 @@ public class TwoClientCorrectReadWriteTestCase extends PassFailJUnitTestCase {
 		this.doNIO = doNIO;
 		this.doRMI = doRMI;
 		this.doGIPC = doGIPC;
-		setOutputBasedInputGenerator(new TwoClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC));
+		setOutputBasedInputGenerator(new FlexibleTwoClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC));
 
 	}
 	
@@ -80,7 +81,7 @@ public class TwoClientCorrectReadWriteTestCase extends PassFailJUnitTestCase {
 //			TwoClientCorrectReadWriteTestInputGenerator aTwoClientOutputGenerator = new TwoClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC);
 //			outputBasedInputGenerator = new TwoClientCorrectReadWriteTestInputGenerator(atomic, doNIO, doRMI, doGIPC);
 			getOutputBasedInputGenerator().clear();
-			TwoClientCorrectReadWriteTestInputGenerator aTwoClientOutputGenerator = (TwoClientCorrectReadWriteTestInputGenerator) getOutputBasedInputGenerator();
+			FlexibleTwoClientCorrectReadWriteTestInputGenerator aTwoClientOutputGenerator = (FlexibleTwoClientCorrectReadWriteTestInputGenerator) getOutputBasedInputGenerator();
 
 			interactiveInputProject = null;
 			try {

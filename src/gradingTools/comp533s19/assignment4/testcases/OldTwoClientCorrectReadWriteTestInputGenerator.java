@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 import gradingTools.comp533s19.assignment4.testcases.TwoClientCorrectConnectionTestInputGenerator;
 import util.trace.Tracer;
 
-public class TwoClientCorrectReadWriteTestInputGenerator extends TwoClientCorrectConnectionTestInputGenerator {
+public class OldTwoClientCorrectReadWriteTestInputGenerator extends TwoClientCorrectConnectionTestInputGenerator {
 	private static final boolean PRINT_CHECKED_REGEX = false;
 	
 	private static final String TRACER_PREFIX = "I***";
@@ -217,7 +217,7 @@ public class TwoClientCorrectReadWriteTestInputGenerator extends TwoClientCorrec
 	}
 	
 	
-	public TwoClientCorrectReadWriteTestInputGenerator(boolean atomic, boolean doNIO, boolean doRMI, boolean doGIPC) {
+	public OldTwoClientCorrectReadWriteTestInputGenerator(boolean atomic, boolean doNIO, boolean doRMI, boolean doGIPC) {
 		super(doNIO, doRMI, doGIPC);
 		this.atomic = atomic;
 	}
