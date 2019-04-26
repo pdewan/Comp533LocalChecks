@@ -1,6 +1,11 @@
 package gradingTools.comp533s19.assignment0.testcases.factories;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 import grader.basics.junit.JUnitTestsEnvironment;
+import grader.basics.junit.NotAutomatableException;
+import grader.basics.junit.TestCaseResult;
+import grader.basics.project.NotGradableException;
+import grader.basics.project.Project;
 import gradingTools.comp533s19.assignment0.interfaces.TestPartitioner;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment1.testcases.SingleClassTagListTestCase;
@@ -9,7 +14,7 @@ import gradingTools.shared.testcases.FactoryMethodTest;
 
 public class PartitionerFactory extends FactoryMethodTest {
 
-	protected TestPartitioner getPartitioner() {
+	public TestPartitioner getPartitioner() {
 		return (TestPartitioner) getRootProxy();
 	}
 	@Override
@@ -30,10 +35,23 @@ public class PartitionerFactory extends FactoryMethodTest {
 	protected Object createUsingFactory() {
 		return createUsingFactoryClassAndMethodName();
 	}
+//	@Override
+//	protected boolean doTest() throws Throwable {
+//		 return doFactoryMethodTest();
+//		
+//	}
+	public void defaultTest() {
+    	passfailDefaultTest();
+    }
 	@Override
-	protected boolean doTest() throws Throwable {
-		 return doFactoryMethodTest();
-		
+	protected boolean matchProxyActualClass() {
+		return false;
 	}
+	public  TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
+   	NotGradableException {
+    	
+		boolean aResult = doFactoryMethodTest();
+		return (aResult == true? pass(): fail("Factory method test failed"));
+    }
 
 }
