@@ -27,7 +27,7 @@ import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
 import util.tags.DistributedTags;
 @MaxValue(5)
-public class GetConfiguration extends PassFailJUnitTestCase {
+public class TestSkeleton extends PassFailJUnitTestCase {
 	public static final String CONFIGURATION_CLASS = "MyMapReduceConfiguration";
 	TestMapReduceConfiguration testConfiguration ;
 

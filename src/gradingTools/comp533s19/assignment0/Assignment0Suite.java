@@ -15,7 +15,8 @@ import gradingTools.comp533s19.assignment1.testcases.OneClientThreadsAtomic;
 import gradingTools.comp533s19.assignment1.testcases.OneClientThreadsNonAtomic;
 import gradingTools.comp533s19.assignment1.testcases.ReadWriteUpdateOrderAtomic;
 import gradingTools.comp533s19.assignment1.testcases.ReadWriteUpdateOrderNonAtomic;
-import gradingTools.comp533s19.assignment0.testcases.GetConfiguration;
+import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
+import gradingTools.comp533s19.assignment0.testcases.factories.PartitionerFactory;
 import gradingTools.comp533s19.assignment1.Assignment1Suite;
 import gradingTools.comp533s19.assignment1.testcases.ClientTagged;
 import gradingTools.comp533s19.assignment1.testcases.OneClientConnection;
@@ -35,7 +36,8 @@ import util.tags.DistributedTags;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	GetConfiguration.class
+	ConfigurationProvided.class,
+	PartitionerFactory.class
 //	Assignment1OneClientSuite.class,
 //	Assignment1TwoClientSuite.class,
 
@@ -45,18 +47,22 @@ import util.tags.DistributedTags;
 
 	
 public class Assignment0Suite extends Assignment1Suite{
-	 static final String[] clientTags = {DistributedTags.NIO, DistributedTags.CLIENT};
-	 static final String[] serverTags = {DistributedTags.NIO, DistributedTags.SERVER};
-	 static final  List<String> clientTagsList = Arrays.asList(clientTags);
-	 static final List<String> serverTagsList = Arrays.asList(serverTags);
-	static int processTimeOut = 45;
-
-	public static int getProcessTimeOut() {
-		return processTimeOut;
-	}
-	public static void setProcessTimeOut(int processTimeOut) {
-		Assignment0Suite.processTimeOut = processTimeOut;
-	}
+//	 static final String[] clientTags = {DistributedTags.NIO, DistributedTags.CLIENT};
+//	 static final String[] serverTags = {DistributedTags.NIO, DistributedTags.SERVER};
+//	 static final  List<String> clientTagsList = Arrays.asList(clientTags);
+//	 static final List<String> serverTagsList = Arrays.asList(serverTags);
+	public static final String MAP_REDUCE_PROCESS_TEAM = "MapReduce Team";
+	public static final String MAP_REDUCE_SERVER = "MapReduce Server";
+	public static final String MAP_REDUCE_CLIENT_1 = "MapReduce Client 1";
+	public static final String MAP_REDUCE_CLIENT_2 = "MapReduce Client 2";
+//	static int processTimeOut = 45;
+//
+//	public static int getProcessTimeOut() {
+//		return processTimeOut;
+//	}
+//	public static void setProcessTimeOut(int processTimeOut) {
+//		Assignment0Suite.processTimeOut = processTimeOut;
+//	}
 	public static void main (String[] args) {
 		try {
 			

@@ -1,5 +1,6 @@
 package gradingTools.comp533s19.assignment0.testcases;
 
+import gradingTools.comp533s19.assignment0.Assignment0Suite;
 import gradingTools.shared.testcases.utils.ABufferingTestInputGenerator;
 
 import java.util.regex.Pattern;
@@ -21,15 +22,15 @@ public class MapReduceInputGenerator extends ABufferingTestInputGenerator {
 	@Override
 	public void newOutputLine(String aProcessName, String anOutputLine) {
 		super.newOutputLine(aProcessName, anOutputLine);
-		if (aProcessName.equals(GetConfiguration.MAP_REDUCE_CLIENT_2)) { // can give input to server
-			notifyNewInputLine(GetConfiguration.MAP_REDUCE_SERVER, numThreads);
+		if (aProcessName.equals(Assignment0Suite.MAP_REDUCE_CLIENT_2)) { // can give input to server
+			notifyNewInputLine(Assignment0Suite.MAP_REDUCE_SERVER, numThreads);
 			for (String aLine:inputLines) {
-				notifyNewInputLine(GetConfiguration.MAP_REDUCE_SERVER, aLine);
+				notifyNewInputLine(Assignment0Suite.MAP_REDUCE_SERVER, aLine);
 
 //			notifyNewInputLine(GetConfiguration.MAP_REDUCE_SERVER, "aaa jjj sss zzzz aaa aaa jjj zzz aaa jjj");
 //			notifyNewInputLine(GetConfiguration.MAP_REDUCE_SERVER, "bbb iii ttt yyy bbb bbb iii yyy bbb iii");
 			}
-			notifyNewInputLine(GetConfiguration.MAP_REDUCE_SERVER, "quit");
+			notifyNewInputLine(Assignment0Suite.MAP_REDUCE_SERVER, "quit");
 		}
 		
 	}
