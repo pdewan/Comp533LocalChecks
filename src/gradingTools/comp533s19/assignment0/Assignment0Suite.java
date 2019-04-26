@@ -18,6 +18,7 @@ import gradingTools.comp533s19.assignment1.testcases.ReadWriteUpdateOrderNonAtom
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment0.testcases.factories.PartitionerFactory;
 import gradingTools.comp533s19.assignment0.testcases.objects.PartitionerObject;
+import gradingTools.comp533s19.assignment0.testcases.standalone.basic.StandAloneBasicTokenCountResult;
 import gradingTools.comp533s19.assignment1.Assignment1Suite;
 import gradingTools.comp533s19.assignment1.testcases.ClientTagged;
 import gradingTools.comp533s19.assignment1.testcases.OneClientConnection;
@@ -39,7 +40,8 @@ import util.tags.DistributedTags;
 @Suite.SuiteClasses({
 	ConfigurationProvided.class,
 	PartitionerFactory.class,
-	PartitionerObject.class
+	PartitionerObject.class,
+	StandAloneBasicTokenCountResult.class
 //	Assignment1OneClientSuite.class,
 //	Assignment1TwoClientSuite.class,
 
