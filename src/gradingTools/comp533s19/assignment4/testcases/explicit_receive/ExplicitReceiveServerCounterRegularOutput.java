@@ -8,7 +8,7 @@ import grader.basics.project.Project;
 import gradingTools.comp533s19.assignment1.testcases.SingleClassTagListTestCase;
 import gradingTools.comp533s19.assignment4.testcases.ARegularCounterServerChecker;
 import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;
-import gradingTools.comp533s19.assignment4.testcases.SubstringSequenceChecker;
+import gradingTools.shared.testcases.SubstringSequenceChecker;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
 @MaxValue(5)

@@ -22,7 +22,7 @@ public class PartitionerObject extends PassFailJUnitTestCase{
 			return pass();
 		}
 		
-		return fail("bad parition for aaa:" + aPartition);
+		return fail("bad partition for aaa:" + aPartition);
 	}
 	protected Class factoryClass() {
 		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);

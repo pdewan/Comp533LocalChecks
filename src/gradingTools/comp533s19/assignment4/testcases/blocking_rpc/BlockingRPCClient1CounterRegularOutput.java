@@ -11,8 +11,8 @@ import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentT
 import gradingTools.comp533s19.assignment4.testcases.ARegularCounterClientChecker;
 import gradingTools.comp533s19.assignment1.testcases.SingleClassTagListTestCase;
 import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;
-import gradingTools.comp533s19.assignment4.testcases.SubstringSequenceChecker;
 import gradingTools.comp533s19.assignment4.testcases.explicit_receive.ExplicitReceiveClient1CounterRegularOutput;
+import gradingTools.shared.testcases.SubstringSequenceChecker;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
 @MaxValue(5)

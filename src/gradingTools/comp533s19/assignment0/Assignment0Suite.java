@@ -16,9 +16,10 @@ import gradingTools.comp533s19.assignment1.testcases.OneClientThreadsNonAtomic;
 import gradingTools.comp533s19.assignment1.testcases.ReadWriteUpdateOrderAtomic;
 import gradingTools.comp533s19.assignment1.testcases.ReadWriteUpdateOrderNonAtomic;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
+import gradingTools.comp533s19.assignment0.testcases.distributed.DistributedTokenCountResult;
 import gradingTools.comp533s19.assignment0.testcases.factories.PartitionerFactory;
 import gradingTools.comp533s19.assignment0.testcases.objects.PartitionerObject;
-import gradingTools.comp533s19.assignment0.testcases.standalone.basic.StandAloneBasicTokenCountResult;
+import gradingTools.comp533s19.assignment0.testcases.standalone.StandAloneBasicTokenCountResult;
 import gradingTools.comp533s19.assignment1.Assignment1Suite;
 import gradingTools.comp533s19.assignment1.testcases.ClientTagged;
 import gradingTools.comp533s19.assignment1.testcases.OneClientConnection;
@@ -33,6 +34,7 @@ import gradingTools.comp533s19.assignment1.testcases.TwoClientReadWriteAtomic;
 import gradingTools.comp533s19.assignment1.testcases.TwoClientReadWriteNonAtomic;
 import gradingTools.comp533s19.assignment1.testcases.TwoClientThreadsAtomic;
 import gradingTools.comp533s19.assignment1.testcases.TwoClientThreadsNonAtomic;
+import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;
 import util.tags.DistributedTags;
 
 
@@ -41,7 +43,8 @@ import util.tags.DistributedTags;
 	ConfigurationProvided.class,
 	PartitionerFactory.class,
 	PartitionerObject.class,
-	StandAloneBasicTokenCountResult.class
+	StandAloneBasicTokenCountResult.class,
+	DistributedTokenCountResult.class
 //	Assignment1OneClientSuite.class,
 //	Assignment1TwoClientSuite.class,
 
@@ -69,7 +72,8 @@ public class Assignment0Suite extends Assignment1Suite{
 //	}
 	public static void main (String[] args) {
 		try {
-			
+//			setProcessTimeOut(25);
+
 			BasicJUnitUtils.interactiveTest(Assignment0Suite.class);
 
 

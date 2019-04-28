@@ -23,7 +23,7 @@ public class MapReduceInputGenerator extends ABufferingTestInputGenerator {
 	public void newOutputLine(String aProcessName, String anOutputLine) {
 		super.newOutputLine(aProcessName, anOutputLine);
 		if (aProcessName.equals(Assignment0Suite.MAP_REDUCE_CLIENT_2)) { // can give input to server
-			notifyNewInputLine(Assignment0Suite.MAP_REDUCE_SERVER, numThreads);
+//			notifyNewInputLine(Assignment0Suite.MAP_REDUCE_SERVER, numThreads);
 			for (String aLine:inputLines) {
 				notifyNewInputLine(Assignment0Suite.MAP_REDUCE_SERVER, aLine);
 

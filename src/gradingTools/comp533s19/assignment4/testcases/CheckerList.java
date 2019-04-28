@@ -2,8 +2,8 @@ package gradingTools.comp533s19.assignment4.testcases;
 
 import java.util.List;
 
-import gradingTools.comp533s19.assignment4.testcases.SubstringChecker;
-import gradingTools.comp533s19.assignment4.testcases.SubstringSequenceChecker;
+import gradingTools.shared.testcases.SubstringSequenceChecker;
+import gradingTools.shared.testcases.interfaces.SubstringChecker;
 
 public interface CheckerList extends SubstringChecker {
 

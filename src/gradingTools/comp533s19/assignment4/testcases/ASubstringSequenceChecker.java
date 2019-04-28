@@ -1,6 +1,6 @@
 package gradingTools.comp533s19.assignment4.testcases;
 
-import gradingTools.comp533s19.assignment4.testcases.SubstringSequenceChecker;
+import gradingTools.shared.testcases.SubstringSequenceChecker;
 import gradingTools.shared.testcases.utils.LinesMatchKind;
 import gradingTools.shared.testcases.utils.LinesMatcher;
 
