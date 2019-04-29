@@ -11,8 +11,8 @@ import util.trace.Tracer;
 public class MapReduceInputGenerator extends ABufferingTestInputGenerator {
 	String numThreads;
 	String[] inputLines;
-	public MapReduceInputGenerator (int aNumThreads, String[] anInputLines) {
-		numThreads = Integer.toString(aNumThreads);
+	public MapReduceInputGenerator (String[] anInputLines) {
+//		numThreads = Integer.toString(aNumThreads);
 		inputLines = anInputLines;		
 	}
 	
@@ -30,7 +30,7 @@ public class MapReduceInputGenerator extends ABufferingTestInputGenerator {
 //			notifyNewInputLine(GetConfiguration.MAP_REDUCE_SERVER, "aaa jjj sss zzzz aaa aaa jjj zzz aaa jjj");
 //			notifyNewInputLine(GetConfiguration.MAP_REDUCE_SERVER, "bbb iii ttt yyy bbb bbb iii yyy bbb iii");
 			}
-			notifyNewInputLine(Assignment0Suite.MAP_REDUCE_SERVER, "quit");
+//			notifyNewInputLine(Assignment0Suite.MAP_REDUCE_SERVER, "quit");
 		}
 		
 	}

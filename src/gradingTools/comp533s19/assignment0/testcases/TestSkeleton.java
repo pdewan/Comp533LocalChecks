@@ -66,13 +66,13 @@ public class TestSkeleton extends PassFailJUnitTestCase {
 			String anOutput = aProject.getOutputAndErrors();
 			setupProcesses(testConfiguration);
 			Map<String, String> aProcessToInput = new HashMap<>();
-			String[] aServerInput = {
+			String[] aServerInput = {"3",
 					"aaa jjj sss zzzz aaa aaa jjj zzz aaa jjj",
 					"bbb iii ttt yyy bbb bbb iii yyy bbb iii"
 			};
 //			notifyNewInputLine(GetConfiguration.MAP_REDUCE_SERVER, "bbb iii ttt yyy bbb bbb iii yyy bbb iii");
 //			aProcessToInput.put(MAP_REDUCE_SERVER, aServerInput);
-			interactiveInputProject = RunningProjectUtils.runProject(project, 600, new MapReduceInputGenerator(3, aServerInput));
+			interactiveInputProject = RunningProjectUtils.runProject(project, 600, new MapReduceInputGenerator( aServerInput));
 			 String anOutput2 = interactiveInputProject.await();
 			 
 				String aServerClassName = testConfiguration.getServerIntegerSummer().getName();
@@ -82,7 +82,7 @@ public class TestSkeleton extends PassFailJUnitTestCase {
 						"1 2 3 4 5 6 7 8 9",
 						"111 222 333 444 555 666 777 888 999",
 						"11 22 33 44 55 66 77 88 99"};
-				interactiveInputProject = RunningProjectUtils.runProject(project, 300, new MapReduceInputGenerator(3, aServerIntInput));
+				interactiveInputProject = RunningProjectUtils.runProject(project, 300, new MapReduceInputGenerator (aServerIntInput));
 
 			 int i = 4;
 //			int i = 4;

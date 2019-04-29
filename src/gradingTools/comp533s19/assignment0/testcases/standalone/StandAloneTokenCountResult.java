@@ -17,8 +17,8 @@ import gradingTools.shared.testcases.MainMethodForkerTest;
 import gradingTools.shared.testcases.MethodExecutionTest;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 
-public class StandAloneBasicTokenCountResult extends MainMethodForkerTest {
-	public StandAloneBasicTokenCountResult() {
+public class StandAloneTokenCountResult extends MainMethodForkerTest {
+	public StandAloneTokenCountResult() {
 //		BasicProjectExecution.setProcessTimeOut(Assignment0Suite.getProcessTimeOut());
 	}
 //	protected Class mainClass;
@@ -92,7 +92,9 @@ public class StandAloneBasicTokenCountResult extends MainMethodForkerTest {
 	@Override 
 	public String[] getInputLines() {
 		return new String[] {"3", 
-				"a an the a an the a a a an an an the the the"
+				"Hogwarts hogwarts muggles wizards Hogwarts hogwarts Hogwarts muggles muggles wizards",
+				"Abbott Creevey Dumbledore Longbottom Potter Snape Voldemort Weasley Zabini Potter Dumbledore Voldemort",
+				"quit"
 		};
 	}
 	protected void setMainClass() {

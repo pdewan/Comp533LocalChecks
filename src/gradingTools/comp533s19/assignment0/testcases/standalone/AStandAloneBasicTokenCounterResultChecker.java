@@ -8,7 +8,9 @@ public class AStandAloneBasicTokenCounterResultChecker extends ASubstringSequenc
 	//make sure receives from both clients take place, need to ensure alternatibg, cannot with regular expressions
 	public  final String[] MY_SUBSTRINGS = {
 //			toRegex(
-				".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.the=5, a=5, an=5.; propagationId=null; source=Model..*"
+				".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.Hogwarts=3, muggles=3, hogwarts=2, wizards=2.; propagationId=null; source=Model..*",
+				".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.Abbott=1, Zabini=1, Creevey=1, Weasley=1, Dumbledore=2, Potter=2, Longbottom=1, Snape=1, Voldemort=2.; propagationId=null; source=Model..*",
+				
 //			)
 
 //		"(Asynchronous Received Call Invoker|Selecting Thread)..ReceivedMessageDequeued",

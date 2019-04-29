@@ -6,6 +6,7 @@ import java.util.List;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+import grader.basics.execution.BasicProjectExecution;
 import grader.basics.junit.BasicJUnitUtils;
 import grader.basics.project.BasicProjectIntrospection;
 import gradingTools.comp533s19.assignment1.testcases.OneClientReadWrite;
@@ -54,6 +55,7 @@ public class Assignment1Suite {
 	}
 	public static void setProcessTimeOut(int processTimeOut) {
 		Assignment1Suite.processTimeOut = processTimeOut;
+		BasicProjectExecution.setProcessTimeOut(processTimeOut);
 	}
 	public static void main (String[] args) {
 		try {

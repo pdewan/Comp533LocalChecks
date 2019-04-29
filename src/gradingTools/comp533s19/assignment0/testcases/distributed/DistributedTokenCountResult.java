@@ -26,7 +26,7 @@ import gradingTools.comp533s19.assignment0.interfaces.TestReducer;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator;
 import gradingTools.comp533s19.assignment0.testcases.standalone.AStandAloneBasicTokenCounterResultChecker;
-import gradingTools.comp533s19.assignment0.testcases.standalone.StandAloneBasicTokenCountResult;
+import gradingTools.comp533s19.assignment0.testcases.standalone.StandAloneTokenCountResult;
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
 import gradingTools.shared.testcases.MainMethodForkerTest;
 import gradingTools.shared.testcases.MethodExecutionTest;
@@ -34,7 +34,7 @@ import gradingTools.shared.testcases.SubstringSequenceChecker;
 import gradingTools.shared.testcases.utils.ABufferingTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 
-public class DistributedTokenCountResult extends StandAloneBasicTokenCountResult {
+public class DistributedTokenCountResult extends StandAloneTokenCountResult {
 	public DistributedTokenCountResult() {
 //		BasicProjectExecution.setProcessTimeOut(Assignment0Suite.getProcessTimeOut());
 	}
@@ -42,10 +42,10 @@ public class DistributedTokenCountResult extends StandAloneBasicTokenCountResult
 	public static final String MAP_REDUCE_SERVER = "MapReduce Server";
 	public static final String MAP_REDUCE_CLIENT_1 = "MapReduce Client 1";
 	public static final String MAP_REDUCE_CLIENT_2 = "MapReduce Client 2";
-
-	protected void setupProcesses(TestMapReduceConfiguration aTestMapReduceConfiguration) {
-		String aServerClassName = aTestMapReduceConfiguration.getServerTokenCounter().getName();
-		String aClientClassName = aTestMapReduceConfiguration.getClientTokenCounter().getName();
+	TestMapReduceConfiguration testMapReduceConfiguration;
+	protected void setupProcesses() {
+		String aServerClassName = testMapReduceConfiguration.getServerTokenCounter().getName();
+		String aClientClassName = testMapReduceConfiguration.getClientTokenCounter().getName();
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList(MAP_REDUCE_PROCESS_TEAM));
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setTerminatingProcesses(MAP_REDUCE_PROCESS_TEAM, 
 				Arrays.asList(MAP_REDUCE_CLIENT_1));
@@ -68,26 +68,48 @@ public class DistributedTokenCountResult extends StandAloneBasicTokenCountResult
 			setSleepTime(MAP_REDUCE_CLIENT_2, 7000);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessTeams().forEach(team -> System.out.println("### " + team));
 	}
+//	protected String processName() {
+//		return MAP_REDUCE_SERVER;
+//	}
 	protected String processName() {
-		return MAP_REDUCE_SERVER;
+		return "All";
 	}
+	@Override
 	protected void callOrForkMain(boolean aFork) throws Throwable {
 		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
 
 		BasicStaticConfigurationUtils.setBasicCommandToDefaultEntryPointCommand();
+		testMapReduceConfiguration = aConfigurationProvided.getTestConfiguration();
+		setupProcesses();
+		BasicStaticConfigurationUtils.setBasicCommandToDefaultEntryPointCommand();
+//		BasicStaticConfigurationUtils.setBasicCommandToDefaultEntryPointCommand();
 
-		setupProcesses(aConfigurationProvided.getTestConfiguration());
-		Map<String, String> aProcessToInput = new HashMap<>();
+
 		interactiveInputProject = RunningProjectUtils.runProject(project, 
-				Assignment0Suite.getProcessTimeOut(), new MapReduceInputGenerator(3, getInputLines()));
-		error = interactiveInputProject.getErrorOutput();
-		output = interactiveInputProject.getOutput();
-		resultingOutError = new ResultingOutErr(output, error);
-//		interactiveInputProject = resultingOutError.getRunningProject();		
+				Assignment0Suite.getProcessTimeOut(), new MapReduceInputGenerator (getInputLines()));
 		BasicStaticConfigurationUtils.setBasicCommandToDefaultCommand();
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().resetProcessTeams();
 
 
 	}
+//	//need to put in superclass
+//	protected void callOrForkInteractiveMain(boolean aFork) throws Throwable {
+//		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
+//
+//		BasicStaticConfigurationUtils.setBasicCommandToDefaultEntryPointCommand();
+//		testMapReduceConfiguration = aConfigurationProvided.getTestConfiguration();
+//		setupProcesses();
+//		Map<String, String> aProcessToInput = new HashMap<>();
+//		interactiveInputProject = RunningProjectUtils.runProject(project, 
+//				Assignment0Suite.getProcessTimeOut(), new MapReduceInputGenerator(3, getInputLines()));
+//		error = interactiveInputProject.getErrorOutput();
+//		output = interactiveInputProject.getOutput();
+//		resultingOutError = new ResultingOutErr(output, error);
+////		interactiveInputProject = resultingOutError.getRunningProject();		
+//		BasicStaticConfigurationUtils.setBasicCommandToDefaultCommand();
+//
+//
+//	}
 	
 //	protected Class mainClass;
 //
