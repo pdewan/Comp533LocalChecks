@@ -9,6 +9,7 @@ import java.util.Map;
 import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.execution.BasicExecutionSpecificationSelector;
 import grader.basics.execution.BasicProjectExecution;
+import grader.basics.execution.BasicRunningProject;
 import grader.basics.execution.GradingMode;
 import grader.basics.execution.ResultingOutErr;
 import grader.basics.execution.RunningProject;
@@ -72,12 +73,14 @@ public class DistributedTokenCountResult extends StandAloneTokenCountResult {
 //		return MAP_REDUCE_SERVER;
 //	}
 	protected String processName() {
-		return "All";
+		return MAP_REDUCE_SERVER;
 	}
 	@Override
 	protected void callOrForkMain(boolean aFork) throws Throwable {
-		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
+		BasicRunningProject.setProcessTeamOutputSleepTime(10000);
 
+		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setWaitForResort(false);
 		BasicStaticConfigurationUtils.setBasicCommandToDefaultEntryPointCommand();
 		testMapReduceConfiguration = aConfigurationProvided.getTestConfiguration();
 		setupProcesses();
@@ -87,6 +90,7 @@ public class DistributedTokenCountResult extends StandAloneTokenCountResult {
 
 		interactiveInputProject = RunningProjectUtils.runProject(project, 
 				Assignment0Suite.getProcessTimeOut(), new MapReduceInputGenerator (getInputLines()));
+		interactiveInputProject.await();
 		BasicStaticConfigurationUtils.setBasicCommandToDefaultCommand();
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().resetProcessTeams();
 

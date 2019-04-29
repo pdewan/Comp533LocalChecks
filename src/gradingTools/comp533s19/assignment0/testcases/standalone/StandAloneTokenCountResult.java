@@ -1,7 +1,9 @@
 package gradingTools.comp533s19.assignment0.testcases.standalone;
 
 import grader.basics.config.BasicStaticConfigurationUtils;
+import grader.basics.execution.BasicExecutionSpecificationSelector;
 import grader.basics.execution.BasicProjectExecution;
+import grader.basics.execution.BasicRunningProject;
 import grader.basics.execution.GradingMode;
 import grader.basics.execution.ResultingOutErr;
 import grader.basics.junit.JUnitTestsEnvironment;
@@ -78,6 +80,10 @@ public class StandAloneTokenCountResult extends MainMethodForkerTest {
 //		
 //
 //	}
+	protected void callOrForkMain(boolean aFork) throws Throwable {
+		BasicRunningProject.setProcessOutputSleepTime(10000);
+		super.callOrForkMain(aFork);
+	}
 	protected SubstringSequenceChecker checker() {
 		return new AStandAloneBasicTokenCounterResultChecker();
 	}

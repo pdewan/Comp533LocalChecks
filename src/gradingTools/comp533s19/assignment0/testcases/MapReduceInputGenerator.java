@@ -24,6 +24,9 @@ public class MapReduceInputGenerator extends ABufferingTestInputGenerator {
 		super.newOutputLine(aProcessName, anOutputLine);
 		if (aProcessName.equals(Assignment0Suite.MAP_REDUCE_CLIENT_2)) { // can give input to server
 //			notifyNewInputLine(Assignment0Suite.MAP_REDUCE_SERVER, numThreads);
+//			for (int i = 0; i < inputLines.length - 1; i++) {
+//				String aLine = inputLines[i];
+
 			for (String aLine:inputLines) {
 				notifyNewInputLine(Assignment0Suite.MAP_REDUCE_SERVER, aLine);
 
@@ -32,6 +35,9 @@ public class MapReduceInputGenerator extends ABufferingTestInputGenerator {
 			}
 //			notifyNewInputLine(Assignment0Suite.MAP_REDUCE_SERVER, "quit");
 		}
+//		if (anOutputLine.contains("Processing line:" )) {
+//			notifyNewInputLine(Assignment0Suite.MAP_REDUCE_SERVER, inputLines[inputLines.length -1]);
+//		}
 		
 	}
 	
