@@ -16,10 +16,12 @@ import gradingTools.comp533s19.assignment1.testcases.OneClientThreadsNonAtomic;
 import gradingTools.comp533s19.assignment1.testcases.ReadWriteUpdateOrderAtomic;
 import gradingTools.comp533s19.assignment1.testcases.ReadWriteUpdateOrderNonAtomic;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
-import gradingTools.comp533s19.assignment0.testcases.distributed.DistributedTokenCountResult;
+import gradingTools.comp533s19.assignment0.testcases.counts.distributed.DistributedTokenCountResult;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountResult;
 import gradingTools.comp533s19.assignment0.testcases.factories.PartitionerFactory;
 import gradingTools.comp533s19.assignment0.testcases.objects.PartitionerObject;
-import gradingTools.comp533s19.assignment0.testcases.standalone.StandAloneTokenCountResult;
+import gradingTools.comp533s19.assignment0.testcases.sums.distributed.DistributedIntSummerResult;
+import gradingTools.comp533s19.assignment0.testcases.sums.standalone.StandAloneIntSummerResult;
 import gradingTools.comp533s19.assignment1.Assignment1Suite;
 import gradingTools.comp533s19.assignment1.testcases.ClientTagged;
 import gradingTools.comp533s19.assignment1.testcases.OneClientConnection;
@@ -44,7 +46,11 @@ import util.tags.DistributedTags;
 	PartitionerFactory.class,
 	PartitionerObject.class,
 	StandAloneTokenCountResult.class,
-	DistributedTokenCountResult.class
+	StandAloneIntSummerResult.class,
+	DistributedTokenCountResult.class,
+	DistributedIntSummerResult.class,
+
+	
 //	Assignment1OneClientSuite.class,
 //	Assignment1TwoClientSuite.class,
 

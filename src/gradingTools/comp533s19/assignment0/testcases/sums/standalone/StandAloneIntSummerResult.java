@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment0.testcases.standalone;
+package gradingTools.comp533s19.assignment0.testcases.sums.standalone;
 
 import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.execution.BasicExecutionSpecificationSelector;
@@ -14,13 +14,14 @@ import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp533s19.assignment0.Assignment0Suite;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountResult;
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
 import gradingTools.shared.testcases.MainMethodForkerTest;
 import gradingTools.shared.testcases.MethodExecutionTest;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 
-public class StandAloneTokenCountResult extends MainMethodForkerTest {
-	public StandAloneTokenCountResult() {
+public class StandAloneIntSummerResult extends StandAloneTokenCountResult {
+	public StandAloneIntSummerResult() {
 //		BasicProjectExecution.setProcessTimeOut(Assignment0Suite.getProcessTimeOut());
 	}
 //	protected Class mainClass;
@@ -80,32 +81,32 @@ public class StandAloneTokenCountResult extends MainMethodForkerTest {
 //		
 //
 //	}
-	protected void callOrForkMain(boolean aFork) throws Throwable {
-		BasicRunningProject.setProcessOutputSleepTime(10000);
-		super.callOrForkMain(aFork);
-	}
+//	protected void callOrForkMain(boolean aFork) throws Throwable {
+//		BasicRunningProject.setProcessOutputSleepTime(10000);
+//		super.callOrForkMain(aFork);
+//	}
 	protected SubstringSequenceChecker checker() {
-		return new AStandAloneBasicTokenCounterResultChecker();
+		return new AStandAloneBasicIntSummerResultChecker();
 	}
-	@Override
-	protected boolean isValidOutput() {
-		return checkWithChecker();
-	}
-	@Override
-	protected boolean hasError(String anError) {
-		return false;
-	}
+//	@Override
+//	protected boolean isValidOutput() {
+//		return checkWithChecker();
+//	}
+//	@Override
+//	protected boolean hasError(String anError) {
+//		return false;
+//	}
 	@Override 
 	public String[] getInputLines() {
 		return new String[] {"3", 
-				"Hogwarts hogwarts muggles wizards Hogwarts hogwarts Hogwarts muggles muggles wizards",
-				"Abbott Creevey Dumbledore Longbottom Potter Snape Voldemort Weasley Zabini Potter Dumbledore Voldemort",
+				"1 2 3 4 5 6 7 8 9 0",
+				"100 200 300 400 500 600 700 800 900 1000",
 				"quit"
 		};
 	}
 	protected void setMainClass() {
 		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
-        setMainClass( aConfigurationProvided.getTestConfiguration().getStandAloneTokenCounter());
+        setMainClass( aConfigurationProvided.getTestConfiguration().getStandAloneIntegerSummer());
 
 	}
 //	@Override
@@ -141,8 +142,8 @@ public class StandAloneTokenCountResult extends MainMethodForkerTest {
 ////		}
 ////		return null;
 //	}
-	public void defaultTest() {
-    	passfailDefaultTest();
-    }
+//	public void defaultTest() {
+//    	passfailDefaultTest();
+//    }
 
 }
