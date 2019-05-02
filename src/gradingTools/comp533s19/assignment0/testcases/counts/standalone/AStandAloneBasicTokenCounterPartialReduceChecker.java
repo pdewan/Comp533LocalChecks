@@ -10,14 +10,14 @@ public class AStandAloneBasicTokenCounterPartialReduceChecker extends ASubstring
 //	I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:(null,null)
 //	I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingReducer@660f79bb:reduce:[(Hogwarts,1), (Hogwarts,1), (muggles,1), (wizards,1), (Hogwarts,1), (Hogwarts,1), (Hogwarts,1), (muggles,1), (muggles,1), (wizards,1)]:{Hogwarts=5, muggles=3, wizards=2}
 	public  final String[] MY_SUBSTRINGS = {
-			toRegex(
+//			toRegex(
 //				AMapReduceTracer.CONTROLLER + ".*" + AMapReduceTracer.QUIT,
-				AMapReduceTracer.SLAVE + ".*:.*" + AMapReduceTracer.DEQUEUE + ".*null.*null",
-				AMapReduceTracer.SLAVE + ".*:.*" + AMapReduceTracer.REDUCE + ".*Hogwarts.*1"			
+				toRegex(AMapReduceTracer.SLAVE + ".*:.*" + AMapReduceTracer.DEQUEUE + ".*null.*null"),
+				toRegex(AMapReduceTracer.SLAVE + ".*:.*" + AMapReduceTracer.REDUCE + ".*Hogwarts.*1")			
 //				*1.*2",
 //				".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*Hogwarts=5.*"
 //				".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*Potter=2.*",
-			)
+//			)
 
 //		"(Asynchronous Received Call Invoker|Selecting Thread)..ReceivedMessageDequeued",
 //			toPrefixedRegex("I\\*\\*\\*", "Selecting Thread..ReceivedReturnValueQueued")	

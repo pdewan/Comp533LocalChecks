@@ -14,7 +14,8 @@ public class AStandAloneBasicTokenCounterMVCChecker extends ASubstringSequenceCh
 
 				toRegex(AMapReduceTracer.VIEW + ".*" + "propertyName=Threads" + ".*" + AMapReduceTracer.SLAVE),
 //					AMapReduceTracer.VIEW + "." + "propertyName=Result; oldValue=null; newValue=.*Hogwarts=5.*"
-
+				toRegex(AMapReduceTracer.CONTROLLER + ".*" + "Please"),
+				toRegex(AMapReduceTracer.VIEW + ".*" + "propertyName=InputString"),
 				".*"+ AMapReduceTracer.VIEW + ".*" + "propertyName=Result" + ".*Hogwarts=5.*"
 //				"View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*Potter=2.*",
 //			)
