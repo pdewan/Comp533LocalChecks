@@ -8,9 +8,12 @@ import java.util.Map;
 import java.util.concurrent.TimeoutException;
 import java.util.regex.Pattern;
 
+
 //import org.codehaus.jackson.format.MatchStrength;
 import org.junit.Test;
 
+
+import grader.basics.execution.BasicRunningProject;
 //import framework.grading.testing.BasicTestCase;
 import grader.basics.execution.NotRunnableException;
 import grader.basics.execution.ResultingOutErr;
@@ -128,9 +131,10 @@ public class AStringCheckBasedDependentTestCase extends MethodExecutionTest
 			throws NotAutomatableException, NotGradableException {
 		return dependentTest(project, autoGrade);
 	}
-
+	
 	protected void dependentSetOutputError() {
 		try {
+			
 			// Get the output when we have no input from the user
 //			RunningProject noInputRunningProject = RunningProjectUtils.runProject(project, 1);
 //			ExclicitReceiveTestInputGenerator anOutputBasedInputGenerator = 
@@ -151,7 +155,10 @@ public class AStringCheckBasedDependentTestCase extends MethodExecutionTest
 			if (outputBasedInputGenerator == null && interactiveInputProject == null) {
 				assertTrue("Problem running test case" + outputGeneratingTestCase.getName(), false);
 			}
-//			
+			if (processName == BasicRunningProject.ALL_PROCESSES) {
+			Tracer.info(this, "Not setting output error status for" + BasicRunningProject.ALL_PROCESSES);
+			return; // nor output for ALL
+		}
 			programmingRunOutput = interactiveInputProject.getProcessOutput().get(processName);
 
 			if (programmingRunOutput == null || programmingRunOutput.length() == 0) {

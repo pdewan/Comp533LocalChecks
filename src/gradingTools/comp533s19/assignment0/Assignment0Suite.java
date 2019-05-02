@@ -16,10 +16,12 @@ import gradingTools.comp533s19.assignment1.testcases.OneClientThreadsNonAtomic;
 import gradingTools.comp533s19.assignment1.testcases.ReadWriteUpdateOrderAtomic;
 import gradingTools.comp533s19.assignment1.testcases.ReadWriteUpdateOrderNonAtomic;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
+import gradingTools.comp533s19.assignment0.testcases.counts.distributed.DistributedTokenCountBulkRemotePartialReduce;
 import gradingTools.comp533s19.assignment0.testcases.counts.distributed.DistributedTokenCountResult;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountBoundedBuffer;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountMVC;
-import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountPartialReduce;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountBulkPartialReduce;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountMultiplePartialReduce;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountResult;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountThreads;
 import gradingTools.comp533s19.assignment0.testcases.factories.PartitionerFactory;
@@ -56,7 +58,10 @@ import util.tags.DistributedTags;
 	StandAloneTokenCountMVC.class,
 	StandAloneTokenCountThreads.class,
 	StandAloneTokenCountBoundedBuffer.class,
-	StandAloneTokenCountPartialReduce.class
+	StandAloneTokenCountBulkPartialReduce.class,
+	StandAloneTokenCountMultiplePartialReduce.class,
+	DistributedTokenCountBulkRemotePartialReduce.class
+
 
 	
 //	Assignment1OneClientSuite.class,
