@@ -28,8 +28,12 @@ import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAlon
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountQuit;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountResult;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountThreads;
+import gradingTools.comp533s19.assignment0.testcases.factories.MapperFactory;
 import gradingTools.comp533s19.assignment0.testcases.factories.PartitionerFactory;
+import gradingTools.comp533s19.assignment0.testcases.factories.ReducerFactory;
 import gradingTools.comp533s19.assignment0.testcases.objects.PartitionerObject;
+import gradingTools.comp533s19.assignment0.testcases.objects.ReduceObject;
+import gradingTools.comp533s19.assignment0.testcases.objects.TokenCountMapObject;
 import gradingTools.comp533s19.assignment0.testcases.sums.distributed.DistributedIntSummerResult;
 import gradingTools.comp533s19.assignment0.testcases.sums.standalone.StandAloneIntSummerResult;
 import gradingTools.comp533s19.assignment1.Assignment1Suite;
@@ -56,6 +60,10 @@ import util.trace.port.rpc.RemoteCallBlockedForReturnValue;
 	ConfigurationProvided.class,
 	PartitionerFactory.class,
 	PartitionerObject.class,
+	MapperFactory.class,
+	TokenCountMapObject.class,
+	ReducerFactory.class,
+	ReduceObject.class,
 	StandAloneTokenCountResult.class,
 	StandAloneIntSummerResult.class,
 	DistributedTokenCountResult.class,
@@ -69,10 +77,7 @@ import util.trace.port.rpc.RemoteCallBlockedForReturnValue;
 //	StandAloneTokenCountQuit.class,
 	DistributedTokenCountQuit.class,
 	ClientBasicTokenCountPartialReduce.class,
-	ClientBasicTokenCountQuit.class
-
-
-	
+	ClientBasicTokenCountQuit.class	
 //	Assignment1OneClientSuite.class,
 //	Assignment1TwoClientSuite.class,
 
