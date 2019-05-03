@@ -1,6 +1,5 @@
 package gradingTools.comp533s19.assignment0.testcases.counts.distributed;
 
-import grader.basics.execution.BasicRunningProject;
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
@@ -10,7 +9,7 @@ import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentT
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 //@MaxValue(5)
 //@Explanation("Checks for expected client1 counter output when explicit receive is implemented.")
-public class DistributedTokenCountPartialReduce extends AStringCheckBasedDependentTestCase {
+public class ClientBasicTokenCountQuit extends AStringCheckBasedDependentTestCase {
 
 //	@Override
 //	protected SubstringSequenceChecker outputChecker() {
@@ -23,13 +22,13 @@ public class DistributedTokenCountPartialReduce extends AStringCheckBasedDepende
 	}
 	@Override
 	protected String processName() {
-		 return BasicRunningProject.ALL_PROCESSES;
+		return DistributedTokenCountResult.MAP_REDUCE_CLIENT_1;
 	}
 //	protected boolean checkTrue() {
 //		return true;
 //	}
 	protected SubstringSequenceChecker checker() {
-		return new ADistributedBasicTokenCountPartialReduceChecker(DistributedTokenCountResult.MAP_REDUCE_CLIENT_1, "2");
+		return new AClientBasicTokenCountQuitChecker();
 	}
 	protected Class outputgeneratingTestCaseClass() {
 		return DistributedTokenCountResult.class;

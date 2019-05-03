@@ -5,7 +5,7 @@ import gradingTools.comp533s19.assignment4.testcases.ASubstringSequenceChecker;
 import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;
 import util.trace.port.rpc.RemoteCallWaitingForReturnValue;
 
-public class ADistributedBasicTokenCounterQuitChecker extends ASubstringSequenceChecker{
+public class AClientBasicTokenCountQuitChecker extends ASubstringSequenceChecker{
 	//make sure receives from both clients take place, need to ensure alternatibg, cannot with regular expressions
 
 	String clientName;
@@ -18,7 +18,7 @@ public class ADistributedBasicTokenCounterQuitChecker extends ASubstringSequence
 //	I***(BasicRunningProject) Received output from MapReduce Client 2: Thread[main,5,main]:exit
 
 	
-	public ADistributedBasicTokenCounterQuitChecker() {
+	public AClientBasicTokenCountQuitChecker() {
 //		clientName = aClientName;
 //		init( MY_SUBSTRINGS);
 		init( makeMySubstrings());
@@ -39,11 +39,9 @@ public class ADistributedBasicTokenCounterQuitChecker extends ASubstringSequence
 //					toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  ".*" + AMapReduceTracer.QUITTING), 
 //					toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  ".*" + AMapReduceTracer.QUITTING), 
 //					toRegex(DistributedTokenCountResult.MAP_REDUCE_CLIENT, "RMI TCP Connection", AMapReduceTracer.QUITTING), 
-					".*" + DistributedTokenCountResult.MAP_REDUCE_CLIENT + ".*" + "main.*" + AMapReduceTracer.EXIT + ".*",
-					".*" + DistributedTokenCountResult.MAP_REDUCE_CLIENT + ".*" + "main.*" + AMapReduceTracer.EXIT + ".*",
-
- 
-
+					toRegex("RMI TCP Connection", AMapReduceTracer.QUITTING),
+					toRegex("RMI TCP Connection", AMapReduceTracer.NOTIFY),
+					toRegex("main", AMapReduceTracer.EXIT)
 	
 		};
 		return MY_SUBSTRINGS;

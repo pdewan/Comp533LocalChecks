@@ -9,7 +9,7 @@ import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentT
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 //@MaxValue(5)
 //@Explanation("Checks for expected client1 counter output when explicit receive is implemented.")
-public class RemoteBasicTokenCountRemotePartialReduce extends AStringCheckBasedDependentTestCase {
+public class ClientBasicTokenCountPartialReduce extends AStringCheckBasedDependentTestCase {
 
 //	@Override
 //	protected SubstringSequenceChecker outputChecker() {
@@ -28,7 +28,7 @@ public class RemoteBasicTokenCountRemotePartialReduce extends AStringCheckBasedD
 //		return true;
 //	}
 	protected SubstringSequenceChecker checker() {
-		return new ARemoteBasicTokenCounterRemotePartialReduceChecker();
+		return new AClientBasicTokenCountPartialReduceChecker();
 	}
 	protected Class outputgeneratingTestCaseClass() {
 		return DistributedTokenCountResult.class;
