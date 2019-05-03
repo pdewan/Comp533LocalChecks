@@ -16,8 +16,9 @@ import gradingTools.comp533s19.assignment1.testcases.OneClientThreadsNonAtomic;
 import gradingTools.comp533s19.assignment1.testcases.ReadWriteUpdateOrderAtomic;
 import gradingTools.comp533s19.assignment1.testcases.ReadWriteUpdateOrderNonAtomic;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
-import gradingTools.comp533s19.assignment0.testcases.counts.distributed.DistributedTokenCountBulkRemotePartialReduce;
+import gradingTools.comp533s19.assignment0.testcases.counts.distributed.DistributedTokenCountRemotePartialReduce;
 import gradingTools.comp533s19.assignment0.testcases.counts.distributed.DistributedTokenCountResult;
+import gradingTools.comp533s19.assignment0.testcases.counts.distributed.RemoteBasicTokenCountRemotePartialReduce;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountBoundedBuffer;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountMVC;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountBulkPartialReduce;
@@ -44,6 +45,7 @@ import gradingTools.comp533s19.assignment1.testcases.TwoClientThreadsAtomic;
 import gradingTools.comp533s19.assignment1.testcases.TwoClientThreadsNonAtomic;
 import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;
 import util.tags.DistributedTags;
+import util.trace.port.rpc.RemoteCallBlockedForReturnValue;
 
 
 @RunWith(Suite.class)
@@ -60,7 +62,8 @@ import util.tags.DistributedTags;
 	StandAloneTokenCountBoundedBuffer.class,
 	StandAloneTokenCountBulkPartialReduce.class,
 	StandAloneTokenCountMultiplePartialReduce.class,
-	DistributedTokenCountBulkRemotePartialReduce.class
+	DistributedTokenCountRemotePartialReduce.class,
+	RemoteBasicTokenCountRemotePartialReduce.class
 
 
 	

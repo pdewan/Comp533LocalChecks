@@ -5,7 +5,7 @@ import gradingTools.comp533s19.assignment4.testcases.ASubstringSequenceChecker;
 import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;
 import util.trace.port.rpc.RemoteCallWaitingForReturnValue;
 
-public class ADistributedBasicTokenCounterRemotePartialReduceChecker extends ASubstringSequenceChecker{
+public class ARemoteBasicTokenCounterRemotePartialReduceChecker extends ASubstringSequenceChecker{
 	//make sure receives from both clients take place, need to ensure alternatibg, cannot with regular expressions
 //	I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:(null,null)
 //	I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingReducer@660f79bb:reduce:[(Hogwarts,1), (Hogwarts,1), (muggles,1), (wizards,1), (Hogwarts,1), (Hogwarts,1), (Hogwarts,1), (muggles,1), (muggles,1), (wizards,1)]:{Hogwarts=5, muggles=3, wizards=2}
@@ -27,11 +27,11 @@ public class ADistributedBasicTokenCounterRemotePartialReduceChecker extends ASu
 //				toRegex(DistributedTokenCountResult.MAP_REDUCE_CLIENT_1 + ".*" + "RMI TCP Connection" +   ".*:.*" + "reduce:"),
 //			    toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  "2" + ".*:.*" + "Remote Result"),
 			    
-			    toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + AMapReduceTracer.DEQUEUE + ".*null.*null"),
-				toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + "Remote List"),
-			    toRegex(clientName + ".*" + "RMI TCP Connection" +   ".*:.*" + "Remote List"),
-				toRegex(clientName + ".*" + "RMI TCP Connection" +   ".*:.*" + "reduce:"),
-			    toRegex(clientName + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + "Remote Result"),
+//			    toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + AMapReduceTracer.DEQUEUE + ".*null.*null"),
+//				toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + "Remote List"),
+			    toRegex("RMI TCP Connection" +   ".*:.*" + "Remote List"),
+				toRegex("RMI TCP Connection" +   ".*:.*" + "reduce:"),
+//			    toRegex(clientName + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + "Remote Result"),
 
 				
 //				*1.*2",
@@ -42,13 +42,13 @@ public class ADistributedBasicTokenCounterRemotePartialReduceChecker extends ASu
 //		"(Asynchronous Received Call Invoker|Selecting Thread)..ReceivedMessageDequeued",
 //			toPrefixedRegex("I\\*\\*\\*", "Selecting Thread..ReceivedReturnValueQueued")	
 	};
-	public ADistributedBasicTokenCounterRemotePartialReduceChecker(String aClientName, String aSlaveName) {
-		clientName = aClientName;
-		slaveName = aSlaveName;
-//		init( MY_SUBSTRINGS);
-		init( makeMySubstrings());
-
-	}
+//	public ARemoteBasicTokenCounterRemotePartialReduceChecker(String aClientName, String aSlaveName) {
+//		clientName = aClientName;
+//		slaveName = aSlaveName;
+////		init( MY_SUBSTRINGS);
+//		init( makeMySubstrings());
+//
+//	}
 	String[]  makeMySubstrings() {
 		final String[] MY_SUBSTRINGS = {
 //				I***(BasicRunningProject) Received output from MapReduce Client 1: Thread[RMI TCP Connection(1)-152.2.130.185,5,RMI Runtime]:mapreduce.ATokenCountingClient@27d6c5e0:Remote List:[(Hogwarts,1), (wizards,1), (muggles,1)]
@@ -65,11 +65,11 @@ public class ADistributedBasicTokenCounterRemotePartialReduceChecker extends ASu
 //					toRegex(DistributedTokenCountResult.MAP_REDUCE_CLIENT_1 + ".*" + "RMI TCP Connection" +   ".*:.*" + "reduce:"),
 //				    toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  "2" + ".*:.*" + "Remote Result"),
 				    
-				    toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + AMapReduceTracer.DEQUEUE + ".*null.*null"),
-					toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + "Remote List"),
-				    toRegex(clientName + ".*" + "RMI TCP Connection" +   ".*:.*" + "Remote List"),
-					toRegex(clientName + ".*" + "RMI TCP Connection" +   ".*:.*" + "reduce:"),
-				    toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + "Remote Result"),
+//				    toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + AMapReduceTracer.DEQUEUE + ".*null.*null"),
+//					toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + "Remote List"),
+				    toRegex("RMI TCP Connection" +   ".*:.*" + "Remote List"),
+					toRegex("RMI TCP Connection" +   ".*:.*" + "reduce:"),
+//				    toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + "Remote Result"),
 
 					
 //					*1.*2",
@@ -82,9 +82,9 @@ public class ADistributedBasicTokenCounterRemotePartialReduceChecker extends ASu
 		};
 		return MY_SUBSTRINGS;
 	}
-//	public ADistributedBasicTokenCounterRemotePartialReduceChecker() {
-//		init( MY_SUBSTRINGS);
-//	}
+	public ARemoteBasicTokenCounterRemotePartialReduceChecker() {
+		init( MY_SUBSTRINGS);
+	}
 	
 
 }
