@@ -28,7 +28,7 @@ public class DistributedTokenCountRemotePartialReduce extends AStringCheckBasedD
 //		return true;
 //	}
 	protected SubstringSequenceChecker checker() {
-		return new ADistributedBasicTokenCounterRemotePartialReduceChecker(DistributedTokenCountResult.MAP_REDUCE_CLIENT_1, "2");
+		return new ADistributedBasicTokenCounterQuitChecker(DistributedTokenCountResult.MAP_REDUCE_CLIENT_1, "2");
 	}
 	protected Class outputgeneratingTestCaseClass() {
 		return DistributedTokenCountResult.class;

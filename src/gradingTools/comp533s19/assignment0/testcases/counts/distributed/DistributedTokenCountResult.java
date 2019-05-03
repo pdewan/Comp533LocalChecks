@@ -42,8 +42,10 @@ public class DistributedTokenCountResult extends StandAloneTokenCountResult {
 	}
 	public static final String MAP_REDUCE_PROCESS_TEAM = "MapReduce Team";
 	public static final String MAP_REDUCE_SERVER = "MapReduce Server";
-	public static final String MAP_REDUCE_CLIENT_1 = "MapReduce Client 1";
-	public static final String MAP_REDUCE_CLIENT_2 = "MapReduce Client 2";
+	public static final String MAP_REDUCE_CLIENT = "MapReduce Client";
+
+	public static final String MAP_REDUCE_CLIENT_1 = MAP_REDUCE_CLIENT + " 1";
+	public static final String MAP_REDUCE_CLIENT_2 = MAP_REDUCE_CLIENT + " 2";
 	TestMapReduceConfiguration testMapReduceConfiguration;
 	public static void setupProcesses(String aServerClassName, String aClientClassName) {
 		BasicRunningProject.setProcessTeamOutputSleepTime(15000);
