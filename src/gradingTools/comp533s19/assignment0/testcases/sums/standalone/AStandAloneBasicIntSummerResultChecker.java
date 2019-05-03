@@ -8,8 +8,8 @@ public class AStandAloneBasicIntSummerResultChecker extends ASubstringSequenceCh
 	//make sure receives from both clients take place, need to ensure alternatibg, cannot with regular expressions
 	public  final String[] MY_SUBSTRINGS = {
 //			toRegex(
-				".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*=45.*",
-				".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*=5500.*",
+				".*=45.*",
+				".*=5500.*",
 				
 //			)
 

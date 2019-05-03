@@ -10,8 +10,8 @@ public class AStandAloneBasicTokenCounterResultChecker extends ASubstringSequenc
 //			toRegex(
 //				".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.Hogwarts=5, muggles=3, wizards=2.; propagationId=null; source=Model..*",
 //				".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.Abbott=1, Zabini=1, Creevey=1, Weasley=1, Dumbledore=2, Potter=2, Longbottom=1, Snape=1, Voldemort=2.; propagationId=null; source=Model..*",
-				".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*Hogwarts=5.*",
-				".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*Potter=2.*",
+				".*Hogwarts=5.*",
+				".*Potter=2.*",
 //			)
 
 //		"(Asynchronous Received Call Invoker|Selecting Thread)..ReceivedMessageDequeued",
