@@ -7,78 +7,44 @@ import util.trace.port.rpc.RemoteCallWaitingForReturnValue;
 
 public class ADistributedBasicTokenCounterQuitChecker extends ASubstringSequenceChecker{
 	//make sure receives from both clients take place, need to ensure alternatibg, cannot with regular expressions
-//	I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:(null,null)
-//	I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingReducer@660f79bb:reduce:[(Hogwarts,1), (Hogwarts,1), (muggles,1), (wizards,1), (Hogwarts,1), (Hogwarts,1), (Hogwarts,1), (muggles,1), (muggles,1), (wizards,1)]:{Hogwarts=5, muggles=3, wizards=2}
+
 	String clientName;
-	String slaveName;
+//	Received output from MapReduce Server: Thread[main,5,main]:Controller:Quitting
+//	(MapReduce Server)java.lang.InterruptedException
+//	(MapReduce Server)java.lang.InterruptedException
+//	(MapReduce Server)java.lang.InterruptedException
+//	Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c2ac017:Quitting
+//	MapReduce Client 1: Thread[main,5,main]:exit
+//	I***(BasicRunningProject) Received output from MapReduce Client 2: Thread[main,5,main]:exit
+
 	
-	public  final String[] MY_SUBSTRINGS = {
-//			I***(BasicRunningProject) Received output from MapReduce Client 1: Thread[RMI TCP Connection(1)-152.2.130.185,5,RMI Runtime]:mapreduce.ATokenCountingClient@27d6c5e0:Remote List:[(Hogwarts,1), (wizards,1), (muggles,1)]
-//					I***(BasicRunningProject) Received output from MapReduce Client 1: Thread[RMI TCP Connection(1)-152.2.130.185,5,RMI Runtime]:mapreduce.ATokenCountingReducer@1d45edc8:reduce:[(Hogwarts,1), (wizards,1), (muggles,1)]:{Hogwarts=1, muggles=1, wizards=1}
-//					I***(BasicRunningProject) Received output from MapReduce Client 1: Thread[RMI TCP Connection(1)-152.2.130.185,5,RMI Runtime]:mapreduce.ATokenCountingClient@27d6c5e0:Remote Result:{Hogwarts=1, muggles=1, wizards=1}
-//					I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@3e3abc88:dequeue:(null,null)
-//					I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@3e3abc88:Remote List:[(muggles,1), (Hogwarts,1), (wizards,1)]
-//					I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@6ce253f1:Remote Result:{Hogwarts=1, muggles=1, wizards=1}
-////			toRegex(
-//				AMapReduceTracer.CONTROLLER + ".*" + AMapReduceTracer.QUIT,
-//			    toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  "2" + ".*:.*" + AMapReduceTracer.DEQUEUE + ".*null.*null"),
-//				toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  "2" + ".*:.*" + "Remote List"),
-//			    toRegex(DistributedTokenCountResult.MAP_REDUCE_CLIENT_1 + ".*" + "RMI TCP Connection" +   ".*:.*" + "Remote List"),
-//				toRegex(DistributedTokenCountResult.MAP_REDUCE_CLIENT_1 + ".*" + "RMI TCP Connection" +   ".*:.*" + "reduce:"),
-//			    toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  "2" + ".*:.*" + "Remote Result"),
-			    
-			    toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + AMapReduceTracer.DEQUEUE + ".*null.*null"),
-				toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + "Remote List"),
-			    toRegex(clientName + ".*" + "RMI TCP Connection" +   ".*:.*" + "Remote List"),
-				toRegex(clientName + ".*" + "RMI TCP Connection" +   ".*:.*" + "reduce:"),
-			    toRegex(clientName + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + "Remote Result"),
-
-				
-//				*1.*2",
-//				".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*Hogwarts=5.*"
-//				".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*Potter=2.*",
-//			)
-
-//		"(Asynchronous Received Call Invoker|Selecting Thread)..ReceivedMessageDequeued",
-//			toPrefixedRegex("I\\*\\*\\*", "Selecting Thread..ReceivedReturnValueQueued")	
-	};
-	public ADistributedBasicTokenCounterQuitChecker(String aClientName, String aSlaveName) {
-		clientName = aClientName;
-		slaveName = aSlaveName;
+	public ADistributedBasicTokenCounterQuitChecker() {
+//		clientName = aClientName;
 //		init( MY_SUBSTRINGS);
 		init( makeMySubstrings());
 
 	}
 	String[]  makeMySubstrings() {
 		final String[] MY_SUBSTRINGS = {
-//				I***(BasicRunningProject) Received output from MapReduce Client 1: Thread[RMI TCP Connection(1)-152.2.130.185,5,RMI Runtime]:mapreduce.ATokenCountingClient@27d6c5e0:Remote List:[(Hogwarts,1), (wizards,1), (muggles,1)]
-//						I***(BasicRunningProject) Received output from MapReduce Client 1: Thread[RMI TCP Connection(1)-152.2.130.185,5,RMI Runtime]:mapreduce.ATokenCountingReducer@1d45edc8:reduce:[(Hogwarts,1), (wizards,1), (muggles,1)]:{Hogwarts=1, muggles=1, wizards=1}
-//						I***(BasicRunningProject) Received output from MapReduce Client 1: Thread[RMI TCP Connection(1)-152.2.130.185,5,RMI Runtime]:mapreduce.ATokenCountingClient@27d6c5e0:Remote Result:{Hogwarts=1, muggles=1, wizards=1}
-//						I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@3e3abc88:dequeue:(null,null)
-//						I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@3e3abc88:Remote List:[(muggles,1), (Hogwarts,1), (wizards,1)]
-//						I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@6ce253f1:Remote Result:{Hogwarts=1, muggles=1, wizards=1}
-////				toRegex(
-//					AMapReduceTracer.CONTROLLER + ".*" + AMapReduceTracer.QUIT,
-//				    toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  "2" + ".*:.*" + AMapReduceTracer.DEQUEUE + ".*null.*null"),
-//					toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  "2" + ".*:.*" + "Remote List"),
-//				    toRegex(DistributedTokenCountResult.MAP_REDUCE_CLIENT_1 + ".*" + "RMI TCP Connection" +   ".*:.*" + "Remote List"),
-//					toRegex(DistributedTokenCountResult.MAP_REDUCE_CLIENT_1 + ".*" + "RMI TCP Connection" +   ".*:.*" + "reduce:"),
-//				    toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  "2" + ".*:.*" + "Remote Result"),
+//				Received output from MapReduce Server: Thread[main,5,main]:Controller:Quitting
+//				(MapReduce Server)java.lang.InterruptedException
+//				(MapReduce Server)java.lang.InterruptedException
+//				(MapReduce Server)java.lang.InterruptedException
+//				Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c2ac017:Quitting
+//				MapReduce Client 1: Thread[main,5,main]:exit
+//				I***(BasicRunningProject) Received output from MapReduce Client 2: Thread[main,5,main]:exit
 				    
-				    toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + AMapReduceTracer.DEQUEUE + ".*null.*null"),
-					toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + "Remote List"),
-				    toRegex(clientName + ".*" + "RMI TCP Connection" +   ".*:.*" + "Remote List"),
-					toRegex(clientName + ".*" + "RMI TCP Connection" +   ".*:.*" + "reduce:"),
-				    toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + "Remote Result"),
+				    toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.CONTROLLER + ".*" + AMapReduceTracer.QUITTING),
+//					toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  ".*" + AMapReduceTracer.QUITTING), 
+//					toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  ".*" + AMapReduceTracer.QUITTING), 
+//					toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  ".*" + AMapReduceTracer.QUITTING), 
+//					toRegex(DistributedTokenCountResult.MAP_REDUCE_CLIENT, "RMI TCP Connection", AMapReduceTracer.QUITTING), 
+					".*" + DistributedTokenCountResult.MAP_REDUCE_CLIENT + ".*" + "main.*" + AMapReduceTracer.EXIT + ".*",
+					".*" + DistributedTokenCountResult.MAP_REDUCE_CLIENT + ".*" + "main.*" + AMapReduceTracer.EXIT + ".*",
 
-					
-//					*1.*2",
-//					".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*Hogwarts=5.*"
-//					".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*Potter=2.*",
-//				)
+ 
 
-//			"(Asynchronous Received Call Invoker|Selecting Thread)..ReceivedMessageDequeued",
-//				toPrefixedRegex("I\\*\\*\\*", "Selecting Thread..ReceivedReturnValueQueued")	
+	
 		};
 		return MY_SUBSTRINGS;
 	}
