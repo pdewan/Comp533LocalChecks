@@ -1,0 +1,106 @@
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Controller:Please enter the number of threads
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:View:java.beans.PropertyChangeEvent[propertyName=Threads; oldValue=null; newValue=[Thread[Slave0,5,main], Thread[Slave1,5,main], Thread[Slave2,5,main]]; propagationId=null; source=Model]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Controller:Please enter quit or a line of tokens to be processed separated by spaces
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:View:java.beans.PropertyChangeEvent[propertyName=InputString; oldValue=null; newValue=Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizards; propagationId=null; source=Model]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:mapreduce.ATokenCountingSlave@78308db1:notify
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:mapreduce.ATokenCountingSlave@27c170f0:notify
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:mapreduce.ATokenCountingSlave@5451c3a8:notify
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:mapreduce.ATokenCountingMapper@2626b418:Map:Hogwarts:(Hogwarts,1)
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1)]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:mapreduce.ATokenCountingMapper@2626b418:Map:Hogwarts:(Hogwarts,1)
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1), (Hogwarts,1)]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:mapreduce.ATokenCountingMapper@2626b418:Map:muggles:(muggles,1)
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:(muggles,1)
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:[(Hogwarts,1), (Hogwarts,1)]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1), (muggles,1)]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:mapreduce.ATokenCountingMapper@2626b418:Map:wizards:(wizards,1)
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:(wizards,1)
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:[(Hogwarts,1), (muggles,1)]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:[(muggles,1), (wizards,1)]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:mapreduce.ATokenCountingMapper@2626b418:Map:Hogwarts:(Hogwarts,1)
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:[(muggles,1), (wizards,1)]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:[(wizards,1), (Hogwarts,1)]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:mapreduce.ATokenCountingMapper@2626b418:Map:Hogwarts:(Hogwarts,1)
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:(muggles,1)
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:[(wizards,1), (Hogwarts,1)]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1), (Hogwarts,1)]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:mapreduce.ATokenCountingMapper@2626b418:Map:Hogwarts:(Hogwarts,1)
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:(wizards,1)
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:[(Hogwarts,1), (Hogwarts,1)]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1), (Hogwarts,1)]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:mapreduce.ATokenCountingMapper@2626b418:Map:muggles:(muggles,1)
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:(muggles,1)
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:[(Hogwarts,1), (Hogwarts,1)]
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1), (muggles,1)]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:mapreduce.ATokenCountingMapper@2626b418:Map:muggles:(muggles,1)
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:(muggles,1)
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:[(Hogwarts,1), (muggles,1)]
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:[(muggles,1), (muggles,1)]
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:[(muggles,1), (muggles,1)]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:mapreduce.ATokenCountingMapper@2626b418:Map:wizards:(wizards,1)
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:(muggles,1)
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:(wizards,1)
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:[(muggles,1)]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:[(muggles,1), (wizards,1)]
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:(muggles,1)
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:[(wizards,1)]
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:[(wizards,1)]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:[(wizards,1), (null,null)]
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:(wizards,1)
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:[(null,null)]
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:[(null,null)]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:[(null,null), (null,null)]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:[(null,null)]
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:dequeue:(null,null)
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Model:enqueue:[(null,null), (null,null)]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:mapreduce.AJoiner@76ed5528:Joiner Wait Start:mapreduce.AJoiner@76ed5528:3:0
+I***(BasicRunningProject) Received output from main: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@5451c3a8:dequeue:[(null,null)]
+I***(BasicRunningProject) Received output from main: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@5451c3a8:dequeue:(null,null)
+I***(BasicRunningProject) Received output from main: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@27c170f0:dequeue:[(null,null)]
+I***(BasicRunningProject) Received output from main: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@27c170f0:dequeue:(null,null)
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingReducer@660f79bb:reduce:[(Hogwarts,1), (Hogwarts,1), (muggles,1), (wizards,1), (Hogwarts,1), (Hogwarts,1), (Hogwarts,1), (muggles,1), (muggles,1), (wizards,1)]:{Hogwarts=5, muggles=3, wizards=2}
+I***(BasicRunningProject) Received output from main: process key:Hogwarts
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.AWordPartitioner@68c89b0a:Partition Assigned:Hogwarts:5:0:3
+I***(BasicRunningProject) Received output from main: got partition:0
+I***(BasicRunningProject) Received output from main: process key:muggles
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.AWordPartitioner@68c89b0a:Partition Assigned:muggles:3:1:3
+I***(BasicRunningProject) Received output from main: got partition:1
+I***(BasicRunningProject) Received output from main: process key:wizards
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.AWordPartitioner@68c89b0a:Partition Assigned:wizards:2:2:3
+I***(BasicRunningProject) Received output from main: got partition:2
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ABarrier@6cf712cb:Barrier Wait Start:mapreduce.ABarrier@6cf712cb:3:1
+I***(BasicRunningProject) Received output from main: Thread[Slave2,5,main]:mapreduce.ATokenCountingReducer@660f79bb:reduce:[]:{}
+I***(BasicRunningProject) Received output from main: Thread[Slave2,5,main]:mapreduce.ABarrier@6cf712cb:Barrier Wait Start:mapreduce.ABarrier@6cf712cb:3:2
+I***(BasicRunningProject) Received output from main: Thread[Slave1,5,main]:mapreduce.ATokenCountingReducer@660f79bb:reduce:[]:{}
+I***(BasicRunningProject) Received output from main: Thread[Slave1,5,main]:mapreduce.ABarrier@6cf712cb:Barrier Release All:mapreduce.ABarrier@6cf712cb:3:3
+I***(BasicRunningProject) Received output from main: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@27c170f0:Partition After Barrier:1:[(muggles,3)]
+I***(BasicRunningProject) Received output from main: Thread[Slave1,5,main]:mapreduce.ATokenCountingReducer@660f79bb:reduce:[(muggles,3)]:{muggles=3}
+I***(BasicRunningProject) Received output from main: Thread[Slave1,5,main]:Model:Added to Final Map:{muggles=3}:{muggles=3}
+I***(BasicRunningProject) Received output from main: Thread[Slave1,5,main]:mapreduce.AJoiner@76ed5528:Joiner Finished:mapreduce.AJoiner@76ed5528:3:1
+I***(BasicRunningProject) Received output from main: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@27c170f0:wait
+I***(BasicRunningProject) Received output from main: Thread[Slave2,5,main]:mapreduce.ABarrier@6cf712cb:Barrier Wait End:mapreduce.ABarrier@6cf712cb:3:0
+I***(BasicRunningProject) Received output from main: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@5451c3a8:Partition After Barrier:2:[(wizards,2)]
+I***(BasicRunningProject) Received output from main: Thread[Slave2,5,main]:mapreduce.ATokenCountingReducer@660f79bb:reduce:[(wizards,2)]:{wizards=2}
+I***(BasicRunningProject) Received output from main: Thread[Slave2,5,main]:Model:Added to Final Map:{muggles=3, wizards=2}:{wizards=2}
+I***(BasicRunningProject) Received output from main: Thread[Slave2,5,main]:mapreduce.AJoiner@76ed5528:Joiner Finished:mapreduce.AJoiner@76ed5528:3:2
+I***(BasicRunningProject) Received output from main: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@5451c3a8:wait
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ABarrier@6cf712cb:Barrier Wait End:mapreduce.ABarrier@6cf712cb:3:0
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:Partition After Barrier:0:[(Hogwarts,5)]
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingReducer@660f79bb:reduce:[(Hogwarts,5)]:{Hogwarts=5}
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:Model:Added to Final Map:{Hogwarts=5, muggles=3, wizards=2}:{Hogwarts=5}
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.AJoiner@76ed5528:Joiner Finished:mapreduce.AJoiner@76ed5528:3:3
+I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@78308db1:wait
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:mapreduce.AJoiner@76ed5528:Joiner Wait End:mapreduce.AJoiner@76ed5528:3:0
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:View:java.beans.PropertyChangeEvent[propertyName=Result; oldValue=null; newValue={Hogwarts=5, muggles=3, wizards=2}; propagationId=null; source=Model]
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Controller:Please enter quit or a line of tokens to be processed separated by spaces
+I***(BasicRunningProject) Received output from main: Thread[main,5,main]:Controller:Quitting

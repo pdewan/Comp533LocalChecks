@@ -10,11 +10,14 @@ public class AStandAloneBasicIntSummerResultChecker extends ASubstringSequenceCh
 //			toRegex(
 				".*=45.*",
 				".*=5500.*",
-				
+//=======
+//			toRegex(
+//				"View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*=45"
+////				".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*=5500.*",
+//>>>>>>> refs/remotes/origin/master
+//				
 //			)
 
-//		"(Asynchronous Received Call Invoker|Selecting Thread)..ReceivedMessageDequeued",
-//			toPrefixedRegex("I\\*\\*\\*", "Selecting Thread..ReceivedReturnValueQueued")	
 	};
 	public AStandAloneBasicIntSummerResultChecker() {
 		init( MY_SUBSTRINGS);

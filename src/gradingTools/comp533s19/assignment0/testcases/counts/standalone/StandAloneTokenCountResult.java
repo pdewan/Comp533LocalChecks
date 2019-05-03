@@ -81,11 +81,11 @@ public class StandAloneTokenCountResult extends MainMethodForkerTest {
 //
 //	}
 	protected void callOrForkMain(boolean aFork) throws Throwable {
-		BasicRunningProject.setProcessOutputSleepTime(10000);
+		BasicRunningProject.setProcessOutputSleepTime(15000);
 		super.callOrForkMain(aFork);
 	}
 	protected SubstringSequenceChecker checker() {
-		return new AStandAloneBasicTokenCounterResultChecker();
+		return new AStandAloneBasicTokenCountResultChecker();
 	}
 	@Override
 	protected boolean isValidOutput() {
@@ -99,7 +99,7 @@ public class StandAloneTokenCountResult extends MainMethodForkerTest {
 	public String[] getInputLines() {
 		return new String[] {"3", 
 				"Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizards",
-				"Abbott Creevey Dumbledore Longbottom Potter Snape Voldemort Weasley Zabini Potter Dumbledore Voldemort",
+//				"Abbott Creevey Dumbledore Longbottom Potter Snape Voldemort Weasley Zabini Potter Dumbledore Voldemort",
 				"quit"
 		};
 	}
