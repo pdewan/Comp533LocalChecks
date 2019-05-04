@@ -29,8 +29,8 @@ public class AClientBasicTokenCountPartialReduceChecker extends ASubstringSequen
 			    
 //			    toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + AMapReduceTracer.DEQUEUE + ".*null.*null"),
 //				toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + "Remote List"),
-			    toRegex("RMI TCP Connection" +   ".*:.*" + "Remote List"),
-				toRegex("RMI TCP Connection" +   ".*:.*" + "reduce:"),
+			    toRegex("RMI TCP Connection" +   ".*:.*" + AMapReduceTracer.REMOTE_LIST),
+				toRegex("RMI TCP Connection" +   ".*:.*" + AMapReduceTracer.REDUCE),
 //			    toRegex(clientName + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + "Remote Result"),
 
 				

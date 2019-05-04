@@ -17,6 +17,7 @@ import gradingTools.comp533s19.assignment1.testcases.ReadWriteUpdateOrderAtomic;
 import gradingTools.comp533s19.assignment1.testcases.ReadWriteUpdateOrderNonAtomic;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment0.testcases.counts.distributed.ClientBasicTokenCountQuit;
+import gradingTools.comp533s19.assignment0.testcases.counts.distributed.ClientTokenCountPartition3Reduce;
 import gradingTools.comp533s19.assignment0.testcases.counts.distributed.DistributedTokenCountPartialReduce;
 import gradingTools.comp533s19.assignment0.testcases.counts.distributed.DistributedTokenCountQuit;
 import gradingTools.comp533s19.assignment0.testcases.counts.distributed.DistributedTokenCountResult;
@@ -89,6 +90,7 @@ import util.trace.port.rpc.RemoteCallBlockedForReturnValue;
 //	StandAloneTokenCountQuit.class,
 	DistributedTokenCountQuit.class,
 	ClientBasicTokenCountPartialReduce.class,
+	ClientTokenCountPartition3Reduce.class,
 	ClientBasicTokenCountQuit.class	
 //	Assignment1OneClientSuite.class,
 //	Assignment1TwoClientSuite.class,
