@@ -1,17 +1,20 @@
-package gradingTools.comp533s19.assignment0.testcases.sums.distributed.partial_reduce;
+package gradingTools.comp533s19.assignment0.testcases.sum.distributed.partitioned_reduce;
 
+import grader.basics.execution.BasicProjectExecution;
+import grader.basics.execution.BasicRunningProject;
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import gradingTools.comp533s19.assignment0.testcases.counts.distributed.DistributedTokenCountResult;
-import gradingTools.comp533s19.assignment0.testcases.sums.distributed.DistributedIntSummerResult;
+import gradingTools.comp533s19.assignment0.testcases.sum.distributed.DistributedSumResult;
 import gradingTools.comp533s19.assignment4.testcases.ARegularCounterClientChecker;
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
+import port.old.PrintingReplyingObjectReceiver;
 //@MaxValue(5)
 //@Explanation("Checks for expected client1 counter output when explicit receive is implemented.")
-public class ClientSumPartialReduce extends AStringCheckBasedDependentTestCase {
+public class ClientSumPartitionReduce extends AStringCheckBasedDependentTestCase {
 
 //	@Override
 //	protected SubstringSequenceChecker outputChecker() {
@@ -24,16 +27,16 @@ public class ClientSumPartialReduce extends AStringCheckBasedDependentTestCase {
 	}
 	@Override
 	protected String processName() {
-		return DistributedTokenCountResult.MAP_REDUCE_CLIENT_2;
+		return BasicRunningProject.ALL_PROCESSES;
 	}
 //	protected boolean checkTrue() {
 //		return true;
 //	}
 	protected SubstringSequenceChecker checker() {
-		return new AClientSumPartialReduceChecker();
+		return new AClientSumPartitionReduceChecker();
 	}
 	protected Class outputgeneratingTestCaseClass() {
-		return DistributedIntSummerResult.class;
+		return DistributedSumResult.class;
 	}
 //	@Override
 //	// we will not get any output for ALL

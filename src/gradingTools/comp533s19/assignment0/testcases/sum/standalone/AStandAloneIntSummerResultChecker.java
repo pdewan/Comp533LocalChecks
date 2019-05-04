@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment0.testcases.sums.standalone;
+package gradingTools.comp533s19.assignment0.testcases.sum.standalone;
 
 import gradingTools.comp533s19.assignment4.testcases.ASubstringSequenceChecker;
 import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;

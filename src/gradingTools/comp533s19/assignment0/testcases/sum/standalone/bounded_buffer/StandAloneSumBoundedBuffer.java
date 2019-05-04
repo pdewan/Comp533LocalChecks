@@ -1,18 +1,17 @@
-package gradingTools.comp533s19.assignment0.testcases.sums.distributed.partial_reduce;
+package gradingTools.comp533s19.assignment0.testcases.sum.standalone.bounded_buffer;
 
-import grader.basics.execution.BasicRunningProject;
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
-import gradingTools.comp533s19.assignment0.testcases.counts.distributed.DistributedTokenCountResult;
-import gradingTools.comp533s19.assignment0.testcases.sums.distributed.DistributedIntSummerResult;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountResult;
+import gradingTools.comp533s19.assignment0.testcases.sum.standalone.StandAloneSumResult;
 import gradingTools.comp533s19.assignment4.testcases.ARegularCounterClientChecker;
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 //@MaxValue(5)
 //@Explanation("Checks for expected client1 counter output when explicit receive is implemented.")
-public class DistributedSumPartialReduce extends AStringCheckBasedDependentTestCase {
+public class StandAloneSumBoundedBuffer extends AStringCheckBasedDependentTestCase {
 
 //	@Override
 //	protected SubstringSequenceChecker outputChecker() {
@@ -23,24 +22,18 @@ public class DistributedSumPartialReduce extends AStringCheckBasedDependentTestC
 	NotGradableException {
 		return dependentTest(project, autoGrade);
 	}
-	@Override
-	protected String processName() {
-		 return BasicRunningProject.ALL_PROCESSES;
-	}
+//	protected String processName() {
+//		return DistributedCounterProgramRunningTestCase.CLIENT_1_NAME;
+//	}
 //	protected boolean checkTrue() {
 //		return true;
 //	}
 	protected SubstringSequenceChecker checker() {
-		return new ADistributedSumPartialReducePartialReduceChecker(DistributedTokenCountResult.MAP_REDUCE_CLIENT_1, "2");
+		return new AStandAloneSumBoundeBufferChecker();
 	}
 	protected Class outputgeneratingTestCaseClass() {
-		return DistributedIntSummerResult.class;
+		return StandAloneSumResult.class;
 	}
-//	@Override
-//	// we will not get any output for ALL
-//	protected void dependentSetOutputError() {
-//		
-//	}
 //	@Override
 //	protected JUnitTestCase outputGeneratingTestCase() {
 //		return JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest( outputgeneratingTestCaseClass());

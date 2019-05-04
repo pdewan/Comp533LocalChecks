@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment0.testcases.sums.standalone;
+package gradingTools.comp533s19.assignment0.testcases.sum.standalone;
 
 import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.execution.BasicExecutionSpecificationSelector;
@@ -20,8 +20,8 @@ import gradingTools.shared.testcases.MainMethodForkerTest;
 import gradingTools.shared.testcases.MethodExecutionTest;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 
-public class StandAloneIntSummerResult extends StandAloneTokenCountResult {
-	public StandAloneIntSummerResult() {
+public class StandAloneSumResult extends StandAloneTokenCountResult {
+	public StandAloneSumResult() {
 //		BasicProjectExecution.setProcessTimeOut(Assignment0Suite.getProcessTimeOut());
 	}
 //	protected Class mainClass;

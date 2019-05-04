@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment0.testcases.sums.distributed;
+package gradingTools.comp533s19.assignment0.testcases.sum.distributed;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,8 +28,8 @@ import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator;
 import gradingTools.comp533s19.assignment0.testcases.counts.distributed.DistributedTokenCountResult;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountResult;
-import gradingTools.comp533s19.assignment0.testcases.sums.standalone.AStandAloneIntSummerResultChecker;
-import gradingTools.comp533s19.assignment0.testcases.sums.standalone.StandAloneIntSummerResult;
+import gradingTools.comp533s19.assignment0.testcases.sum.standalone.AStandAloneIntSummerResultChecker;
+import gradingTools.comp533s19.assignment0.testcases.sum.standalone.StandAloneSumResult;
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
 import gradingTools.shared.testcases.MainMethodForkerTest;
 import gradingTools.shared.testcases.MethodExecutionTest;
@@ -37,8 +37,8 @@ import gradingTools.shared.testcases.SubstringSequenceChecker;
 import gradingTools.shared.testcases.utils.ABufferingTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 
-public class DistributedIntSummerResult extends StandAloneIntSummerResult {
-	public DistributedIntSummerResult() {
+public class DistributedSumResult extends StandAloneSumResult {
+	public DistributedSumResult() {
 //		BasicProjectExecution.setProcessTimeOut(Assignment0Suite.getProcessTimeOut());
 	}
 //	public static final String MAP_REDUCE_PROCESS_TEAM = "MapReduce Team";

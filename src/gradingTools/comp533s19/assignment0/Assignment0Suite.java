@@ -20,10 +20,10 @@ import gradingTools.comp533s19.assignment0.testcases.counts.distributed.Distribu
 import gradingTools.comp533s19.assignment0.testcases.counts.distributed.partial_reduce.ClientTokenCountPartialReduce;
 import gradingTools.comp533s19.assignment0.testcases.counts.distributed.partial_reduce.DistributedTokenCountPartialReduce;
 import gradingTools.comp533s19.assignment0.testcases.counts.distributed.partitioned_reduce.ClientTokenCountPartition3Reduce;
-import gradingTools.comp533s19.assignment0.testcases.counts.distributed.quit.ClientBasicTokenCountQuit;
+import gradingTools.comp533s19.assignment0.testcases.counts.distributed.quit.ClientTokenCountQuit;
 import gradingTools.comp533s19.assignment0.testcases.counts.distributed.quit.DistributedTokenCountQuit;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountResult;
-import gradingTools.comp533s19.assignment0.testcases.counts.standalone.barrier.StandAloneBasicTokenCountBarrier;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.barrier.StandAloneTokenCountBarrier;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.bounded_buffer.StandAloneTokenCountBoundedBuffer;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.joiner.StandAloneBasicTokenCountJoiner;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.multiple_rounds.StandAloneBasicTokenCountMultipleRoundSynchronization;
@@ -41,9 +41,13 @@ import gradingTools.comp533s19.assignment0.testcases.factories.ReducerFactory;
 import gradingTools.comp533s19.assignment0.testcases.objects.PartitionerObject;
 import gradingTools.comp533s19.assignment0.testcases.objects.ReduceObject;
 import gradingTools.comp533s19.assignment0.testcases.objects.TokenCountMapObject;
-import gradingTools.comp533s19.assignment0.testcases.sums.distributed.DistributedIntSummerResult;
-import gradingTools.comp533s19.assignment0.testcases.sums.distributed.partial_reduce.ClientSumPartialReduce;
-import gradingTools.comp533s19.assignment0.testcases.sums.standalone.StandAloneIntSummerResult;
+import gradingTools.comp533s19.assignment0.testcases.sum.distributed.DistributedSumResult;
+import gradingTools.comp533s19.assignment0.testcases.sum.distributed.partial_reduce.ClientSumPartialReduce;
+import gradingTools.comp533s19.assignment0.testcases.sum.distributed.partitioned_reduce.ClientSumPartitionReduce;
+import gradingTools.comp533s19.assignment0.testcases.sum.distributed.quit.ClientSumQuit;
+import gradingTools.comp533s19.assignment0.testcases.sum.distributed.quit.DistributedSumQuit;
+import gradingTools.comp533s19.assignment0.testcases.sum.standalone.StandAloneSumResult;
+import gradingTools.comp533s19.assignment0.testcases.sum.standalone.barrier.StandAloneSumBarrier;
 import gradingTools.comp533s19.assignment1.Assignment1Suite;
 import gradingTools.comp533s19.assignment1.testcases.ClientTagged;
 import gradingTools.comp533s19.assignment1.testcases.OneClientConnection;
@@ -73,28 +77,34 @@ import util.trace.port.rpc.RemoteCallBlockedForReturnValue;
 	ReducerFactory.class,
 	ReduceObject.class,
 	StandAloneTokenCountResult.class,
-	StandAloneIntSummerResult.class,
+	StandAloneSumResult.class,
 	DistributedTokenCountResult.class,
-	DistributedIntSummerResult.class,
+	DistributedSumResult.class,
 	StandAloneTokenCountMVC.class,
 	StandAloneTokenCountThreads.class,
 	StandAloneTokenCountBoundedBuffer.class,
+	StandAloneSumResult.class,
 	StandAloneTokenCountBulkPartialReduce.class,
 	StandAloneTokenCountMultiplePartialReduce.class,
 	StandAloneTokenCountPartition1Reduce.class,
 	StandAloneTokenCountPartition2Reduce.class,
 	StandAloneTokenCountPartition3Reduce.class,
-	StandAloneBasicTokenCountBarrier.class,
+	StandAloneTokenCountBarrier.class,
+	StandAloneSumBarrier.class,
 	StandAloneBasicTokenCountJoiner.class,
 	StandAloneBasicTokenCountMultipleRoundSynchronization.class,
 	DistributedTokenCountPartialReduce.class,
 //	StandAloneTokenCountQuit.class,
 	DistributedTokenCountQuit.class,
+	DistributedSumQuit.class,
+
 	ClientTokenCountPartialReduce.class,
 	ClientTokenCountPartition3Reduce.class,
 	ClientSumPartialReduce.class,
+	ClientSumPartitionReduce.class,
 
-	ClientBasicTokenCountQuit.class	
+	ClientTokenCountQuit.class,
+	ClientSumQuit.class
 //	Assignment1OneClientSuite.class,
 //	Assignment1TwoClientSuite.class,
 

@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment0.testcases.sums.distributed.partial_reduce;
+package gradingTools.comp533s19.assignment0.testcases.sum.distributed.partial_reduce;
 
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 import gradingTools.comp533s19.assignment4.testcases.ASubstringSequenceChecker;
