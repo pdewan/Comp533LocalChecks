@@ -20,7 +20,7 @@ public class StandAloneBasicTokenCountMultipleRoundSynchronization extends AStri
 	}
 
 	protected SubstringSequenceChecker checker() {
-		return new AStandAloneBasicTokenCountMultipleRoundsSynchronizationChecker();
+		return new AStandAloneTokenCountMultipleRoundsSynchronizationChecker();
 	}
 	protected Class outputgeneratingTestCaseClass() {
 		return StandAloneTokenCountResult.class;

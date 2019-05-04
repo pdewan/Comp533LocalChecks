@@ -13,7 +13,7 @@ public class StandAloneTokenCountPartition3Reduce extends StandAloneTokenCountPa
 
 
 	protected SubstringSequenceChecker checker() {
-		return new AStandAloneBasicTokenCountPartition3ReduceChecker();
+		return new AStandAloneTokenCountPartition3ReduceChecker();
 	}
 
 	

@@ -1,16 +1,19 @@
-package gradingTools.comp533s19.assignment0.testcases.counts.standalone.partition_reduce;
+package gradingTools.comp533s19.assignment0.testcases.counts.distributed.partitioned_reduce;
 
+import grader.basics.execution.BasicProjectExecution;
+import grader.basics.execution.BasicRunningProject;
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
-import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountResult;
+import gradingTools.comp533s19.assignment0.testcases.counts.distributed.DistributedTokenCountResult;
 import gradingTools.comp533s19.assignment4.testcases.ARegularCounterClientChecker;
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
+import port.old.PrintingReplyingObjectReceiver;
 //@MaxValue(5)
 //@Explanation("Checks for expected client1 counter output when explicit receive is implemented.")
-public class StandAloneTokenCountPartition1Reduce extends AStringCheckBasedDependentTestCase {
+public class ClientTokenCountPartition3Reduce extends AStringCheckBasedDependentTestCase {
 
 //	@Override
 //	protected SubstringSequenceChecker outputChecker() {
@@ -21,18 +24,24 @@ public class StandAloneTokenCountPartition1Reduce extends AStringCheckBasedDepen
 	NotGradableException {
 		return dependentTest(project, autoGrade);
 	}
-//	protected String processName() {
-//		return DistributedCounterProgramRunningTestCase.CLIENT_1_NAME;
-//	}
+	@Override
+	protected String processName() {
+		return BasicRunningProject.ALL_PROCESSES;
+	}
 //	protected boolean checkTrue() {
 //		return true;
 //	}
 	protected SubstringSequenceChecker checker() {
-		return new AStandAloneTokenCountPartition1ReduceChecker();
+		return new AClientTokenCountPartition3ReduceChecker();
 	}
 	protected Class outputgeneratingTestCaseClass() {
-		return StandAloneTokenCountResult.class;
+		return DistributedTokenCountResult.class;
 	}
+//	@Override
+//	// we will not get any output for ALL
+//	protected void dependentSetOutputError() {
+//		
+//	}
 //	@Override
 //	protected JUnitTestCase outputGeneratingTestCase() {
 //		return JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest( outputgeneratingTestCaseClass());

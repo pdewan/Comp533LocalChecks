@@ -28,7 +28,7 @@ public class StandAloneBasicTokenCountBarrier extends AStringCheckBasedDependent
 //		return true;
 //	}
 	protected SubstringSequenceChecker checker() {
-		return new AStandAloneBasicTokenCountBarrierChecker();
+		return new AStandAloneTokenCountBarrierChecker();
 	}
 	protected Class outputgeneratingTestCaseClass() {
 		return StandAloneTokenCountResult.class;

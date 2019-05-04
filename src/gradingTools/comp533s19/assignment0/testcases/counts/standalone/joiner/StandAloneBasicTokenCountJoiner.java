@@ -28,7 +28,7 @@ public class StandAloneBasicTokenCountJoiner extends AStringCheckBasedDependentT
 //		return true;
 //	}
 	protected SubstringSequenceChecker checker() {
-		return new AStandAloneBasicTokenCountJoinerChecker();
+		return new AStandAloneTokenCountJoinerChecker();
 	}
 	protected Class outputgeneratingTestCaseClass() {
 		return StandAloneTokenCountResult.class;

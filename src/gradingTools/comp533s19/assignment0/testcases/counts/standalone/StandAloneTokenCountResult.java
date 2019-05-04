@@ -85,7 +85,7 @@ public class StandAloneTokenCountResult extends MainMethodForkerTest {
 		super.callOrForkMain(aFork);
 	}
 	protected SubstringSequenceChecker checker() {
-		return new AStandAloneBasicTokenCountResultChecker();
+		return new AStandAloneTokenCountResultChecker();
 	}
 	@Override
 	protected boolean isValidOutput() {

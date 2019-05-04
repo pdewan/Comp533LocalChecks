@@ -86,7 +86,7 @@ public class StandAloneIntSummerResult extends StandAloneTokenCountResult {
 //		super.callOrForkMain(aFork);
 //	}
 	protected SubstringSequenceChecker checker() {
-		return new AStandAloneBasicIntSummerResultChecker();
+		return new AStandAloneIntSummerResultChecker();
 	}
 //	@Override
 //	protected boolean isValidOutput() {

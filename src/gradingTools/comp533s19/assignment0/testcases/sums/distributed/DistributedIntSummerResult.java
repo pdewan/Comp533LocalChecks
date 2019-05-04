@@ -28,7 +28,7 @@ import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator;
 import gradingTools.comp533s19.assignment0.testcases.counts.distributed.DistributedTokenCountResult;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountResult;
-import gradingTools.comp533s19.assignment0.testcases.sums.standalone.AStandAloneBasicIntSummerResultChecker;
+import gradingTools.comp533s19.assignment0.testcases.sums.standalone.AStandAloneIntSummerResultChecker;
 import gradingTools.comp533s19.assignment0.testcases.sums.standalone.StandAloneIntSummerResult;
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
 import gradingTools.shared.testcases.MainMethodForkerTest;
