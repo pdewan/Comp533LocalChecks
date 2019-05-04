@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment0.testcases.counts.standalone;
+package gradingTools.comp533s19.assignment0.testcases.counts.standalone.partition_reduce;
 
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 import gradingTools.comp533s19.assignment0.testcases.objects.PartitionerObject;

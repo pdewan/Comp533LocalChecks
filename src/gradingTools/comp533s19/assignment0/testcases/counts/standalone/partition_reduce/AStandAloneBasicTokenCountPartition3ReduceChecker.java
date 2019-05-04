@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment0.testcases.counts.standalone;
+package gradingTools.comp533s19.assignment0.testcases.counts.standalone.partition_reduce;
 
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 import gradingTools.comp533s19.assignment0.testcases.objects.PartitionerObject;
@@ -6,12 +6,10 @@ import gradingTools.comp533s19.assignment4.testcases.ASubstringSequenceChecker;
 import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;
 import util.trace.port.rpc.RemoteCallWaitingForReturnValue;
 
-public class AStandAloneBasicTokenCountPartition2ReduceChecker extends AStandAloneBasicTokenCountPartition1ReduceChecker{
-	public static final String PARTITION_2_TOKEN = "muggles";
-	public static final String THREAD_2 = "1";
-	public static final String NUM_OCCURENCES_2 = "3";
-
-	
+public class AStandAloneBasicTokenCountPartition3ReduceChecker extends AStandAloneBasicTokenCountPartition1ReduceChecker{
+	public static final String PARTITION_3_TOKEN = "wizards";
+	public static final String THREAD_3 = "2";
+	public static final String NUM_OCCURENCES_3 = "2";
 //	I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.AWordPartitioner@68c89b0a:Partition Assigned:Hogwarts:5:0:3
 
 //	I***(BasicRunningProject) Received output from main: Thread[Slave0,5,main]:mapreduce.ABarrier@6cf712cb:Barrier Wait End:mapreduce.ABarrier@6cf712cb:3:0
@@ -21,13 +19,13 @@ public class AStandAloneBasicTokenCountPartition2ReduceChecker extends AStandAlo
 //	
 	
 	protected String threadNumber() {
-		return THREAD_2;
+		return THREAD_3;
 	}
 	protected String token() {
-		return PARTITION_2_TOKEN;
+		return PARTITION_3_TOKEN;
 	}
 	protected String numOccurences() {
-		return NUM_OCCURENCES_2;
+		return NUM_OCCURENCES_3;
 	}
 
 }

@@ -1,0 +1,1111 @@
+I***Tracer: showInfo = true
+Buffer traced messages =false
+ObjectEditor(Version 22, built on null). Copyright Prasun Dewan, 2012, All rights reserved. US Patent Appl. No.: 12/532,327
+I***(TestCaseResult) ### gradingTools.comp533s19.assignment0.testcases.counts.distributed.DistributedTokenCountResult: 1.0
+I***(TestCaseResult) ### gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided: 1.0
+I***(TestCaseResult) ### anonymous: 1.0
+I***(BasicProjectExecution) Calling on object MyMapReduceConfiguration@24a27c60 614628448 method:public java.lang.Class MyMapReduceConfiguration.getStandAloneTokenCounter() args:[]timeOut:2000
+I***(BasicProjectExecution) Calling on object MyMapReduceConfiguration@24a27c60 614628448 method:public java.lang.Class MyMapReduceConfiguration.getServerTokenCounter() args:[]timeOut:2000
+I***(BasicProjectExecution) Calling on object MyMapReduceConfiguration@24a27c60 614628448 method:public java.lang.Class MyMapReduceConfiguration.getClientTokenCounter() args:[]timeOut:2000
+I***(ABasicExecutionSpecification) Setting process team: [MapReduce Team]
+I***(ABasicExecutionSpecification) Setting terminating processes: MapReduce Team - [MapReduce Client 1]
+I***(ABasicExecutionSpecification) Setting processes: MapReduce Team = [MapReduce Server, MapReduce Client 1, MapReduce Client 2]
+I***(ABasicExecutionSpecification) Setting entry point processes: MapReduce Server - mapreduce.TokenCountingServerLauncher
+I***(ABasicExecutionSpecification) Setting entry point processes: MapReduce Client 1 - mapreduce.TokenCountingClientLauncher
+I***(ABasicExecutionSpecification) Setting entry point processes: MapReduce Client 2 - mapreduce.TokenCountingClientLauncher
+I***(ABasicExecutionSpecification) Setting sleep time: 7000
+I***(ABasicExecutionSpecification) Setting sleep time: 7000
+### MapReduce Team
+I***(BasicProcessRunner) Running command:java -cp ".;..;D:\dewan_backup\Java\NIOTrickOrTreat\bin;D:\dewan_backup\Java\Sync\bin;D:\dewan_backup\Java\GIPC\bin;D:\dewan_backup\Java\TrickOrTreat\AndersonBeau COMP401 Final Project\bin;D:\dewan_backup\Java\DistributedReflection\javareflectcommon\bin;D:\dewan_backup\Java\DistributedReflection\javareflectserver\bin;D:\dewan_backup\Java\DistributedReflection\remotereflect\bin;D:\dewan_backup\Java\Shapes\bin;D:\dewan_backup\Java\ObjectEditor\bin;D:\dewan_backup\Java\util\bin;D:\dewan_backup\Java\VirtualToolkit\Virtual Toolkit\bin;D:\dewan_backup\Java\distTeachingProjects\bin;D:\dewan_backup\Java\GraderBasics\bin;D:\dewan_backup\Java\Comp533LocalChecks\bin;C:\Users\dewan\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\dewan\.p2\pool\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar;C:\Users\dewan\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;D:\dewan_backup\Java\NIOTrickOrTreat\bin;D:\dewan_backup\Java\Sync\bin;D:\dewan_backup\Java\GIPC\bin;D:\dewan_backup\Java\TrickOrTreat\AndersonBeau COMP401 Final Project\bin;D:\dewan_backup\Java\DistributedReflection\javareflectcommon\bin;D:\dewan_backup\Java\DistributedReflection\javareflectserver\bin;D:\dewan_backup\Java\DistributedReflection\remotereflect\bin;D:\dewan_backup\Java\Shapes\bin;D:\dewan_backup\Java\ObjectEditor\bin;D:\dewan_backup\Java\util\bin;D:\dewan_backup\Java\VirtualToolkit\Virtual Toolkit\bin;D:\dewan_backup\Java\distTeachingProjects\bin;D:\dewan_backup\Java\GraderBasics\bin;D:\dewan_backup\Java\Comp533LocalChecks\bin;C:\Users\dewan\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\dewan\.p2\pool\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar" mapreduce.TokenCountingServerLauncher
+I***(BasicProcessRunner) Running in folder: D:\dewan_backup\Java\NIOTrickOrTreat\.\bin
+I***(BasicProcessRunner)  Process started: mapreduce.TokenCountingServerLauncher folder: D:\dewan_backup\Java\NIOTrickOrTreat\.\bin entry point: null class path: D:\dewan_backup\Java\NIOTrickOrTreat\bin;D:\dewan_backup\Java\Sync\bin;D:\dewan_backup\Java\GIPC\bin;D:\dewan_backup\Java\TrickOrTreat\AndersonBeau COMP401 Final Project\bin;D:\dewan_backup\Java\DistributedReflection\javareflectcommon\bin;D:\dewan_backup\Java\DistributedReflection\javareflectserver\bin;D:\dewan_backup\Java\DistributedReflection\remotereflect\bin;D:\dewan_backup\Java\Shapes\bin;D:\dewan_backup\Java\ObjectEditor\bin;D:\dewan_backup\Java\util\bin;D:\dewan_backup\Java\VirtualToolkit\Virtual Toolkit\bin;D:\dewan_backup\Java\distTeachingProjects\bin;D:\dewan_backup\Java\GraderBasics\bin;D:\dewan_backup\Java\Comp533LocalChecks\bin;C:\Users\dewan\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\dewan\.p2\pool\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Controller:Please enter the number of threads
+I***(BasicProcessRunner) Running command:java -cp ".;..;D:\dewan_backup\Java\NIOTrickOrTreat\bin;D:\dewan_backup\Java\Sync\bin;D:\dewan_backup\Java\GIPC\bin;D:\dewan_backup\Java\TrickOrTreat\AndersonBeau COMP401 Final Project\bin;D:\dewan_backup\Java\DistributedReflection\javareflectcommon\bin;D:\dewan_backup\Java\DistributedReflection\javareflectserver\bin;D:\dewan_backup\Java\DistributedReflection\remotereflect\bin;D:\dewan_backup\Java\Shapes\bin;D:\dewan_backup\Java\ObjectEditor\bin;D:\dewan_backup\Java\util\bin;D:\dewan_backup\Java\VirtualToolkit\Virtual Toolkit\bin;D:\dewan_backup\Java\distTeachingProjects\bin;D:\dewan_backup\Java\GraderBasics\bin;D:\dewan_backup\Java\Comp533LocalChecks\bin;C:\Users\dewan\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\dewan\.p2\pool\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar;C:\Users\dewan\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;D:\dewan_backup\Java\NIOTrickOrTreat\bin;D:\dewan_backup\Java\Sync\bin;D:\dewan_backup\Java\GIPC\bin;D:\dewan_backup\Java\TrickOrTreat\AndersonBeau COMP401 Final Project\bin;D:\dewan_backup\Java\DistributedReflection\javareflectcommon\bin;D:\dewan_backup\Java\DistributedReflection\javareflectserver\bin;D:\dewan_backup\Java\DistributedReflection\remotereflect\bin;D:\dewan_backup\Java\Shapes\bin;D:\dewan_backup\Java\ObjectEditor\bin;D:\dewan_backup\Java\util\bin;D:\dewan_backup\Java\VirtualToolkit\Virtual Toolkit\bin;D:\dewan_backup\Java\distTeachingProjects\bin;D:\dewan_backup\Java\GraderBasics\bin;D:\dewan_backup\Java\Comp533LocalChecks\bin;C:\Users\dewan\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\dewan\.p2\pool\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar" mapreduce.TokenCountingClientLauncher
+I***(BasicProcessRunner) Running in folder: D:\dewan_backup\Java\NIOTrickOrTreat\.\bin
+I***(BasicProcessRunner)  Process started: mapreduce.TokenCountingClientLauncher folder: D:\dewan_backup\Java\NIOTrickOrTreat\.\bin entry point: null class path: D:\dewan_backup\Java\NIOTrickOrTreat\bin;D:\dewan_backup\Java\Sync\bin;D:\dewan_backup\Java\GIPC\bin;D:\dewan_backup\Java\TrickOrTreat\AndersonBeau COMP401 Final Project\bin;D:\dewan_backup\Java\DistributedReflection\javareflectcommon\bin;D:\dewan_backup\Java\DistributedReflection\javareflectserver\bin;D:\dewan_backup\Java\DistributedReflection\remotereflect\bin;D:\dewan_backup\Java\Shapes\bin;D:\dewan_backup\Java\ObjectEditor\bin;D:\dewan_backup\Java\util\bin;D:\dewan_backup\Java\VirtualToolkit\Virtual Toolkit\bin;D:\dewan_backup\Java\distTeachingProjects\bin;D:\dewan_backup\Java\GraderBasics\bin;D:\dewan_backup\Java\Comp533LocalChecks\bin;C:\Users\dewan\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\dewan\.p2\pool\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[RMI TCP Connection(2)-172.17.13.152,5,RMI Runtime]:Model:Register:Proxy[ClientKeyValueProcessor,RemoteObjectInvocationHandler[UnicastRef [liveRef: [endpoint:[172.17.13.152:57670](remote),objID:[658ff8e9:16a840e1df3:-7ffe, 535282744072883110]]]]]
+I***(BasicRunningProject) Received output from MapReduce Client 1: Thread[main,5,main]:mapreduce.ATokenCountingClient@7ba18f1b:wait
+I***(BasicProcessRunner) Running command:java -cp ".;..;D:\dewan_backup\Java\NIOTrickOrTreat\bin;D:\dewan_backup\Java\Sync\bin;D:\dewan_backup\Java\GIPC\bin;D:\dewan_backup\Java\TrickOrTreat\AndersonBeau COMP401 Final Project\bin;D:\dewan_backup\Java\DistributedReflection\javareflectcommon\bin;D:\dewan_backup\Java\DistributedReflection\javareflectserver\bin;D:\dewan_backup\Java\DistributedReflection\remotereflect\bin;D:\dewan_backup\Java\Shapes\bin;D:\dewan_backup\Java\ObjectEditor\bin;D:\dewan_backup\Java\util\bin;D:\dewan_backup\Java\VirtualToolkit\Virtual Toolkit\bin;D:\dewan_backup\Java\distTeachingProjects\bin;D:\dewan_backup\Java\GraderBasics\bin;D:\dewan_backup\Java\Comp533LocalChecks\bin;C:\Users\dewan\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\dewan\.p2\pool\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar;C:\Users\dewan\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;D:\dewan_backup\Java\NIOTrickOrTreat\bin;D:\dewan_backup\Java\Sync\bin;D:\dewan_backup\Java\GIPC\bin;D:\dewan_backup\Java\TrickOrTreat\AndersonBeau COMP401 Final Project\bin;D:\dewan_backup\Java\DistributedReflection\javareflectcommon\bin;D:\dewan_backup\Java\DistributedReflection\javareflectserver\bin;D:\dewan_backup\Java\DistributedReflection\remotereflect\bin;D:\dewan_backup\Java\Shapes\bin;D:\dewan_backup\Java\ObjectEditor\bin;D:\dewan_backup\Java\util\bin;D:\dewan_backup\Java\VirtualToolkit\Virtual Toolkit\bin;D:\dewan_backup\Java\distTeachingProjects\bin;D:\dewan_backup\Java\GraderBasics\bin;D:\dewan_backup\Java\Comp533LocalChecks\bin;C:\Users\dewan\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\dewan\.p2\pool\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar" mapreduce.TokenCountingClientLauncher
+I***(BasicProcessRunner) Running in folder: D:\dewan_backup\Java\NIOTrickOrTreat\.\bin
+I***(BasicProcessRunner)  Process started: mapreduce.TokenCountingClientLauncher folder: D:\dewan_backup\Java\NIOTrickOrTreat\.\bin entry point: null class path: D:\dewan_backup\Java\NIOTrickOrTreat\bin;D:\dewan_backup\Java\Sync\bin;D:\dewan_backup\Java\GIPC\bin;D:\dewan_backup\Java\TrickOrTreat\AndersonBeau COMP401 Final Project\bin;D:\dewan_backup\Java\DistributedReflection\javareflectcommon\bin;D:\dewan_backup\Java\DistributedReflection\javareflectserver\bin;D:\dewan_backup\Java\DistributedReflection\remotereflect\bin;D:\dewan_backup\Java\Shapes\bin;D:\dewan_backup\Java\ObjectEditor\bin;D:\dewan_backup\Java\util\bin;D:\dewan_backup\Java\VirtualToolkit\Virtual Toolkit\bin;D:\dewan_backup\Java\distTeachingProjects\bin;D:\dewan_backup\Java\GraderBasics\bin;D:\dewan_backup\Java\Comp533LocalChecks\bin;C:\Users\dewan\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\dewan\.p2\pool\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[RMI TCP Connection(4)-172.17.13.152,5,RMI Runtime]:Model:Register:Proxy[ClientKeyValueProcessor,RemoteObjectInvocationHandler[UnicastRef [liveRef: [endpoint:[172.17.13.152:57674](remote),objID:[-3d9a890a:16a840e21f6:-7ffe, 4572915742172667502]]]]]
+I***(BasicRunningProject) Received output from MapReduce Client 2: Thread[main,5,main]:mapreduce.ATokenCountingClient@7ba18f1b:wait
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Controller:Please enter the number of threads
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[RMI TCP Connection(2)-172.17.13.152,5,RMI Runtime]:Model:Register:Proxy[ClientKeyValueProcessor,RemoteObjectInvocationHandler[UnicastRef [liveRef: [endpoint:[172.17.13.152:57670](remote),objID:[658ff8e9:16a840e1df3:-7ffe, 535282744072883110]]]]]
+I***(BasicRunningProject) Processing line from MapReduce Client 1: Thread[main,5,main]:mapreduce.ATokenCountingClient@7ba18f1b:wait
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[RMI TCP Connection(4)-172.17.13.152,5,RMI Runtime]:Model:Register:Proxy[ClientKeyValueProcessor,RemoteObjectInvocationHandler[UnicastRef [liveRef: [endpoint:[172.17.13.152:57674](remote),objID:[-3d9a890a:16a840e21f6:-7ffe, 4572915742172667502]]]]]
+I***(BasicRunningProject) Processing line from MapReduce Client 2: Thread[main,5,main]:mapreduce.ATokenCountingClient@7ba18f1b:wait
+I***(BasicRunningProject) New input 3for MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$3
+
+I***(BasicRunningProject) New input Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizardsfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizards
+
+I***(BasicRunningProject) New input quitfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$quit
+
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Client Assigned:Proxy[ClientKeyValueProcessor,RemoteObjectInvocationHandler[UnicastRef [liveRef: [endpoint:[172.17.13.152:57674](remote),objID:[-3d9a890a:16a840e21f6:-7ffe, 4572915742172667502]]]]]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:[]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:[]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:[]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Client Assigned:Proxy[ClientKeyValueProcessor,RemoteObjectInvocationHandler[UnicastRef [liveRef: [endpoint:[172.17.13.152:57670](remote),objID:[658ff8e9:16a840e1df3:-7ffe, 535282744072883110]]]]]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:View:java.beans.PropertyChangeEvent[propertyName=Threads; oldValue=null; newValue=[Thread[Slave0,5,main], Thread[Slave1,5,main], Thread[Slave2,5,main]]; propagationId=null; source=Model]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Controller:Please enter quit or a line of tokens to be processed separated by spaces
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:View:java.beans.PropertyChangeEvent[propertyName=InputString; oldValue=null; newValue=Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizards; propagationId=null; source=Model]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:notify
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingSlave@72ed203a:notify
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:notify
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:Hogwarts:(Hogwarts,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:Hogwarts:(Hogwarts,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:[]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:[]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:muggles:(muggles,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:(muggles,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(muggles,1)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:(muggles,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:wizards:(wizards,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:(wizards,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:[]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:(wizards,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(wizards,1)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:[]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:Hogwarts:(Hogwarts,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:Hogwarts:(Hogwarts,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:Hogwarts:(Hogwarts,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:[]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1), (Hogwarts,1)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:muggles:(muggles,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:(Hogwarts,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:[]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:(muggles,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:[]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:(muggles,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(muggles,1)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:[]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:muggles:(muggles,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:(muggles,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(muggles,1)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:(muggles,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:wizards:(wizards,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:[]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:(wizards,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:[]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:(wizards,1)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:[]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:[]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:(null,null)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(null,null)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Remote List:[(Hogwarts,1), (wizards,1), (muggles,1)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:[]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(null,null)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(null,null)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(null,null)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:mapreduce.AJoiner@2eda0940:Joiner Wait Start:mapreduce.AJoiner@2eda0940:3:0
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:(null,null)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:(null,null)
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Remote List:[(muggles,1), (Hogwarts,1), (wizards,1)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingReducer@1ac5c74f:reduce:[(Hogwarts,1), (Hogwarts,1), (Hogwarts,1), (muggles,1)]:{Hogwarts=3, muggles=1}
+I***(BasicRunningProject) Received output from MapReduce Server: process key:Hogwarts
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:Hogwarts:3:0:3
+I***(BasicRunningProject) Received output from MapReduce Server: got partition:0
+I***(BasicRunningProject) Received output from MapReduce Server: process key:muggles
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:muggles:1:1:3
+I***(BasicRunningProject) Received output from MapReduce Server: got partition:1
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ABarrier@59618fcc:Barrier Wait Start:mapreduce.ABarrier@59618fcc:3:1
+I***(BasicRunningProject) Received output from MapReduce Client 1: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Remote List:[(muggles,1), (Hogwarts,1), (wizards,1)]
+I***(BasicRunningProject) Received output from MapReduce Client 2: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Remote List:[(Hogwarts,1), (wizards,1), (muggles,1)]
+I***(BasicRunningProject) Received output from MapReduce Client 1: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingReducer@46e8cdc:reduce:[(muggles,1), (Hogwarts,1), (wizards,1)]:{Hogwarts=1, muggles=1, wizards=1}
+I***(BasicRunningProject) Received output from MapReduce Client 1: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Remote Result:{Hogwarts=1, muggles=1, wizards=1}
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Remote Result:{Hogwarts=1, muggles=1, wizards=1}
+I***(BasicRunningProject) Received output from MapReduce Server: process key:Hogwarts
+I***(BasicRunningProject) Received output from MapReduce Client 2: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingReducer@62c08c52:reduce:[(Hogwarts,1), (wizards,1), (muggles,1)]:{Hogwarts=1, muggles=1, wizards=1}
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:Hogwarts:1:0:3
+I***(BasicRunningProject) Received output from MapReduce Server: got partition:0
+I***(BasicRunningProject) Received output from MapReduce Client 2: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Remote Result:{Hogwarts=1, muggles=1, wizards=1}
+I***(BasicRunningProject) Received output from MapReduce Server: process key:muggles
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:muggles:1:1:3
+I***(BasicRunningProject) Received output from MapReduce Server: got partition:1
+I***(BasicRunningProject) Received output from MapReduce Server: process key:wizards
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:wizards:1:2:3
+I***(BasicRunningProject) Received output from MapReduce Server: got partition:2
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ABarrier@59618fcc:Barrier Wait Start:mapreduce.ABarrier@59618fcc:3:2
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Remote Result:{Hogwarts=1, muggles=1, wizards=1}
+I***(BasicRunningProject) Received output from MapReduce Server: process key:Hogwarts
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:Hogwarts:1:0:3
+I***(BasicRunningProject) Received output from MapReduce Server: got partition:0
+I***(BasicRunningProject) Received output from MapReduce Server: process key:muggles
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:muggles:1:1:3
+I***(BasicRunningProject) Received output from MapReduce Server: got partition:1
+I***(BasicRunningProject) Received output from MapReduce Server: process key:wizards
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:wizards:1:2:3
+I***(BasicRunningProject) Received output from MapReduce Server: got partition:2
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ABarrier@59618fcc:Barrier Release All:mapreduce.ABarrier@59618fcc:3:3
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Partition After Barrier:2:[(wizards,1), (wizards,1)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Remote List:[(wizards,1), (wizards,1)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ABarrier@59618fcc:Barrier Wait End:mapreduce.ABarrier@59618fcc:3:0
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ABarrier@59618fcc:Barrier Wait End:mapreduce.ABarrier@59618fcc:3:0
+I***(BasicRunningProject) Received output from MapReduce Client 2: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Remote List:[(wizards,1), (wizards,1)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Partition After Barrier:1:[(muggles,1), (muggles,1), (muggles,1)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Remote List:[(muggles,1), (muggles,1), (muggles,1)]
+I***(BasicRunningProject) Received output from MapReduce Client 2: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingReducer@62c08c52:reduce:[(wizards,1), (wizards,1)]:{wizards=2}
+I***(BasicRunningProject) Received output from MapReduce Client 2: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Remote Result:{wizards=2}
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Remote Result:{wizards=2}
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:Model:Added to Final Map:{wizards=2}:{wizards=2}
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.AJoiner@2eda0940:Joiner Finished:mapreduce.AJoiner@2eda0940:3:1
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:wait
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:Partition After Barrier:0:[(Hogwarts,3), (Hogwarts,1), (Hogwarts,1)]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingReducer@1ac5c74f:reduce:[(Hogwarts,3), (Hogwarts,1), (Hogwarts,1)]:{Hogwarts=5}
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:Model:Added to Final Map:{Hogwarts=5, wizards=2}:{Hogwarts=5}
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.AJoiner@2eda0940:Joiner Finished:mapreduce.AJoiner@2eda0940:3:2
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:wait
+I***(BasicRunningProject) Received output from MapReduce Client 1: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Remote List:[(muggles,1), (muggles,1), (muggles,1)]
+I***(BasicRunningProject) Received output from MapReduce Client 1: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingReducer@46e8cdc:reduce:[(muggles,1), (muggles,1), (muggles,1)]:{muggles=3}
+I***(BasicRunningProject) Received output from MapReduce Client 1: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Remote Result:{muggles=3}
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Remote Result:{muggles=3}
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:Model:Added to Final Map:{Hogwarts=5, muggles=3, wizards=2}:{muggles=3}
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.AJoiner@2eda0940:Joiner Finished:mapreduce.AJoiner@2eda0940:3:3
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:wait
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:mapreduce.AJoiner@2eda0940:Joiner Wait End:mapreduce.AJoiner@2eda0940:3:0
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:View:java.beans.PropertyChangeEvent[propertyName=Result; oldValue=null; newValue={Hogwarts=5, muggles=3, wizards=2}; propagationId=null; source=Model]
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Controller:Please enter quit or a line of tokens to be processed separated by spaces
+I***(BasicRunningProject) Received output from MapReduce Client 2: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Quitting
+I***(BasicRunningProject) Received output from MapReduce Client 2: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:notify
+I***(BasicRunningProject) Received output from MapReduce Client 2: Thread[main,5,main]:exit
+(MapReduce Server)java.lang.InterruptedException
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Quitting
+I***(BasicRunningProject) Received output from MapReduce Client 1: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Quitting
+I***(BasicRunningProject) Received output from MapReduce Client 1: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:notify
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[main,5,main]:Controller:Quitting
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Quitting
+(MapReduce Server)	at java.base/java.lang.Object.wait(Native Method)
+(MapReduce Server)	at java.base/java.lang.Object.wait(Object.java:328)
+(MapReduce Server)	at mapreduce.AMapReduceTracer.synchronizedWait(AMapReduceTracer.java:158)
+(MapReduce Server)	at mapreduce.AnAbstractSlave.run(AnAbstractSlave.java:100)
+(MapReduce Server)	at java.base/java.lang.Thread.run(Thread.java:844)
+(MapReduce Server)java.lang.InterruptedException
+(MapReduce Server)	at java.base/java.lang.Object.wait(Native Method)
+(MapReduce Server)	at java.base/java.lang.Object.wait(Object.java:328)
+(MapReduce Server)	at mapreduce.AMapReduceTracer.synchronizedWait(AMapReduceTracer.java:158)
+(MapReduce Server)	at mapreduce.AnAbstractSlave.run(AnAbstractSlave.java:100)
+(MapReduce Server)	at java.base/java.lang.Thread.run(Thread.java:844)
+(MapReduce Server)java.lang.InterruptedException
+(MapReduce Server)	at java.base/java.lang.Object.wait(Native Method)
+(MapReduce Server)	at java.base/java.lang.Object.wait(Object.java:328)
+(MapReduce Server)	at mapreduce.AMapReduceTracer.synchronizedWait(AMapReduceTracer.java:158)
+(MapReduce Server)	at mapreduce.AnAbstractSlave.run(AnAbstractSlave.java:100)
+(MapReduce Server)	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) Received output from MapReduce Client 1: Thread[main,5,main]:exit
+I***(BasicRunningProject) Received output from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:Quitting
+I***(BasicRunningProject) Terminating:MapReduce Client 2
+I***(BasicRunningProject) Terminating:MapReduce Client 1
+I***(BasicRunningProject) Terminating:MapReduce Server
+Current thread:Thread[AWT-EventQueue-0,6,main] sleeping for ms:15000
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Client Assigned:Proxy[ClientKeyValueProcessor,RemoteObjectInvocationHandler[UnicastRef [liveRef: [endpoint:[172.17.13.152:57674](remote),objID:[-3d9a890a:16a840e21f6:-7ffe, 4572915742172667502]]]]]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:[]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:[]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:[]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Client Assigned:Proxy[ClientKeyValueProcessor,RemoteObjectInvocationHandler[UnicastRef [liveRef: [endpoint:[172.17.13.152:57670](remote),objID:[658ff8e9:16a840e1df3:-7ffe, 535282744072883110]]]]]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:View:java.beans.PropertyChangeEvent[propertyName=Threads; oldValue=null; newValue=[Thread[Slave0,5,main], Thread[Slave1,5,main], Thread[Slave2,5,main]]; propagationId=null; source=Model]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Controller:Please enter quit or a line of tokens to be processed separated by spaces
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:View:java.beans.PropertyChangeEvent[propertyName=InputString; oldValue=null; newValue=Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizards; propagationId=null; source=Model]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:notify
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingSlave@72ed203a:notify
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:notify
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:Hogwarts:(Hogwarts,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1)]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:Hogwarts:(Hogwarts,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:(Hogwarts,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:(Hogwarts,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:[]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1)]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:[]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:muggles:(muggles,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:(muggles,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(muggles,1)]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:(muggles,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:wizards:(wizards,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:(wizards,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:[]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:(wizards,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(wizards,1)]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:[]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:Hogwarts:(Hogwarts,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1)]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:(Hogwarts,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:Hogwarts:(Hogwarts,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1)]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:Hogwarts:(Hogwarts,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:[]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1), (Hogwarts,1)]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:(Hogwarts,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:muggles:(muggles,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:(Hogwarts,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:[]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:(muggles,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:[]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:(muggles,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(muggles,1)]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:[]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:muggles:(muggles,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:(muggles,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(muggles,1)]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:(muggles,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:wizards:(wizards,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:[]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:(wizards,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:[]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:(wizards,1)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:[]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:[]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:(null,null)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(null,null)]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Remote List:[(Hogwarts,1), (wizards,1), (muggles,1)]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:[]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(null,null)]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(null,null)]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Model:enqueue:[(null,null)]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:mapreduce.AJoiner@2eda0940:Joiner Wait Start:mapreduce.AJoiner@2eda0940:3:0
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:(null,null)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:(null,null)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Remote List:[(muggles,1), (Hogwarts,1), (wizards,1)]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingReducer@1ac5c74f:reduce:[(Hogwarts,1), (Hogwarts,1), (Hogwarts,1), (muggles,1)]:{Hogwarts=3, muggles=1}
+I***(BasicRunningProject) Processing line from MapReduce Server: process key:Hogwarts
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:Hogwarts:3:0:3
+I***(BasicRunningProject) Processing line from MapReduce Server: got partition:0
+I***(BasicRunningProject) Processing line from MapReduce Server: process key:muggles
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:muggles:1:1:3
+I***(BasicRunningProject) Processing line from MapReduce Server: got partition:1
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ABarrier@59618fcc:Barrier Wait Start:mapreduce.ABarrier@59618fcc:3:1
+I***(BasicRunningProject) Processing line from MapReduce Client 1: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Remote List:[(muggles,1), (Hogwarts,1), (wizards,1)]
+I***(BasicRunningProject) Processing line from MapReduce Client 2: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Remote List:[(Hogwarts,1), (wizards,1), (muggles,1)]
+I***(BasicRunningProject) New input 3for MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$3
+
+java.io.IOException: The pipe is being closed
+I***(BasicRunningProject) New input Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizardsfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizards
+
+I***(BasicRunningProject) New input quitfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$quit
+
+I***(BasicRunningProject) Processing line from MapReduce Client 1: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingReducer@46e8cdc:reduce:[(muggles,1), (Hogwarts,1), (wizards,1)]:{Hogwarts=1, muggles=1, wizards=1}
+I***(BasicRunningProject) Processing line from MapReduce Client 1: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Remote Result:{Hogwarts=1, muggles=1, wizards=1}
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Remote Result:{Hogwarts=1, muggles=1, wizards=1}
+I***(BasicRunningProject) Processing line from MapReduce Server: process key:Hogwarts
+I***(BasicRunningProject) Processing line from MapReduce Client 2: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingReducer@62c08c52:reduce:[(Hogwarts,1), (wizards,1), (muggles,1)]:{Hogwarts=1, muggles=1, wizards=1}
+I***(BasicRunningProject) New input 3for MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$3
+
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) New input Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizardsfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizards
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) New input quitfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$quit
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:Hogwarts:1:0:3
+I***(BasicRunningProject) Processing line from MapReduce Server: got partition:0
+I***(BasicRunningProject) Processing line from MapReduce Client 2: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Remote Result:{Hogwarts=1, muggles=1, wizards=1}
+I***(BasicRunningProject) New input 3for MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$3
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) New input Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizardsfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizards
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) New input quitfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$quit
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) Processing line from MapReduce Server: process key:muggles
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:muggles:1:1:3
+I***(BasicRunningProject) Processing line from MapReduce Server: got partition:1
+I***(BasicRunningProject) Processing line from MapReduce Server: process key:wizards
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:wizards:1:2:3
+I***(BasicRunningProject) Processing line from MapReduce Server: got partition:2
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ABarrier@59618fcc:Barrier Wait Start:mapreduce.ABarrier@59618fcc:3:2
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Remote Result:{Hogwarts=1, muggles=1, wizards=1}
+I***(BasicRunningProject) Processing line from MapReduce Server: process key:Hogwarts
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:Hogwarts:1:0:3
+I***(BasicRunningProject) Processing line from MapReduce Server: got partition:0
+I***(BasicRunningProject) Processing line from MapReduce Server: process key:muggles
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:muggles:1:1:3
+I***(BasicRunningProject) Processing line from MapReduce Server: got partition:1
+I***(BasicRunningProject) Processing line from MapReduce Server: process key:wizards
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:wizards:1:2:3
+I***(BasicRunningProject) Processing line from MapReduce Server: got partition:2
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ABarrier@59618fcc:Barrier Release All:mapreduce.ABarrier@59618fcc:3:3
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Partition After Barrier:2:[(wizards,1), (wizards,1)]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Remote List:[(wizards,1), (wizards,1)]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ABarrier@59618fcc:Barrier Wait End:mapreduce.ABarrier@59618fcc:3:0
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ABarrier@59618fcc:Barrier Wait End:mapreduce.ABarrier@59618fcc:3:0
+I***(BasicRunningProject) Processing line from MapReduce Client 2: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Remote List:[(wizards,1), (wizards,1)]
+I***(BasicRunningProject) New input 3for MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$3
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) New input Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizardsfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizards
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) New input quitfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$quit
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Partition After Barrier:1:[(muggles,1), (muggles,1), (muggles,1)]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Remote List:[(muggles,1), (muggles,1), (muggles,1)]
+I***(BasicRunningProject) Processing line from MapReduce Client 2: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingReducer@62c08c52:reduce:[(wizards,1), (wizards,1)]:{wizards=2}
+I***(BasicRunningProject) New input 3for MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$3
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) New input Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizardsfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizards
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) New input quitfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$quit
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) Processing line from MapReduce Client 2: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Remote Result:{wizards=2}
+I***(BasicRunningProject) New input 3for MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$3
+
+java.io.IOException: The pipe is being closed
+I***(BasicRunningProject) New input Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizardsfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizards
+
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) New input quitfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$quit
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Remote Result:{wizards=2}
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:Model:Added to Final Map:{wizards=2}:{wizards=2}
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.AJoiner@2eda0940:Joiner Finished:mapreduce.AJoiner@2eda0940:3:1
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:wait
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:Partition After Barrier:0:[(Hogwarts,3), (Hogwarts,1), (Hogwarts,1)]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingReducer@1ac5c74f:reduce:[(Hogwarts,3), (Hogwarts,1), (Hogwarts,1)]:{Hogwarts=5}
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:Model:Added to Final Map:{Hogwarts=5, wizards=2}:{Hogwarts=5}
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.AJoiner@2eda0940:Joiner Finished:mapreduce.AJoiner@2eda0940:3:2
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:wait
+I***(BasicRunningProject) Processing line from MapReduce Client 1: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Remote List:[(muggles,1), (muggles,1), (muggles,1)]
+I***(BasicRunningProject) Processing line from MapReduce Client 1: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingReducer@46e8cdc:reduce:[(muggles,1), (muggles,1), (muggles,1)]:{muggles=3}
+I***(BasicRunningProject) Processing line from MapReduce Client 1: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Remote Result:{muggles=3}
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Remote Result:{muggles=3}
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:Model:Added to Final Map:{Hogwarts=5, muggles=3, wizards=2}:{muggles=3}
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.AJoiner@2eda0940:Joiner Finished:mapreduce.AJoiner@2eda0940:3:3
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:wait
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:mapreduce.AJoiner@2eda0940:Joiner Wait End:mapreduce.AJoiner@2eda0940:3:0
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:View:java.beans.PropertyChangeEvent[propertyName=Result; oldValue=null; newValue={Hogwarts=5, muggles=3, wizards=2}; propagationId=null; source=Model]
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Controller:Please enter quit or a line of tokens to be processed separated by spaces
+I***(BasicRunningProject) Processing line from MapReduce Client 2: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Quitting
+I***(BasicRunningProject) New input 3for MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$3
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) New input Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizardsfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizards
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) New input quitfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$quit
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) Processing line from MapReduce Client 2: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:notify
+I***(BasicRunningProject) New input 3for MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$3
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) New input Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizardsfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizards
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) New input quitfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$quit
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) Processing line from MapReduce Client 2: Thread[main,5,main]:exit
+I***(BasicRunningProject) New input 3for MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$3
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) New input Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizardsfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizards
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) New input quitfor MapReduce Server
+I***(ARunnerInputStreamProcessor) MapReduce Server$quit
+
+java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:355)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:318)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:153)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:254)
+	at grader.basics.execution.ARunnerInputStreamProcessor.newInput(ARunnerInputStreamProcessor.java:45)
+	at grader.basics.execution.BasicRunningProject.newInputLine(BasicRunningProject.java:644)
+	at util.pipe.AnAbstractInputGenerator.notifyNewInputLine(AnAbstractInputGenerator.java:29)
+	at gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator.newOutputLine(MapReduceInputGenerator.java:31)
+	at grader.basics.execution.BasicRunningProject.doAppendProcessProcessedOutput(BasicRunningProject.java:376)
+	at grader.basics.execution.BasicRunningProject.run(BasicRunningProject.java:162)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Quitting
+I***(BasicRunningProject) Processing line from MapReduce Client 1: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:Quitting
+I***(BasicRunningProject) Processing line from MapReduce Client 1: Thread[RMI TCP Connection(1)-172.17.13.152,5,RMI Runtime]:mapreduce.ATokenCountingClient@7ba18f1b:notify
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[main,5,main]:Controller:Quitting
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Quitting
+I***(BasicRunningProject) Processing line from MapReduce Client 1: Thread[main,5,main]:exit
+I***(BasicRunningProject) Processing line from MapReduce Server: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:Quitting
+I***(ABasicExecutionSpecification) resetting process team: 
+line matcher for key:MapReduce Client 2
+line matcher for key:MapReduce Client 1
+line matcher for key:MapReduce Server
+I***(ALinesMatcher) Matching pattern:.*java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*Hogwarts=5.*?starting at:0
+I***(ALinesMatcher) 0: Checking: Thread[main,5,main]:Controller:Please enter the number of threads
+
+I***(ALinesMatcher) 1: Checking: Thread[RMI TCP Connection(2)-172.17.13.152,5,RMI Runtime]:Model:Register:Proxy[ClientKeyValueProcessor,RemoteObjectInvocationHandler[UnicastRef [liveRef: [endpoint:[172.17.13.152:57670](remote),objID:[658ff8e9:16a840e1df3:-7ffe, 535282744072883110]]]]]
+
+I***(ALinesMatcher) 2: Checking: Thread[RMI TCP Connection(4)-172.17.13.152,5,RMI Runtime]:Model:Register:Proxy[ClientKeyValueProcessor,RemoteObjectInvocationHandler[UnicastRef [liveRef: [endpoint:[172.17.13.152:57674](remote),objID:[-3d9a890a:16a840e21f6:-7ffe, 4572915742172667502]]]]]
+
+I***(ALinesMatcher) 3: Checking: Thread[main,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Client Assigned:Proxy[ClientKeyValueProcessor,RemoteObjectInvocationHandler[UnicastRef [liveRef: [endpoint:[172.17.13.152:57674](remote),objID:[-3d9a890a:16a840e21f6:-7ffe, 4572915742172667502]]]]]
+
+I***(ALinesMatcher) 4: Checking: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:[]
+
+I***(ALinesMatcher) 5: Checking: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:[]
+
+I***(ALinesMatcher) 6: Checking: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:[]
+
+I***(ALinesMatcher) 7: Checking: Thread[main,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Client Assigned:Proxy[ClientKeyValueProcessor,RemoteObjectInvocationHandler[UnicastRef [liveRef: [endpoint:[172.17.13.152:57670](remote),objID:[658ff8e9:16a840e1df3:-7ffe, 535282744072883110]]]]]
+
+I***(ALinesMatcher) 8: Checking: Thread[main,5,main]:View:java.beans.PropertyChangeEvent[propertyName=Threads; oldValue=null; newValue=[Thread[Slave0,5,main], Thread[Slave1,5,main], Thread[Slave2,5,main]]; propagationId=null; source=Model]
+
+I***(ALinesMatcher) 9: Checking: Thread[main,5,main]:Controller:Please enter quit or a line of tokens to be processed separated by spaces
+
+I***(ALinesMatcher) 10: Checking: Thread[main,5,main]:View:java.beans.PropertyChangeEvent[propertyName=InputString; oldValue=null; newValue=Hogwarts Hogwarts muggles wizards Hogwarts Hogwarts Hogwarts muggles muggles wizards; propagationId=null; source=Model]
+
+I***(ALinesMatcher) 11: Checking: Thread[main,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:notify
+
+I***(ALinesMatcher) 12: Checking: Thread[main,5,main]:mapreduce.ATokenCountingSlave@72ed203a:notify
+
+I***(ALinesMatcher) 13: Checking: Thread[main,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:notify
+
+I***(ALinesMatcher) 14: Checking: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:Hogwarts:(Hogwarts,1)
+
+I***(ALinesMatcher) 15: Checking: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+
+I***(ALinesMatcher) 16: Checking: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1)]
+
+I***(ALinesMatcher) 17: Checking: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:Hogwarts:(Hogwarts,1)
+
+I***(ALinesMatcher) 18: Checking: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+
+I***(ALinesMatcher) 19: Checking: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:(Hogwarts,1)
+
+I***(ALinesMatcher) 20: Checking: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:(Hogwarts,1)
+
+I***(ALinesMatcher) 21: Checking: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:[]
+
+I***(ALinesMatcher) 22: Checking: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1)]
+
+I***(ALinesMatcher) 23: Checking: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:[]
+
+I***(ALinesMatcher) 24: Checking: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:muggles:(muggles,1)
+
+I***(ALinesMatcher) 25: Checking: Thread[main,5,main]:Model:enqueue:(muggles,1)
+
+I***(ALinesMatcher) 26: Checking: Thread[main,5,main]:Model:enqueue:[(muggles,1)]
+
+I***(ALinesMatcher) 27: Checking: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:(muggles,1)
+
+I***(ALinesMatcher) 28: Checking: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:wizards:(wizards,1)
+
+I***(ALinesMatcher) 29: Checking: Thread[main,5,main]:Model:enqueue:(wizards,1)
+
+I***(ALinesMatcher) 30: Checking: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:[]
+
+I***(ALinesMatcher) 31: Checking: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:(wizards,1)
+
+I***(ALinesMatcher) 32: Checking: Thread[main,5,main]:Model:enqueue:[(wizards,1)]
+
+I***(ALinesMatcher) 33: Checking: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:[]
+
+I***(ALinesMatcher) 34: Checking: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:Hogwarts:(Hogwarts,1)
+
+I***(ALinesMatcher) 35: Checking: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+
+I***(ALinesMatcher) 36: Checking: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1)]
+
+I***(ALinesMatcher) 37: Checking: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:(Hogwarts,1)
+
+I***(ALinesMatcher) 38: Checking: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:Hogwarts:(Hogwarts,1)
+
+I***(ALinesMatcher) 39: Checking: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+
+I***(ALinesMatcher) 40: Checking: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1)]
+
+I***(ALinesMatcher) 41: Checking: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:Hogwarts:(Hogwarts,1)
+
+I***(ALinesMatcher) 42: Checking: Thread[main,5,main]:Model:enqueue:(Hogwarts,1)
+
+I***(ALinesMatcher) 43: Checking: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:[]
+
+I***(ALinesMatcher) 44: Checking: Thread[main,5,main]:Model:enqueue:[(Hogwarts,1), (Hogwarts,1)]
+
+I***(ALinesMatcher) 45: Checking: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:(Hogwarts,1)
+
+I***(ALinesMatcher) 46: Checking: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:muggles:(muggles,1)
+
+I***(ALinesMatcher) 47: Checking: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:(Hogwarts,1)
+
+I***(ALinesMatcher) 48: Checking: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:[]
+
+I***(ALinesMatcher) 49: Checking: Thread[main,5,main]:Model:enqueue:(muggles,1)
+
+I***(ALinesMatcher) 50: Checking: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:[]
+
+I***(ALinesMatcher) 51: Checking: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:(muggles,1)
+
+I***(ALinesMatcher) 52: Checking: Thread[main,5,main]:Model:enqueue:[(muggles,1)]
+
+I***(ALinesMatcher) 53: Checking: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:[]
+
+I***(ALinesMatcher) 54: Checking: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:muggles:(muggles,1)
+
+I***(ALinesMatcher) 55: Checking: Thread[main,5,main]:Model:enqueue:(muggles,1)
+
+I***(ALinesMatcher) 56: Checking: Thread[main,5,main]:Model:enqueue:[(muggles,1)]
+
+I***(ALinesMatcher) 57: Checking: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:(muggles,1)
+
+I***(ALinesMatcher) 58: Checking: Thread[main,5,main]:mapreduce.ATokenCountingMapper@eb21112:Map:wizards:(wizards,1)
+
+I***(ALinesMatcher) 59: Checking: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:[]
+
+I***(ALinesMatcher) 60: Checking: Thread[main,5,main]:Model:enqueue:(wizards,1)
+
+I***(ALinesMatcher) 61: Checking: Thread[main,5,main]:Model:enqueue:[]
+
+I***(ALinesMatcher) 62: Checking: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:(wizards,1)
+
+I***(ALinesMatcher) 63: Checking: Thread[main,5,main]:Model:enqueue:[]
+
+I***(ALinesMatcher) 64: Checking: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:[]
+
+I***(ALinesMatcher) 65: Checking: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:dequeue:(null,null)
+
+I***(ALinesMatcher) 66: Checking: Thread[main,5,main]:Model:enqueue:[(null,null)]
+
+I***(ALinesMatcher) 67: Checking: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Remote List:[(Hogwarts,1), (wizards,1), (muggles,1)]
+
+I***(ALinesMatcher) 68: Checking: Thread[main,5,main]:Model:enqueue:[]
+
+I***(ALinesMatcher) 69: Checking: Thread[main,5,main]:Model:enqueue:[(null,null)]
+
+I***(ALinesMatcher) 70: Checking: Thread[main,5,main]:Model:enqueue:[(null,null)]
+
+I***(ALinesMatcher) 71: Checking: Thread[main,5,main]:Model:enqueue:[(null,null)]
+
+I***(ALinesMatcher) 72: Checking: Thread[main,5,main]:mapreduce.AJoiner@2eda0940:Joiner Wait Start:mapreduce.AJoiner@2eda0940:3:0
+
+I***(ALinesMatcher) 73: Checking: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:dequeue:(null,null)
+
+I***(ALinesMatcher) 74: Checking: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:dequeue:(null,null)
+
+I***(ALinesMatcher) 75: Checking: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Remote List:[(muggles,1), (Hogwarts,1), (wizards,1)]
+
+I***(ALinesMatcher) 76: Checking: Thread[Slave0,5,main]:mapreduce.ATokenCountingReducer@1ac5c74f:reduce:[(Hogwarts,1), (Hogwarts,1), (Hogwarts,1), (muggles,1)]:{Hogwarts=3, muggles=1}
+
+I***(ALinesMatcher) 77: Checking: process key:Hogwarts
+
+I***(ALinesMatcher) 78: Checking: Thread[Slave0,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:Hogwarts:3:0:3
+
+I***(ALinesMatcher) 79: Checking: got partition:0
+
+I***(ALinesMatcher) 80: Checking: process key:muggles
+
+I***(ALinesMatcher) 81: Checking: Thread[Slave0,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:muggles:1:1:3
+
+I***(ALinesMatcher) 82: Checking: got partition:1
+
+I***(ALinesMatcher) 83: Checking: Thread[Slave0,5,main]:mapreduce.ABarrier@59618fcc:Barrier Wait Start:mapreduce.ABarrier@59618fcc:3:1
+
+I***(ALinesMatcher) 84: Checking: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Remote Result:{Hogwarts=1, muggles=1, wizards=1}
+
+I***(ALinesMatcher) 85: Checking: process key:Hogwarts
+
+I***(ALinesMatcher) 86: Checking: Thread[Slave1,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:Hogwarts:1:0:3
+
+I***(ALinesMatcher) 87: Checking: got partition:0
+
+I***(ALinesMatcher) 88: Checking: process key:muggles
+
+I***(ALinesMatcher) 89: Checking: Thread[Slave1,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:muggles:1:1:3
+
+I***(ALinesMatcher) 90: Checking: got partition:1
+
+I***(ALinesMatcher) 91: Checking: process key:wizards
+
+I***(ALinesMatcher) 92: Checking: Thread[Slave1,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:wizards:1:2:3
+
+I***(ALinesMatcher) 93: Checking: got partition:2
+
+I***(ALinesMatcher) 94: Checking: Thread[Slave1,5,main]:mapreduce.ABarrier@59618fcc:Barrier Wait Start:mapreduce.ABarrier@59618fcc:3:2
+
+I***(ALinesMatcher) 95: Checking: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Remote Result:{Hogwarts=1, muggles=1, wizards=1}
+
+I***(ALinesMatcher) 96: Checking: process key:Hogwarts
+
+I***(ALinesMatcher) 97: Checking: Thread[Slave2,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:Hogwarts:1:0:3
+
+I***(ALinesMatcher) 98: Checking: got partition:0
+
+I***(ALinesMatcher) 99: Checking: process key:muggles
+
+I***(ALinesMatcher) 100: Checking: Thread[Slave2,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:muggles:1:1:3
+
+I***(ALinesMatcher) 101: Checking: got partition:1
+
+I***(ALinesMatcher) 102: Checking: process key:wizards
+
+I***(ALinesMatcher) 103: Checking: Thread[Slave2,5,main]:mapreduce.AWordPartitioner@79dc2b83:Partition Assigned:wizards:1:2:3
+
+I***(ALinesMatcher) 104: Checking: got partition:2
+
+I***(ALinesMatcher) 105: Checking: Thread[Slave2,5,main]:mapreduce.ABarrier@59618fcc:Barrier Release All:mapreduce.ABarrier@59618fcc:3:3
+
+I***(ALinesMatcher) 106: Checking: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Partition After Barrier:2:[(wizards,1), (wizards,1)]
+
+I***(ALinesMatcher) 107: Checking: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Remote List:[(wizards,1), (wizards,1)]
+
+I***(ALinesMatcher) 108: Checking: Thread[Slave0,5,main]:mapreduce.ABarrier@59618fcc:Barrier Wait End:mapreduce.ABarrier@59618fcc:3:0
+
+I***(ALinesMatcher) 109: Checking: Thread[Slave1,5,main]:mapreduce.ABarrier@59618fcc:Barrier Wait End:mapreduce.ABarrier@59618fcc:3:0
+
+I***(ALinesMatcher) 110: Checking: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Partition After Barrier:1:[(muggles,1), (muggles,1), (muggles,1)]
+
+I***(ALinesMatcher) 111: Checking: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Remote List:[(muggles,1), (muggles,1), (muggles,1)]
+
+I***(ALinesMatcher) 112: Checking: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:Remote Result:{wizards=2}
+
+I***(ALinesMatcher) 113: Checking: Thread[Slave2,5,main]:Model:Added to Final Map:{wizards=2}:{wizards=2}
+
+I***(ALinesMatcher) 114: Checking: Thread[Slave2,5,main]:mapreduce.AJoiner@2eda0940:Joiner Finished:mapreduce.AJoiner@2eda0940:3:1
+
+I***(ALinesMatcher) 115: Checking: Thread[Slave2,5,main]:mapreduce.ATokenCountingSlave@7276c8cd:wait
+
+I***(ALinesMatcher) 116: Checking: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:Partition After Barrier:0:[(Hogwarts,3), (Hogwarts,1), (Hogwarts,1)]
+
+I***(ALinesMatcher) 117: Checking: Thread[Slave0,5,main]:mapreduce.ATokenCountingReducer@1ac5c74f:reduce:[(Hogwarts,3), (Hogwarts,1), (Hogwarts,1)]:{Hogwarts=5}
+
+I***(ALinesMatcher) 118: Checking: Thread[Slave0,5,main]:Model:Added to Final Map:{Hogwarts=5, wizards=2}:{Hogwarts=5}
+
+I***(ALinesMatcher) 119: Checking: Thread[Slave0,5,main]:mapreduce.AJoiner@2eda0940:Joiner Finished:mapreduce.AJoiner@2eda0940:3:2
+
+I***(ALinesMatcher) 120: Checking: Thread[Slave0,5,main]:mapreduce.ATokenCountingSlave@7c3d4326:wait
+
+I***(ALinesMatcher) 121: Checking: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:Remote Result:{muggles=3}
+
+I***(ALinesMatcher) 122: Checking: Thread[Slave1,5,main]:Model:Added to Final Map:{Hogwarts=5, muggles=3, wizards=2}:{muggles=3}
+
+I***(ALinesMatcher) 123: Checking: Thread[Slave1,5,main]:mapreduce.AJoiner@2eda0940:Joiner Finished:mapreduce.AJoiner@2eda0940:3:3
+
+I***(ALinesMatcher) 124: Checking: Thread[Slave1,5,main]:mapreduce.ATokenCountingSlave@72ed203a:wait
+
+I***(ALinesMatcher) 125: Checking: Thread[main,5,main]:mapreduce.AJoiner@2eda0940:Joiner Wait End:mapreduce.AJoiner@2eda0940:3:0
+
+I***(ALinesMatcher) 126: Checking: Thread[main,5,main]:View:java.beans.PropertyChangeEvent[propertyName=Result; oldValue=null; newValue={Hogwarts=5, muggles=3, wizards=2}; propagationId=null; source=Model]
+
+126: Matched  pattern .*java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*Hogwarts=5.*?
+Matched Line Thread[main,5,main]:View:java.beans.PropertyChangeEvent[propertyName=Result; oldValue=null; newValue={Hogwarts=5, muggles=3, wizards=2}; propagationId=null; source=Model]
+ for pattern [.*java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*Hogwarts=5.*?]
+I***(TestCaseResult) ### anonymous: 1.0
