@@ -10,7 +10,7 @@ public class AStandAloneBasicTokenCountBarrierChecker extends ASubstringSequence
 	
 	public  String[] mySubstrings() {
 		return new String[] {
-			toLineRegex("main", AMapReduceTracer.BARRIER_CREATED),
+//			toLineRegex("main", AMapReduceTracer.BARRIER_CREATED),
 			toLineRegex(AMapReduceTracer.SLAVE, AMapReduceTracer.BARRIER_WAIT_START),
 			toLineRegex(AMapReduceTracer.SLAVE, AMapReduceTracer.BARRIER_WAIT_START),
 			toLineRegex(AMapReduceTracer.SLAVE, AMapReduceTracer.BARRIER_RELEASE_ALL),
