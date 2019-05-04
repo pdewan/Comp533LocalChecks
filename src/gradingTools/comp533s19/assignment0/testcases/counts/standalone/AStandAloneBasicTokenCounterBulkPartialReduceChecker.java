@@ -12,8 +12,10 @@ public class AStandAloneBasicTokenCounterBulkPartialReduceChecker extends ASubst
 	public  final String[] MY_SUBSTRINGS = {
 //			toRegex(
 //				AMapReduceTracer.CONTROLLER + ".*" + AMapReduceTracer.QUIT,
-				toRegex(AMapReduceTracer.SLAVE +  "0" + ".*:.*" + AMapReduceTracer.DEQUEUE + ".*null.*null"),
-				toRegex(AMapReduceTracer.SLAVE + "0" + ".*:.*" + AMapReduceTracer.REDUCE + ".*Hogwarts.*1")			
+				toRegex(AMapReduceTracer.SLAVE +  "0", AMapReduceTracer.DEQUEUE, "null.*null"),
+				toRegex(AMapReduceTracer.SLAVE + "0", AMapReduceTracer.REDUCE )			
+
+//				toRegex(AMapReduceTracer.SLAVE + "0" + ".*:.*" + AMapReduceTracer.REDUCE + ".*Hogwarts.*1")			
 //				*1.*2",
 //				".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*Hogwarts=5.*"
 //				".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*Potter=2.*",

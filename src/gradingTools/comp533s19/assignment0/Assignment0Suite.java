@@ -25,6 +25,9 @@ import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAlon
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountMVC;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountBulkPartialReduce;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountMultiplePartialReduce;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountPartition1Reduce;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountPartition2Reduce;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountPartition3Reduce;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountQuit;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountResult;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountThreads;
@@ -73,6 +76,10 @@ import util.trace.port.rpc.RemoteCallBlockedForReturnValue;
 	StandAloneTokenCountBoundedBuffer.class,
 	StandAloneTokenCountBulkPartialReduce.class,
 	StandAloneTokenCountMultiplePartialReduce.class,
+	StandAloneTokenCountPartition1Reduce.class,
+	StandAloneTokenCountPartition2Reduce.class,
+	StandAloneTokenCountPartition3Reduce.class,
+
 	DistributedTokenCountPartialReduce.class,
 //	StandAloneTokenCountQuit.class,
 	DistributedTokenCountQuit.class,

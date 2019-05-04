@@ -46,6 +46,17 @@ public ASubstringSequenceChecker(String[] aSubstrings ) {
 	  }
 	  return aRetVal.toString();
   }
+  public static  String toLineRegex(String... aSubstrings) {
+	  StringBuffer aRetVal = new StringBuffer(aSubstrings.length * 20);
+	  aRetVal.append(".*");
+	  for (String aSubstring:aSubstrings) {
+//		  aRetVal.append("." + aSubstring + ".*\n");
+		  aRetVal.append(aSubstring + ".*");
+
+		  
+	  }
+	  return aRetVal.toString();
+  }
   public static  String toPrefixedRegex(String... aSubstrings) {
 	  StringBuffer aRetVal = new StringBuffer(aSubstrings.length * 20);
 	  for (String aSubstring:aSubstrings) {
