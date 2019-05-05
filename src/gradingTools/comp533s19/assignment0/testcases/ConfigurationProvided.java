@@ -26,7 +26,7 @@ import gradingTools.shared.testcases.utils.ABufferingTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
 import util.tags.DistributedTags;
-@MaxValue(5)
+@MaxValue(10)
 public class ConfigurationProvided extends PassFailJUnitTestCase {
 	public static final String CONFIGURATION_CLASS = "MyMapReduceConfiguration";
 	TestMapReduceConfiguration testConfiguration ;

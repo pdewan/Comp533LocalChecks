@@ -69,102 +69,23 @@ import gradingTools.comp533s19.assignment1.testcases.TwoClientReadWriteNonAtomic
 import gradingTools.comp533s19.assignment1.testcases.TwoClientThreadsAtomic;
 import gradingTools.comp533s19.assignment1.testcases.TwoClientThreadsNonAtomic;
 import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;
+import util.annotations.MaxValue;
 import util.tags.DistributedTags;
 import util.trace.port.rpc.RemoteCallBlockedForReturnValue;
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	ConfigurationProvided.class,
-	BasicStandAloneCounts.class,
-	BasicStandAloneSum.class,
-	BasicDistributedCounts.class,
-	BasicDistributedSum.class,
-	MapReduceFactoriesAndObjects.class,
-	StandAloneBarrierJoinSynchronization.class,
-	StandAlonePartitionedReduce.class,
-	DistributedPartitionedReduce.class
-	
-	
-//	PartitionerFactory.class,
-//	PartitionerObject.class,
-//	MapperFactory.class,
-//	TokenCountMapObject.class,
-//	ReducerFactory.class,
-//	ReduceObject.class,
-//	StandAloneTokenCountResult.class,
-//	StandAloneSumResult.class,
-//	DistributedTokenCountResult.class,
-//	DistributedSumResult.class,
-//	StandAloneTokenCountMVC.class,
-//	StandAloneSumBoundedBuffer.class,
-//	StandAloneTokenCountThreads.class,
-//	StandAloneSumThreads.class,
-//	StandAloneTokenCountBoundedBuffer.class,
-//	StandAloneTokenCountBulkPartialReduce.class,
-//	StandAloneTokenCountMultiplePartialReduce.class,
-//	StandAloneSumBulkPartialReduce.class,
-//	StandAloneSumMultiplePartialReduce.class,
-//	StandAloneTokenCountPartition1Reduce.class,
-//	StandAloneTokenCountPartition2Reduce.class,
-//	StandAloneTokenCountPartition3Reduce.class,
-//	StandAloneTokenCountBarrier.class,
-//	StandAloneSumBarrier.class,
-//	StandAloneBasicTokenCountJoiner.class,
-//	StandAloneSumJoiner.class,
-//	StandAloneTokenCountMultipleRoundSynchronization.class,
-//	StandAloneSumMultipleRoundSynchronization.class,
-//
-//	DistributedTokenCountPartialReduce.class,
-////	StandAloneTokenCountQuit.class,
-//	DistributedTokenCountQuit.class,
-//	DistributedSumQuit.class,
-//
-//	ClientTokenCountPartialReduce.class,
-//	ClientTokenCountPartition3Reduce.class,
-//	ClientSumPartialReduce.class,
-//	ClientSumPartitionReduce.class,
-//
-//	ClientTokenCountQuit.class,
-//	ClientSumQuit.class
-//	Assignment1OneClientSuite.class,
-//	Assignment1TwoClientSuite.class,
-
-
+	PartitionerFactory.class,
+	PartitionerObject.class,
+	MapperFactory.class,
+	TokenCountMapObject.class,
+	ReducerFactory.class,
+	ReduceObject.class,
 })
 	
 
-	
-public class Assignment0Suite extends Assignment1Suite{
-//	 static final String[] clientTags = {DistributedTags.NIO, DistributedTags.CLIENT};
-//	 static final String[] serverTags = {DistributedTags.NIO, DistributedTags.SERVER};
-//	 static final  List<String> clientTagsList = Arrays.asList(clientTags);
-//	 static final List<String> serverTagsList = Arrays.asList(serverTags);
-	public static final String MAP_REDUCE_PROCESS_TEAM = "MapReduce Team";
-	public static final String MAP_REDUCE_SERVER = "MapReduce Server";
-	public static final String MAP_REDUCE_CLIENT_1 = "MapReduce Client 1";
-	public static final String MAP_REDUCE_CLIENT_2 = "MapReduce Client 2";
-//	static int processTimeOut = 45;
-//
-//	public static int getProcessTimeOut() {
-//		return processTimeOut;
-//	}
-//	public static void setProcessTimeOut(int processTimeOut) {
-//		Assignment0Suite.processTimeOut = processTimeOut;
-//	}
-	public static void main (String[] args) {
-		try {
-//			setProcessTimeOut(25);
+@MaxValue(120)	
+public class MapReduceFactoriesAndObjects extends Assignment1Suite{
 
-			BasicJUnitUtils.interactiveTest(Assignment0Suite.class);
-
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	static {
-		BasicProjectIntrospection.setCheckAllSpecifiedTags(true);
-
-	}
 }

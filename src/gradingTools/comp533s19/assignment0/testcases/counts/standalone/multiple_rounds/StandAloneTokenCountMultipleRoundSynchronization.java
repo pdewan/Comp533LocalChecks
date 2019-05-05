@@ -10,7 +10,7 @@ import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentT
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 //@MaxValue(5)
 //@Explanation("Checks for expected client1 counter output when explicit receive is implemented.")
-public class StandAloneBasicTokenCountMultipleRoundSynchronization extends AStringCheckBasedDependentTestCase {
+public class StandAloneTokenCountMultipleRoundSynchronization extends AStringCheckBasedDependentTestCase {
 
 
 	@Override
