@@ -81,7 +81,7 @@ public class StandAloneTokenCountResult extends MainMethodForkerTest {
 //
 //	}
 	protected void callOrForkMain(boolean aFork) throws Throwable {
-		BasicRunningProject.setProcessOutputSleepTime(15000);
+//		BasicRunningProject.setProcessOutputSleepTime(15000);
 		super.callOrForkMain(aFork);
 	}
 	protected SubstringSequenceChecker checker() {

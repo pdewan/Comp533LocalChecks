@@ -51,7 +51,7 @@ public class DistributedTokenCountResult extends StandAloneTokenCountResult {
 		BasicRunningProject.setProcessTeamOutputSleepTime(15000);
 
 		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setWaitForResort(false);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderWaitForResort(false);
 		BasicStaticConfigurationUtils.setBasicCommandToDefaultEntryPointCommand();
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList(MAP_REDUCE_PROCESS_TEAM));
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setTerminatingProcesses(MAP_REDUCE_PROCESS_TEAM, 
