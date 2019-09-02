@@ -1,7 +1,7 @@
 package gradingTools.comp533s19.assignment0.testcases.counts.standalone;
 
+import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.config.BasicStaticConfigurationUtils;
-import grader.basics.execution.BasicExecutionSpecificationSelector;
 import grader.basics.execution.BasicProjectExecution;
 import grader.basics.execution.BasicRunningProject;
 import grader.basics.execution.GradingMode;

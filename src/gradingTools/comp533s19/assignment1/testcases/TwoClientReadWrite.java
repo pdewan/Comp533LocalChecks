@@ -2,7 +2,7 @@ package gradingTools.comp533s19.assignment1.testcases;
 
 import java.util.Arrays;
 
-import grader.basics.execution.BasicExecutionSpecificationSelector;
+import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.execution.NotRunnableException;
 import grader.basics.execution.RunningProject;
 import grader.basics.junit.NotAutomatableException;

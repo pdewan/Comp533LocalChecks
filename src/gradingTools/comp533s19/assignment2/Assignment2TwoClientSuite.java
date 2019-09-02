@@ -1,6 +1,5 @@
 package gradingTools.comp533s19.assignment2;
 
-import grader.basics.execution.BasicExecutionSpecificationSelector;
 import gradingTools.comp533s19.assignment2.testcases.RMINIOClientMetaStateBroadcast;
 import gradingTools.comp533s19.assignment2.testcases.RMINIOClientMetaStateNoBroadcast;
 import gradingTools.comp533s19.assignment2.testcases.RMINIOServerMetaStateBroadcast;
@@ -17,6 +16,7 @@ import java.util.List;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+import grader.basics.config.BasicExecutionSpecificationSelector;
 import util.tags.DistributedTags;
 
 
@@ -78,10 +78,10 @@ public static void twoClientSetupProcesses(List<String> aClientTags, List<String
 	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Server", FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS);
 	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client_0", FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS);
 	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client_1", FlexibleStaticArgumentsTestCase.TEST_CLIENT_1_ARGS);
-	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Registry", 500);
-	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Server", 2000);
-	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Client_0", 5000);
-	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Client_1", 5000);
+	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Registry", 500);
+	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Server", 2000);
+	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Client_0", 5000);
+	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Client_1", 5000);
 	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessTeams().forEach(team -> System.out.println("### " + team));
 }
 

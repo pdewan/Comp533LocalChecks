@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
-import grader.basics.execution.BasicExecutionSpecificationSelector;
+import grader.basics.config.BasicExecutionSpecificationSelector;
 import gradingTools.comp533s19.assignment3.testcases.GIPCRMINIOOneClientConnection;
 import gradingTools.comp533s19.assignment3.testcases.GIPCRMINIOOneClientReadWriteAtomic;
 import gradingTools.comp533s19.assignment3.testcases.GIPCRMINIOOneClientReadWriteNonAtomic;

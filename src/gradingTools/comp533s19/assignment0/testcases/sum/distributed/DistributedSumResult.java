@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.config.BasicStaticConfigurationUtils;
-import grader.basics.execution.BasicExecutionSpecificationSelector;
 import grader.basics.execution.BasicProjectExecution;
 import grader.basics.execution.BasicRunningProject;
 import grader.basics.execution.GradingMode;
@@ -99,7 +99,7 @@ public class DistributedSumResult extends StandAloneSumResult {
 		interactiveInputProject = RunningProjectUtils.runProject(project, 
 				Assignment0Suite.getProcessTimeOut(), new MapReduceInputGenerator (getInputLines()));
 		interactiveInputProject.await();
-		BasicStaticConfigurationUtils.setBasicCommandToDefaultCommand();
+		BasicStaticConfigurationUtils.setBasicCommandToDefaultEntryTagCommand();
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().resetProcessTeams();
 
 

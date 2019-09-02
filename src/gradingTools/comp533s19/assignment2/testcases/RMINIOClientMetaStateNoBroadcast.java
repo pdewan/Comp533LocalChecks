@@ -5,6 +5,7 @@ import java.util.concurrent.TimeoutException;
 
 import org.junit.Test;
 
+import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.execution.NotRunnableException;
 import grader.basics.execution.RunningProject;
 import grader.basics.junit.BasicJUnitUtils;
@@ -14,7 +15,6 @@ import grader.basics.project.CurrentProjectHolder;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import grader.basics.execution.BasicExecutionSpecificationSelector;
 import gradingTools.comp533s19.assignment2.Assignment2TwoClientSuite;
 import gradingTools.comp533s19.flexible.testcases.FlexibleMetaStateBroadcastTestCase;
 import gradingTools.comp533s19.flexible.testcases.MetaStateBroadcastTestInputGenerator;

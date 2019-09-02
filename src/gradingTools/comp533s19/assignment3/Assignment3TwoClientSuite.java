@@ -1,6 +1,5 @@
 package gradingTools.comp533s19.assignment3;
 
-import grader.basics.execution.BasicExecutionSpecificationSelector;
 import gradingTools.comp533s19.assignment2.Assignment2TwoClientSuite;
 import gradingTools.comp533s19.assignment3.testcases.GIPCRMINIOClientMetaStateBroadcast;
 import gradingTools.comp533s19.assignment3.testcases.GIPCRMINIOClientMetaStateNoBroadcast;
@@ -17,6 +16,7 @@ import java.util.List;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+import grader.basics.config.BasicExecutionSpecificationSelector;
 import util.tags.DistributedTags;
 
 

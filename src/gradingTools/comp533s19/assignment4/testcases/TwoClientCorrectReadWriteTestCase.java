@@ -2,6 +2,7 @@ package gradingTools.comp533s19.assignment4.testcases;
 
 import java.util.Arrays;
 
+import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.execution.NotRunnableException;
 import grader.basics.execution.RunningProject;
 import grader.basics.junit.NotAutomatableException;
@@ -18,7 +19,6 @@ import gradingTools.comp533s19.assignment3.testcases.GIPCRMINIOStaticArguments;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.Comp533Tags;
 import util.trace.Tracer;
-import grader.basics.execution.BasicExecutionSpecificationSelector;
 import grader.basics.testcase.PassFailJUnitTestCase;
 
 public class TwoClientCorrectReadWriteTestCase extends PassFailJUnitTestCase {
@@ -160,10 +160,10 @@ public class TwoClientCorrectReadWriteTestCase extends PassFailJUnitTestCase {
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Server", FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client_0", FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client_1", FlexibleStaticArgumentsTestCase.TEST_CLIENT_1_ARGS);
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Registry", 500);
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Server", 2000);
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Client_0", 5000);
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Client_1", 5000);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Registry", 500);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Server", 2000);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Client_0", 5000);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Client_1", 5000);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessTeams().forEach(team -> System.out.println("### " + team));
 	}
 }

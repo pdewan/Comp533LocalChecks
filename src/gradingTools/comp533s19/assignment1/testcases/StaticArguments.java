@@ -6,7 +6,7 @@ import java.util.concurrent.TimeoutException;
 
 import assignments.util.mainArgs.ClientArgsProcessor;
 import assignments.util.mainArgs.ServerPort;
-import grader.basics.execution.BasicExecutionSpecificationSelector;
+import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.execution.NotRunnableException;
 import grader.basics.execution.RunningProject;
 import grader.basics.junit.NotAutomatableException;
@@ -129,7 +129,8 @@ public class StaticArguments extends PassFailJUnitTestCase {
 			String incOutput = interactiveInputProject.await();
 		} catch (Exception e){
 			if (!(e instanceof TimeoutException)) {
-				return "Couldn't run code.";
+				e.printStackTrace();
+				return "Couldn't run code";
 			}
 		}
 		if (interactiveInputProject != null) {
@@ -240,8 +241,8 @@ public class StaticArguments extends PassFailJUnitTestCase {
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Client", Assignment1Suite.clientTagsList);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Server", Arrays.asList(serverArgs));
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client", Arrays.asList(clientArgs));
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Server", 2000);
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Client", 2000);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Server", 2000);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Client", 2000);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessTeams().forEach(team -> System.out.println("### " + team));
 	}
 }

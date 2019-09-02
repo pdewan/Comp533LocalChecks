@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.config.BasicStaticConfigurationUtils;
-import grader.basics.execution.BasicExecutionSpecificationSelector;
 import grader.basics.execution.BasicProjectExecution;
 import grader.basics.execution.ResultingOutErr;
 import grader.basics.execution.RunningProject;

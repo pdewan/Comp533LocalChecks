@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
-import grader.basics.execution.BasicExecutionSpecificationSelector;
+import grader.basics.config.BasicExecutionSpecificationSelector;
 import gradingTools.comp533s19.assignment2.testcases.RMINIOOneClientConnection;
 import gradingTools.comp533s19.assignment2.testcases.RMINIOOneClientReadWriteAtomic;
 import gradingTools.comp533s19.assignment2.testcases.RMINIOOneClientReadWriteNonAtomic;
@@ -109,7 +109,7 @@ public class Assignment2OneClientSuite {
 			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Registry",
 					Arrays.asList(DistributedTags.REGISTRY));
 			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Registry", registryArgList);
-			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Registry", 500);
+			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Registry", 500);
 			aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI, DistributedTags.NIO);
 			aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI, DistributedTags.NIO);
 //		} else if (doGIPC) {
@@ -134,8 +134,8 @@ public class Assignment2OneClientSuite {
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Client", aClientTags);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Server", serverArgList);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client", clientArgList);
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Server", 1000);
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Client", 2000);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Server", 1000);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Client", 2000);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessTeams()
 				.forEach(team -> System.out.println("### " + team));
 	}

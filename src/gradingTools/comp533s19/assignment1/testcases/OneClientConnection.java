@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
+import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.execution.NotRunnableException;
 import grader.basics.execution.RunningProject;
 import grader.basics.junit.BasicJUnitUtils;
@@ -12,7 +13,6 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.CurrentProjectHolder;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
-import grader.basics.execution.BasicExecutionSpecificationSelector;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp533s19.assignment1.Assignment1OneClientSuite;
 import gradingTools.comp533s19.assignment1.Assignment1Suite;

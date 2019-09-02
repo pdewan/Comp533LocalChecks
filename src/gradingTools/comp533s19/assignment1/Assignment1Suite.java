@@ -6,6 +6,7 @@ import java.util.List;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.execution.BasicProjectExecution;
 import grader.basics.junit.BasicJUnitUtils;
 import grader.basics.project.BasicProjectIntrospection;
@@ -69,6 +70,8 @@ public class Assignment1Suite {
 	}
 	static {
 		BasicProjectIntrospection.setCheckAllSpecifiedTags(true);
+		BasicStaticConfigurationUtils.setBasicCommandToDefaultEntryTagCommand();
+
 
 	}
 }

@@ -6,6 +6,7 @@ import java.util.List;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.junit.BasicJUnitUtils;
 import grader.basics.project.BasicProjectIntrospection;
 import gradingTools.comp533s19.assignment1.testcases.OneClientReadWrite;
@@ -164,7 +165,9 @@ public class Assignment0Suite extends Assignment1Suite{
 		}
 	}
 	static {
-		BasicProjectIntrospection.setCheckAllSpecifiedTags(true);
+		// do not need this as we are using no tahs
+//		BasicStaticConfigurationUtils.setBasicCommandToDefaultEntryTagCommand();
+//		BasicProjectIntrospection.setCheckAllSpecifiedTags(true);
 
 	}
 }

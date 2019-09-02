@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.config.BasicStaticConfigurationUtils;
-import grader.basics.execution.BasicExecutionSpecificationSelector;
 import grader.basics.execution.BasicProjectExecution;
 import grader.basics.execution.ResultingOutErr;
 import grader.basics.execution.RunningProject;
@@ -125,9 +125,9 @@ public class TestSkeleton extends PassFailJUnitTestCase {
 //				CLIENT_2_NAME, Arrays.asList(client2TaggedTestCase.getTags()));
 //		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime(SERVER_NAME, 5000);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
-			setSleepTime(MAP_REDUCE_CLIENT_1, 7000);
+			setGraderResourceReleaseTime(MAP_REDUCE_CLIENT_1, 7000);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
-			setSleepTime(MAP_REDUCE_CLIENT_2, 7000);
+			setGraderResourceReleaseTime(MAP_REDUCE_CLIENT_2, 7000);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessTeams().forEach(team -> System.out.println("### " + team));
 	}
 

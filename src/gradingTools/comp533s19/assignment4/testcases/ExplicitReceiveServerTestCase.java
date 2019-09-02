@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 
 import org.junit.Test;
 
+import grader.basics.config.BasicExecutionSpecificationSelector;
 //import framework.grading.testing.BasicTestCase;
 import grader.basics.execution.NotRunnableException;
 import grader.basics.execution.RunningProject;
@@ -32,7 +33,6 @@ import util.annotations.Group;
 import util.annotations.MaxValue;
 import util.tags.DistributedTags;
 import util.trace.Tracer;
-import grader.basics.execution.BasicExecutionSpecificationSelector;
 import grader.basics.testcase.JUnitTestCase;
 import grader.basics.testcase.PassFailJUnitTestCase;
 

@@ -10,6 +10,7 @@ import java.util.regex.Pattern;
 //import org.codehaus.jackson.format.MatchStrength;
 import org.junit.Test;
 
+import grader.basics.config.BasicExecutionSpecificationSelector;
 //import framework.grading.testing.BasicTestCase;
 import grader.basics.execution.NotRunnableException;
 import grader.basics.execution.RunningProject;
@@ -34,7 +35,6 @@ import util.annotations.Group;
 import util.annotations.MaxValue;
 import util.tags.DistributedTags;
 import util.trace.Tracer;
-import grader.basics.execution.BasicExecutionSpecificationSelector;
 import grader.basics.testcase.PassFailJUnitTestCase;
 
 @MaxValue(20)
@@ -225,11 +225,11 @@ TagCaseDependentTestCase
 				CLIENT_1_NAME, Arrays.asList(client1TaggedTestCase.getTags()));
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags(
 				CLIENT_2_NAME, Arrays.asList(client2TaggedTestCase.getTags()));
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime(SERVER_NAME, 5000);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime(SERVER_NAME, 5000);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
-			setSleepTime(CLIENT_1_NAME, 7000);
+			setGraderResourceReleaseTime(CLIENT_1_NAME, 7000);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
-			setSleepTime(CLIENT_2_NAME, 7000);
+			setGraderResourceReleaseTime(CLIENT_2_NAME, 7000);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessTeams().forEach(team -> System.out.println("### " + team));
 	}
 }
