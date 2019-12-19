@@ -1,6 +1,6 @@
 package gradingTools.comp533s19.assignment4.testcases;
 
-import gradingTools.comp533s19.assignment4.testcases.ASubstringSequenceChecker;
+import gradingTools.shared.testcases.ASubstringSequenceChecker;
 
 public class ARegularCounterServerChecker extends ASubstringSequenceChecker{
 	public static final String[] MY_SUBSTRINGS = {

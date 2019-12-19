@@ -1,7 +1,7 @@
 package gradingTools.comp533s19.assignment0.testcases.counts.standalone;
 
-import gradingTools.comp533s19.assignment4.testcases.ASubstringSequenceChecker;
 import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;
+import gradingTools.shared.testcases.ASubstringSequenceChecker;
 import util.trace.port.rpc.RemoteCallWaitingForReturnValue;
 
 public class AStandAloneTokenCounterResultChecker extends ASubstringSequenceChecker{

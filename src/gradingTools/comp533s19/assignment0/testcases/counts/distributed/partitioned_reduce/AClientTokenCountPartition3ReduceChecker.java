@@ -3,8 +3,8 @@ package gradingTools.comp533s19.assignment0.testcases.counts.distributed.partiti
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.partition_reduce.AStandAloneTokenCountPartition1ReduceChecker;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.partition_reduce.AStandAloneTokenCountPartition3ReduceChecker;
-import gradingTools.comp533s19.assignment4.testcases.ASubstringSequenceChecker;
 import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;
+import gradingTools.shared.testcases.ASubstringSequenceChecker;
 import util.trace.port.rpc.RemoteCallWaitingForReturnValue;
 
 public class AClientTokenCountPartition3ReduceChecker extends AStandAloneTokenCountPartition3ReduceChecker{

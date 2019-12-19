@@ -2,8 +2,8 @@ package gradingTools.comp533s19.assignment0.testcases.counts.standalone.partitio
 
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 import gradingTools.comp533s19.assignment0.testcases.objects.PartitionerObject;
-import gradingTools.comp533s19.assignment4.testcases.ASubstringSequenceChecker;
 import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;
+import gradingTools.shared.testcases.ASubstringSequenceChecker;
 import util.trace.port.rpc.RemoteCallWaitingForReturnValue;
 
 public class AStandAloneTokenCountPartition3ReduceChecker extends AStandAloneTokenCountPartition1ReduceChecker{

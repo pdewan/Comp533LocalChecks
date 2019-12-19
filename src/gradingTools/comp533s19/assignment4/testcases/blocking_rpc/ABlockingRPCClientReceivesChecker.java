@@ -1,7 +1,7 @@
 package gradingTools.comp533s19.assignment4.testcases.blocking_rpc;
 
-import gradingTools.comp533s19.assignment4.testcases.ASubstringSequenceChecker;
 import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;
+import gradingTools.shared.testcases.ASubstringSequenceChecker;
 
 public class ABlockingRPCClientReceivesChecker extends ASubstringSequenceChecker{
 	//make sure receives from both clients take place, need to ensure alternatibg, cannot with regular expressions

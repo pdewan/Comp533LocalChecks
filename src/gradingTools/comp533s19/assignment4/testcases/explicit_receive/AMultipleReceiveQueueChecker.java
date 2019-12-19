@@ -1,6 +1,6 @@
 package gradingTools.comp533s19.assignment4.testcases.explicit_receive;
 
-import gradingTools.comp533s19.assignment4.testcases.ASubstringSequenceChecker;
+import gradingTools.shared.testcases.ASubstringSequenceChecker;
 
 public class AMultipleReceiveQueueChecker extends ASubstringSequenceChecker{
 	public static final String[] MY_SUBSTRINGS = {
