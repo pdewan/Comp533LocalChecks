@@ -19,8 +19,8 @@ import gradingTools.shared.testcases.MainMethodForkerTest;
 import gradingTools.shared.testcases.MethodExecutionTest;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 
-public class StandAloneTokenCountResult extends MainMethodForkerTest {
-	public StandAloneTokenCountResult() {
+public class StandAloneMultiThreadTokenCountResult extends MainMethodForkerTest {
+	public StandAloneMultiThreadTokenCountResult() {
 //		BasicProjectExecution.setProcessTimeOut(Assignment0Suite.getProcessTimeOut());
 	}
 //	protected Class mainClass;

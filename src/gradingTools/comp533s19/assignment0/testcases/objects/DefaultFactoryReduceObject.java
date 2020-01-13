@@ -19,8 +19,11 @@ import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment0.testcases.factories.MapperFactory;
 import gradingTools.comp533s19.assignment0.testcases.factories.PartitionerFactory;
 import gradingTools.comp533s19.assignment0.testcases.factories.ReducerFactory;
-
-public class ReduceObject extends PassFailJUnitTestCase{
+import util.annotations.Explanation;
+import util.annotations.MaxValue;
+@MaxValue(10)
+@Explanation("Tests the reduce object returned by the configured reduce factory")
+public class DefaultFactoryReduceObject extends PassFailJUnitTestCase{
 	public static final String NAME_1 = "Abbott";
     public static final String NAME_2 = "Longbottom";
     public static final String NAME_3 = "Zabini";
@@ -86,7 +89,7 @@ public class ReduceObject extends PassFailJUnitTestCase{
 		if (aReducer == null) {
 			fail ("Reducer factory returned a null reducer");
 		}
-		TokenCountMapObject aMapperTest = (TokenCountMapObject) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(TokenCountMapObject.class);
+		DefaultFactoryMapObject aMapperTest = (DefaultFactoryMapObject) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(DefaultFactoryMapObject.class);
 		TestMapper aMapper = aMapperTest.getMapper();
 		String aResult = test(aReducer, aMapper, tokens_1, counts_1);
 		if (aResult != null) {

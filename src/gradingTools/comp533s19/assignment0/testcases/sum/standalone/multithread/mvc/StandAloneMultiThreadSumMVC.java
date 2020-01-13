@@ -1,17 +1,17 @@
-package gradingTools.comp533s19.assignment0.testcases.sum.standalone.mvc;
+package gradingTools.comp533s19.assignment0.testcases.sum.standalone.multithread.mvc;
 
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
-import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountResult;
-import gradingTools.comp533s19.assignment0.testcases.sum.standalone.StandAloneSumResult;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneMultiThreadTokenCountResult;
+import gradingTools.comp533s19.assignment0.testcases.sum.standalone.StandAloneMultiThreadSumResult;
 import gradingTools.comp533s19.assignment4.testcases.ARegularCounterClientChecker;
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 //@MaxValue(5)
 //@Explanation("Checks for expected client1 counter output when explicit receive is implemented.")
-public class StandAloneSumMVC extends AStringCheckBasedDependentTestCase {
+public class StandAloneMultiThreadSumMVC extends AStringCheckBasedDependentTestCase {
 
 //	@Override
 //	protected SubstringSequenceChecker outputChecker() {
@@ -29,10 +29,10 @@ public class StandAloneSumMVC extends AStringCheckBasedDependentTestCase {
 //		return true;
 //	}
 	protected SubstringSequenceChecker checker() {
-		return new AStandAloneSumMVCChecker();
+		return new AStandAloneMultiThreadSumMVCChecker();
 	}
 	protected Class outputgeneratingTestCaseClass() {
-		return StandAloneSumResult.class;
+		return StandAloneMultiThreadSumResult.class;
 	}
 //	@Override
 //	protected JUnitTestCase outputGeneratingTestCase() {

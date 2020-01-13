@@ -12,6 +12,7 @@ public abstract class AMapReduceTracer {
 	public static String DEQUEUE = "dequeue:";
 	public static String ADD = "add:";
 	public static String REDUCE = "reduce:";
+	public static String NEW_MAPPER = "new mapper::";
 	public static String MODEL = "Model"; // value returned by toString() method of model
 	public static String VIEW = "View"; // value returned by toString() method of view
 	public static String CONTROLLER = "Controller"; // value returned by toString() method of controller
@@ -29,12 +30,56 @@ public abstract class AMapReduceTracer {
 
 	public static final String START_TOKEN = "Start";
 
-
+	// -----------------------------A1 Traces----------------------------------
 	protected String toPrefix() {
 		return INFO_PREFIX + Thread.currentThread() + ":" + this + ":";
 	}
 	protected void trace(String aSuffix) {
 		System.out.println(toPrefix() + aSuffix);
+	}
+	/**
+	 * To be called before scanning for input string
+	 */
+	protected void traceNumbersPrompt() {
+		trace ("Please enter " + QUIT + " or a line of tokens to be processed separated by spaces");
+	}
+	/**
+	 * To be called in the controller and runnable
+	 */
+	protected void traceQuit() {
+		trace (QUITTING);
+	}
+	/**
+	 * To be called in the view at start of call to propertyChange
+	 */
+	protected void tracePropertyChange(PropertyChangeEvent anEvent) {
+		trace(anEvent.toString());
+	}
+	/*
+	 * To be called in the map methods of the mappers before returning
+	 */
+	public void traceMap(Object anInput, Object aKeyValue) {
+		trace (MAP  + anInput + ":" + aKeyValue);		
+	}
+	/*
+	 * To be called in the reducer before returning
+	 */
+	protected void traceReduce(Object aList,  Object aReducedMap) {
+		trace(REDUCE + aList + ":" +  aReducedMap);
+	}
+	/*
+	 * 
+	 */
+	public static void traceMapperChange( Class aClass, Object aNewMapper) {
+		System.out.println(INFO_PREFIX + Thread.currentThread() + ":" + aClass + ":" + NEW_MAPPER + ":" +  aNewMapper);
+	}
+	
+	//----------------------------A2 traces -----------------------------------
+	/**
+	 * To be called before scanning for number of threads
+	 */
+	protected void traceThreadPrompt() {
+		trace("Please enter the number of threads");
 	}
 	/**
 	 * To be called before a wait on this
@@ -55,28 +100,28 @@ public abstract class AMapReduceTracer {
 //		trace ( ADD + anInt);
 //	}
 	/**
-	 * To be called by a summer master thread before adding an element to 
+	 * To be called by a master thread before adding an element to 
 	 * a queue
 	 */
 	protected void traceEnqueueRequest(Object anElement) {
 		trace(ENQUEUE + anElement);
 	}
 	/**
-	 * To be called by a summer master thread after adding an object to 
+	 * To be called by a  master thread after adding an object to 
 	 * a queue
 	 */
 	protected void traceEnqueue(Object aQueue) {
 		trace(ENQUEUE + aQueue);
 	}
 	/**
-	 * To be called by a summer slave thread before executing a take from
+	 * To be called by a slave thread before executing a take from
 	 * queue 
 	 */
 	protected void traceDequeueRequest(Object aQueue) {
 		trace (DEQUEUE + aQueue);
 	}
 	/**
-	 * To be called by a summer slave thread after taking a String from a
+	 * To be called by a slave thread after taking an object from a
 	 * queue 
 	 */
 	protected void traceDequeue(Object anElement) {
@@ -89,75 +134,8 @@ public abstract class AMapReduceTracer {
 //	protected void traceReduce(int aNumItemsReduced, Object aReducedMap) {
 //		trace(REDUCE + aNumItemsReduced + ":" + aReducedMap);
 //	}
-	/**
-	 * To be called in the view at start of call to propertyChange
-	 */
-	protected void tracePropertyChange(PropertyChangeEvent anEvent) {
-		trace(anEvent.toString());
-	}
-	/**
-	 * To be called before scanning for number of threads
-	 */
-	protected void traceThreadPrompt() {
-		trace("Please enter the number of threads");
-	}
-	/**
-	 * To be called before scanning for input string
-	 */
-	protected void traceNumbersPrompt() {
-		trace ("Please enter " + QUIT + " or a line of tokens to be processed separated by spaces");
-	}
-	/**
-	 * To be called in the controller and runnable
-	 */
-	protected void traceQuit() {
-		trace (QUITTING);
-	}
-	/**
-	 * To be called in the server at the start of its method for registering a client
-	 */
-	protected void traceRegister(Object aClient) {
-		trace (REGISTER + aClient);
-	}
-	/**
-	 * To be called in the server runnable when it is assigned a  client
-	 */
-	protected void traceClientAssignment(Object aClient) {
-		trace(CLIENT_ASSIGNED + aClient);
-	}	
 	
-	/**
-	 * To be called in the server runnable before invoking the callback in the client.
-	 * To be also called in the client at the start of its callback to process sublist	 * 
-	 */
-	public void traceRemoteList (Object aSublist) {
-		trace (REMOTE_LIST + aSublist);
-	}
-	/**
-	 * To be called in the client before returning its result.
-	 * Toe be also called in server runnable after receiving the result from the client
-	 */
-	public void traceRemoteResult (Object aResult) {
-		trace (REMOTE_RESULT + aResult);
-	}
-	/**
-	 * Static method be called by the client main method
-	 */
-	public static void traceExit() {
-		System.out.println (INFO_PREFIX + Thread.currentThread() + ":" + EXIT);
-	}
-	/**
-	 * Slave runnables and client objects can define the following two methods
-	 */
-	public synchronized void synchronizedNotify() {
-		traceNotify();
-		this.notify();
-	}	
-	public synchronized void synchronizedWait() throws InterruptedException {
-		traceWait();		
-		this.wait();
-		
-	}
+	
 	/*
 	 * Additions since assignment was last given
 	 */
@@ -177,12 +155,7 @@ public abstract class AMapReduceTracer {
 
 	public static final String PARTITION_AFTER_BARRIER = "Partition After Barrier:";
 	public static final String ADDED_TO_FINAL_MAP = "Added to Final Map:";	
-	/*
-	 * To be called in the map methods of the mappers before returning
-	 */
-	public void traceMap(Object anInput, Object aKeyValue) {
-		trace (MAP  + anInput + ":" + aKeyValue);		
-	}
+	
 	public void traceBarrierCreated(Object aBarrier, int aNumThreads) {
 		trace (BARRIER_CREATED  + aBarrier + ":" + aNumThreads);		
 	}
@@ -223,12 +196,6 @@ public abstract class AMapReduceTracer {
 	public void traceSplitAfterBarrier(int aThreadNumber, Object aList) {
 		trace (PARTITION_AFTER_BARRIER + aThreadNumber + ":" + aList);
 	}
-	/*
-	 * To be called in the reducer before returning
-	 */
-	protected void traceReduce(Object aList,  Object aReducedMap) {
-		trace(REDUCE + aList + ":" +  aReducedMap);
-	}
 	
 	
 	/*
@@ -236,5 +203,53 @@ public abstract class AMapReduceTracer {
 	 */
 	protected void traceAddedToMap(Object anOriginalMap, Object aReducedMap) {
 		trace( ADDED_TO_FINAL_MAP + anOriginalMap + ":" + aReducedMap);
+	}
+	
+	//---------------------------A3 Traces--------------------------------------
+	/**
+	 * To be called in the server at the start of its method for registering a client
+	 */
+	protected void traceRegister(Object aClient) {
+		trace (REGISTER + aClient);
+	}
+	/**
+	 * To be called in the server runnable when it is assigned a  client
+	 */
+	protected void traceClientAssignment(Object aClient) {
+		trace(CLIENT_ASSIGNED + aClient);
+	}	
+	
+	/**
+	 * To be called in the server runnable before invoking the callback in the client.
+	 * To be also called in the client at the start of its callback to process sublist	 * 
+	 */
+	public void traceRemoteList (Object aSublist) {
+		trace (REMOTE_LIST + aSublist);
+	}
+	/**
+	 * To be called in the client before returning its result.
+	 * To be also called in server runnable after receiving the result from the client
+	 */
+	public void traceRemoteResult (Object aResult) {
+		trace (REMOTE_RESULT + aResult);
+	}
+	/**
+	 * Static method be called by the client main method
+	 */
+	public static void traceExit(Class aClass) {
+		System.out.println (INFO_PREFIX + Thread.currentThread() + ":" + EXIT);
+	}
+	
+	/**
+	 * Slave runnables and client objects can define the following two methods
+	 */
+	public synchronized void synchronizedNotify() {
+		traceNotify();
+		this.notify();
+	}	
+	public synchronized void synchronizedWait() throws InterruptedException {
+		traceWait();		
+		this.wait();
+		
 	}
 }

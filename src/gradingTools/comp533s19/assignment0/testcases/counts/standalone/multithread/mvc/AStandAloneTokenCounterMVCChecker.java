@@ -1,11 +1,11 @@
-package gradingTools.comp533s19.assignment0.testcases.sum.standalone.mvc;
+package gradingTools.comp533s19.assignment0.testcases.counts.standalone.multithread.mvc;
 
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;
 import gradingTools.shared.testcases.ASubstringSequenceChecker;
 import util.trace.port.rpc.RemoteCallWaitingForReturnValue;
 
-public class AStandAloneSumMVCChecker extends ASubstringSequenceChecker{
+public class AStandAloneTokenCounterMVCChecker extends ASubstringSequenceChecker{
 	//make sure receives from both clients take place, need to ensure alternatibg, cannot with regular expressions
 	public  final String[] MY_SUBSTRINGS = {
 //			toRegex(
@@ -16,14 +16,14 @@ public class AStandAloneSumMVCChecker extends ASubstringSequenceChecker{
 //					AMapReduceTracer.VIEW + "." + "propertyName=Result; oldValue=null; newValue=.*Hogwarts=5.*"
 				toRegex(AMapReduceTracer.CONTROLLER + ".*" + "Please"),
 				toRegex(AMapReduceTracer.VIEW + ".*" + "propertyName=InputString"),
-				".*"+ AMapReduceTracer.VIEW + ".*" + "propertyName=Result" + ".*=45.*"
+				".*"+ AMapReduceTracer.VIEW + ".*" + "propertyName=Result" + ".*Hogwarts=5.*"
 //				"View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*Potter=2.*",
 //			)
 
 //		"(Asynchronous Received Call Invoker|Selecting Thread)..ReceivedMessageDequeued",
 //			toPrefixedRegex("I\\*\\*\\*", "Selecting Thread..ReceivedReturnValueQueued")	
 	};
-	public AStandAloneSumMVCChecker() {
+	public AStandAloneTokenCounterMVCChecker() {
 		init( MY_SUBSTRINGS);
 	}
 	

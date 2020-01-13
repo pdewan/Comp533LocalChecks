@@ -27,9 +27,9 @@ import gradingTools.comp533s19.assignment0.interfaces.TestReducer;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator;
 import gradingTools.comp533s19.assignment0.testcases.counts.distributed.DistributedTokenCountResult;
-import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneTokenCountResult;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneMultiThreadTokenCountResult;
 import gradingTools.comp533s19.assignment0.testcases.sum.standalone.AStandAloneIntSummerResultChecker;
-import gradingTools.comp533s19.assignment0.testcases.sum.standalone.StandAloneSumResult;
+import gradingTools.comp533s19.assignment0.testcases.sum.standalone.StandAloneMultiThreadSumResult;
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
 import gradingTools.shared.testcases.MainMethodForkerTest;
 import gradingTools.shared.testcases.MethodExecutionTest;
@@ -37,7 +37,7 @@ import gradingTools.shared.testcases.SubstringSequenceChecker;
 import gradingTools.shared.testcases.utils.ABufferingTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 
-public class DistributedSumResult extends StandAloneSumResult {
+public class DistributedSumResult extends StandAloneMultiThreadSumResult {
 	public DistributedSumResult() {
 //		BasicProjectExecution.setProcessTimeOut(Assignment0Suite.getProcessTimeOut());
 	}
