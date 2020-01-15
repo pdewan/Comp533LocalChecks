@@ -13,7 +13,7 @@ import gradingTools.comp533s20.assignment1.singleThread.StandAloneSingleThreadTo
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
-@MaxValue(10)
+@MaxValue(30)
 @Explanation("Checks that token counting application follows the requiredn MVC decomposition")
 
 public class StandAloneSingleThreadTokenCountMVC extends StandAloneMultiThreadTokenCountMVC {

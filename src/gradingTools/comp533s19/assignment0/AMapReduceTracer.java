@@ -12,7 +12,7 @@ public abstract class AMapReduceTracer {
 	public static String DEQUEUE = "dequeue:";
 	public static String ADD = "add:";
 	public static String REDUCE = "reduce:";
-	public static String NEW_MAPPER = "new mapper::";
+	public static String NEW_MAPPER = "new mapper:";
 	public static String MODEL = "Model"; // value returned by toString() method of model
 	public static String VIEW = "View"; // value returned by toString() method of view
 	public static String CONTROLLER = "Controller"; // value returned by toString() method of controller
@@ -71,7 +71,7 @@ public abstract class AMapReduceTracer {
 	 * 
 	 */
 	public static void traceMapperChange( Class aClass, Object aNewMapper) {
-		System.out.println(INFO_PREFIX + Thread.currentThread() + ":" + aClass + ":" + NEW_MAPPER + ":" +  aNewMapper);
+		System.out.println(INFO_PREFIX + Thread.currentThread() + ":" + aClass + ":" + NEW_MAPPER +  aNewMapper);
 	}
 	
 	//----------------------------A2 traces -----------------------------------
