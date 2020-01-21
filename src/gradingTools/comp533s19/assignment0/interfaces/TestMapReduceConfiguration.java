@@ -1,27 +1,46 @@
 package gradingTools.comp533s19.assignment0.interfaces;
 
 public interface TestMapReduceConfiguration {
-	// return instances of the classes named by getters
-		// return instances of the following, you can use actual interfaces instead of 
-	    // Object as return type. So if your mapper interface is MyMapper, you can
-	    // have getTokenCountingMapper() return MyMapper instead of Object
-	    // return null if you have not defined the kind of object expected
-		Object getTokenCountingMapper(); 
-		Object getIntSummingMapper(); 
-	    Object getReducer();
-	    Object getPartitioner();
-	    // return some instance of the Barrier and Joiner classes
-	    Object getBarrier(int aNumThreads);
-	    Object getJoiner(int aNumThreads);
-	    // return <Class Name>.class in methods below
-	    // return null if you have not defined the kind of class expected
+	// ---------------Mostly A1---------------------------------
+    // return <Class Name>.class in returns of methods below
 
-	    Class getMapperFactory();
-	    Class getReducerFactory();
-	    Class getPartitionerFactory();
-	    Class getStandAloneTokenCounter(); // non distributed case
-	    Class getStandAloneIntegerSummer();
-	    Class getServerTokenCounter();
-	    Class getServerIntegerSummer();
-	    Class getClientTokenCounter();// client remains the same in both cases
+    // return main classes
+    Class getStandAloneTokenCounter(); 
+    Class getStandAloneIntegerSummer();
+
+    //MVC classes
+    Class getModelClass();
+    Class getViewClass();
+    Class getControllerClass();
+    
+
+    // Factories
+    Class getMapperFactory();
+    Class getReducerFactory();
+    Class getPartitionerFactory(); // A2
+
+    //KeyValue defining and processing class
+    Class getKeyValueClass();
+    Class getTokenCountingMapperClass();
+    Class getIntSummingMapperClass(); // extra credit
+    Class getReducerClass();
+
+    // Return instances of the required objects, using the relevant factories
+    // if they return these objects by default
+    Object getTokenCountingMapper(); // default object returned by Mapper factory
+    Object getIntSummingMapper(); 
+    Object getReducer(); // default object returned by Reducer factory   
+    Object getPartitioner(); // default object returned by Reducer factory, needed in A2
+    
+    // --------------------A2------------------------
+    
+    // return some instance of the Barrier and Joiner classes
+    Object getBarrier(int aNumThreads);
+    Object getJoiner(int aNumThreads);
+    
+    // --------------------A3--------------------------
+
+    Class getServerTokenCounter();
+    Class getServerIntegerSummer();
+    Class getClientTokenCounter();// client remains the same in both cases
 }

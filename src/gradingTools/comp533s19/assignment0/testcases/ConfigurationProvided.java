@@ -1,5 +1,7 @@
 package gradingTools.comp533s19.assignment0.testcases;
 
+import java.io.File;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -23,15 +25,17 @@ import gradingTools.comp533s19.assignment0.interfaces.TestReducer;
 import gradingTools.comp533s19.assignment1.Assignment1Suite;
 import gradingTools.shared.testcases.MethodExecutionTest.OutputErrorStatus;
 import gradingTools.shared.testcases.utils.ABufferingTestInputGenerator;
+import gradingTools.shared.testcases.utils.ConfigurationWriter;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
 import util.tags.DistributedTags;
 @MaxValue(10)
-@Explanation("Tests that the mapreduce configuration class is provided under the right name.")
+@Explanation("Tests that the mapreduce configuration class is provided under the rright name.")
 public class ConfigurationProvided extends PassFailJUnitTestCase {
 	public static final String CONFIGURATION_CLASS = "MyMapReduceConfiguration";
 	TestMapReduceConfiguration testConfiguration ;
+	public static final String CONFIGURATION_FILE_NAME = CONFIGURATION_CLASS + ".csv";
 
 
 	public TestMapReduceConfiguration getTestConfiguration() {
@@ -45,54 +49,17 @@ public class ConfigurationProvided extends PassFailJUnitTestCase {
 			Class aConfigurationClass = Class.forName(CONFIGURATION_CLASS);
 			Object aConfigurationObject = aConfigurationClass.newInstance();
 			 testConfiguration =  (TestMapReduceConfiguration) BasicProjectIntrospection.createProxy(TestMapReduceConfiguration.class, aConfigurationObject);
-//			Object aMapperObject = testConfiguration.getTokenCountingMapper();
-//			TestMapper aMapper = (TestMapper) BasicProjectIntrospection.createProxy(TestMapper.class, aMapperObject);
-//			Object aReducerObject = testConfiguration.getReducer();
-//			TestReducer aReducer = (TestReducer) BasicProjectIntrospection.createProxy(TestReducer.class, aReducerObject);
-//			Object a1 = aMapper.map("a ");
-//			Object a2 = aMapper.map("a");
-//			List aList = new ArrayList();
-//			aList.add(a1);
-//			aList.add(a2);
-//			
-////			aList.add("c");
-//			Object retVal = aReducer.reduce(aList);
-//			
-//			Class aStandAloneTokenCountingClass = testConfiguration.getStandAloneTokenCounter();
-//			BasicStaticConfigurationUtils.setBasicCommandToDefaultEntryPointCommand();
-//			String[] emptyArgs = {};
-//			ResultingOutErr anOutError = BasicProjectExecution.callOrForkMain(true, aStandAloneTokenCountingClass.getName(), emptyArgs, "3", "a an the a an the a a a an an an the the the");
-//			Class aStandALoneIntegerCountingClass = testConfiguration.getStandAloneIntegerSummer();
-//			anOutError = BasicProjectExecution.callOrForkMain(true, aStandALoneIntegerCountingClass.getName(), emptyArgs, "3", "1 2 3 4 5 6 7 8 9\n10 20 30 40 50 60 70 80 90\nquit");
-//
-//			ABufferingTestInputGenerator aGenerator = this.getOutputBasedInputGenerator();
-//			setInteractiveInputProject(anOutError.getRunningProject());
-//
-//						RunningProject aProject = this.getInteractiveInputProject();
-//			String anOutput = aProject.getOutputAndErrors();
-//			setupProcesses(testConfiguration);
-//			Map<String, String> aProcessToInput = new HashMap<>();
-//			String[] aServerInput = {
-//					"aaa jjj sss zzzz aaa aaa jjj zzz aaa jjj",
-//					"bbb iii ttt yyy bbb bbb iii yyy bbb iii"
-//			};
-////			notifyNewInputLine(GetConfiguration.MAP_REDUCE_SERVER, "bbb iii ttt yyy bbb bbb iii yyy bbb iii");
-////			aProcessToInput.put(MAP_REDUCE_SERVER, aServerInput);
-//			interactiveInputProject = RunningProjectUtils.runProject(project, 600, new MapReduceInputGenerator(3, aServerInput));
-//			 String anOutput2 = interactiveInputProject.await();
-//			 
-//				String aServerClassName = testConfiguration.getServerIntegerSummer().getName();
-//				BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryPoint(
-//						MAP_REDUCE_SERVER , aServerClassName);
-//				String[] aServerIntInput = {
-//						"1 2 3 4 5 6 7 8 9",
-//						"111 222 333 444 555 666 777 888 999",
-//						"11 22 33 44 55 66 77 88 99"};
-//				interactiveInputProject = RunningProjectUtils.runProject(project, 300, new MapReduceInputGenerator(3, aServerIntInput));
-//
-//			 int i = 4;
-////			int i = 4;
-////			System.out.println(anOutError.out);
+			 File aProjectDirectory = project.getProjectFolder();
+			 String aConfigurationFileName = aProjectDirectory.getCanonicalPath() + "/" + CONFIGURATION_FILE_NAME;
+			 ConfigurationWriter.writeConfiguration(aConfigurationFileName, aConfigurationObject);
+
+//			 File aFile = new File(aConfigurationFileName);
+//			 if (!aFile.exists()) {
+//				 aFile.createNewFile();
+//			 }
+//			 PrintWriter aPrintWriter = new PrintWriter (aFile);
+//			 aPrintWriter.println ("time, " + System.currentTimeMillis());
+//			 aPrintWriter.close();
 			
 			
 			
