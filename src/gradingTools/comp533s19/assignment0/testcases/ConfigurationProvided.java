@@ -46,7 +46,11 @@ public class ConfigurationProvided extends PassFailJUnitTestCase {
 	public TestCaseResult test(Project project, boolean autoGrade)
 			throws NotAutomatableException, NotGradableException {
 		try {
-			Class aConfigurationClass = Class.forName(CONFIGURATION_CLASS);
+//			Class aConfigurationClass = Class.forName(CONFIGURATION_CLASS);
+			Class aConfigurationClass = BasicProjectIntrospection.findClassByName(project, CONFIGURATION_CLASS);
+			if (aConfigurationClass == null) {
+				throw new ClassNotFoundException(CONFIGURATION_CLASS);
+			}
 			Object aConfigurationObject = aConfigurationClass.newInstance();
 			 testConfiguration =  (TestMapReduceConfiguration) BasicProjectIntrospection.createProxy(TestMapReduceConfiguration.class, aConfigurationObject);
 			 File aProjectDirectory = project.getProjectFolder();
