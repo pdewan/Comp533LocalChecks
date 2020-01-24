@@ -76,13 +76,17 @@ import util.trace.port.rpc.RemoteCallBlockedForReturnValue;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	ClientTokenCountPartition3Reduce.class,
-	ClientSumPartitionReduce.class,
 
+	MultiThreadTokenCountResult.class,
+	TokenCountThreads.class,
+	TokenCountBoundedBuffer.class,
+	TokenCountBulkPartialReduce.class,
+	TokenCountMultiplePartialReduce.class,
+	TokenCountMultipleRoundSynchronization.class,
 })
 	
 
-@MaxValue(40)	
-public class DistributedPartitionedReduce extends Assignment1Suite{
+@MaxValue(60)	
+public class MultiThreadTokenCounts extends Assignment1Suite{
 
 }

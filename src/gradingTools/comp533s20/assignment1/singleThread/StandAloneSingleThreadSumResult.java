@@ -1,13 +1,13 @@
 package gradingTools.comp533s20.assignment1.singleThread;
 
-import gradingTools.comp533s19.assignment0.testcases.sum.standalone.StandAloneMultiThreadSumResult;
+import gradingTools.comp533s19.assignment0.testcases.sum.standalone.MultiThreadSumResult;
 import util.annotations.Explanation;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @Explanation("Checks that ints are correcetly input and summed")
 @IsExtra(true)
 @MaxValue(10)
-public class StandAloneSingleThreadSumResult extends StandAloneMultiThreadSumResult {
+public class StandAloneSingleThreadSumResult extends MultiThreadSumResult {
 
 	
 	@Override 

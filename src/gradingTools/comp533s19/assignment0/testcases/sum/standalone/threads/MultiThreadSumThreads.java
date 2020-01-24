@@ -1,16 +1,17 @@
-package gradingTools.comp533s19.assignment0.testcases.counts.standalone.partial_reduce;
+package gradingTools.comp533s19.assignment0.testcases.sum.standalone.threads;
 
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
-import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneMultiThreadTokenCountResult;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.MultiThreadTokenCountResult;
+import gradingTools.comp533s19.assignment0.testcases.sum.standalone.MultiThreadSumResult;
 import gradingTools.comp533s19.assignment4.testcases.ARegularCounterClientChecker;
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 //@MaxValue(5)
 //@Explanation("Checks for expected client1 counter output when explicit receive is implemented.")
-public class StandAloneTokenCountMultiplePartialReduce extends AStringCheckBasedDependentTestCase {
+public class MultiThreadSumThreads extends AStringCheckBasedDependentTestCase {
 
 //	@Override
 //	protected SubstringSequenceChecker outputChecker() {
@@ -28,10 +29,10 @@ public class StandAloneTokenCountMultiplePartialReduce extends AStringCheckBased
 //		return true;
 //	}
 	protected SubstringSequenceChecker checker() {
-		return new AStandAloneTokenCounterBulkPartialReduceChecker();
+		return new AStandAloneCountThreadsChecker();
 	}
 	protected Class outputgeneratingTestCaseClass() {
-		return StandAloneMultiThreadTokenCountResult.class;
+		return MultiThreadSumResult.class;
 	}
 //	@Override
 //	protected JUnitTestCase outputGeneratingTestCase() {

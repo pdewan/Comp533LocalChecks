@@ -4,13 +4,13 @@ import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
-import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneMultiThreadTokenCountResult;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.MultiThreadTokenCountResult;
 import gradingTools.comp533s19.assignment4.testcases.ARegularCounterClientChecker;
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 //@MaxValue(5)
 //@Explanation("Checks for expected client1 counter output when explicit receive is implemented.")
-public class StandAloneBasicTokenCountJoiner extends AStringCheckBasedDependentTestCase {
+public class TokenCountJoiner extends AStringCheckBasedDependentTestCase {
 
 //	@Override
 //	protected SubstringSequenceChecker outputChecker() {
@@ -31,7 +31,7 @@ public class StandAloneBasicTokenCountJoiner extends AStringCheckBasedDependentT
 		return new AStandAloneTokenCountJoinerChecker();
 	}
 	protected Class outputgeneratingTestCaseClass() {
-		return StandAloneMultiThreadTokenCountResult.class;
+		return MultiThreadTokenCountResult.class;
 	}
 //	@Override
 //	protected JUnitTestCase outputGeneratingTestCase() {

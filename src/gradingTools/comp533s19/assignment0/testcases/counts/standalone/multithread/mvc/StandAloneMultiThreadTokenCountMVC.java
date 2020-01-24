@@ -4,7 +4,7 @@ import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
-import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneMultiThreadTokenCountResult;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.MultiThreadTokenCountResult;
 import gradingTools.comp533s19.assignment4.testcases.ARegularCounterClientChecker;
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
@@ -31,7 +31,7 @@ public class StandAloneMultiThreadTokenCountMVC extends AStringCheckBasedDepende
 		return new AStandAloneTokenCounterMVCChecker();
 	}
 	protected Class outputgeneratingTestCaseClass() {
-		return StandAloneMultiThreadTokenCountResult.class;
+		return MultiThreadTokenCountResult.class;
 	}
 //	@Override
 //	protected JUnitTestCase outputGeneratingTestCase() {

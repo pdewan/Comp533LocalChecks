@@ -37,6 +37,10 @@ public interface TestMapReduceConfiguration {
     // return some instance of the Barrier and Joiner classes
     Object getBarrier(int aNumThreads);
     Object getJoiner(int aNumThreads);
+
+//    // return A2 main classes
+//    Class getMultiThreadTokenCounter(); 
+//    Class getMultiThreadIntegerSummer();
     
     // --------------------A3--------------------------
 

@@ -15,7 +15,7 @@ import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp533s19.assignment0.Assignment0Suite;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.AStandAloneTokenCountResultChecker;
-import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneMultiThreadTokenCountResult;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.MultiThreadTokenCountResult;
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
 import gradingTools.shared.testcases.MainMethodForkerTest;
 import gradingTools.shared.testcases.MethodExecutionTest;
@@ -24,7 +24,7 @@ import util.annotations.Explanation;
 import util.annotations.MaxValue;
 @Explanation("Checks that token counts are correcetly input and counted")
 @MaxValue(10)
-public class StandAloneSingleThreadTokenCountResult extends StandAloneMultiThreadTokenCountResult {
+public class StandAloneSingleThreadTokenCountResult extends MultiThreadTokenCountResult {
 
 	
 	@Override 

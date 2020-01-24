@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment0;
+package gradingTools.comp533s20.assignment2;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,19 +22,19 @@ import gradingTools.comp533s19.assignment0.testcases.counts.distributed.partial_
 import gradingTools.comp533s19.assignment0.testcases.counts.distributed.partitioned_reduce.ClientTokenCountPartition3Reduce;
 import gradingTools.comp533s19.assignment0.testcases.counts.distributed.quit.ClientTokenCountQuit;
 import gradingTools.comp533s19.assignment0.testcases.counts.distributed.quit.DistributedTokenCountQuit;
-import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneMultiThreadTokenCountResult;
-import gradingTools.comp533s19.assignment0.testcases.counts.standalone.barrier.StandAloneTokenCountBarrier;
-import gradingTools.comp533s19.assignment0.testcases.counts.standalone.bounded_buffer.StandAloneTokenCountBoundedBuffer;
-import gradingTools.comp533s19.assignment0.testcases.counts.standalone.joiner.StandAloneBasicTokenCountJoiner;
-import gradingTools.comp533s19.assignment0.testcases.counts.standalone.multiple_rounds.StandAloneTokenCountMultipleRoundSynchronization;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.MultiThreadTokenCountResult;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.barrier.TokenCountBarrier;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.bounded_buffer.TokenCountBoundedBuffer;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.joiner.TokenCountJoiner;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.multiple_rounds.TokenCountMultipleRoundSynchronization;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.multithread.mvc.StandAloneMultiThreadTokenCountMVC;
-import gradingTools.comp533s19.assignment0.testcases.counts.standalone.partial_reduce.StandAloneTokenCountBulkPartialReduce;
-import gradingTools.comp533s19.assignment0.testcases.counts.standalone.partial_reduce.StandAloneTokenCountMultiplePartialReduce;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.partial_reduce.TokenCountBulkPartialReduce;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.partial_reduce.TokenCountMultiplePartialReduce;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.partition_reduce.StandAloneTokenCountPartition1Reduce;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.partition_reduce.StandAloneTokenCountPartition2Reduce;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.partition_reduce.StandAloneTokenCountPartition3Reduce;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.quit.StandAloneTokenCountQuit;
-import gradingTools.comp533s19.assignment0.testcases.counts.standalone.threads.StandAloneTokenCountThreads;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.threads.TokenCountThreads;
 import gradingTools.comp533s19.assignment0.testcases.factories.MapperFactory;
 import gradingTools.comp533s19.assignment0.testcases.factories.PartitionerFactory;
 import gradingTools.comp533s19.assignment0.testcases.factories.ReducerFactory;
@@ -46,14 +46,14 @@ import gradingTools.comp533s19.assignment0.testcases.sum.distributed.partial_red
 import gradingTools.comp533s19.assignment0.testcases.sum.distributed.partitioned_reduce.ClientSumPartitionReduce;
 import gradingTools.comp533s19.assignment0.testcases.sum.distributed.quit.ClientSumQuit;
 import gradingTools.comp533s19.assignment0.testcases.sum.distributed.quit.DistributedSumQuit;
-import gradingTools.comp533s19.assignment0.testcases.sum.standalone.StandAloneMultiThreadSumResult;
-import gradingTools.comp533s19.assignment0.testcases.sum.standalone.barrier.StandAloneSumBarrier;
-import gradingTools.comp533s19.assignment0.testcases.sum.standalone.bounded_buffer.StandAloneSumBoundedBuffer;
-import gradingTools.comp533s19.assignment0.testcases.sum.standalone.joiner.StandAloneSumJoiner;
-import gradingTools.comp533s19.assignment0.testcases.sum.standalone.multiple_rounds.StandAloneSumMultipleRoundSynchronization;
-import gradingTools.comp533s19.assignment0.testcases.sum.standalone.partial_reduce.StandAloneSumBulkPartialReduce;
-import gradingTools.comp533s19.assignment0.testcases.sum.standalone.partial_reduce.StandAloneSumMultiplePartialReduce;
-import gradingTools.comp533s19.assignment0.testcases.sum.standalone.threads.StandAloneSumThreads;
+import gradingTools.comp533s19.assignment0.testcases.sum.standalone.MultiThreadSumResult;
+import gradingTools.comp533s19.assignment0.testcases.sum.standalone.barrier.SumBarrier;
+import gradingTools.comp533s19.assignment0.testcases.sum.standalone.bounded_buffer.MultiThreadSumBoundedBuffer;
+import gradingTools.comp533s19.assignment0.testcases.sum.standalone.joiner.SumJoiner;
+import gradingTools.comp533s19.assignment0.testcases.sum.standalone.multiple_rounds.MultiThreadSumMultipleRoundSynchronization;
+import gradingTools.comp533s19.assignment0.testcases.sum.standalone.partial_reduce.MultiThreadSumBulkPartialReduce;
+import gradingTools.comp533s19.assignment0.testcases.sum.standalone.partial_reduce.MultiThreadSumMultiplePartialReduce;
+import gradingTools.comp533s19.assignment0.testcases.sum.standalone.threads.MultiThreadSumThreads;
 import gradingTools.comp533s19.assignment1.Assignment1Suite;
 import gradingTools.comp533s19.assignment1.testcases.ClientTagged;
 import gradingTools.comp533s19.assignment1.testcases.OneClientConnection;
@@ -76,21 +76,12 @@ import util.trace.port.rpc.RemoteCallBlockedForReturnValue;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-
-	StandAloneMultiThreadSumResult.class,
-	StandAloneSumBoundedBuffer.class,
-	StandAloneSumThreads.class,
-	StandAloneSumBulkPartialReduce.class,
-	StandAloneSumMultiplePartialReduce.class,
-	StandAloneSumMultipleRoundSynchronization.class,
-
-
-
-
+	PartitionerFactory.class,
+	PartitionerObject.class	
 })
 	
 
-@MaxValue(60)	
-public class BasicStandAloneSum extends Assignment1Suite{
+@MaxValue(120)	
+public class PartitionerFactoriesAndObjects extends Assignment1Suite{
 
 }

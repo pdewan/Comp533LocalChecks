@@ -14,14 +14,14 @@ import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp533s19.assignment0.Assignment0Suite;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
-import gradingTools.comp533s19.assignment0.testcases.counts.standalone.StandAloneMultiThreadTokenCountResult;
+import gradingTools.comp533s19.assignment0.testcases.counts.standalone.MultiThreadTokenCountResult;
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
 import gradingTools.shared.testcases.MainMethodForkerTest;
 import gradingTools.shared.testcases.MethodExecutionTest;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 
-public class StandAloneMultiThreadSumResult extends StandAloneMultiThreadTokenCountResult {
-	public StandAloneMultiThreadSumResult() {
+public class MultiThreadSumResult extends MultiThreadTokenCountResult {
+	public MultiThreadSumResult() {
 //		BasicProjectExecution.setProcessTimeOut(Assignment0Suite.getProcessTimeOut());
 	}
 //	protected Class mainClass;
