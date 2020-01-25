@@ -31,7 +31,7 @@ import util.annotations.Explanation;
 import util.annotations.MaxValue;
 import util.tags.DistributedTags;
 @MaxValue(10)
-@Explanation("Tests that the mapreduce configuration class is provided under the rright name.")
+@Explanation("Tests that the mapreduce configuration class is provided under the right name.")
 public class ConfigurationProvided extends PassFailJUnitTestCase {
 	public static final String CONFIGURATION_CLASS = "MyMapReduceConfiguration";
 	TestMapReduceConfiguration testConfiguration ;

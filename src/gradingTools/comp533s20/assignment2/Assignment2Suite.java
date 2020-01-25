@@ -13,7 +13,7 @@ import gradingTools.comp533s19.assignment0.Assignment0Suite;
 import gradingTools.comp533s19.assignment0.MultiThreadSum;
 import gradingTools.comp533s19.assignment0.MapReduceFactoriesAndObjects;
 import gradingTools.comp533s19.assignment0.MultiThreadTokenCounts;
-import gradingTools.comp533s19.assignment0.BarrierJoinSynchronization;
+import gradingTools.comp533s19.assignment0.BarrierJoinSynchronizationCountsAndSum;
 import gradingTools.comp533s19.assignment0.PartitionedReduce;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.MultiThreadTokenCountResult;
@@ -25,6 +25,8 @@ import gradingTools.comp533s20.assignment1.singleThread.StandAloneSingleThreadSu
 import gradingTools.comp533s20.assignment1.singleThread.StandAloneSingleThreadTokenCountResult;
 import gradingTools.comp533s20.assignment1.testcases.counts.standalone.singlethread.StandAloneSingleThreadTokenCountMVC;
 import gradingTools.comp533s20.assignment1.testcases.sum.standalone.singlethread.StandAloneSingleThreadSumMVC;
+import gradingTools.comp533s20.assignment2.testcases.synchronization.objects.BarrierJoinSynchronizationObjects;
+import util.trace.Tracer;
 
 
 
@@ -34,7 +36,8 @@ import gradingTools.comp533s20.assignment1.testcases.sum.standalone.singlethread
 	MultiThreadTokenCounts.class,
 	MultiThreadSum.class,
 	PartitionerFactoriesAndObjects.class,
-	BarrierJoinSynchronization.class,
+	BarrierJoinSynchronizationObjects.class,
+	BarrierJoinSynchronizationCountsAndSum.class,
 	PartitionedReduce.class,
 })
 	

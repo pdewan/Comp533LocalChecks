@@ -8,7 +8,8 @@ import gradingTools.comp533s19.assignment0.testcases.counts.standalone.MultiThre
 import gradingTools.comp533s19.assignment4.testcases.ARegularCounterClientChecker;
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
-//@MaxValue(5)
+import util.annotations.MaxValue;
+@MaxValue(20)
 //@Explanation("Checks for expected client1 counter output when explicit receive is implemented.")
 public class TokenCountBarrier extends AStringCheckBasedDependentTestCase {
 	public TokenCountBarrier() {

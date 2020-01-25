@@ -9,8 +9,12 @@ import gradingTools.comp533s19.assignment0.testcases.sum.standalone.MultiThreadS
 import gradingTools.comp533s19.assignment4.testcases.ARegularCounterClientChecker;
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
+import util.annotations.IsExtra;
+import util.annotations.MaxValue;
 //@MaxValue(5)
 //@Explanation("Checks for expected client1 counter output when explicit receive is implemented.")
+@MaxValue(10)
+@IsExtra(true)
 public class SumBarrier extends AStringCheckBasedDependentTestCase {
 
 //	@Override

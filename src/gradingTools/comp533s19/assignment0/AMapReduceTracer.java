@@ -29,6 +29,8 @@ public abstract class AMapReduceTracer {
 
 
 	public static final String START_TOKEN = "Start";
+	public final int BUFFER_SIZE = 2;	
+
 
 	// -----------------------------A1 Traces----------------------------------
 	protected String toPrefix() {

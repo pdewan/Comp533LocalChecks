@@ -81,7 +81,6 @@ import util.trace.port.rpc.RemoteCallBlockedForReturnValue;
 })
 	
 
-@MaxValue(120)	
 public class PartitionerFactoriesAndObjects extends Assignment1Suite{
 
 }

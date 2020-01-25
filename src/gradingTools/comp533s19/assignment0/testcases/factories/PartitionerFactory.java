@@ -1,6 +1,7 @@
 package gradingTools.comp533s19.assignment0.testcases.factories;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import util.annotations.MaxValue;
 import grader.basics.junit.JUnitTestsEnvironment;
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
@@ -11,7 +12,7 @@ import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment1.testcases.SingleClassTagListTestCase;
 import gradingTools.comp533s19.assignment4.testcases.blocking_rpc.BlockingRPCCounterServerTagged;
 import gradingTools.shared.testcases.FactoryMethodTest;
-
+@MaxValue(10)
 public class PartitionerFactory extends FactoryMethodTest {
 
 	public TestPartitioner getPartitioner() {

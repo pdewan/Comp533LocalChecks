@@ -69,6 +69,7 @@ import gradingTools.comp533s19.assignment1.testcases.TwoClientReadWriteNonAtomic
 import gradingTools.comp533s19.assignment1.testcases.TwoClientThreadsAtomic;
 import gradingTools.comp533s19.assignment1.testcases.TwoClientThreadsNonAtomic;
 import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;
+import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 import util.tags.DistributedTags;
 import util.trace.port.rpc.RemoteCallBlockedForReturnValue;
@@ -90,7 +91,8 @@ import util.trace.port.rpc.RemoteCallBlockedForReturnValue;
 })
 	
 
-@MaxValue(60)	
+@MaxValue(30)
+@IsExtra(true)
 public class MultiThreadSum extends Assignment1Suite{
 
 }
