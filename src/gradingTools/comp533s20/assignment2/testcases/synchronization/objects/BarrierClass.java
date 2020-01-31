@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment0.testcases.factories;
+package gradingTools.comp533s20.assignment2.testcases.synchronization.objects;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 import util.annotations.Explanation;
@@ -9,6 +9,7 @@ import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
+import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp533s19.assignment0.interfaces.TestMapReduceConfiguration;
 import gradingTools.comp533s19.assignment0.interfaces.TestMapper;
 import gradingTools.comp533s19.assignment0.interfaces.TestPartitioner;
@@ -16,52 +17,45 @@ import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment1.testcases.SingleClassTagListTestCase;
 import gradingTools.comp533s19.assignment4.testcases.blocking_rpc.BlockingRPCCounterServerTagged;
 import gradingTools.shared.testcases.FactoryMethodTest;
-@MaxValue(10)
+@MaxValue(5)
 @Explanation("Checks that a mapper factory is returned by the configuration and creates a mapper object")
-public class MapperFactory extends FactoryMethodTest {
-
-	public TestMapper getMapper() {
-		return (TestMapper) getRootProxy();
-	}
-	@Override
-	protected Class proxyClass() {
-		return TestMapper.class;
-	}
-	@Override
-	protected String factoryMethodName() {
-		return "getMapper";
-	}
-	@Override
-	protected Class factoryClass() {
+public class BarrierClass extends PassFailJUnitTestCase {
+	Class barrierClass;
+	
+	
+	protected Class barrierClass() {
 		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
 		TestMapReduceConfiguration aTestMapReduceConfiguration = aConfigurationProvided.getTestConfiguration();
 		if (aTestMapReduceConfiguration == null) {
 			assertTrue("No configuration", false);
 		}
-		return aConfigurationProvided.getTestConfiguration().getMapperFactory();
+		return aConfigurationProvided.getTestConfiguration().getBarrierClass();
 		
 	}
-	@Override
-	protected Object createUsingFactory() {
-		return createUsingFactoryClassAndMethodName();
-	}
+	
 //	@Override
 //	protected boolean doTest() throws Throwable {
 //		 return doFactoryMethodTest();
 //		
 //	}
-	public void defaultTest() {
-    	passfailDefaultTest();
-    }
-	@Override
-	protected boolean matchProxyActualClass() {
-		return false;
+	public TestCaseResult test(Project project, boolean autoGrade)
+			throws NotAutomatableException, NotGradableException {
+		barrierClass = barrierClass();
+		if (barrierClass == null) {
+			return fail ("Null barrier class returned by configuration:");
+		}
+		String aPackageName = barrierClass.getPackage().getName();
+		boolean aCorrectPackageName = aPackageName.startsWith(ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME);
+		if (!aCorrectPackageName) {
+			return partialPass(0.5, "Barrier class package name, " + aPackageName + ",  does not start with:" + ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME + ". ");
+		}
+		return pass();
+			
+		
 	}
-	public  TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
-   	NotGradableException {
-    	
-		boolean aResult = doFactoryMethodTest();
-		return (aResult == true? pass(): fail("Factory method test failed"));
-    }
+//	public void defaultTest() {
+//    	passfailDefaultTest();
+//    }
+//	
 
 }

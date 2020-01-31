@@ -24,6 +24,9 @@ public interface TestMapReduceConfiguration {
     Class getTokenCountingMapperClass();
     Class getIntSummingMapperClass(); // extra credit
     Class getReducerClass();
+    Class getPartitionerClass();//A2
+  	Class getJoinerClass();// A2
+	Class getBarrierClass();// A2
 
     // Return instances of the required objects, using the relevant factories
     // if they return these objects by default
@@ -31,6 +34,9 @@ public interface TestMapReduceConfiguration {
     Object getIntSummingMapper(); 
     Object getReducer(); // default object returned by Reducer factory   
     Object getPartitioner(); // default object returned by Reducer factory, needed in A2
+    
+    
+  
     
     // --------------------A2------------------------
     
@@ -47,4 +53,5 @@ public interface TestMapReduceConfiguration {
     Class getServerTokenCounter();
     Class getServerIntegerSummer();
     Class getClientTokenCounter();// client remains the same in both cases
+	
 }

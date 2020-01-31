@@ -1,4 +1,4 @@
-package gradingTools.comp533s20.assignment2;
+package gradingTools.comp533s20.assignment2.testcases.synchronization.objects;
 
 import java.util.Arrays;
 import java.util.List;
@@ -76,11 +76,15 @@ import util.trace.port.rpc.RemoteCallBlockedForReturnValue;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	PartitionerFactory.class,
-	PartitionerObject.class	
+	BarrierClass.class,
+	Barrier.class,
+	JoinerClass.class,
+	EarlyJoin.class,
+	LateJoin.class,
+	
 })
 	
 
-public class PartitionerFactoriesAndObjects extends Assignment1Suite{
+public class BarrierJoinSynchronizationClassAndObject extends Assignment1Suite{
 
 }

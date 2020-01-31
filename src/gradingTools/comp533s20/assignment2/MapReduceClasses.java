@@ -1,4 +1,4 @@
-package gradingTools.comp533s20.assignment2.testcases.synchronization.objects;
+package gradingTools.comp533s20.assignment2;
 
 import java.util.Arrays;
 import java.util.List;
@@ -39,6 +39,9 @@ import gradingTools.comp533s19.assignment0.testcases.factories.MapperFactory;
 import gradingTools.comp533s19.assignment0.testcases.factories.PartitionerFactory;
 import gradingTools.comp533s19.assignment0.testcases.factories.ReducerFactory;
 import gradingTools.comp533s19.assignment0.testcases.objects.PartitionerObject;
+import gradingTools.comp533s19.assignment0.testcases.objects.ReducerClass;
+import gradingTools.comp533s19.assignment0.testcases.objects.SumMapperClass;
+import gradingTools.comp533s19.assignment0.testcases.objects.TokenCountsMapperClass;
 import gradingTools.comp533s19.assignment0.testcases.objects.DefaultFactoryReduceObject;
 import gradingTools.comp533s19.assignment0.testcases.objects.DefaultFactoryMapObject;
 import gradingTools.comp533s19.assignment0.testcases.sum.distributed.DistributedSumResult;
@@ -76,13 +79,13 @@ import util.trace.port.rpc.RemoteCallBlockedForReturnValue;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	EarlyJoin.class,
-	LateJoin.class,
-	Barrier.class
-	
+	TokenCountsMapperClass.class,
+	SumMapperClass.class,
+	ReducerClass.class,
+
 })
 	
 
-public class BarrierJoinSynchronizationObjects extends Assignment1Suite{
+public class MapReduceClasses extends Assignment1Suite{
 
 }

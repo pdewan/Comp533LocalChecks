@@ -34,6 +34,9 @@ import util.tags.DistributedTags;
 @Explanation("Tests that the mapreduce configuration class is provided under the right name.")
 public class ConfigurationProvided extends PassFailJUnitTestCase {
 	public static final String CONFIGURATION_CLASS = "MyMapReduceConfiguration";
+	public static final String TOP_LEVEL_PACKAGE_NAME = "comp533";
+	public static final String CONFIGURATION_CLASS_2 = TOP_LEVEL_PACKAGE_NAME + ".MyMapReduceConfiguration";
+
 	TestMapReduceConfiguration testConfiguration ;
 	public static final String CONFIGURATION_FILE_NAME = CONFIGURATION_CLASS + ".csv";
 
@@ -47,9 +50,12 @@ public class ConfigurationProvided extends PassFailJUnitTestCase {
 			throws NotAutomatableException, NotGradableException {
 		try {
 //			Class aConfigurationClass = Class.forName(CONFIGURATION_CLASS);
-			Class aConfigurationClass = BasicProjectIntrospection.findClassByName(project, CONFIGURATION_CLASS);
+			Class aConfigurationClass = BasicProjectIntrospection.findClassByName(project, CONFIGURATION_CLASS_2);
 			if (aConfigurationClass == null) {
+				aConfigurationClass = BasicProjectIntrospection.findClassByName(project, CONFIGURATION_CLASS);
+				if (aConfigurationClass == null) {
 				throw new ClassNotFoundException(CONFIGURATION_CLASS);
+				}
 			}
 			Object aConfigurationObject = aConfigurationClass.newInstance();
 			 testConfiguration =  (TestMapReduceConfiguration) BasicProjectIntrospection.createProxy(TestMapReduceConfiguration.class, aConfigurationObject);

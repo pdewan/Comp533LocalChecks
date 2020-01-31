@@ -25,7 +25,7 @@ import gradingTools.comp533s20.assignment1.singleThread.StandAloneSingleThreadSu
 import gradingTools.comp533s20.assignment1.singleThread.StandAloneSingleThreadTokenCountResult;
 import gradingTools.comp533s20.assignment1.testcases.counts.standalone.singlethread.StandAloneSingleThreadTokenCountMVC;
 import gradingTools.comp533s20.assignment1.testcases.sum.standalone.singlethread.StandAloneSingleThreadSumMVC;
-import gradingTools.comp533s20.assignment2.testcases.synchronization.objects.BarrierJoinSynchronizationObjects;
+import gradingTools.comp533s20.assignment2.testcases.synchronization.objects.BarrierJoinSynchronizationClassAndObject;
 import util.trace.Tracer;
 
 
@@ -33,10 +33,11 @@ import util.trace.Tracer;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	ConfigurationProvided.class,
+	MapReduceClasses.class,
 	MultiThreadTokenCounts.class,
 	MultiThreadSum.class,
-	PartitionerFactoriesAndObjects.class,
-	BarrierJoinSynchronizationObjects.class,
+	PartitionerClassFactoryAndObject.class,
+	BarrierJoinSynchronizationClassAndObject.class,
 	BarrierJoinSynchronizationCountsAndSum.class,
 	PartitionedReduce.class,
 })
