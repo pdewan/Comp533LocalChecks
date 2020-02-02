@@ -6,6 +6,7 @@ import java.util.List;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.junit.BasicJUnitUtils;
 import grader.basics.project.BasicProjectIntrospection;
@@ -48,6 +49,7 @@ public class Assignment2Suite extends Assignment1Suite{
 
 	public static void main (String[] args) {
 		try {
+//			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setReRunTests(false);;
 
 			BasicJUnitUtils.interactiveTest(Assignment2Suite.class);
 

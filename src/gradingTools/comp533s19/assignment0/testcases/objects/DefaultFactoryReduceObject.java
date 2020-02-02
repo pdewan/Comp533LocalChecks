@@ -87,10 +87,13 @@ public class DefaultFactoryReduceObject extends PassFailJUnitTestCase{
 		ReducerFactory aFactory = (ReducerFactory) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ReducerFactory.class);
 		TestReducer aReducer = aFactory.getReducer();
 		if (aReducer == null) {
-			fail ("Reducer factory returned a null reducer");
+			return fail ("Reducer factory returned a null reducer");
 		}
 		DefaultFactoryMapObject aMapperTest = (DefaultFactoryMapObject) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(DefaultFactoryMapObject.class);
 		TestMapper aMapper = aMapperTest.getMapper();
+		if (aMapper == null) {
+			return fail("Null mapper");
+		}
 		String aResult = test(aReducer, aMapper, tokens_1, counts_1);
 		if (aResult != null) {
 			return fail(aResult);

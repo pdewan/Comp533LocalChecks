@@ -13,6 +13,7 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp533s19.assignment0.Assignment0Suite;
+import gradingTools.comp533s19.assignment0.interfaces.TestMapReduceConfiguration;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.MultiThreadTokenCountResult;
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
@@ -106,7 +107,16 @@ public class MultiThreadSumResult extends MultiThreadTokenCountResult {
 	}
 	protected void setMainClass() {
 		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
-        setMainClass( aConfigurationProvided.getTestConfiguration().getStandAloneIntegerSummer());
+        TestMapReduceConfiguration aTestMapReduceConfiguration =  aConfigurationProvided.getTestConfiguration();
+        if (aTestMapReduceConfiguration == null) {
+        	assertTrue("No configuration", false);
+        }
+        Class anIntSummer = aTestMapReduceConfiguration.getStandAloneIntegerSummer();
+        if (anIntSummer == null) {
+        	assertTrue("No int summer", false);
+        }
+        setMainClass(anIntSummer);
+//		setMainClass( aConfigurationProvided.getTestConfiguration().getStandAloneIntegerSummer());
 
 	}
 //	@Override

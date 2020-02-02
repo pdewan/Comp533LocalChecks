@@ -38,8 +38,11 @@ public class MapperFactory extends FactoryMethodTest {
 		if (aTestMapReduceConfiguration == null) {
 			assertTrue("No configuration", false);
 		}
-		return aConfigurationProvided.getTestConfiguration().getMapperFactory();
-		
+		Class retVal = aConfigurationProvided.getTestConfiguration().getMapperFactory();
+		if (retVal == null) {
+			assertTrue("Null mapper factory in configuration", false);
+		}
+		return retVal;
 	}
 	@Override
 	protected Object createUsingFactory() {

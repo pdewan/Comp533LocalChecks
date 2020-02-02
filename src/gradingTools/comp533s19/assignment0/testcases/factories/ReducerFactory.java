@@ -8,6 +8,7 @@ import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
+import gradingTools.comp533s19.assignment0.interfaces.TestMapReduceConfiguration;
 import gradingTools.comp533s19.assignment0.interfaces.TestMapper;
 import gradingTools.comp533s19.assignment0.interfaces.TestPartitioner;
 import gradingTools.comp533s19.assignment0.interfaces.TestReducer;
@@ -33,7 +34,16 @@ public class ReducerFactory extends FactoryMethodTest {
 	@Override
 	protected Class factoryClass() {
 		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
-		return aConfigurationProvided.getTestConfiguration().getReducerFactory();
+		TestMapReduceConfiguration aTestMapReduceConfiguration = aConfigurationProvided.getTestConfiguration();
+		if (aTestMapReduceConfiguration == null) {
+			assertTrue("No configuration", false);
+		}
+		Class retVal = aConfigurationProvided.getTestConfiguration().getReducerFactory();
+		if (retVal == null) {
+			assertTrue("Null reducer factory in configuration", false);
+		}
+		return retVal;
+//		return aConfigurationProvided.getTestConfiguration().getReducerFactory();
 		
 	}
 	@Override

@@ -16,6 +16,10 @@ public class TokenCountingMapper extends DefaultFactoryMapObject{
 	protected void setMapper() {
 		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
 		Object anObjectMapper =  aConfigurationProvided.getTestConfiguration().getTokenCountingMapper();
+		if (anObjectMapper == null) {
+    		BasicJUnitUtils.assertTrue("Configuration returned a null mapper", 0, false);
+
+		}
 		mapper = (TestMapper) BasicProjectIntrospection.createProxy(TestMapper.class, anObjectMapper);
 		if (mapper == null) {
     		BasicJUnitUtils.assertTrue("Configuration returned a null mapper", 0, false);

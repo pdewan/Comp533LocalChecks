@@ -27,7 +27,13 @@ public class PartitionerObject extends PassFailJUnitTestCase{
 	public TestCaseResult test(Project project, boolean autoGrade)
 			throws NotAutomatableException, NotGradableException {
 		PartitionerFactory aPartitionerFactory = (PartitionerFactory) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(PartitionerFactory.class);
+		if (aPartitionerFactory == null) {
+			assertTrue("Null partitioner factory returned by configuration", false);
+		}
 		TestPartitioner aPartitioner = aPartitionerFactory.getPartitioner();
+		if (aPartitioner == null) {
+			assertTrue("Null partitioner returned by partioner factory ", false);
+		}
 		int aPartition = aPartitioner.getPartition(PARTITION_1_NAME , null, 3);
 //		if (aPartition == 0) {
 //			return pass();

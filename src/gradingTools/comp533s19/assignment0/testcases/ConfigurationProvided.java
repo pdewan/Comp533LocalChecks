@@ -39,7 +39,10 @@ public class ConfigurationProvided extends PassFailJUnitTestCase {
 
 	TestMapReduceConfiguration testConfiguration ;
 	public static final String CONFIGURATION_FILE_NAME = CONFIGURATION_CLASS + ".csv";
-
+	
+	public ConfigurationProvided() {
+		
+	}
 
 	public TestMapReduceConfiguration getTestConfiguration() {
 		return testConfiguration;

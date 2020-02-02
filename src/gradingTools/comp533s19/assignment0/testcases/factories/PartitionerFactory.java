@@ -7,6 +7,7 @@ import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
+import gradingTools.comp533s19.assignment0.interfaces.TestMapReduceConfiguration;
 import gradingTools.comp533s19.assignment0.interfaces.TestPartitioner;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment1.testcases.SingleClassTagListTestCase;
@@ -29,7 +30,17 @@ public class PartitionerFactory extends FactoryMethodTest {
 	@Override
 	protected Class factoryClass() {
 		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
-		return aConfigurationProvided.getTestConfiguration().getPartitionerFactory();
+		TestMapReduceConfiguration aTestMapReduceConfiguration = aConfigurationProvided.getTestConfiguration();
+		
+		if (aTestMapReduceConfiguration == null) {
+			assertTrue("No configuration", false);
+		}
+		Class retVal = aTestMapReduceConfiguration.getPartitionerFactory();
+		if (retVal == null) {
+			assertTrue("Null partitioner factory:", false);
+		}
+		return retVal;
+//		return aConfigurationProvided.getTestConfiguration().getPartitionerFactory();
 		
 	}
 	@Override

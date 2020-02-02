@@ -23,7 +23,11 @@ public class IntSummingMapper extends TokenCountingMapper{
 	}   
 	protected void setMapper() {
 		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
+	
 		Object anObjectMapper =  aConfigurationProvided.getTestConfiguration().getIntSummingMapper();
+		if (anObjectMapper == null) {
+			assertTrue("Null object mapper returned by configiration", false);
+		}
 		mapper = (TestMapper) BasicProjectIntrospection.createProxy(TestMapper.class, anObjectMapper);
 		if (mapper == null) {
     		BasicJUnitUtils.assertTrue("Configuration returned a null mapper", 0, false);
