@@ -39,15 +39,15 @@ public class PartitionerObject extends PassFailJUnitTestCase{
 //			return pass();
 //		}
 		if (aPartition != 0) {
-			return fail("Partition for " + PARTITION_1_NAME + " should be:" + 0);
+			return fail("Partition for " + PARTITION_1_NAME + " should be:" + 0 + " and not:" + aPartition);
 		}
 		aPartition = aPartitioner.getPartition(PARTITION_2_NAME , null, 3);
 		if (aPartition != 1) {
-			return partialPass(PARTITION_1_CREDIT, "Partition for " + PARTITION_2_NAME + " should be:" + 1);
+			return partialPass(PARTITION_1_CREDIT, "Partition for " + PARTITION_2_NAME + " should be:" + 1 + " and not:" + aPartition);
 		}
 		aPartition = aPartitioner.getPartition(PARTITION_3_NAME , null, 3);
 		if (aPartition != 2) {
-			return partialPass(PARTITION_2_CREDIT, "Partition for " + PARTITION_3_NAME + " should be:" + 3);
+			return partialPass(PARTITION_2_CREDIT, "Partition for " + PARTITION_3_NAME + " should be:" + 2 + " and not:" + aPartition);
 		}
 		return pass();
 		
