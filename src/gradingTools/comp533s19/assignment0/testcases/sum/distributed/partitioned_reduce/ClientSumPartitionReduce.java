@@ -12,8 +12,10 @@ import gradingTools.comp533s19.assignment4.testcases.ARegularCounterClientChecke
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 import port.old.PrintingReplyingObjectReceiver;
-//@MaxValue(5)
-//@Explanation("Checks for expected client1 counter output when explicit receive is implemented.")
+import util.annotations.IsExtra;
+import util.annotations.MaxValue;
+@MaxValue(10)
+@IsExtra(true)
 public class ClientSumPartitionReduce extends AStringCheckBasedDependentTestCase {
 
 //	@Override
