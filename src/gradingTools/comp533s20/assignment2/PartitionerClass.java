@@ -44,18 +44,24 @@ public class PartitionerClass extends PassFailJUnitTestCase {
 		if (clazz == null) {
 			return fail ("Null partitioner class returned by configuration:");
 		}
-		String aFullClassName = clazz.getName();
-		Package aPackage = clazz.getPackage();
-		String aPackageName = "";
 		boolean aCorrectPackageName = false;
-		if (aPackage != null) {
-		   aPackageName = aPackage.getName();
-//		boolean aCorrectPackageName = aPackageName.startsWith(ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME);
-		   aCorrectPackageName = aPackageName.startsWith(ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME);
+
+		String aFullClassName = clazz.getName();
+		if (aFullClassName.contains(".")) {
+			aCorrectPackageName = aFullClassName.startsWith(ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME);
 		}
+//		Package aPackage = clazz.getPackage();
+//		String aPackageName = "";
+//		if (aPackage != null) {
+//		   aPackageName = aPackage.getName();
+////		boolean aCorrectPackageName = aPackageName.startsWith(ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME);
+//		   aCorrectPackageName = aPackageName.startsWith(ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME);
+//		}
 
 		if (!aCorrectPackageName) {
-			return partialPass(0.5, "Partitioner class package name, " + aPackageName + ",  does not start with:" + ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME + ". ");
+//			return partialPass(0.5, "Partitioner class package name, " + aPackageName + ",  does not start with:" + ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME + ". ");
+			return partialPass(0.5, "Pckage of class , " + aFullClassName + ",  does not start with:" + ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME + ". ");
+
 		}
 		return pass();
 			
