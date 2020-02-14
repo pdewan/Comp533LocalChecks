@@ -44,6 +44,7 @@ public class PartitionerClass extends PassFailJUnitTestCase {
 		if (clazz == null) {
 			return fail ("Null partitioner class returned by configuration:");
 		}
+		String aFullClassName = clazz.getName();
 		Package aPackage = clazz.getPackage();
 		String aPackageName = "";
 		boolean aCorrectPackageName = false;
