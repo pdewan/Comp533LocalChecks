@@ -16,6 +16,7 @@ import gradingTools.comp533s19.assignment0.interfaces.TestPartitioner;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment1.testcases.SingleClassTagListTestCase;
 import gradingTools.comp533s19.assignment4.testcases.blocking_rpc.BlockingRPCCounterServerTagged;
+import gradingTools.comp533s20.assignment2.PartitionerClass;
 import gradingTools.shared.testcases.FactoryMethodTest;
 @MaxValue(5)
 @Explanation("Checks that a mapper factory is returned by the configuration and creates a mapper object")
@@ -44,10 +45,13 @@ public class BarrierClass extends PassFailJUnitTestCase {
 		if (barrierClass == null) {
 			return fail ("Null barrier class returned by configuration:");
 		}
-		String aPackageName = barrierClass.getPackage().getName();
-		boolean aCorrectPackageName = aPackageName.startsWith(ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME);
-		if (!aCorrectPackageName) {
-			return partialPass(0.5, "Barrier class package name, " + aPackageName + ",  does not start with:" + ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME + ". ");
+//		String aPackageName = barrierClass.getPackage().getName();
+//		boolean aCorrectPackageName = aPackageName.startsWith(ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME);
+//		if (!aCorrectPackageName) {
+//			return partialPass(0.5, "Barrier class package name, " + aPackageName + ",  does not start with:" + ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME + ". ");
+//		}
+		if (!PartitionerClass.testForCorrectPackageName(barrierClass)) {
+			return partialPass(0.5, "Barrier class package name, " + barrierClass + ",  does not start with:" + ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME + ". ");
 		}
 		return pass();
 			

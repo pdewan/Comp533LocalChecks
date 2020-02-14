@@ -38,15 +38,10 @@ public class PartitionerClass extends PassFailJUnitTestCase {
 //		 return doFactoryMethodTest();
 //		
 //	}
-	public TestCaseResult test(Project project, boolean autoGrade)
-			throws NotAutomatableException, NotGradableException {
-		clazz = partitionerClass();
-		if (clazz == null) {
-			return fail ("Null partitioner class returned by configuration:");
-		}
+	public static boolean testForCorrectPackageName (Class aClass) {
 		boolean aCorrectPackageName = false;
 
-		String aFullClassName = clazz.getName();
+		String aFullClassName = aClass.getName();
 		if (aFullClassName.contains(".")) {
 			aCorrectPackageName = aFullClassName.startsWith(ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME);
 		}
@@ -58,9 +53,36 @@ public class PartitionerClass extends PassFailJUnitTestCase {
 //		   aCorrectPackageName = aPackageName.startsWith(ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME);
 //		}
 
-		if (!aCorrectPackageName) {
+		return aCorrectPackageName;
+	}
+	public TestCaseResult test(Project project, boolean autoGrade)
+			throws NotAutomatableException, NotGradableException {
+		clazz = partitionerClass();
+		if (clazz == null) {
+			return fail ("Null partitioner class returned by configuration:");
+		}
+//		boolean aCorrectPackageName = false;
+//
+//		String aFullClassName = clazz.getName();
+//		if (aFullClassName.contains(".")) {
+//			aCorrectPackageName = aFullClassName.startsWith(ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME);
+//		}
+////		Package aPackage = clazz.getPackage();
+////		String aPackageName = "";
+////		if (aPackage != null) {
+////		   aPackageName = aPackage.getName();
+//////		boolean aCorrectPackageName = aPackageName.startsWith(ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME);
+////		   aCorrectPackageName = aPackageName.startsWith(ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME);
+////		}
+//
+//		if (!aCorrectPackageName) {
+////			return partialPass(0.5, "Partitioner class package name, " + aPackageName + ",  does not start with:" + ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME + ". ");
+//			return partialPass(0.5, "Package of class , " + aFullClassName + ",  does not start with:" + ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME + ". ");
+//
+//		}
+		if (!testForCorrectPackageName(clazz)) {
 //			return partialPass(0.5, "Partitioner class package name, " + aPackageName + ",  does not start with:" + ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME + ". ");
-			return partialPass(0.5, "Package of class , " + aFullClassName + ",  does not start with:" + ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME + ". ");
+			return partialPass(0.5, "Package of class , " + clazz + ",  does not start with:" + ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME + ". ");
 
 		}
 		return pass();

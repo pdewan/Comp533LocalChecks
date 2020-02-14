@@ -16,6 +16,7 @@ import gradingTools.comp533s19.assignment0.interfaces.TestPartitioner;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment1.testcases.SingleClassTagListTestCase;
 import gradingTools.comp533s19.assignment4.testcases.blocking_rpc.BlockingRPCCounterServerTagged;
+import gradingTools.comp533s20.assignment2.PartitionerClass;
 import gradingTools.shared.testcases.FactoryMethodTest;
 @IsExtra(true)
 @MaxValue(5)
@@ -45,10 +46,13 @@ public class SumMapperClass extends PassFailJUnitTestCase {
 		if (clazz == null) {
 			return fail ("Null token counts mapper class returned by configuration:");
 		}
-		String aPackageName = clazz.getPackage().getName();
-		boolean aCorrectPackageName = aPackageName.startsWith(ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME);
-		if (!aCorrectPackageName) {
-			return partialPass(0.5, "Sum mapper class package name, " + aPackageName + ",  does not start with:" + ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME + ". ");
+//		String aPackageName = clazz.getPackage().getName();
+//		boolean aCorrectPackageName = aPackageName.startsWith(ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME);
+//		if (!aCorrectPackageName) {
+//			return partialPass(0.5, "Sum mapper class package name, " + aPackageName + ",  does not start with:" + ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME + ". ");
+//		}
+		if (!PartitionerClass.testForCorrectPackageName(clazz)) {
+			return partialPass(0.5, "Package of " + clazz + ",  does not start with:" + ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME + ". ");
 		}
 		return pass();
 			
