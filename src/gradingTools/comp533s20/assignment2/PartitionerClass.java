@@ -60,7 +60,7 @@ public class PartitionerClass extends PassFailJUnitTestCase {
 
 		if (!aCorrectPackageName) {
 //			return partialPass(0.5, "Partitioner class package name, " + aPackageName + ",  does not start with:" + ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME + ". ");
-			return partialPass(0.5, "Pckage of class , " + aFullClassName + ",  does not start with:" + ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME + ". ");
+			return partialPass(0.5, "Package of class , " + aFullClassName + ",  does not start with:" + ConfigurationProvided.TOP_LEVEL_PACKAGE_NAME + ". ");
 
 		}
 		return pass();
