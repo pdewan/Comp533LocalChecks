@@ -11,6 +11,7 @@ public class RunA4Tests {
 		Tracer.showInfo(true);
 		GraderBasicsTraceUtility.setBufferTracedMessages(false);
 		Assignment4Suite.setProcessTimeOut(45);
+		Tracer.setMaxTraces(4000);
 	Assignment4Suite.main(args);
 	}
 
