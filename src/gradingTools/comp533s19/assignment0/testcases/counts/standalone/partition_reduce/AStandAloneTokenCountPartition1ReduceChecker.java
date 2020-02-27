@@ -38,7 +38,8 @@ public class AStandAloneTokenCountPartition1ReduceChecker extends ASubstringSequ
 			toLineRegex(AMapReduceTracer.SLAVE, AMapReduceTracer.PARTITION_ASSIGNED, token(), threadNumber(), "3"),
 			toLineRegex(AMapReduceTracer.SLAVE +  threadNumber() ,  BARRIER_END),
 			toLineRegex(AMapReduceTracer.SLAVE +  threadNumber() ,  AMapReduceTracer.PARTITION_AFTER_BARRIER, threadNumber(), token()),
-			toLineRegex(AMapReduceTracer.SLAVE +  threadNumber() ,  AMapReduceTracer.ADDED_TO_FINAL_MAP, token(), numOccurences(), ":", token())
+//			toLineRegex(AMapReduceTracer.SLAVE +  threadNumber() ,  AMapReduceTracer.ADDED_TO_FINAL_MAP, token(), numOccurences(), ":", token())
+			toLineRegex(AMapReduceTracer.ADDED_TO_FINAL_MAP, token(), numOccurences(), ":", token())
 		};
 	}
 
