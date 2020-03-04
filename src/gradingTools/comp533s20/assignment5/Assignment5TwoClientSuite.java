@@ -1,15 +1,16 @@
-package gradingTools.comp533s20.assignment4;
+package gradingTools.comp533s20.assignment5;
 
-import gradingTools.comp533s20.assignment4.testcases.RMIClientMetaStateBroadcast;
-import gradingTools.comp533s20.assignment4.testcases.RMIClientMetaStateNoBroadcast;
-import gradingTools.comp533s20.assignment4.testcases.RMIServerMetaStateBroadcast;
-import gradingTools.comp533s20.assignment4.testcases.RMIServerMetaStateNoBroadcast;
-import gradingTools.comp533s20.assignment4.testcases.RMITwoClientConnection;
-import gradingTools.comp533s20.assignment4.testcases.RMITwoClientReadWriteAtomic;
-import gradingTools.comp533s20.assignment4.testcases.RMITwoClientReadWriteNonAtomic;
-import gradingTools.comp533s20.assignment5.Assignment5TwoClientSuite;
 //import gradingTools.comp533s19.assignment3.Assignment3TwoClientSuite;
 import gradingTools.comp533s19.flexible.testcases.FlexibleStaticArgumentsTestCase;
+import gradingTools.comp533s20.assignment4.Assignment4TwoClientSuite;
+import gradingTools.comp533s20.assignment5.testcases.GIPCRMIClientMetaStateBroadcast;
+import gradingTools.comp533s20.assignment5.testcases.GIPCRMIClientMetaStateNoBroadcast;
+import gradingTools.comp533s20.assignment5.testcases.GIPCRMIServerMetaStateBroadcast;
+import gradingTools.comp533s20.assignment5.testcases.GIPCRMIServerMetaStateNoBroadcast;
+import gradingTools.comp533s20.assignment5.testcases.GIPCRMIStaticArguments;
+import gradingTools.comp533s20.assignment5.testcases.GIPCRMITwoClientConnection;
+import gradingTools.comp533s20.assignment5.testcases.GIPCRMITwoClientReadWriteAtomic;
+import gradingTools.comp533s20.assignment5.testcases.GIPCRMITwoClientReadWriteNonAtomic;
 
 import java.util.Arrays;
 import java.util.List;
@@ -23,18 +24,18 @@ import util.tags.DistributedTags;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-//	RMINIOStaticArguments.class,
-	RMITwoClientConnection.class,
-	RMITwoClientReadWriteNonAtomic.class,
-	//RMITwoClientReadWriteAtomic.class,
-	RMIClientMetaStateNoBroadcast.class,
-	RMIClientMetaStateBroadcast.class,
-	RMIServerMetaStateNoBroadcast.class,
-	RMIServerMetaStateBroadcast.class
+//	GIPCRMIStaticArguments.class,
+	GIPCRMITwoClientConnection.class,
+	GIPCRMITwoClientReadWriteNonAtomic.class,
+//	GIPCRMITwoClientReadWriteAtomic.class,
+	GIPCRMIClientMetaStateNoBroadcast.class,
+	GIPCRMIClientMetaStateBroadcast.class,
+	GIPCRMIServerMetaStateNoBroadcast.class,
+	GIPCRMIServerMetaStateBroadcast.class
 	
 	
 })
-public class Assignment4TwoClientSuite {
+public class Assignment5TwoClientSuite {
 public static void twoClientSetupProcesses(boolean doGIPC) {
 	if (doGIPC) {
 		Assignment5TwoClientSuite.twoClientSetupProcesses();
@@ -45,8 +46,8 @@ public static void twoClientSetupProcesses(boolean doGIPC) {
 
 
 public static void twoClientSetupProcesses() {
-	List<String> aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI);
-	List<String> aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI);
+	List<String> aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI, DistributedTags.GIPC);
+	List<String> aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI, DistributedTags.GIPC);
 	twoClientSetupProcesses(aClientTags, aServerTags);
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client_0", "Client_1"));
