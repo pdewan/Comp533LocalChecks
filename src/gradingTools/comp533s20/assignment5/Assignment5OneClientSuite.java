@@ -111,18 +111,18 @@ public class Assignment5OneClientSuite {
 					Arrays.asList(DistributedTags.REGISTRY));
 			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Registry", registryArgList);
 			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Registry", 500);
-			aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI, DistributedTags.NIO);
-			aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI, DistributedTags.NIO);
+			aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI);
+			aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI);
 //		} else if (doGIPC) {
 		}
 		if (doGIPC) {
-			aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.NIO, DistributedTags.RMI, DistributedTags.GIPC);
-			aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.NIO, DistributedTags.RMI,DistributedTags.GIPC);
+			aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI, DistributedTags.GIPC);
+			aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI,DistributedTags.GIPC);
 //		} else {
 		}
 		if (!doRMI && !doGIPC) {
-			aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.NIO);
-			aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.NIO);
+			aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.NIO, DistributedTags.RMI, DistributedTags.GIPC);
+			aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.NIO, DistributedTags.RMI, DistributedTags.GIPC);
 			BasicExecutionSpecificationSelector.getBasicExecutionSpecification()
 					.setProcessTeams(Arrays.asList("DistributedProgram"));
 			BasicExecutionSpecificationSelector.getBasicExecutionSpecification()
