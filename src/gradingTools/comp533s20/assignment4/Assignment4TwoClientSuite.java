@@ -27,10 +27,10 @@ import util.tags.DistributedTags;
 	RMITwoClientConnection.class,
 	RMITwoClientReadWriteNonAtomic.class,
 	//RMITwoClientReadWriteAtomic.class,
-	RMIClientMetaStateNoBroadcast.class,
-	RMIClientMetaStateBroadcast.class,
-	RMIServerMetaStateNoBroadcast.class,
-	RMIServerMetaStateBroadcast.class
+//	RMIClientMetaStateNoBroadcast.class,
+//	RMIClientMetaStateBroadcast.class,
+//	RMIServerMetaStateNoBroadcast.class,
+//	RMIServerMetaStateBroadcast.class
 	
 	
 })

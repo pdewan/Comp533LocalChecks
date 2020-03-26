@@ -28,10 +28,10 @@ import util.tags.DistributedTags;
 	GIPCRMITwoClientConnection.class,
 	GIPCRMITwoClientReadWriteNonAtomic.class,
 //	GIPCRMITwoClientReadWriteAtomic.class,
-	GIPCRMIClientMetaStateNoBroadcast.class,
-	GIPCRMIClientMetaStateBroadcast.class,
-	GIPCRMIServerMetaStateNoBroadcast.class,
-	GIPCRMIServerMetaStateBroadcast.class
+//	GIPCRMIClientMetaStateNoBroadcast.class,
+//	GIPCRMIClientMetaStateBroadcast.class,
+//	GIPCRMIServerMetaStateNoBroadcast.class,
+//	GIPCRMIServerMetaStateBroadcast.class
 	
 	
 })
