@@ -20,9 +20,10 @@ import gradingTools.comp533s20.flexible.testcases.FlexibleMetaStateBroadcastTest
 import gradingTools.comp533s19.flexible.testcases.MetaStateBroadcastTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.Group;
+import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 import util.trace.Tracer;
-
+@IsExtra(true) 
 @MaxValue(20)
 //@Group("Test group name")
 public class GIPCRMIServerMetaStateBroadcast extends FlexibleMetaStateBroadcastTestCase {
