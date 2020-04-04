@@ -20,6 +20,8 @@ public class FlexibleTwoClientCorrectReadWriteTestCase extends PassFailJUnitTest
 	private final boolean doNIO;
 	private final boolean doRMI;
 	private final boolean doGIPC;
+	private boolean NIOPassed = false;
+	private boolean	RMIPassed = false;
 	
 	private static int RUNTIME = 60;
 	
@@ -86,23 +88,23 @@ public class FlexibleTwoClientCorrectReadWriteTestCase extends PassFailJUnitTest
 			int possible = atomic ? 4 : 2;
 			int[] scoring = new int[] {0,0};
 			if (doNIO) {
-				check(scoring, anOutputBasedInputGenerator.isClient0NIOWriteComplete());
-				check(scoring, anOutputBasedInputGenerator.isServerNIORead0Complete());
-				check(scoring, anOutputBasedInputGenerator.isServerNIOWrite1Complete());
-				check(scoring, anOutputBasedInputGenerator.isClient1NIOReadComplete());
+				check(scoring, NIOPassed = anOutputBasedInputGenerator.isClient0NIOWriteComplete());
+				check(scoring, NIOPassed = anOutputBasedInputGenerator.isServerNIORead0Complete());
+				check(scoring, NIOPassed = anOutputBasedInputGenerator.isServerNIOWrite1Complete());
+				check(scoring, NIOPassed = anOutputBasedInputGenerator.isClient1NIOReadComplete());
 				if (atomic) {
-					check(scoring, anOutputBasedInputGenerator.isServerNIOWrite0Complete());
-					check(scoring, anOutputBasedInputGenerator.isClient0NIOReadComplete());
+					check(scoring, NIOPassed = anOutputBasedInputGenerator.isServerNIOWrite0Complete());
+					check(scoring, NIOPassed = anOutputBasedInputGenerator.isClient0NIOReadComplete());
 				}
 			}
 			if (doRMI) {
-				check(scoring, anOutputBasedInputGenerator.isClient0RMIWriteComplete());
-				check(scoring, anOutputBasedInputGenerator.isServerRMIRead0Complete());
-				check(scoring, anOutputBasedInputGenerator.isServerRMIWrite1Complete());
-				check(scoring, anOutputBasedInputGenerator.isClient1RMIReadComplete());
+				check(scoring, RMIPassed = anOutputBasedInputGenerator.isClient0RMIWriteComplete());
+				check(scoring, RMIPassed = anOutputBasedInputGenerator.isServerRMIRead0Complete());
+				check(scoring, RMIPassed = anOutputBasedInputGenerator.isServerRMIWrite1Complete());
+				check(scoring, RMIPassed = anOutputBasedInputGenerator.isClient1RMIReadComplete());
 				if (atomic) {
-					check(scoring, anOutputBasedInputGenerator.isServerRMIWrite0Complete());
-					check(scoring, anOutputBasedInputGenerator.isClient0RMIReadComplete());
+					check(scoring, RMIPassed = anOutputBasedInputGenerator.isServerRMIWrite0Complete());
+					check(scoring, RMIPassed = anOutputBasedInputGenerator.isClient0RMIReadComplete());
 				}
 			}
 			if (doGIPC) {
@@ -120,9 +122,37 @@ public class FlexibleTwoClientCorrectReadWriteTestCase extends PassFailJUnitTest
 			if (correct == possible) {
 				return pass();
 			} else if (correct == 0) {
-				return fail("In " + anOutputBasedInputGenerator.getLastNotFoundSource() + ", no line found matching regex: " + anOutputBasedInputGenerator.getLastNotFound());
+				if (doNIO && !NIOPassed) {
+					if (doRMI && doGIPC) {
+						return fail("In " + anOutputBasedInputGenerator.getLastNotFoundSource() + ", no line found matching regex: " + anOutputBasedInputGenerator.getLastNotFound() + "\nRMI and GIPC are not checked because NIO failed");
+					} else if (doRMI) {
+						return fail("In " + anOutputBasedInputGenerator.getLastNotFoundSource() + ", no line found matching regex: " + anOutputBasedInputGenerator.getLastNotFound() + "\nRMI is not checked because NIO failed");
+					} else if (doGIPC) {
+						return fail("In " + anOutputBasedInputGenerator.getLastNotFoundSource() + ", no line found matching regex: " + anOutputBasedInputGenerator.getLastNotFound() + "\nGIPC is not checked because NIO failed");
+					} else {
+						return fail("In " + anOutputBasedInputGenerator.getLastNotFoundSource() + ", no line found matching regex: " + anOutputBasedInputGenerator.getLastNotFound());
+					}
+				} else if (doRMI && !RMIPassed && doGIPC) {
+					return fail("In " + anOutputBasedInputGenerator.getLastNotFoundSource() + ", no line found matching regex: " + anOutputBasedInputGenerator.getLastNotFound() + "\nGIPC is not checked because RMI failed");
+				} else {
+					return fail("In " + anOutputBasedInputGenerator.getLastNotFoundSource() + ", no line found matching regex: " + anOutputBasedInputGenerator.getLastNotFound());
+				}
 			} else {
-				return partialPass(((double)correct)/possible, "In " + anOutputBasedInputGenerator.getLastNotFoundSource() + ", no line found matching regex: " + anOutputBasedInputGenerator.getLastNotFound());
+				if (doNIO && !NIOPassed) {
+					if (doRMI && doGIPC) {
+						return partialPass(((double)correct)/possible, "In " + anOutputBasedInputGenerator.getLastNotFoundSource() + ", no line found matching regex: " + anOutputBasedInputGenerator.getLastNotFound() + "\nRMI and GIPC are not checked because NIO failed");
+					} else if (doRMI) {
+						return partialPass(((double)correct)/possible, "In " + anOutputBasedInputGenerator.getLastNotFoundSource() + ", no line found matching regex: " + anOutputBasedInputGenerator.getLastNotFound() + "\nRMI is not checked because NIO failed");
+					} else if (doGIPC) {
+						return partialPass(((double)correct)/possible, "In " + anOutputBasedInputGenerator.getLastNotFoundSource() + ", no line found matching regex: " + anOutputBasedInputGenerator.getLastNotFound() + "\nGIPC is not checked because NIO failed");
+					} else {
+						return fail("In " + anOutputBasedInputGenerator.getLastNotFoundSource() + ", no line found matching regex: " + anOutputBasedInputGenerator.getLastNotFound());
+					}
+				} else if (doRMI && !RMIPassed && doGIPC) {
+					return partialPass(((double)correct)/possible, "In " + anOutputBasedInputGenerator.getLastNotFoundSource() + ", no line found matching regex: " + anOutputBasedInputGenerator.getLastNotFound() + "\nGIPC is not checked because RMI failed");
+				} else {
+					return partialPass(((double)correct)/possible, "In " + anOutputBasedInputGenerator.getLastNotFoundSource() + ", no line found matching regex: " + anOutputBasedInputGenerator.getLastNotFound());
+				}
 			}
 		} catch (NotRunnableException e) {
 			throw new NotGradableException();
