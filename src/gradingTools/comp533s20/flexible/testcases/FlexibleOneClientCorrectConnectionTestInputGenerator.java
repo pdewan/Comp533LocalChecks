@@ -47,7 +47,7 @@ public class FlexibleOneClientCorrectConnectionTestInputGenerator extends AnAbst
 			checkStr(MAIN_THREAD, "SelectorFactorySet"),
 			checkStr(MAIN_THREAD, "SocketChannelBound"),
 			checkStr(MAIN_THREAD, "ListenableAcceptsEnabled"),
-			checkStr(MAIN_THREAD, "SelectorRequestNextInterestOp"),
+//			checkStr(MAIN_THREAD, "SelectorRequestNextInterestOp"),
 			checkStr(MAIN_THREAD, "SelectorRequestEnqueued"),
 			checkStr(MAIN_THREAD, "SelectorWokenUp"),
 			checkStr(SELECT_THREAD, "SelectorRequestDequeued"),
@@ -78,7 +78,7 @@ public class FlexibleOneClientCorrectConnectionTestInputGenerator extends AnAbst
 	private static final Pattern[] clientNIOConnectStages = {
 			checkStr(MAIN_THREAD, "SelectorFactorySet"),
 			checkStr(MAIN_THREAD, "SocketChannelConnectRequested"),
-			checkStr(MAIN_THREAD, "SelectorRequestNextInterestOp"),
+//			checkStr(MAIN_THREAD, "SelectorRequestNextInterestOp"),
 			checkStr(MAIN_THREAD, "SelectorRequestEnqueued"),
 			checkStr(MAIN_THREAD, "SelectorWokenUp"),
 			checkStr(SELECT_THREAD, "SelectorRequestDequeued"),
