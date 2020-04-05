@@ -18,7 +18,7 @@ import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp533s20.assignment4.Assignment4Suite;
 import gradingTools.comp533s20.assignment4.Assignment4TwoClientSuite;
 import gradingTools.comp533s19.assignment3.Assignment3TwoClientSuite;
-import gradingTools.comp533s19.flexible.testcases.MetaStateBroadcastTestInputGenerator;
+import gradingTools.comp533s20.flexible.testcases.MetaStateBroadcastTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.Group;
 import util.annotations.MaxValue;

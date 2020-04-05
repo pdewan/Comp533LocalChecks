@@ -3,7 +3,7 @@ package gradingTools.comp533s20.flexible.testcases;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
-import gradingTools.comp533s19.flexible.testcases.FlexibleTwoClientCorrectConnectionTestInputGenerator;
+import gradingTools.comp533s20.flexible.testcases.FlexibleTwoClientCorrectConnectionTestInputGenerator;
 import util.trace.Tracer;
 
 public class MetaStateBroadcastTestInputGenerator extends FlexibleTwoClientCorrectConnectionTestInputGenerator {

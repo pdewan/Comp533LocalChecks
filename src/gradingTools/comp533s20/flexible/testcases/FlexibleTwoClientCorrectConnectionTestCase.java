@@ -16,7 +16,7 @@ import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp533s20.assignment4.Assignment4Suite;
 import gradingTools.comp533s20.assignment4.Assignment4TwoClientSuite;
-import gradingTools.comp533s19.flexible.testcases.FlexibleTwoClientCorrectConnectionTestInputGenerator;
+import gradingTools.comp533s20.flexible.testcases.FlexibleTwoClientCorrectConnectionTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.Group;
 import util.annotations.MaxValue;

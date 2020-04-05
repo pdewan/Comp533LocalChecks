@@ -1,6 +1,6 @@
 package gradingTools.comp533s20.assignment6.testcases;
 
-import gradingTools.comp533s19.flexible.testcases.FlexibleTwoClientCorrectConnectionTestCase;
+import gradingTools.comp533s20.flexible.testcases.FlexibleTwoClientCorrectConnectionTestCase;
 import util.annotations.MaxValue;
 
 @MaxValue(20)

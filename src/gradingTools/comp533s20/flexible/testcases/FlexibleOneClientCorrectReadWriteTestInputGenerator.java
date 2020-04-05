@@ -2,7 +2,7 @@ package gradingTools.comp533s20.flexible.testcases;
 
 import java.util.regex.Pattern;
 
-import gradingTools.comp533s19.flexible.testcases.FlexibleOneClientCorrectConnectionTestInputGenerator;
+import gradingTools.comp533s20.flexible.testcases.FlexibleOneClientCorrectConnectionTestInputGenerator;
 import util.trace.Tracer;
 
 public class FlexibleOneClientCorrectReadWriteTestInputGenerator extends FlexibleOneClientCorrectConnectionTestInputGenerator {

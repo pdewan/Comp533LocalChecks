@@ -11,7 +11,7 @@ import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp533s19.assignment1.Assignment1OneClientSuite;
 import gradingTools.comp533s20.flexible.testcases.FlexibleOneClientCorrectReadWriteTestCase;
-import gradingTools.comp533s19.flexible.testcases.FlexibleOneClientCorrectReadWriteTestInputGenerator;
+import gradingTools.comp533s20.flexible.testcases.FlexibleOneClientCorrectReadWriteTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
 import util.trace.Tracer;

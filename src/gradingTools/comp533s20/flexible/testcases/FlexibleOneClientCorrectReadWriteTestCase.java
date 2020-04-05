@@ -13,7 +13,7 @@ import gradingTools.comp533s19.assignment1.Assignment1OneClientSuite;
 import gradingTools.comp533s20.assignment4.Assignment4OneClientSuite;
 import gradingTools.comp533s20.assignment4.Assignment4Suite;
 import gradingTools.comp533s20.assignment4.Assignment4TwoClientSuite;
-import gradingTools.comp533s19.flexible.testcases.FlexibleOneClientCorrectReadWriteTestInputGenerator;
+import gradingTools.comp533s20.flexible.testcases.FlexibleOneClientCorrectReadWriteTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 import util.trace.Tracer;
 
