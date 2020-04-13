@@ -23,7 +23,7 @@ import util.tags.DistributedTags;
 //	RMINIOStaticArguments.class,
 	GIPCRMINIOTwoClientConnection.class,
 	GIPCRMINIOTwoClientReadWriteNonAtomic.class,
-	GIPCRMINIOTwoClientReadWriteAtomic.class,
+//	GIPCRMINIOTwoClientReadWriteAtomic.class,
 	GIPCRMINIOClientMetaStateNoBroadcast.class,
 	GIPCRMINIOClientMetaStateBroadcast.class,
 	GIPCRMINIOServerMetaStateNoBroadcast.class,
