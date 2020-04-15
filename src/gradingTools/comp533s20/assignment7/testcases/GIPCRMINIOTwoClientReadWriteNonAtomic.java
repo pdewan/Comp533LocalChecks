@@ -1,4 +1,4 @@
-package gradingTools.comp533s20.assignment6.testcases;
+package gradingTools.comp533s20.assignment7.testcases;
 
 import java.util.Arrays;
 
@@ -16,10 +16,10 @@ import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
 import util.trace.Tracer;
 @MaxValue(20)
-public class GIPCRMINIOTwoClientReadWriteAtomic extends FlexibleTwoClientCorrectReadWriteTestCase {
+public class GIPCRMINIOTwoClientReadWriteNonAtomic extends FlexibleTwoClientCorrectReadWriteTestCase {
 
-	public GIPCRMINIOTwoClientReadWriteAtomic() {
-		super(true, true, true, true);
+	public GIPCRMINIOTwoClientReadWriteNonAtomic() {
+		super(false, true, true, true);
 	}
 	
 }

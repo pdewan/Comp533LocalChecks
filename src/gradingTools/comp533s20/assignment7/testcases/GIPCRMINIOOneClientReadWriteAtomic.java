@@ -1,4 +1,4 @@
-package gradingTools.comp533s20.assignment6.testcases;
+package gradingTools.comp533s20.assignment7.testcases;
 
 import java.util.Arrays;
 
@@ -9,17 +9,15 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.comp533s19.assignment2.Assignment2TwoClientSuite;
-import gradingTools.comp533s20.flexible.testcases.FlexibleTwoClientCorrectReadWriteTestCase;
-import gradingTools.comp533s20.flexible.testcases.FlexibleTwoClientCorrectReadWriteTestInputGenerator;
+import gradingTools.comp533s19.assignment1.Assignment1OneClientSuite;
+import gradingTools.comp533s20.flexible.testcases.FlexibleOneClientCorrectReadWriteTestCase;
+import gradingTools.comp533s20.flexible.testcases.FlexibleOneClientCorrectReadWriteTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
 import util.trace.Tracer;
 @MaxValue(20)
-public class GIPCRMINIOTwoClientReadWriteAtomic extends FlexibleTwoClientCorrectReadWriteTestCase {
-
-	public GIPCRMINIOTwoClientReadWriteAtomic() {
+public class GIPCRMINIOOneClientReadWriteAtomic extends FlexibleOneClientCorrectReadWriteTestCase {
+	public GIPCRMINIOOneClientReadWriteAtomic() {
 		super(true, true, true, true);
-	}
-	
+	}	
 }

@@ -1,4 +1,4 @@
-package gradingTools.comp533s20.assignment6.testcases;
+package gradingTools.comp533s20.assignment7.testcases;
 
 import java.util.Arrays;
 
@@ -10,16 +10,18 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp533s19.assignment2.Assignment2TwoClientSuite;
+import gradingTools.comp533s20.flexible.testcases.FlexibleTwoClientCorrectReadWriteConsensusTestCase;
 import gradingTools.comp533s20.flexible.testcases.FlexibleTwoClientCorrectReadWriteTestCase;
 import gradingTools.comp533s20.flexible.testcases.FlexibleTwoClientCorrectReadWriteTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
+import util.interactiveMethodInvocation.ConsensusAlgorithm;
 import util.trace.Tracer;
 @MaxValue(20)
-public class GIPCRMINIOTwoClientReadWriteAtomic extends FlexibleTwoClientCorrectReadWriteTestCase {
+public class GIPCRMINIOTwoClientReadWriteAtomicConsensus extends FlexibleTwoClientCorrectReadWriteConsensusTestCase {
 
-	public GIPCRMINIOTwoClientReadWriteAtomic() {
-		super(true, true, true, true);
+	public GIPCRMINIOTwoClientReadWriteAtomicConsensus() {
+		super(true, true, true, true, ConsensusAlgorithm.CENTRALIZED_SYNCHRONOUS);
 	}
 	
 }

@@ -1,4 +1,4 @@
-package gradingTools.comp533s20.assignment6.testcases;
+package gradingTools.comp533s20.assignment7.testcases;
 
 import java.util.Arrays;
 
