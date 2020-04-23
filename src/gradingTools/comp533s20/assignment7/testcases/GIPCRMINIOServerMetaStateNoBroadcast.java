@@ -23,7 +23,7 @@ import util.annotations.Group;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 import util.trace.Tracer;
-//@IsExtra(true)
+@IsExtra(true)
 @MaxValue(5)
 //@Group("Test group name")
 public class GIPCRMINIOServerMetaStateNoBroadcast extends FlexibleMetaStateBroadcastTestCase {
