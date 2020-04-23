@@ -26,14 +26,14 @@ import util.tags.DistributedTags;
 public class Assignment4OneClientSuite {
 	private static final String DEFAULT_PORT_RMI = "" + Registry.REGISTRY_PORT;
 
-	public static void oneClientSetupProcesses(boolean doGIPC) {
+	public static void oneClientSetupProcesses(boolean doNIO, boolean doRMI, boolean doGIPC) {
 		Assignment4OneClientSuite.oneClientSetupProcesses(FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS,
-				FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS, true, doGIPC);
+				FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS, doNIO, doRMI, doGIPC);
 	}
 
-	public static void oneClientSetupProcessesRMI() {
-		Assignment4OneClientSuite.oneClientSetupProcesses(FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS,
-				FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS, true, false);
+//	public static void oneClientSetupProcessesRMI() {
+//		Assignment4OneClientSuite.oneClientSetupProcesses(FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS,
+//				FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS, true, false);
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client"));
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcesses("RegistryBasedDistributedProgram", Arrays.asList("Registry", "Server", "Client"));
@@ -47,15 +47,15 @@ public class Assignment4OneClientSuite {
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Server", 2000);
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Client", 5000);
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessTeams().forEach(team -> System.out.println("### " + team));
-	}
+//	}
 
 	public static void oneClientSetupProcesses(String[] serverArgs, String[] clientArgs, boolean doRMI,
-			boolean doGIPC) {
+			boolean doGIPC, boolean doNIO) {
 		List<String> serverArgList = Arrays.stream(serverArgs).filter(s -> !s.isEmpty()).collect(Collectors.toList());
 //	List<String> registryArgList = (serverArgList.size() >= 3 && !serverArgList.get(2).equals(DEFAULT_PORT_RMI)) ? serverArgList.subList(2, 3) : Collections.emptyList();
 		List<String> clientArgList = Arrays.stream(clientArgs).filter(s -> !s.isEmpty()).collect(Collectors.toList());
 //	List<String> aClientTags;
-		oneClientSetupProcesses(serverArgList, clientArgList, doRMI, doGIPC);
+		oneClientSetupProcesses(serverArgList, clientArgList, doRMI, doGIPC, doNIO);
 //	List<String> aServerTags;
 ////	serverArgList.removeIf(s-> s.isEmpty());
 ////	clientArgList.removeIf(s-> s.isEmpty());
@@ -89,7 +89,7 @@ public class Assignment4OneClientSuite {
 	}
 
 	public static void oneClientSetupProcesses(List<String> serverArgList, List<String> clientArgList, boolean doRMI,
-			boolean doGIPC) {
+			boolean doGIPC, boolean doNIO) {
 //	List<String> serverArgList = Arrays.stream(serverArgs).filter(s -> !s.isEmpty()).collect(Collectors.toList());
 		List<String> registryArgList = (serverArgList.size() >= 3 && !serverArgList.get(2).equals(DEFAULT_PORT_RMI))
 				? serverArgList.subList(2, 3)
@@ -120,7 +120,7 @@ public class Assignment4OneClientSuite {
 			aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI,DistributedTags.GIPC);
 //		} else {
 		}
-		if (!doRMI && !doGIPC) {
+		if (doNIO) {
 			aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.NIO, DistributedTags.RMI, DistributedTags.GIPC);
 			aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.NIO, DistributedTags.RMI, DistributedTags.GIPC);
 			BasicExecutionSpecificationSelector.getBasicExecutionSpecification()
@@ -143,6 +143,6 @@ public class Assignment4OneClientSuite {
 
 	public static void setupProcesses() {
 		Assignment4OneClientSuite.oneClientSetupProcesses(FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS,
-				FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS, true, false);
+				FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS, false, true, false);
 	}
 }

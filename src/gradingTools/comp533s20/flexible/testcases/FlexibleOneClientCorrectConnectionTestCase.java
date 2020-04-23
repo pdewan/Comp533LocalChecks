@@ -100,7 +100,7 @@ public class FlexibleOneClientCorrectConnectionTestCase extends PassFailJUnitTes
 	
 	protected  void setupProcesses() {
 		
-		Assignment4OneClientSuite.oneClientSetupProcesses(doGIPC);
+		Assignment4OneClientSuite.oneClientSetupProcesses(doNIO, doRMI, doGIPC);
 
 //		Assignment2OneClientSuite.oneClientSetupProcesses(
 //				FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS.toArray(new String[] {}), 

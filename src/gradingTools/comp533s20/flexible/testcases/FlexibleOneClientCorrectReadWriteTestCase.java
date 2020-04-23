@@ -163,7 +163,7 @@ public class FlexibleOneClientCorrectReadWriteTestCase extends PassFailJUnitTest
 	}
 	
 	protected  void setupProcesses() {
-		Assignment4OneClientSuite.oneClientSetupProcesses(doGIPC);
+		Assignment4OneClientSuite.oneClientSetupProcesses(doNIO, doRMI, doGIPC);
 
 //		Assignment1OneClientSuite.oneClientSetupProcesses();
 //		ExecutionSpecificationSelector.getExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
