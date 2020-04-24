@@ -49,13 +49,13 @@ public class Assignment4OneClientSuite {
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessTeams().forEach(team -> System.out.println("### " + team));
 //	}
 
-	public static void oneClientSetupProcesses(String[] serverArgs, String[] clientArgs, boolean doRMI,
-			boolean doGIPC, boolean doNIO) {
+	public static void oneClientSetupProcesses(String[] serverArgs, String[] clientArgs, boolean doNIO, boolean doRMI,
+			boolean doGIPC) {
 		List<String> serverArgList = Arrays.stream(serverArgs).filter(s -> !s.isEmpty()).collect(Collectors.toList());
 //	List<String> registryArgList = (serverArgList.size() >= 3 && !serverArgList.get(2).equals(DEFAULT_PORT_RMI)) ? serverArgList.subList(2, 3) : Collections.emptyList();
 		List<String> clientArgList = Arrays.stream(clientArgs).filter(s -> !s.isEmpty()).collect(Collectors.toList());
 //	List<String> aClientTags;
-		oneClientSetupProcesses(serverArgList, clientArgList, doRMI, doGIPC, doNIO);
+		oneClientSetupProcesses(serverArgList, clientArgList, doNIO, doRMI, doGIPC);
 //	List<String> aServerTags;
 ////	serverArgList.removeIf(s-> s.isEmpty());
 ////	clientArgList.removeIf(s-> s.isEmpty());
@@ -88,8 +88,8 @@ public class Assignment4OneClientSuite {
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessTeams().forEach(team -> System.out.println("### " + team));
 	}
 
-	public static void oneClientSetupProcesses(List<String> serverArgList, List<String> clientArgList, boolean doRMI,
-			boolean doGIPC, boolean doNIO) {
+	public static void oneClientSetupProcesses(List<String> serverArgList, List<String> clientArgList, boolean doNIO, boolean doRMI,
+			boolean doGIPC) {
 //	List<String> serverArgList = Arrays.stream(serverArgs).filter(s -> !s.isEmpty()).collect(Collectors.toList());
 		List<String> registryArgList = (serverArgList.size() >= 3 && !serverArgList.get(2).equals(DEFAULT_PORT_RMI))
 				? serverArgList.subList(2, 3)
@@ -123,12 +123,16 @@ public class Assignment4OneClientSuite {
 		if (doNIO) {
 			aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.NIO, DistributedTags.RMI, DistributedTags.GIPC);
 			aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.NIO, DistributedTags.RMI, DistributedTags.GIPC);
-			BasicExecutionSpecificationSelector.getBasicExecutionSpecification()
-					.setProcessTeams(Arrays.asList("DistributedProgram"));
-			BasicExecutionSpecificationSelector.getBasicExecutionSpecification()
-					.setTerminatingProcesses("DistributedProgram", Arrays.asList("Client"));
-			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcesses("DistributedProgram",
-					Arrays.asList("Server", "Client"));
+			if (!doGIPC && !doRMI) {
+				aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.NIO);
+				aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.NIO);
+				BasicExecutionSpecificationSelector.getBasicExecutionSpecification()
+				.setProcessTeams(Arrays.asList("DistributedProgram"));
+				BasicExecutionSpecificationSelector.getBasicExecutionSpecification()
+				.setTerminatingProcesses("DistributedProgram", Arrays.asList("Client"));
+				BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcesses("DistributedProgram",
+						Arrays.asList("Server", "Client"));
+			}
 		}
 
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Server", aServerTags);
