@@ -149,24 +149,17 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestInputGenerator extend
 	};
 	
 	private static final Pattern[] serverRMIAcceptedStages = {
-			checkStr(RMI_THREAD, "ProposalAcceptRequestSent"),
-			checkStr(RMI_THREAD, "ProposalAcceptedNotificationReceived"),
-			checkStr(RMI_THREAD, "ProposalAcceptRequestSent"),
-			checkStr(RMI_THREAD, "ProposalAcceptedNotificationReceived")
-	};
-	
-	private static final Pattern[] serverNIOAcceptedStages = {
-			checkStr(SELECT_THREAD, "ProposalAcceptRequestSent"),
-			checkStr(SELECT_THREAD, "ProposalAcceptedNotificationReceived"),
-			checkStr(SELECT_THREAD, "ProposalAcceptRequestSent"),
-			checkStr(SELECT_THREAD, "ProposalAcceptedNotificationReceived")
+			Pattern.compile(".*?" + "ProposalAcceptRequestSent" + ".*", Pattern.DOTALL),
+			Pattern.compile(".*?" + "ProposalAcceptedNotificationReceived" + ".*", Pattern.DOTALL)
+//			checkStr(RMI_THREAD, "ProposalAcceptRequestSent"),
+//			checkStr(RMI_THREAD, "ProposalAcceptedNotificationReceived")
 	};
 	
 	private static final Pattern[] serverGIPCAcceptedStages = {
-			checkStr(GIPC_THREAD, "ProposalAcceptRequestSent"),
-//			checkStr(GIPC_THREAD, "ProposalAcceptedNotificationReceived"),
+			Pattern.compile(".*?" + "ProposalAcceptRequestSent" + ".*", Pattern.DOTALL),
+			Pattern.compile(".*?" + "ProposalAcceptedNotificationReceived" + ".*", Pattern.DOTALL)
 //			checkStr(GIPC_THREAD, "ProposalAcceptRequestSent"),
-			checkStr(GIPC_THREAD, "ProposalAcceptedNotificationReceived")
+//			checkStr(GIPC_THREAD, "ProposalAcceptedNotificationReceived")
 	};
 	
 	private static final Pattern[] serverNIOWriteStages = {
