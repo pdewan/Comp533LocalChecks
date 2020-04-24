@@ -77,15 +77,15 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestInputGenerator extend
 	private int client1RMIReadStage = 0;
 	private int client1GIPCReadStage = 0;
 	
-	private int serverGIPCAcceptedStage = 0;
-	private int serverNIOAcceptedStage = 0;
-	private int serverRMIAcceptedStage = 0;
-	private int client0NIOAcceptStage = 0;
+	private int serverGIPCClient0AcceptedStage = 0;
+	private int serverGIPCClient1AcceptedStage = 0;
+	private int serverRMIClient0AcceptedStage = 0;
+	private int serverRMIClient1AcceptedStage = 0;
 	private int client0RMIAcceptStage = 0;
 	private int client0GIPCAcceptStage = 0;
-	private int client1NIOAcceptStage = 0;
 	private int client1RMIAcceptStage = 0;
 	private int client1GIPCAcceptStage = 0;
+	
 
 	
 	private static final int CLIENT_WRITE_LEN_STAGE = 0;//3;
@@ -164,8 +164,8 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestInputGenerator extend
 	
 	private static final Pattern[] serverGIPCAcceptedStages = {
 			checkStr(GIPC_THREAD, "ProposalAcceptRequestSent"),
-			checkStr(GIPC_THREAD, "ProposalAcceptedNotificationReceived"),
-			checkStr(GIPC_THREAD, "ProposalAcceptRequestSent"),
+//			checkStr(GIPC_THREAD, "ProposalAcceptedNotificationReceived"),
+//			checkStr(GIPC_THREAD, "ProposalAcceptRequestSent"),
 			checkStr(GIPC_THREAD, "ProposalAcceptedNotificationReceived")
 	};
 	
@@ -346,9 +346,7 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestInputGenerator extend
 					if (!atomic && isServerNIORead0Complete()) {
 //						nioDone0 = true;
 					}
-//				} else if (!isServerNIOAcceptedComplete()) {
-//					checkServerNIOAccepted(anOutputLine);
-				} else {
+				}  else {
 					if (!isServerNIOWrite1Complete() && checkServerNIOWrite1(anOutputLine)) {
 					} else if (atomic && !isServerNIOWrite0Complete() && checkServerNIOWrite0(anOutputLine)) {
 					}
@@ -359,8 +357,14 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestInputGenerator extend
 					if (!atomic && isServerRMIRead0Complete()) {
 //						rmiDone0 = true;
 					}
-				} else if (!isServerRMIAcceptedComplete()) {
-					checkServerRMIAccepted(anOutputLine);
+				} else if (!isServerRMIClient0AcceptedComplete() || !isServerRMIClient1AcceptedComplete()) {
+					if (!isServerRMIClient0AcceptedComplete()) {
+						if (checkServerRMIClient0Accepted(anOutputLine)) {
+							checkServerRMIClient1Accepted(anOutputLine);
+						}
+					} else {
+						checkServerRMIClient1Accepted(anOutputLine);
+					}
 				} else {
 					if (!isServerRMIWrite1Complete() && checkServerRMIWrite1(anOutputLine)) {
 					} else if (atomic && !isServerRMIWrite0Complete() && checkServerRMIWrite0(anOutputLine)) {
@@ -371,8 +375,14 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestInputGenerator extend
 					checkServerGIPCRead0(anOutputLine);
 //					if (!atomic && isServerGIPCRead0Complete()) {
 //					}
-				} else if (!isServerGIPCAcceptedComplete()) {
-					checkServerGIPCAccepted(anOutputLine);
+				} else if (!isServerGIPCClient0AcceptedComplete() || !isServerGIPCClient1AcceptedComplete()) {
+					if (!isServerGIPCClient0AcceptedComplete()) {
+						if (checkServerGIPCClient0Accepted(anOutputLine)) {
+							checkServerGIPCClient1Accepted(anOutputLine);
+						}
+					} else {
+						checkServerGIPCClient1Accepted(anOutputLine);
+					}
 				} else {
 					if (!isServerGIPCWrite1Complete() && checkServerGIPCWrite1(anOutputLine)) {
 					} else if (atomic && !isServerGIPCWrite0Complete() && checkServerGIPCWrite0(anOutputLine)) {
@@ -541,10 +551,6 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestInputGenerator extend
 		return (!doNIO() || isServerNIORead1Complete()) && (!doRMI() || isServerRMIRead1Complete()) && (!doGIPC() || isServerGIPCRead1Complete());
 	}
 	
-	public boolean isClient0NIOAcceptComplete() {
-		return client0NIOAcceptStage == clientAcceptStages.length;
-	}
-	
 	public boolean isClient0RMIAcceptComplete() {
 		return client0RMIAcceptStage == clientAcceptStages.length;
 	}
@@ -553,16 +559,12 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestInputGenerator extend
 		return client0GIPCAcceptStage == clientAcceptStages.length;
 	}
 	
-	public boolean isClient1NIOAcceptComplete() {
-		return client1NIOAcceptStage == clientAcceptStages.length;
-	}
-	
 	public boolean isClient1RMIAcceptComplete() {
-		return client0RMIAcceptStage == clientAcceptStages.length;
+		return client1RMIAcceptStage == clientAcceptStages.length;
 	}
 	
 	public boolean isClient1GIPCAcceptComplete() {
-		return client0GIPCAcceptStage == clientAcceptStages.length;
+		return client1GIPCAcceptStage == clientAcceptStages.length;
 	}
 	
 	public boolean isClient0NIOWriteComplete() {
@@ -613,18 +615,22 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestInputGenerator extend
 		return serverGIPCWrite1Stage == serverGIPCWriteStages.length;
 	}
 	
-	public boolean isServerGIPCAcceptedComplete() {
-		return serverGIPCAcceptedStage == serverGIPCAcceptedStages.length;
+	public boolean isServerGIPCClient0AcceptedComplete() {
+		return serverGIPCClient0AcceptedStage == serverGIPCAcceptedStages.length;
 	}
 	
-	public boolean isServerNIOAcceptedComplete() {
-		return serverNIOAcceptedStage == serverNIOAcceptedStages.length;
+	public boolean isServerGIPCClient1AcceptedComplete() {
+		return serverGIPCClient1AcceptedStage == serverGIPCAcceptedStages.length;
 	}
 	
-	public boolean isServerRMIAcceptedComplete() {
-		return serverRMIAcceptedStage == serverRMIAcceptedStages.length;
+	public boolean isServerRMIClient0AcceptedComplete() {
+		return serverRMIClient0AcceptedStage == serverRMIAcceptedStages.length;
 	}
 
+	public boolean isServerRMIClient1AcceptedComplete() {
+		return serverRMIClient1AcceptedStage == serverRMIAcceptedStages.length;
+	}
+	
 	public boolean isClient0NIOReadComplete() {
 		return client0NIOReadStage == nioReadStages.length;
 	}
@@ -931,24 +937,6 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestInputGenerator extend
 		return false;
 	}
 	
-	public boolean checkClient0NIOAccept(String line) {
-		if (line.startsWith(TRACER_PREFIX)) {
-			if (PRINT_CHECKED_REGEX) {
-				Tracer.info(this, "Checking for line matching: " + clientAcceptStages[client0NIOAcceptStage].pattern());
-			}
-			if (clientAcceptStages[client0NIOAcceptStage].matcher(line).matches()) {
-				if (client0NIOAcceptStage == READ_LEN_STAGE) {
-					clientReadLen = extractReadLen(line);
-				} else if (client0NIOAcceptStage == READ_STR_STAGE) {
-					clientReadStr = extractReadStr(line);
-				}
-				client0NIOAcceptStage++;
-				return true;
-			}
-		}
-		return false;
-	}
-	
 	public boolean checkClient0RMIAccept(String line) {
 		if (line.startsWith(TRACER_PREFIX)) {
 			if (PRINT_CHECKED_REGEX) {
@@ -979,24 +967,6 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestInputGenerator extend
 					clientReadStr = extractReadStr(line);
 				}
 				client0GIPCAcceptStage++;
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	public boolean checkClient1NIOAccept(String line) {
-		if (line.startsWith(TRACER_PREFIX)) {
-			if (PRINT_CHECKED_REGEX) {
-				Tracer.info(this, "Checking for line matching: " + clientAcceptStages[client1NIOAcceptStage].pattern());
-			}
-			if (clientAcceptStages[client1NIOAcceptStage].matcher(line).matches()) {
-				if (client1NIOAcceptStage == READ_LEN_STAGE) {
-					clientReadLen = extractReadLen(line);
-				} else if (client1NIOAcceptStage == READ_STR_STAGE) {
-					clientReadStr = extractReadStr(line);
-				}
-				client1NIOAcceptStage++;
 				return true;
 			}
 		}
@@ -1237,57 +1207,72 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestInputGenerator extend
 		return false;
 	}
 	
-	public boolean checkServerGIPCAccepted(String line) {
+	public boolean checkServerGIPCClient0Accepted(String line) {
 		if (line.startsWith(TRACER_PREFIX)) {
 			if (PRINT_CHECKED_REGEX) {
-				Tracer.info(this, "Checking for line matching: " + serverGIPCAcceptedStages[serverGIPCAcceptedStage].pattern());
+				Tracer.info(this, "Checking for line matching: " + serverGIPCAcceptedStages[serverGIPCClient0AcceptedStage].pattern());
 			}
-			if (serverGIPCAcceptedStages[serverGIPCAcceptedStage].matcher(line).matches()) {
-				if (serverGIPCAcceptedStage == READ_LEN_STAGE) {
+			if (serverGIPCAcceptedStages[serverGIPCClient0AcceptedStage].matcher(line).matches()) {
+				if (serverGIPCClient0AcceptedStage == READ_LEN_STAGE) {
 					serverReadLen = extractReadLen(line);
-				} else if (serverGIPCAcceptedStage == READ_STR_STAGE) {
+				} else if (serverGIPCClient0AcceptedStage == READ_STR_STAGE) {
 					serverReadStr = extractReadStr(line);
 				}
-				serverGIPCAcceptedStage++;
+				serverGIPCClient0AcceptedStage++;
 				return true;
 			}
 		}
 		return false;
 	}
 	
-	public boolean checkServerRMIAccepted(String line) {
+	public boolean checkServerGIPCClient1Accepted(String line) {
 		if (line.startsWith(TRACER_PREFIX)) {
 			if (PRINT_CHECKED_REGEX) {
-				Tracer.info(this, "Checking for line matching: " + serverRMIAcceptedStages[serverRMIAcceptedStage].pattern());
+				Tracer.info(this, "Checking for line matching: " + serverGIPCAcceptedStages[serverGIPCClient1AcceptedStage].pattern());
 			}
-			if (serverRMIAcceptedStages[serverRMIAcceptedStage].matcher(line).matches()) {
-				if (serverRMIAcceptedStage == READ_LEN_STAGE) {
+			if (serverGIPCAcceptedStages[serverGIPCClient1AcceptedStage].matcher(line).matches()) {
+				if (serverGIPCClient1AcceptedStage == READ_LEN_STAGE) {
 					serverReadLen = extractReadLen(line);
-				} else if (serverRMIAcceptedStage == READ_STR_STAGE) {
+				} else if (serverGIPCClient1AcceptedStage == READ_STR_STAGE) {
 					serverReadStr = extractReadStr(line);
 				}
-				serverRMIAcceptedStage++;
+				serverGIPCClient1AcceptedStage++;
+				return true;
+			} 
+		}
+		return false;
+	}
+	
+	public boolean checkServerRMIClient0Accepted(String line) {
+		if (line.startsWith(TRACER_PREFIX)) {
+			if (PRINT_CHECKED_REGEX) {
+				Tracer.info(this, "Checking for line matching: " + serverRMIAcceptedStages[serverRMIClient0AcceptedStage].pattern());
+			}
+			if (serverRMIAcceptedStages[serverRMIClient0AcceptedStage].matcher(line).matches()) {
+				if (serverRMIClient0AcceptedStage == READ_LEN_STAGE) {
+					serverReadLen = extractReadLen(line);
+				} else if (serverRMIClient0AcceptedStage == READ_STR_STAGE) {
+					serverReadStr = extractReadStr(line);
+				}
+				serverRMIClient0AcceptedStage++;
 				return true;
 			}
 		}
 		return false;
 	}
 	
-	public boolean checkServerNIOAccepted(String line) {
-		if (line.contains("ProposalAcceptRequestSent")) {
-			int i = 0;
-		}
+	public boolean checkServerRMIClient1Accepted(String line) {
 		if (line.startsWith(TRACER_PREFIX)) {
 			if (PRINT_CHECKED_REGEX) {
-				Tracer.info(this, "Checking for line matching: " + serverNIOAcceptedStages[serverNIOAcceptedStage].pattern());
+				Tracer.info(this, "Checking for line matching: " + serverRMIAcceptedStages[serverRMIClient1AcceptedStage].pattern());
 			}
-			if (serverNIOAcceptedStages[serverNIOAcceptedStage].matcher(line).matches()) {
-				if (serverNIOAcceptedStage == READ_LEN_STAGE) {
+			if (serverRMIAcceptedStages[serverRMIClient1AcceptedStage].matcher(line).matches()) {
+				if (serverRMIClient1AcceptedStage == READ_LEN_STAGE) {
 					serverReadLen = extractReadLen(line);
-				} else if (serverNIOAcceptedStage == READ_STR_STAGE) {
+				} else if (serverRMIClient1AcceptedStage == READ_STR_STAGE) {
 					serverReadStr = extractReadStr(line);
 				}
-				serverNIOAcceptedStage++;
+				serverRMIClient1AcceptedStage++;
 				return true;
 			}
 		}
@@ -1341,7 +1326,7 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestInputGenerator extend
 				return "Client0 accepting command";
 			} else if (!isClient1RMIAcceptComplete()){
 				return "Client1 accepting command";
-			} else if (!isServerRMIAcceptedComplete()){
+			} else if (!isServerRMIClient0AcceptedComplete() || !isServerRMIClient1AcceptedComplete()){
 				return "Server waiting for accept from clients";
 			} else if (!isServerRMIWrite1Complete()) {
 				return "Server writing to client 1 via RMI";
@@ -1364,7 +1349,7 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestInputGenerator extend
 				return "Client0 accepting command";
 			} else if (!isClient1GIPCAcceptComplete()){
 				return "Client1 accepting command";
-			} else if (!isServerGIPCAcceptedComplete()){
+			} else if (!isServerGIPCClient0AcceptedComplete() || !isServerGIPCClient1AcceptedComplete()){
 				return "Server waiting for accept from clients";
 			} else if (!isServerGIPCWrite1Complete()) {
 				return "Server writing to client 1 via GIPC";
@@ -1412,8 +1397,10 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestInputGenerator extend
 				return clientAcceptStages[client0RMIAcceptStage].pattern();
 			} else if (!isClient1RMIAcceptComplete()){
 				return clientAcceptStages[client1RMIAcceptStage].pattern();
-			} else if (!isServerRMIAcceptedComplete()){
-				return serverRMIAcceptedStages[serverRMIAcceptedStage].pattern();
+			} else if (!isServerRMIClient0AcceptedComplete()){
+				return serverRMIAcceptedStages[serverRMIClient0AcceptedStage].pattern();
+			} else if (!isServerRMIClient1AcceptedComplete()){
+				return serverRMIAcceptedStages[serverRMIClient1AcceptedStage].pattern();
 			} else if (!isServerRMIWrite1Complete()) {
 				return serverRMIWriteStages[serverRMIWrite1Stage].pattern();
 			} else if (!isClient1RMIReadComplete()) {
@@ -1435,8 +1422,10 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestInputGenerator extend
 				return clientAcceptStages[client0GIPCAcceptStage].pattern();
 			} else if (!isClient1GIPCAcceptComplete()){
 				return clientAcceptStages[client1GIPCAcceptStage].pattern();
-			} else if (!isServerGIPCAcceptedComplete()){
-				return serverGIPCAcceptedStages[serverGIPCAcceptedStage].pattern();
+			} else if (!isServerGIPCClient0AcceptedComplete()){
+				return serverGIPCAcceptedStages[serverGIPCClient0AcceptedStage].pattern();
+			} else if (!isServerGIPCClient1AcceptedComplete()){
+				return serverGIPCAcceptedStages[serverGIPCClient1AcceptedStage].pattern();
 			} else if (!isServerGIPCWrite1Complete()) {
 				return serverGIPCWriteStages[serverGIPCWrite1Stage].pattern();
 			} else if (!isClient1GIPCReadComplete()) {
