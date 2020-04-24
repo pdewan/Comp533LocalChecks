@@ -170,7 +170,7 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestCase extends PassFail
 	}
 	
 	protected  void setupProcesses() {
-		Assignment4TwoClientSuite.twoClientSetupProcesses(doGIPC);
+		Assignment4TwoClientSuite.twoClientSetupProcesses(doNIO, doGIPC);
 //		ExecutionSpecificationSelector.getExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
 //		ExecutionSpecificationSelector.getExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client_0", "Client_1"));
 //		ExecutionSpecificationSelector.getExecutionSpecification().setProcesses("RegistryBasedDistributedProgram", Arrays.asList("Registry", "Server", "Client_0", "Client_1"));

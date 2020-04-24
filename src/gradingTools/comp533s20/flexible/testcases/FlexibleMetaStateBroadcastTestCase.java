@@ -102,7 +102,7 @@ public class FlexibleMetaStateBroadcastTestCase extends PassFailJUnitTestCase {
 	}
 	
 	  protected void setupProcesses() {
-		Assignment4TwoClientSuite.twoClientSetupProcesses(doGIPC);
+		Assignment4TwoClientSuite.twoClientSetupProcesses(doNIO, doGIPC);
 //		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
 //		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client_0", "Client_1"));
 //		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcesses("RegistryBasedDistributedProgram", Arrays.asList("Registry", "Server", "Client_0", "Client_1"));

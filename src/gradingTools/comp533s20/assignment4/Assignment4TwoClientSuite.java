@@ -8,6 +8,7 @@ import gradingTools.comp533s20.assignment4.testcases.RMITwoClientConnection;
 import gradingTools.comp533s20.assignment4.testcases.RMITwoClientReadWriteAtomic;
 import gradingTools.comp533s20.assignment4.testcases.RMITwoClientReadWriteNonAtomic;
 import gradingTools.comp533s20.assignment5.Assignment5TwoClientSuite;
+import gradingTools.comp533s20.assignment6.Assignment6TwoClientSuite;
 //import gradingTools.comp533s19.assignment3.Assignment3TwoClientSuite;
 import gradingTools.comp533s19.flexible.testcases.FlexibleStaticArgumentsTestCase;
 
@@ -35,12 +36,16 @@ import util.tags.DistributedTags;
 	
 })
 public class Assignment4TwoClientSuite {
-public static void twoClientSetupProcesses(boolean doGIPC) {
+public static void twoClientSetupProcesses(boolean doNIO, boolean doGIPC) {
 	if (doGIPC) {
-		Assignment5TwoClientSuite.twoClientSetupProcesses();
+		if (doNIO) {
+			Assignment6TwoClientSuite.twoClientSetupProcesses();
+		} else {
+			Assignment5TwoClientSuite.twoClientSetupProcesses();
+		}
 	} else {
 		Assignment4TwoClientSuite.twoClientSetupProcesses();
-	}
+	} 
 }
 
 
