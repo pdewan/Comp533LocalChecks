@@ -10,13 +10,13 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.comp533s19.assignment0.interfaces.TestMapReduceConfiguration;
-import gradingTools.comp533s19.assignment0.interfaces.TestMapper;
-import gradingTools.comp533s19.assignment0.interfaces.TestPartitioner;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment1.testcases.SingleClassTagListTestCase;
 import gradingTools.comp533s19.assignment4.testcases.blocking_rpc.BlockingRPCCounterServerTagged;
 import gradingTools.comp533s20.assignment2.PartitionerClass;
+import gradingTools.comp533s21.assignment1.interfaces.MapReduceConfiguration;
+import gradingTools.comp533s21.assignment1.interfaces.TestMapper;
+import gradingTools.comp533s21.assignment1.interfaces.TestPartitioner;
 import gradingTools.shared.testcases.FactoryMethodTest;
 @MaxValue(5)
 @Explanation("Checks that a mapper factory is returned by the configuration and creates a mapper object")
@@ -26,7 +26,7 @@ public class ReducerClass extends PassFailJUnitTestCase {
 	
 	protected Class reducerClass() {
 		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
-		TestMapReduceConfiguration aTestMapReduceConfiguration = aConfigurationProvided.getTestConfiguration();
+		MapReduceConfiguration aTestMapReduceConfiguration = aConfigurationProvided.getTestConfiguration();
 		if (aTestMapReduceConfiguration == null) {
 			assertTrue("No configuration", false);
 		}

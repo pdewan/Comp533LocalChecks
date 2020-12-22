@@ -17,10 +17,10 @@ import grader.basics.project.BasicProjectIntrospection;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.comp533s19.assignment0.interfaces.TestMapReduceConfiguration;
-import gradingTools.comp533s19.assignment0.interfaces.TestMapper;
-import gradingTools.comp533s19.assignment0.interfaces.TestReducer;
 import gradingTools.comp533s19.assignment1.Assignment1Suite;
+import gradingTools.comp533s21.assignment1.interfaces.MapReduceConfiguration;
+import gradingTools.comp533s21.assignment1.interfaces.TestMapper;
+import gradingTools.comp533s21.assignment1.interfaces.TestReducer;
 import gradingTools.shared.testcases.MethodExecutionTest.OutputErrorStatus;
 import gradingTools.shared.testcases.utils.ABufferingTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
@@ -29,7 +29,7 @@ import util.tags.DistributedTags;
 @MaxValue(5)
 public class TestSkeleton extends PassFailJUnitTestCase {
 	public static final String CONFIGURATION_CLASS = "MyMapReduceConfiguration";
-	TestMapReduceConfiguration testConfiguration ;
+	MapReduceConfiguration testConfiguration ;
 
 
 	@Override
@@ -38,7 +38,7 @@ public class TestSkeleton extends PassFailJUnitTestCase {
 		try {
 			Class aConfigurationClass = Class.forName(CONFIGURATION_CLASS);
 			Object aConfigurationObject = aConfigurationClass.newInstance();
-			 testConfiguration =  (TestMapReduceConfiguration) BasicProjectIntrospection.createProxy(TestMapReduceConfiguration.class, aConfigurationObject);
+			 testConfiguration =  (MapReduceConfiguration) BasicProjectIntrospection.createProxy(MapReduceConfiguration.class, aConfigurationObject);
 			Object aMapperObject = testConfiguration.getTokenCountingMapper();
 			TestMapper aMapper = (TestMapper) BasicProjectIntrospection.createProxy(TestMapper.class, aMapperObject);
 			Object aReducerObject = testConfiguration.getReducer();
@@ -105,7 +105,7 @@ public class TestSkeleton extends PassFailJUnitTestCase {
 	public static final String MAP_REDUCE_CLIENT_1 = "MapReduce Client 1";
 	public static final String MAP_REDUCE_CLIENT_2 = "MapReduce Client 2";
 
-	protected void setupProcesses(TestMapReduceConfiguration aTestMapReduceConfiguration) {
+	protected void setupProcesses(MapReduceConfiguration aTestMapReduceConfiguration) {
 		String aServerClassName = aTestMapReduceConfiguration.getServerTokenCounter().getName();
 		String aClientClassName = aTestMapReduceConfiguration.getClientTokenCounter().getName();
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList(MAP_REDUCE_PROCESS_TEAM));

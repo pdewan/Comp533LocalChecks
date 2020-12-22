@@ -13,10 +13,10 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp533s19.assignment0.Assignment0Suite;
-import gradingTools.comp533s19.assignment0.interfaces.TestMapReduceConfiguration;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.MultiThreadTokenCountResult;
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
+import gradingTools.comp533s21.assignment1.interfaces.MapReduceConfiguration;
 import gradingTools.shared.testcases.MainMethodForkerTest;
 import gradingTools.shared.testcases.MethodExecutionTest;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
@@ -107,7 +107,7 @@ public class MultiThreadSumResult extends MultiThreadTokenCountResult {
 	}
 	protected void setMainClass() {
 		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
-        TestMapReduceConfiguration aTestMapReduceConfiguration =  aConfigurationProvided.getTestConfiguration();
+        MapReduceConfiguration aTestMapReduceConfiguration =  aConfigurationProvided.getTestConfiguration();
         if (aTestMapReduceConfiguration == null) {
         	assertTrue("No configuration", false);
         }

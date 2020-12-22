@@ -1,4 +1,4 @@
-package gradingTools.comp533s19.assignment0.interfaces;
+package gradingTools.comp533s21.assignment1.interfaces;
 
 import java.util.List;
 

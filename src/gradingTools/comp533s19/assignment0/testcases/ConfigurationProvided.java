@@ -19,10 +19,10 @@ import grader.basics.project.BasicProjectIntrospection;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.comp533s19.assignment0.interfaces.TestMapReduceConfiguration;
-import gradingTools.comp533s19.assignment0.interfaces.TestMapper;
-import gradingTools.comp533s19.assignment0.interfaces.TestReducer;
 import gradingTools.comp533s19.assignment1.Assignment1Suite;
+import gradingTools.comp533s21.assignment1.interfaces.MapReduceConfiguration;
+import gradingTools.comp533s21.assignment1.interfaces.TestMapper;
+import gradingTools.comp533s21.assignment1.interfaces.TestReducer;
 import gradingTools.shared.testcases.MethodExecutionTest.OutputErrorStatus;
 import gradingTools.shared.testcases.utils.ABufferingTestInputGenerator;
 import gradingTools.shared.testcases.utils.ConfigurationWriter;
@@ -33,18 +33,21 @@ import util.tags.DistributedTags;
 @MaxValue(10)
 @Explanation("Tests that the mapreduce configuration class is provided under the right name.")
 public class ConfigurationProvided extends PassFailJUnitTestCase {
+	public static final Class REGISTRY_INTERFACE = MapReduceConfiguration.class;
+
 	public static final String CONFIGURATION_CLASS = "MyMapReduceConfiguration";
 	public static final String TOP_LEVEL_PACKAGE_NAME = "comp533";
 	public static final String CONFIGURATION_CLASS_2 = TOP_LEVEL_PACKAGE_NAME + ".MyMapReduceConfiguration";
 
-	TestMapReduceConfiguration testConfiguration ;
-	public static final String CONFIGURATION_FILE_NAME = CONFIGURATION_CLASS + ".csv";
-	
+	MapReduceConfiguration testConfiguration ;
+//	public static final String CONFIGURATION_FILE_NAME = CONFIGURATION_CLASS + ".csv";
+	public static final String CONFIGURATION_FILE_NAME = "ClassRegistry"+ ".csv";
+
 	public ConfigurationProvided() {
 		
 	}
 
-	public TestMapReduceConfiguration getTestConfiguration() {
+	public MapReduceConfiguration getTestConfiguration() {
 		return testConfiguration;
 	}
 
@@ -53,15 +56,24 @@ public class ConfigurationProvided extends PassFailJUnitTestCase {
 			throws NotAutomatableException, NotGradableException {
 		try {
 //			Class aConfigurationClass = Class.forName(CONFIGURATION_CLASS);
+//			Class aConfigurationClass = BasicProjectIntrospection.findClassByName(project, CONFIGURATION_CLASS_2);
+			Object aConfigurationObject;
+			testConfiguration = (MapReduceConfiguration) BasicProjectIntrospection.createInstanceOfPredefinedSupertype(REGISTRY_INTERFACE);
+			aConfigurationObject = testConfiguration;
+			if (testConfiguration == null) {
 			Class aConfigurationClass = BasicProjectIntrospection.findClassByName(project, CONFIGURATION_CLASS_2);
+	
 			if (aConfigurationClass == null) {
 				aConfigurationClass = BasicProjectIntrospection.findClassByName(project, CONFIGURATION_CLASS);
 				if (aConfigurationClass == null) {
 				throw new ClassNotFoundException(CONFIGURATION_CLASS);
 				}
 			}
-			Object aConfigurationObject = aConfigurationClass.newInstance();
-			 testConfiguration =  (TestMapReduceConfiguration) BasicProjectIntrospection.createProxy(TestMapReduceConfiguration.class, aConfigurationObject);
+//			Object aConfigurationObject = aConfigurationClass.newInstance();
+			aConfigurationObject = aConfigurationClass.newInstance();
+
+			 testConfiguration =  (MapReduceConfiguration) BasicProjectIntrospection.createProxy(MapReduceConfiguration.class, aConfigurationObject);
+			}
 			 File aProjectDirectory = project.getProjectFolder();
 			 String aConfigurationFileName = aProjectDirectory.getCanonicalPath() + "/" + CONFIGURATION_FILE_NAME;
 			 ConfigurationWriter.writeConfiguration(aConfigurationFileName, aConfigurationObject);

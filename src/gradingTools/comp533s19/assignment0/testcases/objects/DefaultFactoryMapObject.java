@@ -9,11 +9,11 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
-import gradingTools.comp533s19.assignment0.interfaces.TestMapper;
-import gradingTools.comp533s19.assignment0.interfaces.TestPartitioner;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment0.testcases.factories.MapperFactory;
 import gradingTools.comp533s19.assignment0.testcases.factories.PartitionerFactory;
+import gradingTools.comp533s21.assignment1.interfaces.TestMapper;
+import gradingTools.comp533s21.assignment1.interfaces.TestPartitioner;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
 @Explanation("Tests the map object returned by the configured map factory")

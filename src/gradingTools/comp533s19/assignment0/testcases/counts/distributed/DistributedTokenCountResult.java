@@ -21,15 +21,15 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.comp533s19.assignment0.Assignment0Suite;
-import gradingTools.comp533s19.assignment0.interfaces.TestMapReduceConfiguration;
-import gradingTools.comp533s19.assignment0.interfaces.TestMapper;
-import gradingTools.comp533s19.assignment0.interfaces.TestReducer;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment0.testcases.MapReduceInputGenerator;
 import gradingTools.comp533s19.assignment0.testcases.counts.standalone.MultiThreadTokenCountResult;
 import gradingTools.comp533s19.assignment0.testcases.sum.standalone.AStandAloneIntSummerResultChecker;
 import gradingTools.comp533s19.assignment0.testcases.sum.standalone.MultiThreadSumResult;
 import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentTestCase;
+import gradingTools.comp533s21.assignment1.interfaces.MapReduceConfiguration;
+import gradingTools.comp533s21.assignment1.interfaces.TestMapper;
+import gradingTools.comp533s21.assignment1.interfaces.TestReducer;
 import gradingTools.shared.testcases.MainMethodForkerTest;
 import gradingTools.shared.testcases.MethodExecutionTest;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
@@ -46,7 +46,7 @@ public class DistributedTokenCountResult extends MultiThreadTokenCountResult {
 
 	public static final String MAP_REDUCE_CLIENT_1 = MAP_REDUCE_CLIENT + " 1";
 	public static final String MAP_REDUCE_CLIENT_2 = MAP_REDUCE_CLIENT + " 2";
-	TestMapReduceConfiguration testMapReduceConfiguration;
+	MapReduceConfiguration testMapReduceConfiguration;
 	public static void setupProcesses(String aServerClassName, String aClientClassName) {
 		BasicRunningProject.setProcessTeamOutputSleepTime(15000);
 

@@ -1,6 +1,6 @@
-package gradingTools.comp533s19.assignment0.interfaces;
+package gradingTools.comp533s21.assignment1.interfaces;
 
-public interface TestMapReduceConfiguration {
+public interface MapReduceConfiguration {
 	// ---------------Mostly A1---------------------------------
     // return <Class Name>.class in returns of methods below
 
