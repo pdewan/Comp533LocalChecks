@@ -30,24 +30,21 @@ import gradingTools.comp533s20.assignment1.singleThread.StandAloneSingleThreadTo
 import gradingTools.comp533s20.assignment1.testcases.counts.standalone.singlethread.StandAloneSingleThreadTokenCountMVC;
 import gradingTools.comp533s20.assignment1.testcases.sum.standalone.singlethread.StandAloneSingleThreadSumMVC;
 import gradingTools.comp533s20.assignment2.testcases.synchronization.objects.BarrierJoinSynchronizationClassAndObject;
+import gradingTools.comp533s21.assignment3.style.A3GeneralStyleSuite;
+import gradingTools.comp533s21.assignment3.style.A3SpecificStyleSuite;
 import util.trace.Tracer;
 
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	ConfigurationProvided.class,
+//	ConfigurationProvided.class,
+	A3ConfigurationProvided.class,
+	A3GeneralStyleSuite.class,
+	A3SpecificStyleSuite.class,
 	BasicDistributedCounts.class,
 	BasicDistributedSum.class,
-	DistributedPartitionedReduce.class
-
-//	MapReduceClasses.class,
-//	MultiThreadTokenCounts.class,
-//	MultiThreadSum.class,
-//	PartitionerClassFactoryAndObject.class,
-//	BarrierJoinSynchronizationClassAndObject.class,
-//	BarrierJoinSynchronizationCountsAndSum.class,
-//	PartitionedReduce.class,
+	DistributedPartitionedReduce.class,
 })
 	
 
@@ -57,6 +54,8 @@ public class S21Assignment3Suite extends Assignment1Suite{
 	public static void main (String[] args) {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setReRunTests(false);;
+			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+			setCheckStyleConfiguration("unc_checks_533_A3.xml");
 
 			BasicJUnitUtils.interactiveTest(S21Assignment3Suite.class);
 

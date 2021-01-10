@@ -13,8 +13,7 @@ import gradingTools.basics.sharedTestCase.checkstyle.PublicMethodsOverrideRatioC
 import gradingTools.basics.sharedTestCase.checkstyle.VariableHasInterfaceTypeRatioCheck;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
-@MaxValue(3)
-@IsExtra(true)
+@MaxValue(1)
 public class A1ExpectedSupertypes extends ExpectedSuperTypesRatioCheck{
 	 public A1ExpectedSupertypes() {
 		 super();

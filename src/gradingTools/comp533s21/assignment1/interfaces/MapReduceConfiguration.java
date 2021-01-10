@@ -1,7 +1,9 @@
 package gradingTools.comp533s21.assignment1.interfaces;
 
+
+
 public interface MapReduceConfiguration {
-	// ---------------Mostly A1---------------------------------
+	// ---------------A1---------------------------------
     // return <Class Name>.class in returns of methods below
 
     // return main classes
@@ -17,41 +19,42 @@ public interface MapReduceConfiguration {
     // Factories
     Class getMapperFactory();
     Class getReducerFactory();
-    Class getPartitionerFactory(); // A2
+  
 
     //KeyValue defining and processing class
     Class getKeyValueClass();
     Class getTokenCountingMapperClass();
     Class getIntSummingMapperClass(); // extra credit
     Class getReducerClass();
-    Class getPartitionerClass();//A2
-  	Class getJoinerClass();// A2
-	Class getBarrierClass();// A2
+    
+    
 
     // Return instances of the required objects, using the relevant factories
     // if they return these objects by default
     Object getTokenCountingMapper(); // default object returned by Mapper factory
     Object getIntSummingMapper(); 
     Object getReducer(); // default object returned by Reducer factory   
-    Object getPartitioner(); // default object returned by Reducer factory, needed in A2
-    
-    
-  
     
     // --------------------A2------------------------
-    
-    // return some instance of the Barrier and Joiner classes
+
+    Class getPartitionerClass();
+    Class getPartitionerFactory();
+    Object getPartitioner(); 
+  	Class getJoinerClass();
+	Class getBarrierClass();
+	Class getSlaveClass();    
+    // return some instance of the Barrier and Joiner classes in the  methods
+	// below as these are not singletons
     Object getBarrier(int aNumThreads);
     Object getJoiner(int aNumThreads);
 
-//    // return A2 main classes
-//    Class getMultiThreadTokenCounter(); 
-//    Class getMultiThreadIntegerSummer();
-    
     // --------------------A3--------------------------
 
     Class getServerTokenCounter();
     Class getServerIntegerSummer();
-    Class getClientTokenCounter();// client remains the same in both cases
+    Class getClientTokenCounter();
+    Class getRemoteModelInterface() ;
+	Class getRemoteClientObjectInterface();
+	Class getRemoteClientObjectClass();
 	
 }

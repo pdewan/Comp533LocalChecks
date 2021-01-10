@@ -12,6 +12,7 @@ import grader.basics.project.Project;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s19.assignment1.testcases.SingleClassTagListTestCase;
 import gradingTools.comp533s19.assignment4.testcases.blocking_rpc.BlockingRPCCounterServerTagged;
+import gradingTools.comp533s21.assignment1.A1ConfigurationProvided;
 import gradingTools.comp533s21.assignment1.interfaces.MapReduceConfiguration;
 import gradingTools.comp533s21.assignment1.interfaces.TestMapper;
 import gradingTools.comp533s21.assignment1.interfaces.TestPartitioner;
@@ -33,7 +34,9 @@ public class MapperFactory extends FactoryMethodTest {
 	}
 	@Override
 	protected Class factoryClass() {
-		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
+//		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
+		A1ConfigurationProvided aConfigurationProvided = (A1ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(A1ConfigurationProvided.class);
+
 		MapReduceConfiguration aTestMapReduceConfiguration = aConfigurationProvided.getTestConfiguration();
 		if (aTestMapReduceConfiguration == null) {
 			assertTrue("No configuration", false);

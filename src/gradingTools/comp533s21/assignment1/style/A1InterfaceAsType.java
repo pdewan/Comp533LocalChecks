@@ -9,8 +9,7 @@ import gradingTools.basics.sharedTestCase.checkstyle.PublicMethodsOverrideRatioC
 import gradingTools.basics.sharedTestCase.checkstyle.VariableHasInterfaceTypeRatioCheck;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
-@MaxValue(5)
-@IsExtra(true)
+@MaxValue(10)
 public class A1InterfaceAsType extends VariableHasInterfaceTypeRatioCheck{
 	 public A1InterfaceAsType() {
 		 super();

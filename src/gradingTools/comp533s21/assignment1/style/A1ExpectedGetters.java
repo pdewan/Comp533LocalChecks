@@ -13,8 +13,7 @@ import gradingTools.basics.sharedTestCase.checkstyle.PublicMethodsOverrideRatioC
 import gradingTools.basics.sharedTestCase.checkstyle.VariableHasInterfaceTypeRatioCheck;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
-@MaxValue(5)
-@IsExtra(true)
+@MaxValue(3)
 public class A1ExpectedGetters extends ExpectedGettersRatioCheck{
 	 public A1ExpectedGetters() {
 		 super();

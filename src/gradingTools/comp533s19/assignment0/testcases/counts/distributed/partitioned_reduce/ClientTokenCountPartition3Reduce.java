@@ -15,10 +15,7 @@ import util.annotations.MaxValue;
 @MaxValue(30)
 public class ClientTokenCountPartition3Reduce extends AStringCheckBasedDependentTestCase {
 
-//	@Override
-//	protected SubstringSequenceChecker outputChecker() {
-//		return new  ARegularCounterClientChecker(); 
-//	}
+
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
 	NotGradableException {
@@ -28,27 +25,13 @@ public class ClientTokenCountPartition3Reduce extends AStringCheckBasedDependent
 	protected String processName() {
 		return BasicRunningProject.ALL_PROCESSES;
 	}
-//	protected boolean checkTrue() {
-//		return true;
-//	}
+
 	protected SubstringSequenceChecker checker() {
 		return new AClientTokenCountPartition3ReduceChecker();
 	}
 	protected Class outputgeneratingTestCaseClass() {
 		return DistributedTokenCountResult.class;
 	}
-//	@Override
-//	// we will not get any output for ALL
-//	protected void dependentSetOutputError() {
-//		
-//	}
-//	@Override
-//	protected JUnitTestCase outputGeneratingTestCase() {
-//		return JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest( outputgeneratingTestCaseClass());
-////		return null;
-//	}
-//	public void defaultTest() {
-//    	passfailDefaultTest(); // do not want super test's default test which we want to bypass
-//    }
+
 	
 }

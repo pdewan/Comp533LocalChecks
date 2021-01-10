@@ -30,13 +30,16 @@ import gradingTools.comp533s20.assignment1.singleThread.StandAloneSingleThreadTo
 import gradingTools.comp533s20.assignment1.testcases.counts.standalone.singlethread.StandAloneSingleThreadTokenCountMVC;
 import gradingTools.comp533s20.assignment1.testcases.sum.standalone.singlethread.StandAloneSingleThreadSumMVC;
 import gradingTools.comp533s20.assignment2.testcases.synchronization.objects.BarrierJoinSynchronizationClassAndObject;
+import gradingTools.comp533s21.assignment3.A3ConfigurationProvided;
 import util.trace.Tracer;
 
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	ConfigurationProvided.class,
+//	ConfigurationProvided.class,
+	A3ConfigurationProvided.class,
+
 	BasicDistributedCounts.class,
 	BasicDistributedSum.class,
 	DistributedPartitionedReduce.class

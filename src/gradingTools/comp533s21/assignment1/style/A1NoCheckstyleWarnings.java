@@ -34,7 +34,7 @@ import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
-@MaxValue(0)
+@MaxValue(20)
 @IsExtra(true)
 public class A1NoCheckstyleWarnings extends PassFailJUnitTestCase {
 

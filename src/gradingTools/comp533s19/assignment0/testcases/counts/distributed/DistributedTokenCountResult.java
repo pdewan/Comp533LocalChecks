@@ -30,6 +30,8 @@ import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentT
 import gradingTools.comp533s21.assignment1.interfaces.MapReduceConfiguration;
 import gradingTools.comp533s21.assignment1.interfaces.TestMapper;
 import gradingTools.comp533s21.assignment1.interfaces.TestReducer;
+import gradingTools.comp533s21.assignment2.A2ConfigurationProvided;
+import gradingTools.comp533s21.assignment3.A3ConfigurationProvided;
 import gradingTools.shared.testcases.MainMethodForkerTest;
 import gradingTools.shared.testcases.MethodExecutionTest;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
@@ -50,7 +52,8 @@ public class DistributedTokenCountResult extends MultiThreadTokenCountResult {
 	public static void setupProcesses(String aServerClassName, String aClientClassName) {
 		BasicRunningProject.setProcessTeamOutputSleepTime(15000);
 
-		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
+//		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
+		A3ConfigurationProvided aConfigurationProvided = (A3ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(A3ConfigurationProvided.class);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderWaitForResort(false);
 		BasicStaticConfigurationUtils.setBasicCommandToDefaultEntryPointCommand();
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList(MAP_REDUCE_PROCESS_TEAM));
@@ -81,13 +84,21 @@ public class DistributedTokenCountResult extends MultiThreadTokenCountResult {
 	protected String processName() {
 		return MAP_REDUCE_SERVER;
 	}
+	protected void setMainClass() {
+//		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
+//		A1ConfigurationProvided aConfigurationProvided = (A1ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(A1ConfigurationProvided.class);
+		A3ConfigurationProvided aConfigurationProvided = (A3ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(A3ConfigurationProvided.class);
+
+		setMainClass( aConfigurationProvided.getTestConfiguration().getStandAloneTokenCounter());
+
+	}
 	@Override
 	protected void callOrForkMain(boolean aFork) throws Throwable {
 		BasicRunningProject.setProcessTeamOutputSleepTime(10000);
 
-		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
-//		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setWaitForResort(false);
-//		BasicStaticConfigurationUtils.setBasicCommandToDefaultEntryPointCommand();
+//		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
+		A3ConfigurationProvided aConfigurationProvided = (A3ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(A3ConfigurationProvided.class);
+
 		testMapReduceConfiguration = aConfigurationProvided.getTestConfiguration();
 		setupProcesses(	testMapReduceConfiguration.getServerTokenCounter().getName(),
 				testMapReduceConfiguration.getClientTokenCounter().getName());
@@ -105,137 +116,7 @@ public class DistributedTokenCountResult extends MultiThreadTokenCountResult {
 
 
 	}
-//	//need to put in superclass
-//	protected void callOrForkInteractiveMain(boolean aFork) throws Throwable {
-//		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
-//
-//		BasicStaticConfigurationUtils.setBasicCommandToDefaultEntryPointCommand();
-//		testMapReduceConfiguration = aConfigurationProvided.getTestConfiguration();
-//		setupProcesses();
-//		Map<String, String> aProcessToInput = new HashMap<>();
-//		interactiveInputProject = RunningProjectUtils.runProject(project, 
-//				Assignment0Suite.getProcessTimeOut(), new MapReduceInputGenerator(3, getInputLines()));
-//		error = interactiveInputProject.getErrorOutput();
-//		output = interactiveInputProject.getOutput();
-//		resultingOutError = new ResultingOutErr(output, error);
-////		interactiveInputProject = resultingOutError.getRunningProject();		
-//		BasicStaticConfigurationUtils.setBasicCommandToDefaultCommand();
-//
-//
-//	}
-	
-//	protected Class mainClass;
-//
-//	
-//	protected String mainClassName;
-//	protected String[] emptyStringArgs = {};
-//    
-//    public String getMainClassName() {
-//    	if (mainClassName == null) {
-//    		mainClassName = mainClassName();
-//    	}
-//		return mainClassName;
-//	}
-//	public void setMainClassName(String mainClassName) {
-//		this.mainClassName = mainClassName;
-//	}
-//	protected Class mainClass() {
-//    	return null;
-//    }
-//    protected Class getMainClass() {
-//    	if (mainClass == null) {
-//    		mainClass = mainClass();
-//    	}
-//		return mainClass;
-//	}
-//	public void setMainClass(Class mainClass) {
-//		this.mainClass = mainClass;
-//	}
-//	protected String mainClassName() {
-//    	return getMainClass().getName();
-//    }	
-//	protected void setMainClass() {
-//		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
-//		mainClass = aConfigurationProvided.getTestConfiguration().getStandAloneTokenCounter();
-//	}
-//	protected String[] getInputLines() {
-//		return  new String[]{"3", "a an the a an the a a a an an an the the the"};
-//	}
-//	@Override
-//	public String[] getStudentArgs() {
-//		return new String[]{"3", "a an the a an the a a a an an an the the the"};
-//	}
-	
-	
-//	protected boolean forkMain() {
-//		return true;
-//	}
-	
-//	protected void callOrForkMain(boolean aFork) throws Throwable {
-//		
-//		resultingOutError = BasicProjectExecution.callOrForkMain(
-//			true, getMainClassName(), emptyStringArgs, "3", "a an the a an the a a a an an an the the the");
-//		error = resultingOutError.getErr();
-//		output = resultingOutError.getOut();
-//		interactiveInputProject = resultingOutError.getRunningProject();
-//		
-//
-//	}
-//	protected SubstringSequenceChecker checker() {
-//		return new AStandAloneBasicTokenCounterResultChecker();
-//	}
-//	@Override
-//	protected boolean isValidOutput() {
-//		return checkWithChecker();
-//	}
-//	@Override
-//	protected boolean hasError(String anError) {
-//		return false;
-//	}
-//	@Override 
-//	public String[] getInputLines() {
-//		return new String[] {"3", 
-//				"a an the a an the a a a an an an the the the"
-//		};
-//	}
-//	protected void setMainClass() {
-//		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
-//        setMainClass( aConfigurationProvided.getTestConfiguration().get);
-//
-//	}
-//	@Override
-//	public TestCaseResult test(Project project, boolean autoGrade)
-//			throws NotAutomatableException, NotGradableException {
-//		try {
-//		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
-//		setMainClass();
-//		
-//			callOrForkMain(forkMain());
-//			setOutputErrorStatus();
-//			processOutputErrorStatus();
-//			return pass();
-//			
-//		} catch (Throwable e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//			return fail(e.getMessage());
-//
-//		}
-////		String aMainClassName = aConfigurationProvided.getTestConfiguration().getStandAloneTokenCounter().getName();
-////		BasicStaticConfigurationUtils.setBasicCommandToDefaultEntryPointCommand();
-////		String[] emptyArgs = {};
-////		try {
-////			ResultingOutErr anOutError = BasicProjectExecution.callOrForkMain(true, aMainClassName, emptyArgs, "3", "a an the a an the a a a an an an the the the");
-////			BasicProjectExecution.callOrForkMain(true, getMainClassName(), emptyArgs, "3", "a an the a an the a a a an an an the the the");
-////
-////			String anOut = anOutError.getOut();
-////			String anError = anOutError.getErr();
-////			
-////		} catch (Throwable e) {
-////			return fail(e.getMessage());
-////		}
-////		return null;
-//	}
+
 	public void defaultTest() {
     	passfailDefaultTest();
     }

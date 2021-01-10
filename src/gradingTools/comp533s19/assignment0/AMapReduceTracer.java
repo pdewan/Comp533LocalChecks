@@ -46,7 +46,7 @@ public abstract class AMapReduceTracer {
 		trace ("Please enter " + QUIT + " or a line of tokens to be processed separated by spaces");
 	}
 	/**
-	 * To be called in the controller and runnable
+	 * To be called in the controller (A1) and slave runnable (A2)
 	 */
 	protected void traceQuit() {
 		trace (QUITTING);
@@ -60,7 +60,7 @@ public abstract class AMapReduceTracer {
 	/*
 	 * To be called in the map methods of the mappers before returning
 	 */
-	public void traceMap(Object anInput, Object aKeyValue) {
+	protected void traceMap(Object anInput, Object aKeyValue) {
 		trace (MAP  + anInput + ":" + aKeyValue);		
 	}
 	/*
@@ -158,44 +158,44 @@ public abstract class AMapReduceTracer {
 	public static final String PARTITION_AFTER_BARRIER = "Partition After Barrier:";
 	public static final String ADDED_TO_FINAL_MAP = "Added to Final Map:";	
 	
-	public void traceBarrierCreated(Object aBarrier, int aNumThreads) {
+	protected void traceBarrierCreated(Object aBarrier, int aNumThreads) {
 		trace (BARRIER_CREATED  + aBarrier + ":" + aNumThreads);		
 	}
-	public void traceBarrierWaitStart(Object aBarrier, int aNumThreads, int aNumWaitingThreads) {
+	protected void traceBarrierWaitStart(Object aBarrier, int aNumThreads, int aNumWaitingThreads) {
 		trace (BARRIER_WAIT_START + aBarrier + ":" + aNumThreads + ":" + aNumWaitingThreads);		
 	}
-	public void traceBarrierWaitEnd(Object aBarrier, int aNumThreads, int aNumWaitingThreads) {
+	protected void traceBarrierWaitEnd(Object aBarrier, int aNumThreads, int aNumWaitingThreads) {
 		trace (BARRIER_WAIT_END + aBarrier + ":" + aNumThreads + ":" + aNumWaitingThreads);		
 	}
-	public void traceBarrierReleaseAll(Object aBarrier, int aNumThreads, int aNumWaitingThreads) {
+	protected void traceBarrierReleaseAll(Object aBarrier, int aNumThreads, int aNumWaitingThreads) {
 		trace (BARRIER_RELEASE_ALL + aBarrier + ":" + aNumThreads + ":" + aNumWaitingThreads);		
 	}
 	
-	public void traceJoinerCreated(Object aJoiner, int aNumThreads) {
+	protected void traceJoinerCreated(Object aJoiner, int aNumThreads) {
 		trace (JOINER_CREATED +aJoiner + ":" + aNumThreads);		
 	}
-	public void traceJoinerWaitStart(Object aJoiner, int aNumThreads, int aNumFinishedThreads) {
+	protected void traceJoinerWaitStart(Object aJoiner, int aNumThreads, int aNumFinishedThreads) {
 		trace (JOINER_WAIT_START + aJoiner + ":" + aNumThreads + ":" + aNumFinishedThreads);		
 	}
-	public void traceJoinerWaitEnd(Object aJoiner, int aNumThreads, int aNumFinishedThreads) {
+	protected void traceJoinerWaitEnd(Object aJoiner, int aNumThreads, int aNumFinishedThreads) {
 		trace (JOINER_WAIT_END + aJoiner + ":" + aNumThreads + ":" + aNumFinishedThreads);		
 	}
 	/*
 	 * Call after changing finished threads in the joiner
 	 */
-	public void traceJoinerFinishedTask(Object aJoiner, int aNumThreads, int aNumFinishedThreads) {
+	protected void traceJoinerFinishedTask(Object aJoiner, int aNumThreads, int aNumFinishedThreads) {
 		trace (JOINER_FINISHED_TASK + aJoiner + ":" + aNumThreads + ":" + aNumFinishedThreads);		
 	}
-	public void traceJoinerRelease(Object aJoiner, int aNumThreads, int aNumFinishedThreads) {
+	protected void traceJoinerRelease(Object aJoiner, int aNumThreads, int aNumFinishedThreads) {
 		trace (JOINER_RELEASE + aJoiner + ":" + aNumThreads + ":" + aNumFinishedThreads);		
 	}
-	public void tracePartitionAssigned(Object aKey, Object aValue, int aPartitionNum, int aNumPartitions ) {
+	protected void tracePartitionAssigned(Object aKey, Object aValue, int aPartitionNum, int aNumPartitions ) {
 		trace (PARTITION_ASSIGNED + aKey + ":" + aValue + ":" + aPartitionNum + ":" + aNumPartitions );
 	}
 	/*
 	 * To be printed by thread aThreadNumber
 	 */
-	public void traceSplitAfterBarrier(int aThreadNumber, Object aList) {
+	protected void traceSplitAfterBarrier(int aThreadNumber, Object aList) {
 		trace (PARTITION_AFTER_BARRIER + aThreadNumber + ":" + aList);
 	}
 	
@@ -225,14 +225,14 @@ public abstract class AMapReduceTracer {
 	 * To be called in the server runnable before invoking the callback in the client.
 	 * To be also called in the client at the start of its callback to process sublist	 * 
 	 */
-	public void traceRemoteList (Object aSublist) {
+	protected void traceRemoteList (Object aSublist) {
 		trace (REMOTE_LIST + aSublist);
 	}
 	/**
 	 * To be called in the client before returning its result.
 	 * To be also called in server runnable after receiving the result from the client
 	 */
-	public void traceRemoteResult (Object aResult) {
+	protected void traceRemoteResult (Object aResult) {
 		trace (REMOTE_RESULT + aResult);
 	}
 	/**

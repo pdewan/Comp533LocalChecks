@@ -13,7 +13,6 @@ import gradingTools.basics.sharedTestCase.checkstyle.VariableHasInterfaceTypeRat
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(5)
-@IsExtra(true)
 public class A1ExpectedSignatures extends ExpectedSignaturesRatioCheck{
 	 public A1ExpectedSignatures() {
 		 super();

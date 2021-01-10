@@ -7,8 +7,7 @@ import grader.basics.project.Project;
 import gradingTools.basics.sharedTestCase.checkstyle.NamedConstantsRatioCheck;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
-@MaxValue(10)
-@IsExtra(true)
+@MaxValue(1)
 public class A1NamedConstants extends NamedConstantsRatioCheck{
 	 public A1NamedConstants() {
 		 super();

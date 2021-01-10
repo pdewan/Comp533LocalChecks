@@ -11,36 +11,22 @@ import gradingTools.comp533s19.assignment4.testcases.AStringCheckBasedDependentT
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 //@MaxValue(5)
 //@Explanation("Checks for expected client1 counter output when explicit receive is implemented.")
-public class StandAloneMultiThreadSumMVC extends AStringCheckBasedDependentTestCase {
+//public class StandAloneMultiThreadSumMVC extends AStringCheckBasedDependentTestCase {
+	public class StandAloneMultiThreadSumMVC extends StandAloneSingleThreadSumMVC {
+
 
 //	@Override
-//	protected SubstringSequenceChecker outputChecker() {
-//		return new  ARegularCounterClientChecker(); 
+//	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
+//	NotGradableException {
+//		return dependentTest(project, autoGrade);
 //	}
-	@Override
-	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
-	NotGradableException {
-		return dependentTest(project, autoGrade);
-	}
-//	protected String processName() {
-//		return DistributedCounterProgramRunningTestCase.CLIENT_1_NAME;
+
+//	protected SubstringSequenceChecker checker() {
+//		return new AStandAloneMultiThreadSumMVCChecker();
 //	}
-//	protected boolean checkTrue() {
-//		return true;
-//	}
-	protected SubstringSequenceChecker checker() {
-		return new AStandAloneMultiThreadSumMVCChecker();
-	}
 	protected Class outputgeneratingTestCaseClass() {
 		return MultiThreadSumResult.class;
 	}
-//	@Override
-//	protected JUnitTestCase outputGeneratingTestCase() {
-//		return JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest( outputgeneratingTestCaseClass());
-////		return null;
-//	}
-//	public void defaultTest() {
-//    	passfailDefaultTest(); // do not want super test's default test which we want to bypass
-//    }
+
 	
 }

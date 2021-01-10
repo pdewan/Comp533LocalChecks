@@ -11,7 +11,7 @@ import grader.basics.junit.BasicJUnitUtils;
 	A1ClassIsGeneric.class,
 	A1ExpectedCalls.class,
 	A1ExpectedGetters.class,
-	A1ExpectedInterfaces.class,
+//	A1ExpectedInterfaces.class,
 	A1ExpectedSetters.class,
 	A1ExpectedSignatures.class,
 	A1ExpectedSupertypes.class

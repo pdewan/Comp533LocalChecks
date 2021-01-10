@@ -2,6 +2,7 @@ package gradingTools.comp533s20.assignment2.testcases.synchronization.objects;
 
 import grader.basics.junit.JUnitTestsEnvironment;
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
+import gradingTools.comp533s21.assignment2.A2ConfigurationProvided;
 import gradingTools.shared.testcases.concurrency.AbstractBarrier;
 import gradingTools.shared.testcases.concurrency.AbstractEarlyJoinBasicJoiner;
 import util.annotations.MaxValue;
@@ -12,8 +13,10 @@ public class Barrier extends AbstractBarrier {
 	@Override
 	protected Object getBarrierObject (Class[] aConstructorArgTypes, Object[] aJoinerArgs, Class aProxyClass ) {
 
-			ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
-			return aConfigurationProvided.getTestConfiguration().getBarrier(barrierCount);
+//			ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
+		A2ConfigurationProvided aConfigurationProvided = (A2ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
+
+		return aConfigurationProvided.getTestConfiguration().getBarrier(barrierCount);
 			
 	
 	}

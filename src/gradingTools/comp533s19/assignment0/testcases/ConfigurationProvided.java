@@ -4,9 +4,11 @@ import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.config.BasicStaticConfigurationUtils;
@@ -42,15 +44,34 @@ public class ConfigurationProvided extends PassFailJUnitTestCase {
 	MapReduceConfiguration testConfiguration ;
 //	public static final String CONFIGURATION_FILE_NAME = CONFIGURATION_CLASS + ".csv";
 	public static final String CONFIGURATION_FILE_NAME = "ClassRegistry"+ ".csv";
+	Set<String> missingClasses;
+	Collection<String> duplicateClasses;
+	int numMissingClasses = 0;
+	int numDuplicateClasses = 0;
+	double numRequiredClasses = 0;
+	double score = 1.0;
+	
 
 	public ConfigurationProvided() {
 		
+	}
+	
+	public Class referenceClass() {
+		return null;
+	}
+	
+	public double getScore() {
+		return score;
+	}
+	
+	public Object getConfiguration() {
+		return testConfiguration;
 	}
 
 	public MapReduceConfiguration getTestConfiguration() {
 		return testConfiguration;
 	}
-
+	Class configurationClass;
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade)
 			throws NotAutomatableException, NotGradableException {
@@ -58,19 +79,22 @@ public class ConfigurationProvided extends PassFailJUnitTestCase {
 //			Class aConfigurationClass = Class.forName(CONFIGURATION_CLASS);
 //			Class aConfigurationClass = BasicProjectIntrospection.findClassByName(project, CONFIGURATION_CLASS_2);
 			Object aConfigurationObject;
-			testConfiguration = (MapReduceConfiguration) BasicProjectIntrospection.createInstanceOfPredefinedSupertype(REGISTRY_INTERFACE);
+			configurationClass = BasicProjectIntrospection.
+					findClassByExistingSupertype(project, REGISTRY_INTERFACE);
+//			testConfiguration = (MapReduceConfiguration) BasicProjectIntrospection.createInstanceOfPredefinedSupertype(REGISTRY_INTERFACE);
+			testConfiguration = (MapReduceConfiguration) BasicProjectIntrospection.createInstanceAndProxy(configurationClass, REGISTRY_INTERFACE );
 			aConfigurationObject = testConfiguration;
 			if (testConfiguration == null) {
-			Class aConfigurationClass = BasicProjectIntrospection.findClassByName(project, CONFIGURATION_CLASS_2);
+		    configurationClass = BasicProjectIntrospection.findClassOrInterfaceByName(project, CONFIGURATION_CLASS_2);
 	
-			if (aConfigurationClass == null) {
-				aConfigurationClass = BasicProjectIntrospection.findClassByName(project, CONFIGURATION_CLASS);
-				if (aConfigurationClass == null) {
+			if (configurationClass == null) {
+				configurationClass = BasicProjectIntrospection.findClassOrInterfaceByName(project, CONFIGURATION_CLASS);
+				if (configurationClass == null) {
 				throw new ClassNotFoundException(CONFIGURATION_CLASS);
 				}
 			}
 //			Object aConfigurationObject = aConfigurationClass.newInstance();
-			aConfigurationObject = aConfigurationClass.newInstance();
+			aConfigurationObject = configurationClass.newInstance();
 
 			 testConfiguration =  (MapReduceConfiguration) BasicProjectIntrospection.createProxy(MapReduceConfiguration.class, aConfigurationObject);
 			}
@@ -107,8 +131,41 @@ public class ConfigurationProvided extends PassFailJUnitTestCase {
 			return fail("Exception occurred:" + e.getMessage());
 
 		}
+		Class aReferenceClass = referenceClass();
+		
+		if (aReferenceClass != null) {
+		    Map<String, Class> aReferenceMapping = BasicProjectIntrospection.getPropertyClassMapping(null, aReferenceClass);
+			Map<String, Class> anActualMapping = BasicProjectIntrospection.getPropertyClassMapping(project, configurationClass);
+			numRequiredClasses = aReferenceMapping.size();
+			missingClasses = BasicProjectIntrospection.diff(aReferenceMapping, anActualMapping);
+			numMissingClasses = missingClasses.size();
+			if (numMissingClasses > 0) {
+				return fail("To get style credit provide (possibly stub) missing classes for properties:" + missingClasses);
+			}
+			duplicateClasses = BasicProjectIntrospection.findDuplicateValues(anActualMapping);
+			numDuplicateClasses = duplicateClasses.size();
+			if (numDuplicateClasses == 0) {
+				return pass();
+			}
+			score = (numRequiredClasses - numDuplicateClasses)/numRequiredClasses;
+			return partialPass(score, "Style checks will be scaled by " + score + " because of duplicate configuration classes: " + duplicateClasses);
+			
+		}
 		return pass();
 	}
+	
+	public TestCaseResult computeResultBasedOnTaggedClasses(TestCaseResult aSuperResult) {
+		if (getScore() == 1.0) {
+			return aSuperResult;
+		} else if (getScore() == 0) {
+			return fail("Create " + getNumMissingClasses() + "  classes with missing tags to receive non zero score on this test");
+
+		} else  {
+			double anOriginalPercentage = aSuperResult.getPercentage();
+			double aPercentage = getScore()*anOriginalPercentage;
+			
+			return partialPass(aPercentage, "Raw score of " + anOriginalPercentage + " scaled by " + getScore() + " because of duplicate tagged classes. See console trace of failing and passing lines");
+		}
 //	public static final String MAP_REDUCE_PROCESS_TEAM = "MapReduce Team";
 //	public static final String MAP_REDUCE_SERVER = "MapReduce Server";
 //	public static final String MAP_REDUCE_CLIENT_1 = "MapReduce Client 1";
@@ -140,4 +197,29 @@ public class ConfigurationProvided extends PassFailJUnitTestCase {
 //		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessTeams().forEach(team -> System.out.println("### " + team));
 //	}
 
+}
+
+	public Set<String> getMissingClasses() {
+		return missingClasses;
+	}
+
+	public Collection<String> getDuplicateClasses() {
+		return duplicateClasses;
+	}
+
+	public int getNumMissingClasses() {
+		return numMissingClasses;
+	}
+
+	public int getNumDuplicateClasses() {
+		return numDuplicateClasses;
+	}
+
+	public double getNumRequiredClasses() {
+		return numRequiredClasses;
+	}
+
+	public Class getConfigurationClass() {
+		return configurationClass;
+	}
 }

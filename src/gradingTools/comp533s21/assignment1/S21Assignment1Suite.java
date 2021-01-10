@@ -10,6 +10,7 @@ import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import gradingTools.comp533s20.assignment1.MapReduceFactories;
 import gradingTools.comp533s20.assignment1.SingleThreadIntSum;
 import gradingTools.comp533s20.assignment1.SingleThreadTokenCount;
+import gradingTools.comp533s20.assignment2.MapReduceClasses;
 import gradingTools.comp533s21.assignment1.style.A1GeneralStyleSuite;
 import gradingTools.comp533s21.assignment1.style.A1SpecificStyleSuite;
 
@@ -17,8 +18,10 @@ import gradingTools.comp533s21.assignment1.style.A1SpecificStyleSuite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	ConfigurationProvided.class,
+//	ConfigurationSuite.class,
+	A1ConfigurationProvided.class,
 	MapReduceFactories.class,
+	MapReduceClasses.class,
 	SingleThreadTokenCount.class,
 	SingleThreadIntSum.class,
 	A1GeneralStyleSuite.class,

@@ -17,6 +17,7 @@ import gradingTools.comp533s20.assignment2.PartitionerClass;
 import gradingTools.comp533s21.assignment1.interfaces.MapReduceConfiguration;
 import gradingTools.comp533s21.assignment1.interfaces.TestMapper;
 import gradingTools.comp533s21.assignment1.interfaces.TestPartitioner;
+import gradingTools.comp533s21.assignment2.A2ConfigurationProvided;
 import gradingTools.shared.testcases.FactoryMethodTest;
 @MaxValue(5)
 @Explanation("Checks that a mapper factory is returned by the configuration and creates a mapper object")
@@ -25,7 +26,9 @@ public class BarrierClass extends PassFailJUnitTestCase {
 	
 	
 	protected Class barrierClass() {
-		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
+//		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
+		A2ConfigurationProvided aConfigurationProvided = (A2ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
+
 		MapReduceConfiguration aTestMapReduceConfiguration = aConfigurationProvided.getTestConfiguration();
 		if (aTestMapReduceConfiguration == null) {
 			assertTrue("No configuration", false);

@@ -26,13 +26,6 @@ public class StandAloneSingleThreadSumMVC extends StandAloneMultiThreadSumMVC {
 	protected Class outputgeneratingTestCaseClass() {
 		return StandAloneSingleThreadSumResult.class;
 	}
-//	@Override
-//	protected JUnitTestCase outputGeneratingTestCase() {
-//		return JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest( outputgeneratingTestCaseClass());
-////		return null;
-//	}
-//	public void defaultTest() {
-//    	passfailDefaultTest(); // do not want super test's default test which we want to bypass
-//    }
+
 	
 }

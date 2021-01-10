@@ -12,6 +12,7 @@ import gradingTools.comp533s19.assignment1.testcases.SingleClassTagListTestCase;
 import gradingTools.comp533s19.assignment4.testcases.blocking_rpc.BlockingRPCCounterServerTagged;
 import gradingTools.comp533s21.assignment1.interfaces.MapReduceConfiguration;
 import gradingTools.comp533s21.assignment1.interfaces.TestPartitioner;
+import gradingTools.comp533s21.assignment2.A2ConfigurationProvided;
 import gradingTools.shared.testcases.FactoryMethodTest;
 @MaxValue(10)
 public class PartitionerFactory extends FactoryMethodTest {
@@ -29,7 +30,9 @@ public class PartitionerFactory extends FactoryMethodTest {
 	}
 	@Override
 	protected Class factoryClass() {
-		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
+//		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
+		A2ConfigurationProvided aConfigurationProvided = (A2ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
+
 		MapReduceConfiguration aTestMapReduceConfiguration = aConfigurationProvided.getTestConfiguration();
 		
 		if (aTestMapReduceConfiguration == null) {

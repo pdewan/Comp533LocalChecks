@@ -16,7 +16,6 @@ import gradingTools.basics.sharedTestCase.checkstyle.VariableHasInterfaceTypeRat
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(5)
-@IsExtra(true)
 public class A1ClassIsGeneric extends ClassIsGenericRatioCheck{
 	 public A1ClassIsGeneric() {
 		 super();

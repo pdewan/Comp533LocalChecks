@@ -15,7 +15,6 @@ import gradingTools.basics.sharedTestCase.checkstyle.VariableHasInterfaceTypeRat
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(3)
-@IsExtra(true)
 public class A1ExpectedInterfaces extends ExpectedInterfacesRatioCheck{
 	 public A1ExpectedInterfaces() {
 		 super();
