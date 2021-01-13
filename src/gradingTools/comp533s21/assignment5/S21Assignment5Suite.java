@@ -22,15 +22,22 @@ import gradingTools.comp533s21.assignment5.style.A5SpecificStyleSuite;
 	A5SpecificStyleSuite.class
 })
 public class S21Assignment5Suite extends Assignment1Suite{
+	public static void configureProperties() {
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+		setCheckStyleConfiguration("unc_checks_533_A5.xml");
+	}
 	public static void main (String[] args) {
 		try {
-			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
-			setCheckStyleConfiguration("unc_checks_533_A5.xml");
+//			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+//			setCheckStyleConfiguration("unc_checks_533_A5.xml");
 			BasicJUnitUtils.interactiveTest(S21Assignment5Suite.class);
 
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	static {
+		configureProperties();
 	}
 }

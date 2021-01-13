@@ -55,12 +55,19 @@ import util.trace.Tracer;
 
 	
 public class S21Assignment2Suite extends Assignment1Suite{
+	public static void configureProperties() {
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+		setCheckStyleConfiguration("unc_checks_533_A2.xml");
+	}
+	static {
+		configureProperties();
+	}
 
 	public static void main (String[] args) {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setReRunTests(false);;
-			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
-			setCheckStyleConfiguration("unc_checks_533_A2.xml");
+//			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+//			setCheckStyleConfiguration("unc_checks_533_A2.xml");
 
 			BasicJUnitUtils.interactiveTest(S21Assignment2Suite.class);
 

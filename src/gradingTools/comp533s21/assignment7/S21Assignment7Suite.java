@@ -23,15 +23,24 @@ import gradingTools.comp533s21.assignment7.style.A7SpecificStyleSuite;
 	A7SpecificStyleSuite.class
 })
 public class S21Assignment7Suite extends Assignment2Suite{
+	
+	public static void configureProperties() {
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+		setCheckStyleConfiguration("unc_checks_533_A7.xml");
+	}
 	public static void main (String[] args) {
 		try {
-			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
-			setCheckStyleConfiguration("unc_checks_533_A7.xml");
+//			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+//			setCheckStyleConfiguration("unc_checks_533_A7.xml");
+//			configureProperties();
 			BasicJUnitUtils.interactiveTest(S21Assignment7Suite.class);
 
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	static {
+		configureProperties();
 	}
 }

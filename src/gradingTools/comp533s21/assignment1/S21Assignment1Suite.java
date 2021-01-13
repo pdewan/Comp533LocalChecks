@@ -96,12 +96,18 @@ import gradingTools.comp533s21.assignment1.style.A1SpecificStyleSuite;
 
 	
 public class S21Assignment1Suite extends Assignment0Suite{
-
+	public static void configureProperties() {
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+		setCheckStyleConfiguration("unc_checks_533_A1.xml");
+	}
+	static {
+		configureProperties();
+	}
 	public static void main (String[] args) {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setReRunTests(false);
-			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
-			setCheckStyleConfiguration("unc_checks_533_A1.xml");
+//			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+//			setCheckStyleConfiguration("unc_checks_533_A1.xml");
 			BasicJUnitUtils.interactiveTest(S21Assignment1Suite.class);
 
 

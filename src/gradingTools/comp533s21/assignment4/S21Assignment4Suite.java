@@ -22,10 +22,17 @@ import gradingTools.comp533s21.assignment4.style.A4SpecificStyleSuite;
 	A4GeneralStyleSuite.class
 })
 public class S21Assignment4Suite extends Assignment1Suite{
+	public static void configureProperties() {
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+		setCheckStyleConfiguration("unc_checks_533_A4.xml");
+	}
+	static {
+		configureProperties();
+	}
 	public static void main (String[] args) {
 		try {
-			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
-			setCheckStyleConfiguration("unc_checks_533_A4.xml");
+//			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+//			setCheckStyleConfiguration("unc_checks_533_A4.xml");
 			BasicJUnitUtils.interactiveTest(S21Assignment4Suite.class);
 
 
@@ -33,4 +40,5 @@ public class S21Assignment4Suite extends Assignment1Suite{
 			e.printStackTrace();
 		}
 	}
+	
 }

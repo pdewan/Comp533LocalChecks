@@ -29,6 +29,13 @@ import gradingTools.shared.testcases.greeting.GreetingRun;
 
 //@MaxValue(50)
 public class S21Assignment0Suite {
+	public static void configureProperties() {
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+		setCheckStyleConfiguration("unc_checks_533_A0.xml");
+	}
+	static {
+		configureProperties();
+	}
 
 	public static void main (String[] args) {
 		try {
