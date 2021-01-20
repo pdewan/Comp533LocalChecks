@@ -13,7 +13,6 @@ import util.annotations.Explanation;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(10)
-@IsExtra(true)
 @Explanation("Tests the map function of the int summung mapper returned by the configuration")
 public class IntSummingMapper extends TokenCountingMapper{
 	 public static final String VALUE_TO_STRING = "42";

@@ -19,11 +19,16 @@ public class A1ExpectedCalls extends ExpectedCallsRatioCheck{
 	 public A1ExpectedCalls() {
 		 super();
 	 }
+	 @Override
+	 protected Class configurationClass () {
+		 return A1ConfigurationProvided.class;
+	 }
 	
 	public TestCaseResult test(Project aProject, boolean autoGrade) throws NotAutomatableException, NotGradableException {
-	        TestCaseResult aSuperResult = super.test(aProject, autoGrade);
-	        A1ConfigurationProvided aConfigurationProvided = (A1ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(A1ConfigurationProvided.class);
-			return aConfigurationProvided.computeResultBasedOnTaggedClasses(aSuperResult);
+//	        TestCaseResult aSuperResult = super.test(aProject, autoGrade);
+//	        A1ConfigurationProvided aConfigurationProvided = (A1ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(A1ConfigurationProvided.class);
+//			return aConfigurationProvided.computeResultBasedOnTaggedClasses(aSuperResult);
+		return super.test(aProject, autoGrade);
 	        
 //	        return retVal;
 

@@ -15,7 +15,7 @@ import util.annotations.Explanation;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(10)
-@IsExtra(true)
+//@IsExtra(true)
 @Explanation("Checks that summation application makes a mapper factory change")
 public class StandAloneSingleThreadSumFactoryChange extends StandAloneMultiThreadSumMVC {
 

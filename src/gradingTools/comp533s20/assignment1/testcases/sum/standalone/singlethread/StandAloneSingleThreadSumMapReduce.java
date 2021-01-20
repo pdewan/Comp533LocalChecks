@@ -15,7 +15,7 @@ import util.annotations.Explanation;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(30)
-@IsExtra(true)
+//@IsExtra(true)
 @Explanation("Checks that summation application follows the required MapReduce pattern")
 public class StandAloneSingleThreadSumMapReduce extends StandAloneMultiThreadSumMVC {
 

@@ -32,7 +32,7 @@ import gradingTools.utils.RunningProjectUtils;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
 import util.tags.DistributedTags;
-@MaxValue(10)
+@MaxValue(0)
 @Explanation("Tests that the mapreduce configuration class is provided under the right name.")
 public class ConfigurationProvided extends PassFailJUnitTestCase {
 	public static final Class REGISTRY_INTERFACE = MapReduceConfiguration.class;

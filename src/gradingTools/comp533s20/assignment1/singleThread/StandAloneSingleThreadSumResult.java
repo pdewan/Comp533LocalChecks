@@ -6,7 +6,7 @@ import util.annotations.Explanation;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @Explanation("Checks that ints are correcetly input and summed")
-@IsExtra(true)
+//@IsExtra(true)
 @MaxValue(10)
 //public class StandAloneSingleThreadSumResult extends MultiThreadSumResult {
 public class StandAloneSingleThreadSumResult extends SingleThreadSumResult {

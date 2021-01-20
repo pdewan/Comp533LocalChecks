@@ -7,6 +7,7 @@ import java.util.Set;
 import java.util.regex.Pattern;
 
 import grader.basics.config.BasicExecutionSpecificationSelector;
+import grader.basics.execution.GradingMode;
 import grader.basics.execution.NotRunnableException;
 import grader.basics.execution.RunningProject;
 import grader.basics.junit.JUnitTestsEnvironment;
@@ -16,6 +17,9 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.project.source.ABasicTextManager;
 import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.basics.sharedTestCase.checkstyle.CheckStyleWarningsRatioTestCase;
+import gradingTools.basics.sharedTestCase.checkstyle.CheckStyleWarningsTestCase;
+import gradingTools.basics.sharedTestCase.checkstyle.NoCheckstyleWarnings;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 import gradingTools.shared.testcases.openmp.OpenMPPragma;
 import gradingTools.shared.testcases.openmp.OpenMPUtils;
@@ -34,80 +38,15 @@ import gradingTools.shared.testcases.utils.LinesMatcher;
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
+import util.trace.Tracer;
 @MaxValue(20)
 @IsExtra(true)
-public class A7NoCheckstyleWarnings extends PassFailJUnitTestCase {
-
-	public A7NoCheckstyleWarnings() {
-	}
-
-	
+public class A7NoCheckstyleWarnings extends NoCheckstyleWarnings {
 
 	@Override
-	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
-			NotGradableException {
-//		System.out.println("hello");
-//		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
-//		setCheckStyleConfiguration("unc_checks_524_A1.xml");
-		String aText = project.getCheckstyleText();
-		if (aText == null) {
-			return fail("Could not run checkstyle");
-		}
-		if (aText.contains("WARN")) {
-			System.out.println("checkstyle text");
-			System.out.println(aText);
-			return fail("Warnings found in checkstyle text, see output");
-		}
-		return pass();
-		
-			
-
-		
-	}
-//	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode) {
-//		for (SNode anSNode:aRootOfFileSNode.getChildren()) {
-//			if (anSNode instanceof ExternalMethodSNode) {
-//				processExternalMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, (ExternalMethodSNode) anSNode);
-//			}
-//		}
-//	}
-//	public static void processExternalMethodSNode (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode, ExternalMethodSNode anExternalMethodSNode) {
-//		MethodSNode aMethodSNode = aRootOfProgramSNode.getExternalToInternalMethod().get(anExternalMethodSNode.toString());
-//		if (aMethodSNode == null) {
-//			aMethodSNode = findMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, anExternalMethodSNode);
-//			if (aMethodSNode != null) {
-//				aRootOfProgramSNode.getExternalToInternalMethod().put(anExternalMethodSNode.toString(),aMethodSNode );
-//			}
-//		}
-//		if (aMethodSNode != null) {
-//			anExternalMethodSNode.setActualMethodSNode(aMethodSNode);
-//		}
-//	}
-//	public static MethodSNode findMethodSNode (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode, ExternalMethodSNode anExternalMethodSNode) {
-////		MethodSNode foundMethodSNode = null;
-//		for (String aFileName:aRootOfProgramSNode.getFileNameToSNode().keySet()) {
-//			if (aFileName.equals(aRootOfFileSNode.getFileName()))
-//				continue;
-//			
-//			RootOfFileSNode aSearchedRootOfFileSNode = aRootOfProgramSNode.getFileNameToSNode().get(aFileName);
-//			 for (SNode anSNode:aSearchedRootOfFileSNode.getChildren()) {
-//				if (anSNode instanceof MethodSNode && !(anSNode instanceof ExternalMethodSNode)) {
-//					if (anSNode.toString().equals(anExternalMethodSNode)) {
-//						return (MethodSNode) anSNode;
-//						
-//					}
-////					processExternalMethodSNode(aRootOfProgramSNode, aRootOfFileSNode, (ExternalMethodSNode) anSNode);
-//				}
-//			}
-//		}
-//		return null;
-//	}
-//	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode) {
-//		for (String aFileName:aRootOfProgramSNode.getFileNameToSNode().keySet()) {
-//			RootOfFileSNode aRootOfFileSNode = aRootOfProgramSNode.getFileNameToSNode().get(aFileName);
-//			processExternalMethodSNodes(aRootOfProgramSNode, aRootOfFileSNode);
-//			
-//		}
-//
-//	}
+public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
+	NotGradableException {
+		return super.test(project, autoGrade);
+	
+}
 }

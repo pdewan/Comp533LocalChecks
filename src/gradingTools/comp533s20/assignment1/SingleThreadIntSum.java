@@ -93,7 +93,7 @@ import util.trace.port.rpc.RemoteCallBlockedForReturnValue;
 })
 	
 
-@MaxValue(120)	
+@MaxValue(70)	
 public class SingleThreadIntSum extends Assignment1Suite{
 
 }
