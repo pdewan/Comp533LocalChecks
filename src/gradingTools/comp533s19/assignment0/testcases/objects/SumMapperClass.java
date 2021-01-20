@@ -19,7 +19,7 @@ import gradingTools.comp533s21.assignment1.interfaces.MapReduceConfiguration;
 import gradingTools.comp533s21.assignment1.interfaces.TestMapper;
 import gradingTools.comp533s21.assignment1.interfaces.TestPartitioner;
 import gradingTools.shared.testcases.FactoryMethodTest;
-h@IsExtra(true)
+//@IsExtra(true)
 @MaxValue(5)
 @Explanation("Checks that a mapper factory is returned by the configuration and creates a mapper object")
 public class SumMapperClass extends PassFailJUnitTestCase {
