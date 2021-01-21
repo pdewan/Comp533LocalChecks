@@ -91,7 +91,7 @@ import util.trace.port.rpc.RemoteCallBlockedForReturnValue;
 	
 
 @MaxValue(25)
-@IsExtra(true)
+//@IsExtra(true)
 public class BasicDistributedSum extends Assignment1Suite{
 
 }

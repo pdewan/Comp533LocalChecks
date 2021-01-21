@@ -39,7 +39,7 @@ import gradingTools.utils.RunningProjectUtils;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 import util.trace.Tracer;
-@MaxValue(20)
+@MaxValue(10)
 @IsExtra(true)
 public class A7NoCheckstyleWarnings extends NoCheckstyleWarnings {
 

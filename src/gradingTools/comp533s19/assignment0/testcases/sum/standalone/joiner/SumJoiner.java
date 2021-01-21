@@ -14,7 +14,7 @@ import util.annotations.MaxValue;
 //@MaxValue(5)
 //@Explanation("Checks for expected client1 counter output when explicit receive is implemented.")
 @MaxValue(10)
-@IsExtra(true)
+//@IsExtra(true)
 public class SumJoiner extends AStringCheckBasedDependentTestCase {
 
 //	@Override

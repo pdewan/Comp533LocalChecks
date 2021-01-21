@@ -92,7 +92,7 @@ import util.trace.port.rpc.RemoteCallBlockedForReturnValue;
 	
 
 @MaxValue(30)
-@IsExtra(true)
+//@IsExtra(true)
 public class MultiThreadSum extends Assignment1Suite{
 
 }

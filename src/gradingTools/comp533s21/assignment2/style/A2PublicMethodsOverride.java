@@ -9,6 +9,7 @@ import gradingTools.basics.sharedTestCase.checkstyle.PublicMethodsOverrideRatioC
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(10)
+@IsExtra(true)
 public class A2PublicMethodsOverride extends PublicMethodsOverrideRatioCheck{
 	 public A2PublicMethodsOverride() {
 		 super();

@@ -15,7 +15,7 @@ import port.old.PrintingReplyingObjectReceiver;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(10)
-@IsExtra(true)
+//@IsExtra(true)
 public class ClientSumPartitionReduce extends AStringCheckBasedDependentTestCase {
 
 //	@Override

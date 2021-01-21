@@ -11,6 +11,7 @@ import gradingTools.basics.sharedTestCase.checkstyle.VariableHasInterfaceTypeRat
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(15)
+@IsExtra(true)
 public class A2MnemonicNames extends MnemonicNamesRatioCheck{
 	 public A2MnemonicNames() {
 		 super();

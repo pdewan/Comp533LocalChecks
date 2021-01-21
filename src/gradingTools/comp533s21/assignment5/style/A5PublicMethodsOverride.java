@@ -8,7 +8,8 @@ import gradingTools.basics.sharedTestCase.checkstyle.NamedConstantsRatioCheck;
 import gradingTools.basics.sharedTestCase.checkstyle.PublicMethodsOverrideRatioCheck;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
-@MaxValue(10)
+@MaxValue(5)
+@IsExtra(true)
 public class A5PublicMethodsOverride extends PublicMethodsOverrideRatioCheck{
 	 public A5PublicMethodsOverride() {
 		 super();

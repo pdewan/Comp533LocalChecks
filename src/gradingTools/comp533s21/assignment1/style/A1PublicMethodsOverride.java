@@ -10,6 +10,7 @@ import gradingTools.comp533s21.assignment1.A1ConfigurationProvided;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(10)
+@IsExtra(true)
 public class A1PublicMethodsOverride extends PublicMethodsOverrideRatioCheck{
 	 public A1PublicMethodsOverride() {
 		 super();
