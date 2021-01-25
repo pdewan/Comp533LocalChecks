@@ -16,6 +16,7 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.project.source.ABasicTextManager;
 import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.basics.sharedTestCase.checkstyle.NoCheckstyleWarnings;
 import gradingTools.shared.testcases.SubstringSequenceChecker;
 import gradingTools.shared.testcases.openmp.OpenMPPragma;
 import gradingTools.shared.testcases.openmp.OpenMPUtils;
@@ -36,34 +37,43 @@ import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(10)
 @IsExtra(true)
-public class A5NoCheckstyleWarnings extends PassFailJUnitTestCase {
+public class A5NoCheckstyleWarnings extends NoCheckstyleWarnings {
 
 	public A5NoCheckstyleWarnings() {
 	}
-
 	
-
+	
 	@Override
 	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
-			NotGradableException {
-//		System.out.println("hello");
-//		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
-//		setCheckStyleConfiguration("unc_checks_524_A1.xml");
-		String aText = project.getCheckstyleText();
-		if (aText == null) {
-			return fail("Could not run checkstyle");
-		}
-		if (aText.contains("WARN")) {
-			System.out.println("checkstyle text");
-			System.out.println(aText);
-			return fail("Warnings found in checkstyle text, see output");
-		}
-		return pass();
-		
-			
-
-		
+	NotGradableException {
+		return super.test(project, autoGrade);
+	
 	}
+	
+
+//	
+//
+//	@Override
+//	public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
+//			NotGradableException {
+////		System.out.println("hello");
+////		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+////		setCheckStyleConfiguration("unc_checks_524_A1.xml");
+//		String aText = project.getCheckstyleText();
+//		if (aText == null) {
+//			return fail("Could not run checkstyle");
+//		}
+//		if (aText.contains("WARN")) {
+//			System.out.println("checkstyle text");
+//			System.out.println(aText);
+//			return fail("Warnings found in checkstyle text, see output");
+//		}
+//		return pass();
+//		
+//			
+//
+//		
+//	}
 //	public static void processExternalMethodSNodes (RootOfProgramSNode aRootOfProgramSNode, RootOfFileSNode aRootOfFileSNode) {
 //		for (SNode anSNode:aRootOfFileSNode.getChildren()) {
 //			if (anSNode instanceof ExternalMethodSNode) {

@@ -3,8 +3,9 @@ package gradingTools.comp533s20.assignment1.testcases.sum.standalone.singlethrea
 import gradingTools.comp533s19.assignment0.AMapReduceTracer;
 import gradingTools.comp533s19.assignment4.testcases.DistributedCounterProgramRunningTestCase;
 import gradingTools.shared.testcases.ASubstringSequenceChecker;
+import util.annotations.Explanation;
 import util.trace.port.rpc.RemoteCallWaitingForReturnValue;
-
+@Explanation("Checks that the int summing main changes the mapper and traces this change")
 public class AStandAloneSingleThreadSumMapFactoryChangeChecker extends ASubstringSequenceChecker{
 	//make sure receives from both clients take place, need to ensure alternatibg, cannot with regular expressions
 	public  final String[] MY_SUBSTRINGS = {

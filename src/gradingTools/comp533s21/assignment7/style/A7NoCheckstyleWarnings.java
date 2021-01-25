@@ -43,10 +43,16 @@ import util.trace.Tracer;
 @IsExtra(true)
 public class A7NoCheckstyleWarnings extends NoCheckstyleWarnings {
 
-	@Override
-public TestCaseResult test(Project project, boolean autoGrade) throws NotAutomatableException,
-	NotGradableException {
-		return super.test(project, autoGrade);
+	 protected Class taggedClassesDefined() {
+			return A7TaggedClassesDefined.class;
+		}
 	
-}
+	public TestCaseResult test(Project aProject, boolean autoGrade) throws NotAutomatableException, NotGradableException {
+	        
+			TestCaseResult aSuperResult = super.test(aProject, autoGrade);
+			return aSuperResult;
+//			A7TaggedClassesDefined aTaggedClassesDefined = (A7TaggedClassesDefined) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(A7TaggedClassesDefined.class);
+//			return aTaggedClassesDefined.computeResultBasedOnTaggedClasses(aSuperResult);
+	        
+	    }
 }

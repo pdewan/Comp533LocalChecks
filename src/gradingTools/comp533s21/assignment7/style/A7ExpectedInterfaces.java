@@ -19,10 +19,16 @@ public class A7ExpectedInterfaces extends ExpectedInterfacesRatioCheck{
 	 public A7ExpectedInterfaces() {
 		 super();
 	 }
+	 protected Class taggedClassesDefined() {
+			return A7TaggedClassesDefined.class;
+		}
 	
 	public TestCaseResult test(Project aProject, boolean autoGrade) throws NotAutomatableException, NotGradableException {
-	        return super.test(aProject, autoGrade);
-
+	        
+			TestCaseResult aSuperResult = super.test(aProject, autoGrade);
+			return aSuperResult;
+//			A7TaggedClassesDefined aTaggedClassesDefined = (A7TaggedClassesDefined) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(A7TaggedClassesDefined.class);
+//			return aTaggedClassesDefined.computeResultBasedOnTaggedClasses(aSuperResult);
 	        
 	    }
 }
