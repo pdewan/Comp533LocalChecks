@@ -58,7 +58,7 @@ public abstract class AMapReduceTracer {
 		trace(anEvent.toString());
 	}
 	/*
-	 * To be called in the map methods of the mappers before returning
+	 * To be called in the map methods of the mappers for each mapped token
 	 */
 	protected void traceMap(Object anInput, Object aKeyValue) {
 		trace (MAP  + anInput + ":" + aKeyValue);		
