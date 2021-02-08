@@ -31,8 +31,11 @@ public class PartitionerFactory extends FactoryMethodTest {
 	@Override
 	protected Class factoryClass() {
 //		ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
-		A2ConfigurationProvided aConfigurationProvided = (A2ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
-
+		A2ConfigurationProvided aConfigurationProvided = (A2ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(A2ConfigurationProvided.class);
+		if (aConfigurationProvided == null) {
+			System.err.println("Internal error in dependent test:" + PartitionerFactory.class.getName());
+			assertTrue("Internal error in dependent test:" + PartitionerFactory.class.getName(), false);
+		}
 		MapReduceConfiguration aTestMapReduceConfiguration = aConfigurationProvided.getTestConfiguration();
 		
 		if (aTestMapReduceConfiguration == null) {
