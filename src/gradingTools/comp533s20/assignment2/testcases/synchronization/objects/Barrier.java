@@ -14,7 +14,7 @@ public class Barrier extends AbstractBarrier {
 	protected Object getBarrierObject (Class[] aConstructorArgTypes, Object[] aJoinerArgs, Class aProxyClass ) {
 
 //			ConfigurationProvided aConfigurationProvided = (ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
-		A2ConfigurationProvided aConfigurationProvided = (A2ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(ConfigurationProvided.class);
+		A2ConfigurationProvided aConfigurationProvided = (A2ConfigurationProvided) JUnitTestsEnvironment.getAndPossiblyRunGradableJUnitTest(A2ConfigurationProvided.class);
 
 		return aConfigurationProvided.getTestConfiguration().getBarrier(barrierCount);
 			

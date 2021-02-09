@@ -8,7 +8,7 @@ import gradingTools.basics.sharedTestCase.checkstyle.MnemonicNamesRatioCheck;
 import gradingTools.basics.sharedTestCase.checkstyle.NamedConstantsRatioCheck;
 import gradingTools.basics.sharedTestCase.checkstyle.PublicMethodsOverrideRatioCheck;
 import gradingTools.basics.sharedTestCase.checkstyle.VariableHasInterfaceTypeRatioCheck;
-import gradingTools.comp533s20.assignment2.A2ConfigurationProvided;
+import gradingTools.comp533s21.assignment2.A2ConfigurationProvided;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(15)
