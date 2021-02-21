@@ -40,4 +40,18 @@ public class A3ReferenceConfigurationClass extends A2ReferenceConfigurationClass
 		return Object.class;
 	}
 
+	@Override
+	public Class getServerFacebookMapReduce() {
+		return Object.class;
+	}
+
+	@Override
+	public Class getRemoteClientFacebookMapReduce() {
+		return Object.class;
+	}
+	
+	@Override
+	public Class getStandAloneFacebookMapReduce() {
+		return Object.class;
+	}
 }

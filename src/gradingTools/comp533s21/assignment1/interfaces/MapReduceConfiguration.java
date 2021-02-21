@@ -57,4 +57,7 @@ public interface MapReduceConfiguration {
 	Class getRemoteClientObjectInterface();
 	Class getRemoteClientObjectClass();
 	
+	Class getServerFacebookMapReduce();
+	Class getRemoteClientFacebookMapReduce();
+	Class getStandAloneFacebookMapReduce();
 }

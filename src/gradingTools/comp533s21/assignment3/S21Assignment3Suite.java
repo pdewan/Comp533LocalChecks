@@ -30,6 +30,8 @@ import gradingTools.comp533s20.assignment1.singleThread.StandAloneSingleThreadTo
 import gradingTools.comp533s20.assignment1.testcases.counts.standalone.singlethread.StandAloneSingleThreadTokenCountMVC;
 import gradingTools.comp533s20.assignment1.testcases.sum.standalone.singlethread.StandAloneSingleThreadSumMVC;
 import gradingTools.comp533s20.assignment2.testcases.synchronization.objects.BarrierJoinSynchronizationClassAndObject;
+import gradingTools.comp533s21.assignment3.facebookMapReduce.BasicDistributedFacebookMapReduce;
+import gradingTools.comp533s21.assignment3.facebookMapReduce.tests.DistributedFacebookMapReduceResult;
 import gradingTools.comp533s21.assignment3.style.A3GeneralStyleSuite;
 import gradingTools.comp533s21.assignment3.style.A3SpecificStyleSuite;
 import util.trace.Tracer;
@@ -45,6 +47,7 @@ import util.trace.Tracer;
 	BasicDistributedCounts.class,
 	BasicDistributedSum.class,
 	DistributedPartitionedReduce.class,
+	BasicDistributedFacebookMapReduce.class
 })
 	
 
