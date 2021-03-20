@@ -25,7 +25,7 @@ import util.annotations.MaxValue;
 })
 	
 
-@MaxValue(25)
+@MaxValue(50)
 @IsExtra(true)
 public class BasicDistributedFacebookMapReduce extends Assignment1Suite{
 

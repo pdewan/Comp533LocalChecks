@@ -168,4 +168,22 @@ public class A2ReferenceConfigurationClass implements MapReduceConfiguration{
 		return null;
 	}
 
+	@Override
+	public Class getServerFacebookMapReduce() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Class getRemoteClientFacebookMapReduce() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Class getStandAloneFacebookMapReduce() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -32,9 +32,9 @@ public class ADistributedTokenCountPartialReduceChecker extends ASubstringSequen
 				toRegex(DistributedTokenCountResult.MAP_REDUCE_SERVER + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + "Remote List"),
 			    toRegex(clientName + ".*" + "RMI TCP Connection" +   ".*:.*" + "Remote List"),
 				toRegex(clientName + ".*" + "RMI TCP Connection" +   ".*:.*" + "reduce:"),
-			    toRegex(clientName + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + "Remote Result"),
+//			    toRegex(clientName + ".*" + AMapReduceTracer.SLAVE +  slaveName + ".*:.*" + "Remote Result"),
 
-				
+   		        toRegex(clientName + ".*" + AMapReduceTracer.SLAVE +  ".*:.*" + "Remote Result"),
 //				*1.*2",
 //				".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*Hogwarts=5.*"
 //				".*View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*Potter=2.*",

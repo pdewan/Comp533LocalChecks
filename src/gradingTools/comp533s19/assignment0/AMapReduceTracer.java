@@ -2,6 +2,7 @@ package gradingTools.comp533s19.assignment0;
 
 import java.beans.PropertyChangeEvent;
 
+import util.misc.ThreadSupport;
 import util.trace.bean.AddedPropertyChangeListener;
 
 public abstract class AMapReduceTracer {
@@ -36,8 +37,11 @@ public abstract class AMapReduceTracer {
 	protected String toPrefix() {
 		return INFO_PREFIX + Thread.currentThread() + ":" + this + ":";
 	}
+	static final int FLUSH_SLEEP = 100;
 	protected void trace(String aSuffix) {
 		System.out.println(toPrefix() + aSuffix);
+		System.out.flush();
+		ThreadSupport.sleep(FLUSH_SLEEP);
 	}
 	/**
 	 * To be called before scanning for input string
@@ -226,7 +230,7 @@ public abstract class AMapReduceTracer {
 	 * To be also called in the client at the start of its callback to process sublist	 * 
 	 */
 	protected void traceRemoteList (Object aSublist) {
-		trace (REMOTE_LIST + aSublist);
+		trace (REMOTE_LIST + aSublist);		
 	}
 	/**
 	 * To be called in the client before returning its result.
