@@ -166,7 +166,7 @@ public class FlexibleOneClientCorrectConnectionTestInputGenerator extends AnAbst
 	
 	private static final Pattern readListenerPattern = multipleCheckStr(MAIN_THREAD, "ReadListenerAdded", SELECT_THREAD, "ReadListenerAdded");
 	private static final Pattern writeListenerPattern = multipleCheckStr(MAIN_THREAD, "WriteListenerAdded", SELECT_THREAD, "WriteListenerAdded");
-	private static final Pattern propertyChangeListenerPattern = multipleCheckStr(MAIN_THREAD, "AddedPropertyChangeListener", SELECT_THREAD, "AddedPropertyChangeListener");
+	private static final Pattern propertyChangeListenerPattern = multipleCheckStr(MAIN_THREAD, "AddedPropertyChangeListener.*?@", SELECT_THREAD, "AddedPropertyChangeListener.*?@");
 	
 	private static final Pattern gipcObjectLookedUpPattern = checkStr(MAIN_THREAD, "GIPCObjectLookedUp");
 	private static final Pattern gipcObjectRegisteredPattern = checkStr(MAIN_THREAD, "GIPCObjectRegistered");
