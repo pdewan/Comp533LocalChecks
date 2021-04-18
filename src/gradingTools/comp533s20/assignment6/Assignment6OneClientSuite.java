@@ -14,6 +14,7 @@ import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOOneClientConnecti
 import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOOneClientReadWriteNonAtomic;
 import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOStaticArguments;
 import gradingTools.comp533s20.flexible.testcases.FlexibleStaticArgumentsTestCase;
+import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
 import util.tags.DistributedTags;
 
 
@@ -90,8 +91,11 @@ public static void oneClientSetupProcesses(List<String> serverArgList, List<Stri
 //	List<String> serverArgList = Arrays.stream(serverArgs).filter(s -> !s.isEmpty()).collect(Collectors.toList());
 	List<String> registryArgList = (serverArgList.size() >= 3 && !serverArgList.get(2).equals(DEFAULT_PORT_RMI)) ? serverArgList.subList(2, 3) : Collections.emptyList();
 //	List<String> clientArgList = Arrays.stream(clientArgs).filter(s -> !s.isEmpty()).collect(Collectors.toList());
-	List<String> aClientTags;
-	List<String> aServerTags;
+
+	List<String> aClientTags = TagsFactory.getAssignmentTags().getOneClientClientTags(false, doRMI, doGIPC);
+	List<String> aServerTags = TagsFactory.getAssignmentTags().getOneClientServerTags(false, doRMI, doGIPC);
+//	List<String> aClientTags;
+//	List<String> aServerTags;
 //	serverArgList.removeIf(s-> s.isEmpty());
 //	clientArgList.removeIf(s-> s.isEmpty());
 	if (doRMI && doGIPC) {
@@ -101,8 +105,8 @@ public static void oneClientSetupProcesses(List<String> serverArgList, List<Stri
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Registry", Arrays.asList(DistributedTags.REGISTRY));
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Registry", registryArgList);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Registry", 500);
-		aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI, DistributedTags.NIO, DistributedTags.GIPC);
-		aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI, DistributedTags.NIO, DistributedTags.GIPC);
+//		aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI, DistributedTags.NIO, DistributedTags.GIPC);
+//		aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI, DistributedTags.NIO, DistributedTags.GIPC);
 	} else if (doRMI) {
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client"));
@@ -110,14 +114,14 @@ public static void oneClientSetupProcesses(List<String> serverArgList, List<Stri
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Registry", Arrays.asList(DistributedTags.REGISTRY));
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Registry", registryArgList);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Registry", 500);
-		aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI, DistributedTags.NIO);
-		aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI, DistributedTags.NIO);
+//		aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI, DistributedTags.NIO);
+//		aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI, DistributedTags.NIO);
 	} else if (doGIPC) {
-		aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.GIPC);
-		aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.GIPC);
+//		aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.GIPC);
+//		aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.GIPC);
 	} else {
-		aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.NIO);
-		aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.NIO);
+//		aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.NIO);
+//		aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.NIO);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList("DistributedProgram"));
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setTerminatingProcesses("DistributedProgram", Arrays.asList("Client"));
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcesses("DistributedProgram", Arrays.asList("Server", "Client"));

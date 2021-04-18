@@ -13,6 +13,7 @@ import gradingTools.comp533s20.assignment7.Assignment7OneClientSuite;
 import gradingTools.comp533s20.assignment7.Assignment7TwoClientSuite;
 import gradingTools.comp533s21.assignment7.style.A7GeneralStyleSuite;
 import gradingTools.comp533s21.assignment7.style.A7SpecificStyleSuite;
+import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
 
 
 @RunWith(Suite.class)
@@ -33,6 +34,7 @@ public class S21Assignment7Suite extends Assignment2Suite{
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
 //			setCheckStyleConfiguration("unc_checks_533_A7.xml");
 //			configureProperties();
+			TagsFactory.setAssignmentTags(new S21A7AssignmentTags());
 			BasicJUnitUtils.interactiveTest(S21Assignment7Suite.class);
 
 

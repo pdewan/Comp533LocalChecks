@@ -15,6 +15,7 @@ import gradingTools.comp533s20.assignment4.testcases.RMIOneClientReadWriteAtomic
 import gradingTools.comp533s20.assignment4.testcases.RMIOneClientReadWriteNonAtomic;
 import gradingTools.comp533s20.assignment4.testcases.RMIStaticArguments;
 import gradingTools.comp533s20.flexible.testcases.FlexibleStaticArgumentsTestCase;
+import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
 import util.tags.DistributedTags;
 
 @RunWith(Suite.class)
@@ -95,8 +96,9 @@ public class Assignment4OneClientSuite {
 				? serverArgList.subList(2, 3)
 				: Collections.emptyList();
 //	List<String> clientArgList = Arrays.stream(clientArgs).filter(s -> !s.isEmpty()).collect(Collectors.toList());
-		List<String> aClientTags = null;
-		List<String> aServerTags = null;
+		
+		List<String> aClientTags = TagsFactory.getAssignmentTags().getOneClientClientTags(doNIO, doRMI, doGIPC);
+		List<String> aServerTags = TagsFactory.getAssignmentTags().getOneClientServerTags(doNIO, doRMI, doGIPC);
 //	serverArgList.removeIf(s-> s.isEmpty());
 //	clientArgList.removeIf(s-> s.isEmpty());
 
@@ -111,21 +113,21 @@ public class Assignment4OneClientSuite {
 					Arrays.asList(DistributedTags.REGISTRY));
 			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Registry", registryArgList);
 			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Registry", 500);
-			aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI);
-			aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI);
+//			aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI);
+//			aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI);
 //		} else if (doGIPC) {
 		}
 		if (doGIPC) {
-			aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI, DistributedTags.GIPC);
-			aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI,DistributedTags.GIPC);
+//			aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI, DistributedTags.GIPC);
+//			aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI,DistributedTags.GIPC);
 //		} else {
 		}
 		if (doNIO) {
-			aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.NIO, DistributedTags.RMI, DistributedTags.GIPC);
-			aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.NIO, DistributedTags.RMI, DistributedTags.GIPC);
+//			aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.NIO, DistributedTags.RMI, DistributedTags.GIPC);
+//			aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.NIO, DistributedTags.RMI, DistributedTags.GIPC);
 			if (!doGIPC && !doRMI) {
-				aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.NIO);
-				aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.NIO);
+//				aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.NIO);
+//				aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.NIO);
 				BasicExecutionSpecificationSelector.getBasicExecutionSpecification()
 				.setProcessTeams(Arrays.asList("DistributedProgram"));
 				BasicExecutionSpecificationSelector.getBasicExecutionSpecification()

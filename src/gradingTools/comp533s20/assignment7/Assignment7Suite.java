@@ -8,6 +8,8 @@ import gradingTools.comp533s19.assignment1.testcases.OneClientConnection;
 import gradingTools.comp533s19.assignment2.Assignment2OneClientSuite;
 import gradingTools.comp533s19.assignment2.Assignment2Suite;
 import gradingTools.comp533s19.assignment2.Assignment2TwoClientSuite;
+import gradingTools.comp533s20.assignment6.A6AssignmentTags;
+import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
 
 
 @RunWith(Suite.class)
@@ -19,6 +21,7 @@ public class Assignment7Suite extends Assignment2Suite{
 	public static void main (String[] args) {
 		try {
 			
+			TagsFactory.setAssignmentTags(new A6AssignmentTags());
 			BasicJUnitUtils.interactiveTest(Assignment7Suite.class);
 
 
