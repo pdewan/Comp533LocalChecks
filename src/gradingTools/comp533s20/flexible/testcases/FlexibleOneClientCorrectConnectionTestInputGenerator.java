@@ -326,7 +326,7 @@ public class FlexibleOneClientCorrectConnectionTestInputGenerator extends AnAbst
 	}
 	
 	public boolean isServerAcceptComplete() {
-		return isServerNIOAcceptComplete() && isServerGIPCAcceptComplete();
+		return isServerNIOAcceptComplete() && isServerGIPCAcceptComplete() && isClientRMIConnectComplete();
 	}
 	
 	public boolean isServerNIOAcceptComplete() {

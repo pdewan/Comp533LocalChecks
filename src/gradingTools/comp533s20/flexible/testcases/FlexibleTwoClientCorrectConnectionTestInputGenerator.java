@@ -409,7 +409,7 @@ public class FlexibleTwoClientCorrectConnectionTestInputGenerator extends ABuffe
 	}
 
 	public boolean areServerAcceptsComplete() {
-		return isServerAccept0Complete() && isServerAccept1Complete();
+		return isServerAccept0Complete() && isServerAccept1Complete() && isClient0RMIConnectComplete() && isClient1RMIConnectComplete();
 	}
 	
 	public boolean isServerAccept0Complete() {
