@@ -8,10 +8,12 @@ import grader.basics.junit.BasicJUnitUtils;
 import gradingTools.comp533s19.assignment1.Assignment1OneClientSuite;
 import gradingTools.comp533s19.assignment1.Assignment1Suite;
 import gradingTools.comp533s19.assignment1.testcases.OneClientConnection;
+import gradingTools.comp533s20.assignment5.A5AssignmentTags;
 import gradingTools.comp533s20.assignment5.Assignment5OneClientSuite;
 import gradingTools.comp533s20.assignment5.Assignment5TwoClientSuite;
 import gradingTools.comp533s21.assignment5.style.A5GeneralStyleSuite;
 import gradingTools.comp533s21.assignment5.style.A5SpecificStyleSuite;
+import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
 
 
 @RunWith(Suite.class)
@@ -30,6 +32,7 @@ public class S21Assignment5Suite extends Assignment1Suite{
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
 //			setCheckStyleConfiguration("unc_checks_533_A5.xml");
+			TagsFactory.setAssignmentTags(new A5AssignmentTags());
 			BasicJUnitUtils.interactiveTest(S21Assignment5Suite.class);
 
 

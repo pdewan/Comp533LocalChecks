@@ -8,6 +8,7 @@ import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOServerMetaStateNo
 import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOTwoClientConnection;
 import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOTwoClientReadWriteAtomic;
 import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOTwoClientReadWriteNonAtomic;
+import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,8 +35,10 @@ import util.tags.DistributedTags;
 public class Assignment6TwoClientSuite {
 
 	public static void twoClientSetupProcesses() {
-		List<String> aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI, DistributedTags.NIO, DistributedTags.GIPC);
-		List<String> aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI, DistributedTags.NIO, DistributedTags.GIPC);
+//		List<String> aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI, DistributedTags.NIO, DistributedTags.GIPC);
+//		List<String> aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI, DistributedTags.NIO, DistributedTags.GIPC);
+		List<String> aClientTags = TagsFactory.getAssignmentTags().getTwoClientClientTags();
+		List<String> aServerTags = TagsFactory.getAssignmentTags().getTwoClientServerTags();
 		Assignment5TwoClientSuite.twoClientSetupProcesses(aClientTags, aServerTags);
 //		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
 //		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client_0", "Client_1"));

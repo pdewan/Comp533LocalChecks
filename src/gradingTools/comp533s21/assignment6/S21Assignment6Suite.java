@@ -9,10 +9,12 @@ import gradingTools.comp533s19.assignment1.testcases.OneClientConnection;
 import gradingTools.comp533s19.assignment2.Assignment2OneClientSuite;
 import gradingTools.comp533s19.assignment2.Assignment2Suite;
 import gradingTools.comp533s19.assignment2.Assignment2TwoClientSuite;
+import gradingTools.comp533s20.assignment6.A6AssignmentTags;
 import gradingTools.comp533s20.assignment6.Assignment6OneClientSuite;
 import gradingTools.comp533s20.assignment6.Assignment6TwoClientSuite;
 import gradingTools.comp533s21.assignment6.style.A6GeneralStyleSuite;
 import gradingTools.comp533s21.assignment6.style.A6SpecificStyleSuite;
+import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
 
 
 @RunWith(Suite.class)
@@ -32,6 +34,7 @@ public class S21Assignment6Suite extends Assignment2Suite{
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
 //			setCheckStyleConfiguration("unc_checks_533_A6.xml");
 //			configureProperties();
+			TagsFactory.setAssignmentTags(new A6AssignmentTags());
 			BasicJUnitUtils.interactiveTest(S21Assignment6Suite.class);
 
 

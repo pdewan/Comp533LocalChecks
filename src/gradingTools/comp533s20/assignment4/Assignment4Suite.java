@@ -7,6 +7,7 @@ import grader.basics.junit.BasicJUnitUtils;
 import gradingTools.comp533s19.assignment1.Assignment1OneClientSuite;
 import gradingTools.comp533s19.assignment1.Assignment1Suite;
 import gradingTools.comp533s19.assignment1.testcases.OneClientConnection;
+import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
 
 
 @RunWith(Suite.class)
@@ -17,6 +18,8 @@ import gradingTools.comp533s19.assignment1.testcases.OneClientConnection;
 public class Assignment4Suite extends Assignment1Suite{
 	public static void main (String[] args) {
 		try {
+			
+			TagsFactory.setAssignmentTags(new A4AssignmentTags());
 			
 			BasicJUnitUtils.interactiveTest(Assignment4Suite.class);
 

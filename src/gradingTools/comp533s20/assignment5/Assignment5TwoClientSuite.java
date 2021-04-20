@@ -11,6 +11,7 @@ import gradingTools.comp533s20.assignment5.testcases.GIPCRMIStaticArguments;
 import gradingTools.comp533s20.assignment5.testcases.GIPCRMITwoClientConnection;
 import gradingTools.comp533s20.assignment5.testcases.GIPCRMITwoClientReadWriteAtomic;
 import gradingTools.comp533s20.assignment5.testcases.GIPCRMITwoClientReadWriteNonAtomic;
+import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
 
 import java.util.Arrays;
 import java.util.List;
@@ -46,8 +47,10 @@ public static void twoClientSetupProcesses(boolean doGIPC) {
 
 
 public static void twoClientSetupProcesses() {
-	List<String> aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI, DistributedTags.GIPC);
-	List<String> aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI, DistributedTags.GIPC);
+//	List<String> aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI, DistributedTags.GIPC);
+//	List<String> aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI, DistributedTags.GIPC);
+	List<String> aClientTags = TagsFactory.getAssignmentTags().getTwoClientClientTags();
+	List<String> aServerTags = TagsFactory.getAssignmentTags().getTwoClientServerTags();
 	twoClientSetupProcesses(aClientTags, aServerTags);
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client_0", "Client_1"));

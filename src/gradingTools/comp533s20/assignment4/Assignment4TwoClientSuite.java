@@ -9,6 +9,7 @@ import gradingTools.comp533s20.assignment4.testcases.RMITwoClientReadWriteAtomic
 import gradingTools.comp533s20.assignment4.testcases.RMITwoClientReadWriteNonAtomic;
 import gradingTools.comp533s20.assignment5.Assignment5TwoClientSuite;
 import gradingTools.comp533s20.assignment6.Assignment6TwoClientSuite;
+import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
 //import gradingTools.comp533s19.assignment3.Assignment3TwoClientSuite;
 import gradingTools.comp533s19.flexible.testcases.FlexibleStaticArgumentsTestCase;
 
@@ -50,8 +51,10 @@ public static void twoClientSetupProcesses(boolean doNIO, boolean doGIPC) {
 
 
 public static void twoClientSetupProcesses() {
-	List<String> aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI);
-	List<String> aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI);
+//	List<String> aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI);
+//	List<String> aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI);
+	List<String> aClientTags = TagsFactory.getAssignmentTags().getTwoClientClientTags();
+	List<String> aServerTags = TagsFactory.getAssignmentTags().getTwoClientServerTags();
 	twoClientSetupProcesses(aClientTags, aServerTags);
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client_0", "Client_1"));
