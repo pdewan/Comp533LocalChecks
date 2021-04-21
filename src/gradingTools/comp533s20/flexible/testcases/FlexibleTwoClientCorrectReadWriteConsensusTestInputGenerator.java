@@ -1317,11 +1317,11 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestInputGenerator extend
 			} else if (!isServerRMIRead0Complete()) {
 				return "Server reading via RMI";
 			} else if (!isClient0RMIAcceptComplete()){
-				return "Client0 accepting command";
+				return "Client0 accepting command via RMI";
 			} else if (!isClient1RMIAcceptComplete()){
-				return "Client1 accepting command";
+				return "Client1 accepting command via RMI";
 			} else if (!isServerRMIClient0AcceptedComplete() || !isServerRMIClient1AcceptedComplete()){
-				return "Server waiting for accept from clients";
+				return "Server waiting for accept from clients via RMI";
 			} else if (!isServerRMIWrite1Complete()) {
 				return "Server writing to client 1 via RMI";
 			} else if (!isClient1RMIReadComplete()) {
@@ -1340,11 +1340,11 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestInputGenerator extend
 			} else if (!isServerGIPCRead0Complete()) {
 				return "Server reading via GIPC";
 			} else if (!isClient0GIPCAcceptComplete()){
-				return "Client0 accepting command";
+				return "Client0 accepting command via GIPC";
 			} else if (!isClient1GIPCAcceptComplete()){
-				return "Client1 accepting command";
+				return "Client1 accepting command via GIPC";
 			} else if (!isServerGIPCClient0AcceptedComplete() || !isServerGIPCClient1AcceptedComplete()){
-				return "Server waiting for accept from clients";
+				return "Server waiting for accept from clients via GIPC";
 			} else if (!isServerGIPCWrite1Complete()) {
 				return "Server writing to client 1 via GIPC";
 			} else if (!isClient1GIPCReadComplete()) {
