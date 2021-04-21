@@ -408,6 +408,7 @@ public class FlexibleTwoClientCorrectReadWriteConsensusTestInputGenerator extend
 			} else if (doingGIPC) {
 				if (!isClient0GIPCWriteComplete()) {
 					checkClient0GIPCWrite(anOutputLine);
+					if (!isClient0GIPCAcceptComplete()) checkClient0GIPCAccept(anOutputLine);
 				} else if (!isClient0GIPCAcceptComplete()) {
 					checkClient0GIPCAccept(anOutputLine);
 				} else if (atomic && !isClient0GIPCReadComplete()) {
