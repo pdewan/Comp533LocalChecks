@@ -99,14 +99,9 @@ public class Assignment4OneClientSuite {
 
 //		if(TagsFactory.getAssignmentTags()==null)
 //			TagsFactory.setAssignmentTags(new A4AssignmentTags());
-		List<String> aClientTags=null;
-		List<String> aServerTags=null;
-		try {
-			aClientTags = TagsFactory.getAssignmentTags().getOneClientClientTags(doNIO, doRMI, doGIPC);
-			aServerTags = TagsFactory.getAssignmentTags().getOneClientServerTags(doNIO, doRMI, doGIPC);
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
+		List<String> aClientTags = TagsFactory.getAssignmentTags().getOneClientClientTags(doNIO, doRMI, doGIPC);
+		List<String> aServerTags = TagsFactory.getAssignmentTags().getOneClientServerTags(doNIO, doRMI, doGIPC);
+
 
 
 //	serverArgList.removeIf(s-> s.isEmpty());

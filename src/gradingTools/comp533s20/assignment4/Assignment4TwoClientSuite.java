@@ -54,14 +54,9 @@ public static void twoClientSetupProcesses() {
 //	List<String> aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI);
 //	List<String> aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI);
 
-	List<String> aClientTags=null;
-	List<String> aServerTags=null;
-	try {
-		aClientTags = TagsFactory.getAssignmentTags().getTwoClientClientTags();
-		aServerTags = TagsFactory.getAssignmentTags().getTwoClientServerTags();
-	}catch(Exception e) {
-		e.printStackTrace();
-	}
+	List<String> aClientTags=TagsFactory.getAssignmentTags().getTwoClientClientTags();
+	List<String> aServerTags=TagsFactory.getAssignmentTags().getTwoClientServerTags();
+
 	twoClientSetupProcesses(aClientTags, aServerTags);
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client_0", "Client_1"));

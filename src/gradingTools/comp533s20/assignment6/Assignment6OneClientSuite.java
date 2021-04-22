@@ -92,14 +92,9 @@ public static void oneClientSetupProcesses(List<String> serverArgList, List<Stri
 	List<String> registryArgList = (serverArgList.size() >= 3 && !serverArgList.get(2).equals(DEFAULT_PORT_RMI)) ? serverArgList.subList(2, 3) : Collections.emptyList();
 //	List<String> clientArgList = Arrays.stream(clientArgs).filter(s -> !s.isEmpty()).collect(Collectors.toList());
 
-	List<String> aClientTags=null;
-	List<String> aServerTags=null;
-	try {
-		aClientTags = TagsFactory.getAssignmentTags().getOneClientClientTags(false, doRMI, doGIPC);
-		aServerTags = TagsFactory.getAssignmentTags().getOneClientServerTags(false, doRMI, doGIPC);
-	}catch(Exception e) {
-		e.printStackTrace();
-	}
+	List<String> aClientTags = TagsFactory.getAssignmentTags().getOneClientClientTags(false, doRMI, doGIPC);
+	List<String> aServerTags = TagsFactory.getAssignmentTags().getOneClientServerTags(false, doRMI, doGIPC);
+	
 //	List<String> aClientTags;
 //	List<String> aServerTags;
 //	serverArgList.removeIf(s-> s.isEmpty());

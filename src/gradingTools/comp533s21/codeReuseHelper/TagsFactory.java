@@ -9,6 +9,10 @@ public class TagsFactory {
 	}
 	
 	public static AssignmentTags getAssignmentTags() {
+		if(selectTag==null) {
+			System.err.println("TagsFactory has never been set in current Assignment Suite");
+			System.err.println("Call at: "+new Throwable().getStackTrace()[1]);
+		}
 		return selectTag;
 	}
 	
