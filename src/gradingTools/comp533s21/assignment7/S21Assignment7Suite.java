@@ -44,6 +44,6 @@ public class S21Assignment7Suite extends Assignment2Suite{
 	}
 	static {
 		configureProperties();
-//		TagsFactory.setAssignmentTags(new S21A7AssignmentTags());
+		TagsFactory.setAssignmentTags(new S21A7AssignmentTags());
 	}
 }
