@@ -18,14 +18,13 @@ import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
 public class Assignment4Suite extends Assignment1Suite{
 	public static void main (String[] args) {
 		try {
-			
-			TagsFactory.setAssignmentTags(new A4AssignmentTags());
-			
 			BasicJUnitUtils.interactiveTest(Assignment4Suite.class);
 
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}static {
+		TagsFactory.setAssignmentTags(new A4AssignmentTags());
 	}
 }

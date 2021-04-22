@@ -21,12 +21,15 @@ public class Assignment7Suite extends Assignment2Suite{
 	public static void main (String[] args) {
 		try {
 			
-			TagsFactory.setAssignmentTags(new A6AssignmentTags());
+			
 			BasicJUnitUtils.interactiveTest(Assignment7Suite.class);
 
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	static {
+		TagsFactory.setAssignmentTags(new A6AssignmentTags());
 	}
 }

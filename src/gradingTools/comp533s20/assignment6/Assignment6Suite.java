@@ -29,4 +29,7 @@ public class Assignment6Suite extends Assignment2Suite{
 			e.printStackTrace();
 		}
 	}
+	static {
+		TagsFactory.setAssignmentTags(new A6AssignmentTags());
+	}
 }

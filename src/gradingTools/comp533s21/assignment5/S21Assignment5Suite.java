@@ -32,7 +32,7 @@ public class S21Assignment5Suite extends Assignment1Suite{
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
 //			setCheckStyleConfiguration("unc_checks_533_A5.xml");
-			TagsFactory.setAssignmentTags(new A5AssignmentTags());
+			
 			BasicJUnitUtils.interactiveTest(S21Assignment5Suite.class);
 
 
@@ -41,6 +41,7 @@ public class S21Assignment5Suite extends Assignment1Suite{
 		}
 	}
 	static {
+		TagsFactory.setAssignmentTags(new A5AssignmentTags());
 		configureProperties();
 	}
 }

@@ -1,6 +1,7 @@
 package gradingTools.comp533s20.assignment7;
 
 import gradingTools.comp533s20.assignment5.Assignment5TwoClientSuite;
+import gradingTools.comp533s20.assignment6.A6AssignmentTags;
 import gradingTools.comp533s20.assignment7.testcases.GIPCRMINIOClientMetaStateBroadcast;
 import gradingTools.comp533s20.assignment7.testcases.GIPCRMINIOClientMetaStateNoBroadcast;
 import gradingTools.comp533s20.assignment7.testcases.GIPCRMINIOServerMetaStateBroadcast;
@@ -37,8 +38,14 @@ public class Assignment7TwoClientSuite {
 	public static void twoClientSetupProcesses() {
 //		List<String> aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI, DistributedTags.NIO, DistributedTags.GIPC);
 //		List<String> aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI, DistributedTags.NIO, DistributedTags.GIPC);
-		List<String> aClientTags = TagsFactory.getAssignmentTags().getTwoClientClientTags();
-		List<String> aServerTags = TagsFactory.getAssignmentTags().getTwoClientServerTags();
+		List<String> aClientTags=null;
+		List<String> aServerTags=null;
+		try {
+			aClientTags = TagsFactory.getAssignmentTags().getTwoClientClientTags();
+			aServerTags = TagsFactory.getAssignmentTags().getTwoClientServerTags();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 		Assignment5TwoClientSuite.twoClientSetupProcesses(aClientTags, aServerTags);
 //		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
 //		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client_0", "Client_1"));

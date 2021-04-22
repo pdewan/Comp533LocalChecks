@@ -99,9 +99,17 @@ public class Assignment5OneClientSuite {
 
 //		List<String> aClientTags = null;
 //		List<String> aServerTags = null;
-		
-		List<String> aClientTags = TagsFactory.getAssignmentTags().getOneClientClientTags(false, doRMI, doGIPC);
-		List<String> aServerTags = TagsFactory.getAssignmentTags().getOneClientServerTags(false, doRMI, doGIPC);
+		if(TagsFactory.getAssignmentTags()==null)
+			TagsFactory.setAssignmentTags(new A5AssignmentTags());
+				
+		List<String> aClientTags=null;
+		List<String> aServerTags=null;
+		try {
+			aClientTags = TagsFactory.getAssignmentTags().getOneClientClientTags(false, doRMI, doGIPC);
+			aServerTags = TagsFactory.getAssignmentTags().getOneClientServerTags(false, doRMI, doGIPC);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 
 //	serverArgList.removeIf(s-> s.isEmpty());
 //	clientArgList.removeIf(s-> s.isEmpty());

@@ -29,13 +29,14 @@ public class S21Assignment4Suite extends Assignment1Suite{
 		setCheckStyleConfiguration("unc_checks_533_A4.xml");
 	}
 	static {
+		TagsFactory.setAssignmentTags(new A4AssignmentTags());
 		configureProperties();
 	}
 	public static void main (String[] args) {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
 //			setCheckStyleConfiguration("unc_checks_533_A4.xml");
-			TagsFactory.setAssignmentTags(new A4AssignmentTags());
+			
 			BasicJUnitUtils.interactiveTest(S21Assignment4Suite.class);
 
 

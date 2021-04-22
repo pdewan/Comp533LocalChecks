@@ -34,7 +34,7 @@ public class S21Assignment7Suite extends Assignment2Suite{
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
 //			setCheckStyleConfiguration("unc_checks_533_A7.xml");
 //			configureProperties();
-			TagsFactory.setAssignmentTags(new S21A7AssignmentTags());
+			
 			BasicJUnitUtils.interactiveTest(S21Assignment7Suite.class);
 
 
@@ -44,5 +44,6 @@ public class S21Assignment7Suite extends Assignment2Suite{
 	}
 	static {
 		configureProperties();
+		TagsFactory.setAssignmentTags(new S21A7AssignmentTags());
 	}
 }

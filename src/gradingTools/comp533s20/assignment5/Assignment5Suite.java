@@ -19,7 +19,7 @@ public class Assignment5Suite extends Assignment1Suite{
 	public static void main (String[] args) {
 		try {
 			
-			TagsFactory.setAssignmentTags(new A5AssignmentTags());
+			
 			
 			BasicJUnitUtils.interactiveTest(Assignment5Suite.class);
 
@@ -27,5 +27,7 @@ public class Assignment5Suite extends Assignment1Suite{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}static {
+		TagsFactory.setAssignmentTags(new A5AssignmentTags());
 	}
 }
