@@ -4,14 +4,14 @@ import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
-import gradingTools.basics.sharedTestCase.checkstyle.MnemonicNamesRatioCheck;
+import gradingTools.basics.sharedTestCase.checkstyle.MnemonicNameRatioTestCase;
 import gradingTools.basics.sharedTestCase.checkstyle.NamedConstantsRatioCheck;
 import gradingTools.basics.sharedTestCase.checkstyle.PublicMethodsOverrideRatioCheck;
-import gradingTools.basics.sharedTestCase.checkstyle.VariableHasInterfaceTypeRatioCheck;
+import gradingTools.basics.sharedTestCase.checkstyle.VariableHasClassTypeRatioCheck;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(15)
-public class A6MnemonicNames extends MnemonicNamesRatioCheck{
+public class A6MnemonicNames extends MnemonicNameRatioTestCase{
 	 public A6MnemonicNames() {
 		 super();
 	 }

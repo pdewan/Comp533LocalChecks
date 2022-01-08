@@ -6,12 +6,12 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import gradingTools.basics.sharedTestCase.checkstyle.NamedConstantsRatioCheck;
 import gradingTools.basics.sharedTestCase.checkstyle.PublicMethodsOverrideRatioCheck;
-import gradingTools.basics.sharedTestCase.checkstyle.VariableHasInterfaceTypeRatioCheck;
+import gradingTools.basics.sharedTestCase.checkstyle.VariableHasClassTypeRatioCheck;
 import gradingTools.comp533s21.assignment3.A3ConfigurationProvided;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(10)
-public class A3InterfaceAsType extends VariableHasInterfaceTypeRatioCheck{
+public class A3InterfaceAsType extends VariableHasClassTypeRatioCheck{
 	 public A3InterfaceAsType() {
 		 super();
 	 }
