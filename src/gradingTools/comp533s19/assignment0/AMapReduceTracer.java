@@ -17,6 +17,10 @@ public abstract class AMapReduceTracer {
 	public static String MODEL = "Model"; // value returned by toString() method of model
 	public static String VIEW = "View"; // value returned by toString() method of view
 	public static String CONTROLLER = "Controller"; // value returned by toString() method of controller
+	public static String REDUCER = "Reducer"; // value returned by toString() method of reducer
+	public static String TOKEN_COUNTING_MAPPER = "Token Counting Mapper"; // value returned by toString() method of token counting mapper
+	public static String INT_SUMMING_MAPPER = "Int Summing Mapper"; // value returned by toString() method of int summing mapper
+
 	public static String SLAVE = "Slave"; // value returned by toString() method of slave summer
 	public static final String QUIT = "quit";
 	public static final String EXIT = "exit";
@@ -62,10 +66,10 @@ public abstract class AMapReduceTracer {
 		trace(anEvent.toString());
 	}
 	/*
-	 * To be called in the map methods of the mappers for each mapped token
+	 * To be called in the map methods of the mappers for each tokenlist
 	 */
-	protected void traceMap(Object anInput, Object aKeyValue) {
-		trace (MAP  + anInput + ":" + aKeyValue);		
+	protected void traceMap(Object anInputs, Object aKeyValues) {
+		trace (MAP  + anInputs + ":" + aKeyValues);		
 	}
 	/*
 	 * To be called in the reducer before returning
@@ -74,11 +78,23 @@ public abstract class AMapReduceTracer {
 		trace(REDUCE + aList + ":" +  aReducedMap);
 	}
 	/*
-	 * 
+	 * to be called in the mapper factory when the mapper changes (deprecated)
 	 */
-	public static void traceMapperChange( Class aClass, Object aNewMapper) {
-		System.out.println(INFO_PREFIX + Thread.currentThread() + ":" + aClass + ":" + NEW_MAPPER +  aNewMapper);
+	@Deprecated
+	public static void traceMapperChange( Class aFactoryClass, Object aNewMapper) {
+		System.out.println(INFO_PREFIX + Thread.currentThread() + ":" + aFactoryClass + ":" + NEW_MAPPER +  aNewMapper);
 	}
+	/*
+	 * to be called in the mapper/reducer factory when the mapper/reducer changes
+	 */
+	public static void traceSingletonChange(Class aFactoryClass, Object aNewSingleton) {
+		if (aNewSingleton == null) {
+			System.out.println("Null new singleton");
+		} else {
+		System.out.println(INFO_PREFIX + Thread.currentThread() + ":" + aFactoryClass + ":" + NEW_MAPPER +  aNewSingleton);
+		}
+	}
+	
 	
 	//----------------------------A2 traces -----------------------------------
 	/**
