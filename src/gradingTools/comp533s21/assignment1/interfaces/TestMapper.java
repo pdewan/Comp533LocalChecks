@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface TestMapper {
 	 Object map(String aString) ;
-
+	 List<Object> map(List<String> aList);
 }

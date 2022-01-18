@@ -6,7 +6,6 @@ import org.junit.runners.Suite;
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.junit.BasicJUnitUtils;
 import gradingTools.comp533s19.assignment0.Assignment0Suite;
-import gradingTools.comp533s20.assignment1.MapReduceFactories;
 import gradingTools.comp533s20.assignment2.MapReduceClasses;
 import gradingTools.comp533s21.assignment1.A1ConfigurationProvided;
 import gradingTools.comp533s21.assignment1.style.A1GeneralStyleSuite;
