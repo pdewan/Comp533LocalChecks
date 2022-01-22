@@ -19,6 +19,12 @@ public class A2ExpectedGetters extends ExpectedGettersRatioCheck{
 	 public A2ExpectedGetters() {
 		 super();
 	 }
+	 
+	 @Override
+	 protected boolean addBrackets() {
+		 return false;
+	 }
+	 
 	 @Override
 		protected Class configurationClass() {
 			return A2ConfigurationProvided.class;

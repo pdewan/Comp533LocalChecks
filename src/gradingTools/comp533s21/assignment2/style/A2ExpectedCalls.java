@@ -17,8 +17,15 @@ public class A2ExpectedCalls extends ExpectedCallsRatioCheck{
 	 public A2ExpectedCalls() {
 		 super();
 	 }
+	 
+	 @Override
+	 protected boolean addBrackets() {
+		 return false;
+	 }
+	 
 	 @Override
 		protected Class configurationClass() {
+		 
 			return A2ConfigurationProvided.class;
 		}
 		

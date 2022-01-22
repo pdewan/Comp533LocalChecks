@@ -18,6 +18,12 @@ public class A2ExpectedSignatures extends ExpectedSignaturesRatioCheck{
 	 public A2ExpectedSignatures() {
 		 super();
 	 }
+	 
+	 @Override
+	 protected boolean addBrackets() {
+		 return false;
+	 }
+	 
 	 @Override
 		protected Class configurationClass() {
 			return A2ConfigurationProvided.class;
