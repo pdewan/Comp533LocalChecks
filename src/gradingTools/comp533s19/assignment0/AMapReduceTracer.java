@@ -21,7 +21,11 @@ public abstract class AMapReduceTracer {
 	public static String TOKEN_COUNTING_MAPPER = "Token Counting Mapper"; // value returned by toString() method of token counting mapper
 	public static String INT_SUMMING_MAPPER = "Int Summing Mapper"; // value returned by toString() method of int summing mapper
 
-	public static String SLAVE = "Slave"; // value returned by toString() method of slave summer
+	public static String SLAVE = "Slave"; // value returned by toString() method of slave 
+	public static String JOINER = "Joiner"; // value returned by toString() method of a joiner
+	public static String BARRIER = "Barrier"; // value returned by toString() method of a barrier
+	public static String PARTITIONER = "Partitioner"; // value returned by toString() method of a partitioner
+
 	public static final String QUIT = "quit";
 	public static final String EXIT = "exit";
 
@@ -178,15 +182,27 @@ public abstract class AMapReduceTracer {
 	public static final String PARTITION_AFTER_BARRIER = "Partition After Barrier:";
 	public static final String ADDED_TO_FINAL_MAP = "Added to Final Map:";	
 	
+	/**
+	 * To be called in the model after a barrier has been created
+	 */
 	protected void traceBarrierCreated(Object aBarrier, int aNumThreads) {
 		trace (BARRIER_CREATED  + aBarrier + ":" + aNumThreads);		
 	}
+	/**
+	 * To be called in the the barrier before a wait()
+	 */
 	protected void traceBarrierWaitStart(Object aBarrier, int aNumThreads, int aNumWaitingThreads) {
 		trace (BARRIER_WAIT_START + aBarrier + ":" + aNumThreads + ":" + aNumWaitingThreads);		
 	}
+	/**
+	 * To be called in the barrier after a wait()
+	 */
 	protected void traceBarrierWaitEnd(Object aBarrier, int aNumThreads, int aNumWaitingThreads) {
 		trace (BARRIER_WAIT_END + aBarrier + ":" + aNumThreads + ":" + aNumWaitingThreads);		
 	}
+	/**
+	 * To be called in the the barrier after all blocked threads are unblocked
+	 */
 	protected void traceBarrierReleaseAll(Object aBarrier, int aNumThreads, int aNumWaitingThreads) {
 		trace (BARRIER_RELEASE_ALL + aBarrier + ":" + aNumThreads + ":" + aNumWaitingThreads);		
 	}
@@ -201,14 +217,21 @@ public abstract class AMapReduceTracer {
 		trace (JOINER_WAIT_END + aJoiner + ":" + aNumThreads + ":" + aNumFinishedThreads);		
 	}
 	/*
-	 * Call after changing finished threads in the joiner
+	 * Call at the start of the finish method
 	 */
 	protected void traceJoinerFinishedTask(Object aJoiner, int aNumThreads, int aNumFinishedThreads) {
 		trace (JOINER_FINISHED_TASK + aJoiner + ":" + aNumThreads + ":" + aNumFinishedThreads);		
 	}
+	/*
+	 * Call after the blocked forker is unblocked
+	 */
 	protected void traceJoinerRelease(Object aJoiner, int aNumThreads, int aNumFinishedThreads) {
 		trace (JOINER_RELEASE + aJoiner + ":" + aNumThreads + ":" + aNumFinishedThreads);		
 	}
+	
+	/*
+	 * Called before returning from the getPartition() method in the partitioner
+	 */
 	protected void tracePartitionAssigned(Object aKey, Object aValue, int aPartitionNum, int aNumPartitions ) {
 		trace (PARTITION_ASSIGNED + aKey + ":" + aValue + ":" + aPartitionNum + ":" + aNumPartitions );
 	}
