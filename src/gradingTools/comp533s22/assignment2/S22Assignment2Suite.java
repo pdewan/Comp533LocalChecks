@@ -69,6 +69,7 @@ public class S22Assignment2Suite extends Assignment1Suite{
 		try {
 
 			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setBetweenInputDelay(2000);
+			BasicProjectExecution.setProcessTimeOut(25);
 			//BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setMaxTraces(2000);
 			BasicJUnitUtils.interactiveTest(S22Assignment2Suite.class);
 			//System.out.println("Test");
