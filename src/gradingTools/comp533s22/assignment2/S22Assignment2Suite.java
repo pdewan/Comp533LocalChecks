@@ -9,6 +9,7 @@ import org.junit.runners.Suite;
 import grader.basics.config.BasicExecutionSpecificationSelector;
 import grader.basics.config.BasicStaticConfigurationUtils;
 import grader.basics.execution.BasicProjectExecution;
+import grader.basics.execution.GradingMode;
 import grader.basics.junit.BasicJUnitUtils;
 import grader.basics.project.BasicProjectIntrospection;
 import gradingTools.comp533s19.assignment0.Assignment0Suite;
@@ -60,6 +61,12 @@ public class S22Assignment2Suite extends Assignment1Suite{
 	public static void configureProperties() {
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
 		setCheckStyleConfiguration("unc_checks_533_A2.xml");
+		
+		if(GradingMode.getGraderRun()) {
+			BasicProjectExecution.setProcessTimeOut(250);
+//			BasicProjectExecution.setMethodTimeOut(1000);
+		}
+//		System.out.println("Test2");
 	}
 	static {
 		configureProperties();
@@ -68,8 +75,8 @@ public class S22Assignment2Suite extends Assignment1Suite{
 	public static void main (String[] args) {
 		try {
 
-			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setBetweenInputDelay(2000);
-			BasicProjectExecution.setProcessTimeOut(25);
+			//BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setBetweenInputDelay(2000);
+			
 			//BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setMaxTraces(2000);
 			BasicJUnitUtils.interactiveTest(S22Assignment2Suite.class);
 			//System.out.println("Test");
