@@ -11,8 +11,8 @@ import grader.basics.junit.BasicJUnitUtils;
 	A3ExpectedInterfaces.class,
 	A3ExpectedCalls.class,
 	A3SpuriousCalls.class,
-	A3ExpectedGetters.class,
-	A3ExpectedSetters.class,
+//	A3ExpectedGetters.class,
+//	A3ExpectedSetters.class,
 	A3ExpectedSignatures.class,
 	
 	
