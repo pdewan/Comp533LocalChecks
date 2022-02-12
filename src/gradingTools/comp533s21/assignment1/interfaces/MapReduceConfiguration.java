@@ -50,14 +50,42 @@ public interface MapReduceConfiguration {
 
     // --------------------A3--------------------------
 
-    Class getServerTokenCounter();
-    Class getServerIntegerSummer();
-    Class getClientTokenCounter();
-    Class getRemoteModelInterface() ;
+    
+    // The model stored in the server will now have a remote interface to be used 
+    // by the client to register its proxy. 
+    // The model class will have to be changed to implement  this interface. 
+    // If you change the name of this class, make sure you change the getModelClass
+    // method of the registry to reflect the name change.   
+    Class getRemoteModelInterface();
+    
+    
+    // The client proxy also has a remote interface for remote callbacks
 	Class getRemoteClientObjectInterface();
+	
+	// This is the class implementing the interface
 	Class getRemoteClientObjectClass();
 	
-	Class getServerFacebookMapReduce();
-	Class getRemoteClientFacebookMapReduce();
+	// For each application (token count, int sum), we now have two main classes,
+	// one for the server and one for each client.
+		
+	// The main class of the server token counter.	
+	Class getServerTokenCounter();
+	
+	// The main class of the server int summer.
+    Class getServerIntegerSummer();
+    
+    // The main class of both the client token counter and the int summer,
+  	// since the reduction step is the same for both, and the client only
+    // performs reduction
+    Class getClientTokenCounter();
+    
+    // A standalone class similar to the two classes in A2 implementing the Facebook 
+    // map reduce algorithm
 	Class getStandAloneFacebookMapReduce();
+
+	// The main class of the server facebook implementation
+	Class getServerFacebookMapReduce();
+	// The main class of the client facebook implementation
+	Class getRemoteClientFacebookMapReduce();
+	
 }
