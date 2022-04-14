@@ -13,6 +13,7 @@ import gradingTools.comp533s20.assignment7.Assignment7OneClientSuite;
 import gradingTools.comp533s20.assignment7.Assignment7TwoClientSuite;
 import gradingTools.comp533s21.assignment7.S21A7AssignmentTags;
 import gradingTools.comp533s21.assignment7.style.A7GeneralStyleSuite;
+import gradingTools.comp533s22.assignment6.S22Assignment6Suite;
 import gradingTools.comp533s22.assignment7.style.A7SpecificStyleSuite;
 import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
 
@@ -40,6 +41,7 @@ public class S22Assignment7Suite extends Assignment2Suite{
 		}
 	}
 	static {
+		S22Assignment6Suite.enableNoFactories();
 		configureProperties();
 		TagsFactory.setAssignmentTags(new S21A7AssignmentTags());
 	}

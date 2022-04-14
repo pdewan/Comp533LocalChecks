@@ -14,6 +14,11 @@ public class FlexibleOneClientCorrectConnectionTestInputGenerator extends AnAbst
 	private static final String SELECT_THREAD = "\\{.*?[sS][eE][lL][eE][cC][tT].*?\\}";
 	private static final String GIPC_THREAD = "\\{Asynchronous Received Call Invoker\\}";
 	
+	private static boolean USE_NO_FACTORIES = false;
+	public static void setUseNoFactories(boolean value) {
+		USE_NO_FACTORIES=value;
+	}
+	
 	
 	private static final String SERVER_NAME = "Server";
 	private static final String CLIENT_NAME = "Client";
@@ -48,6 +53,18 @@ public class FlexibleOneClientCorrectConnectionTestInputGenerator extends AnAbst
 			checkStr(MAIN_THREAD, "SocketChannelBound"),
 			checkStr(MAIN_THREAD, "ListenableAcceptsEnabled"),
 //			checkStr(MAIN_THREAD, "SelectorRequestNextInterestOp"),
+			checkStr(MAIN_THREAD, "SelectorRequestEnqueued"),
+			checkStr(MAIN_THREAD, "SelectorWokenUp"),
+			checkStr(SELECT_THREAD, "SelectorRequestDequeued"),
+			checkStr(SELECT_THREAD, "SocketChannelBlockingConfigured"),
+			checkStr(SELECT_THREAD, "SocketChannelRegistered"),
+			checkStr(SELECT_THREAD, "SelectCalled")
+	};
+	
+	private static final Pattern[] serverNIOSetupStagesNoFactories = {
+			checkStr(MAIN_THREAD, "SocketChannelBound"),
+			checkStr(MAIN_THREAD, "SelectorFactorySet"),
+			checkStr(MAIN_THREAD, "ListenableAcceptsEnabled"),
 			checkStr(MAIN_THREAD, "SelectorRequestEnqueued"),
 			checkStr(MAIN_THREAD, "SelectorWokenUp"),
 			checkStr(SELECT_THREAD, "SelectorRequestDequeued"),
@@ -270,7 +287,8 @@ public class FlexibleOneClientCorrectConnectionTestInputGenerator extends AnAbst
 	}
 	
 	public boolean isServerNIOSetupComplete() {
-		return !doNIO || serverNIOSetupStage == serverNIOSetupStages.length;
+		Pattern [] nioStages = USE_NO_FACTORIES ? serverNIOSetupStagesNoFactories:serverNIOSetupStages;
+		return !doNIO || serverNIOSetupStage == nioStages.length;
 	}
 
 	public boolean isServerRMISetupComplete() {
@@ -338,11 +356,12 @@ public class FlexibleOneClientCorrectConnectionTestInputGenerator extends AnAbst
 	}
 	
 	public boolean checkServerNIOSetup(String line) {
+		Pattern [] nioStages = USE_NO_FACTORIES ? serverNIOSetupStagesNoFactories:serverNIOSetupStages;
 		if (line.startsWith(TRACER_PREFIX)) {
 			if (PRINT_CHECKED_REGEX) {
-				Tracer.info(this, "Checking for line matching: " + serverNIOSetupStages[serverNIOSetupStage]);
+				Tracer.info(this, "Checking for line matching: " + nioStages[serverNIOSetupStage]);
 			}
-			if (line.startsWith(TRACER_PREFIX) && serverNIOSetupStages[serverNIOSetupStage].matcher(line).matches()) {
+			if (line.startsWith(TRACER_PREFIX) && nioStages[serverNIOSetupStage].matcher(line).matches()) {
 				serverNIOSetupStage++;
 				return true;
 			}
@@ -582,7 +601,7 @@ public class FlexibleOneClientCorrectConnectionTestInputGenerator extends AnAbst
 	public String getLastNotFound() {
 		if (!isServerSetupComplete()) {
 			if (!isServerNIOSetupComplete()) {
-				return serverNIOSetupStages[serverNIOSetupStage].pattern();
+				return (USE_NO_FACTORIES ? serverNIOSetupStagesNoFactories:serverNIOSetupStages)[serverNIOSetupStage].pattern();
 			} else if (!isServerRMISetupComplete()) {
 				return serverRMISetupStages[serverRMISetupStage].pattern();
 			} else if (!isServerGIPCSetupComplete()) {

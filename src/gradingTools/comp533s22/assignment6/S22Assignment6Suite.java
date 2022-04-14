@@ -12,6 +12,8 @@ import gradingTools.comp533s19.assignment2.Assignment2TwoClientSuite;
 import gradingTools.comp533s20.assignment6.A6AssignmentTags;
 import gradingTools.comp533s20.assignment6.Assignment6OneClientSuite;
 import gradingTools.comp533s20.assignment6.Assignment6TwoClientSuite;
+import gradingTools.comp533s20.flexible.testcases.FlexibleOneClientCorrectConnectionTestInputGenerator;
+import gradingTools.comp533s20.flexible.testcases.FlexibleTwoClientCorrectConnectionTestInputGenerator;
 import gradingTools.comp533s21.assignment6.style.A6GeneralStyleSuite;
 import gradingTools.comp533s22.assignment6.style.A6SpecificStyleSuite;
 import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
@@ -40,7 +42,13 @@ public class S22Assignment6Suite extends Assignment2Suite{
 		}
 	}
 	static {
+		enableNoFactories();
 		TagsFactory.setAssignmentTags(new A6AssignmentTags());
 		configureProperties();
 	}
+	public static void enableNoFactories() {
+		FlexibleOneClientCorrectConnectionTestInputGenerator.setUseNoFactories(true);
+		FlexibleTwoClientCorrectConnectionTestInputGenerator.setUseNoFactories(true);
+	}
+	
 }
