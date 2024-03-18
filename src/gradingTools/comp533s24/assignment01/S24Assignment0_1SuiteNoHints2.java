@@ -1,4 +1,4 @@
-package gradingTools.comp533s24.assignment0_1;
+package gradingTools.comp533s24.assignment01;
 
 import java.io.PrintStream;
 
@@ -16,19 +16,31 @@ import gradingTools.shared.testcases.concurrency.oddNumbers.FairAllocationLarger
 import gradingTools.shared.testcases.concurrency.oddNumbers.FairAllocationSmallProblem;
 import gradingTools.shared.testcases.concurrency.oddNumbers.ForkJoinLargerProblem;
 import gradingTools.shared.testcases.concurrency.oddNumbers.ForkJoinSmallProblem;
+import gradingTools.shared.testcases.concurrency.oddNumbers.HelperTestsOddNumbers;
 import gradingTools.shared.testcases.concurrency.oddNumbers.LargerNumberOfRandoms;
 import gradingTools.shared.testcases.concurrency.oddNumbers.LargerNumberSuite;
+import gradingTools.shared.testcases.concurrency.oddNumbers.LargerNumberTests;
 import gradingTools.shared.testcases.concurrency.oddNumbers.SmallNumberOfRandoms;
 import gradingTools.shared.testcases.concurrency.oddNumbers.SmallNumberSuite;
+import gradingTools.shared.testcases.concurrency.oddNumbers.SmallNumberTests;
 import gradingTools.shared.testcases.concurrency.oddNumbers.SynchronizationLargerProblem;
 import gradingTools.shared.testcases.concurrency.oddNumbers.SynchronizationSmallProblem;
+import gradingTools.shared.testcases.concurrency.oddNumbers.hints.FairAllocationHintsSuite;
+import gradingTools.shared.testcases.concurrency.oddNumbers.hints.ForkJoinHintsSuite;
+import gradingTools.shared.testcases.concurrency.oddNumbers.hints.SynchronizationHintsSuite;
+import gradingTools.shared.testcases.concurrency.oddNumbers.hints.HangingHintsSuite;
 
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	SmallNumberSuite.class,
-	LargerNumberSuite.class
+	HelperTestsOddNumbers.class,
+	SmallNumberTests.class,
+	LargerNumberTests.class,
+//	ForkJoinHintsSuite.class,
+//	FairAllocationHintsSuite.class,
+//	SynchronizationHintsSuite.class,
+//	HangingHintsSuite.class
 //	SmallNumberOfRandoms.class,
 //	LargerNumberOfRandoms.class,
 //	ForkJoinSmallProblem.class,
@@ -44,7 +56,7 @@ import gradingTools.shared.testcases.concurrency.oddNumbers.SynchronizationSmall
 	
 
 //@MaxValue(50)
-public class S24Assignment0_1Suite extends ConcurrencySuiteSkeleton{
+public class S24Assignment0_1SuiteNoHints2 extends ConcurrencySuiteSkeleton{
 //	public static final String ROOT_CLASS = "ConcurrentOddNumbers";
 //	public static final String DISPATCHER_CLASS = "OddNumbersDispatcher";
 //
@@ -54,9 +66,9 @@ public class S24Assignment0_1Suite extends ConcurrencySuiteSkeleton{
 	public static void main (String[] args) {
 		try {
 //			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLanguage(BasicLanguageDependencyManager.JAVA_LANGUAGE);
-			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
-			setCheckStyleConfiguration("unc_checks_533_A0_1.xml");
-			BasicJUnitUtils.interactiveTest(S24Assignment0_1Suite.class);
+//			BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+//			setCheckStyleConfiguration("unc_checks_533_A0_1.xml");
+			BasicJUnitUtils.interactiveTest(S24Assignment0_1SuiteNoHints2.class);
 
 
 		} catch (Exception e) {
@@ -64,9 +76,11 @@ public class S24Assignment0_1Suite extends ConcurrencySuiteSkeleton{
 		}
 	}
 	static {
-		ObservablePrintStream anObservablePrintStream = ObservablePrintStreamFactory.getObservablePrintStream();
-		anObservablePrintStream.setRedirectionFrozen(true);
-		System.setOut((PrintStream) anObservablePrintStream);
+//		ObservablePrintStream anObservablePrintStream = ObservablePrintStreamFactory.getObservablePrintStream();
+//		anObservablePrintStream.setRedirectionFrozen(true);
+//		System.setOut((PrintStream) anObservablePrintStream);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().
+		setCheckStyleConfiguration("unc_checks_533_A0_1.xml");
 	}
 	
 }
