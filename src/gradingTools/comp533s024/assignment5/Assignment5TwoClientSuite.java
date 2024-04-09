@@ -1,45 +1,47 @@
-package gradingTools.comp533s20.assignment6;
+package gradingTools.comp533s024.assignment5;
 
-import gradingTools.comp533s20.assignment5.Assignment5TwoClientSuite;
-import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOClientMetaStateBroadcast;
-import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOClientMetaStateNoBroadcast;
-import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOServerMetaStateBroadcast;
-import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOServerMetaStateNoBroadcast;
-import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOTwoClientConnection;
-import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOTwoClientReadWriteAtomic;
-import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOTwoClientReadWriteNonAtomic;
-import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
-
-import java.util.Arrays;
 import java.util.List;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
-import util.tags.DistributedTags;
+import gradingTools.comp533s024.assignment5.testcases.RMINIOClientMetaStateBroadcast;
+import gradingTools.comp533s024.assignment5.testcases.RMINIOClientMetaStateNoBroadcast;
+import gradingTools.comp533s024.assignment5.testcases.RMINIOServerMetaStateBroadcast;
+import gradingTools.comp533s024.assignment5.testcases.RMINIOServerMetaStateNoBroadcast;
+import gradingTools.comp533s024.assignment5.testcases.RMINIOTwoClientConnection;
+import gradingTools.comp533s024.assignment5.testcases.RMINIOTwoClientReadWriteNonAtomic;
+//import gradingTools.comp533s20.assignment5.Assignment5TwoClientSuite;
+//import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOClientMetaStateBroadcast;
+//import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOClientMetaStateNoBroadcast;
+//import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOServerMetaStateBroadcast;
+//import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOServerMetaStateNoBroadcast;
+//import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOTwoClientConnection;
+//import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOTwoClientReadWriteNonAtomic;
+import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
 
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 //	RMINIOStaticArguments.class,
-	GIPCRMINIOTwoClientConnection.class,
-	GIPCRMINIOTwoClientReadWriteNonAtomic.class,
+	RMINIOTwoClientConnection.class,
+	RMINIOTwoClientReadWriteNonAtomic.class,
 //	RMINIOTwoClientReadWriteAtomic.class,
-	GIPCRMINIOClientMetaStateNoBroadcast.class,
-	GIPCRMINIOClientMetaStateBroadcast.class,
-	GIPCRMINIOServerMetaStateNoBroadcast.class,
-	GIPCRMINIOServerMetaStateBroadcast.class
+	RMINIOClientMetaStateNoBroadcast.class,
+	RMINIOClientMetaStateBroadcast.class,
+	RMINIOServerMetaStateNoBroadcast.class,
+	RMINIOServerMetaStateBroadcast.class
 	
 	
 })
-public class Assignment6TwoClientSuite {
+public class Assignment5TwoClientSuite {
 
 	public static void twoClientSetupProcesses() {
 //		List<String> aClientTags = Arrays.asList(DistributedTags.CLIENT, DistributedTags.RMI, DistributedTags.NIO, DistributedTags.GIPC);
 //		List<String> aServerTags = Arrays.asList(DistributedTags.SERVER, DistributedTags.RMI, DistributedTags.NIO, DistributedTags.GIPC);
 		List<String> aClientTags=TagsFactory.getAssignmentTags().getTwoClientClientTags();
 		List<String> aServerTags=TagsFactory.getAssignmentTags().getTwoClientServerTags();
-		Assignment5TwoClientSuite.twoClientSetupProcesses(aClientTags, aServerTags);
+		gradingTools.comp533s20.assignment5.Assignment5TwoClientSuite.twoClientSetupProcesses(aClientTags, aServerTags);
 //		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
 //		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client_0", "Client_1"));
 //		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcesses("RegistryBasedDistributedProgram", Arrays.asList("Registry", "Server", "Client_0", "Client_1"));

@@ -1,4 +1,4 @@
-package gradingTools.comp533s20.assignment6;
+package gradingTools.comp533s024.assignment5;
 
 import java.rmi.registry.Registry;
 import java.util.Arrays;
@@ -10,9 +10,12 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 import grader.basics.config.BasicExecutionSpecificationSelector;
-import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOOneClientConnection;
-import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOOneClientReadWriteNonAtomic;
-import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOStaticArguments;
+import gradingTools.comp533s024.assignment5.testcases.RMINIOOneClientConnection;
+import gradingTools.comp533s024.assignment5.testcases.RMINIOOneClientReadWriteNonAtomic;
+import gradingTools.comp533s024.assignment5.testcases.RMINIOStaticArguments;
+//import gradingTools.comp533s2.assignment6.testcases.GIPCRMINIOOneClientConnection;
+//import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOOneClientReadWriteNonAtomic;
+//import gradingTools.comp533s20.assignment6.testcases.GIPCRMINIOStaticArguments;
 import gradingTools.comp533s20.flexible.testcases.FlexibleStaticArgumentsTestCase;
 import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
 import util.tags.DistributedTags;
@@ -20,20 +23,20 @@ import util.tags.DistributedTags;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	GIPCRMINIOStaticArguments.class,
-	GIPCRMINIOOneClientConnection.class,
-	GIPCRMINIOOneClientReadWriteNonAtomic.class,
+	RMINIOStaticArguments.class,
+	RMINIOOneClientConnection.class,
+	RMINIOOneClientReadWriteNonAtomic.class,
 //	RMINIOOneClientReadWriteAtomic.class
 
 
 })
-public class Assignment6OneClientSuite  {
+public class Assignment5OneClientSuite  {
 	private static final String DEFAULT_PORT_RMI = ""+Registry.REGISTRY_PORT;
 
 
 
 public static void oneClientSetupProcessesRMI() {
-	Assignment6OneClientSuite.oneClientSetupProcesses(
+	Assignment5OneClientSuite.oneClientSetupProcesses(
 			FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS, 
 			FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS, true, true);
 ////	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
@@ -136,7 +139,7 @@ public static void oneClientSetupProcesses(List<String> serverArgList, List<Stri
 	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().getProcessTeams().forEach(team -> System.out.println("### " + team));
 }
 public static void setupProcesses() {
-	Assignment6OneClientSuite.oneClientSetupProcesses(
+	Assignment5OneClientSuite.oneClientSetupProcesses(
 			FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS, 
 			FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS, true, true);
 }
