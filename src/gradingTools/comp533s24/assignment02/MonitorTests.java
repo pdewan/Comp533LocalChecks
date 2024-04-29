@@ -22,8 +22,8 @@ import gradingTools.shared.testcases.ConcurrencySuiteSkeleton;
 	EntryQueueHas4.class,
 	UrgentQueueHas4.class,
 	EntryQueueNotFIFO.class,
-	UrgentQueueNotFIFO.class,
 	UrgentQueueHasPrecedence.class,
+	UrgentQueueNotFIFO.class,
 	ThreadMappingChanges.class,
 	
 })

@@ -20,13 +20,7 @@ import gradingTools.shared.testcases.concurrency.oddNumbers.hints.AbstractHint;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	MonitorTests.class,
-	EntryQueueHas4Hints.class,
-	ConditionQueueHas4Hints.class,
-	UrgentQueueHas4Hints.class,
-	ThreadMapingHints.class,
-	UrgentQueuePrecedenceHints.class,
-	EntryQueueNotFIFOHints.class,
-	UrgentQueueNotFIFOHints.class,
+	
 })
 	
 
