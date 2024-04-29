@@ -19,13 +19,18 @@ import gradingTools.shared.testcases.concurrency.oddNumbers.hints.AbstractHint;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	MonitorTests.class,
-	
+	EntryQueueHas4Hints.class,
+	ConditionQueueHas4Hints.class,
+	UrgentQueueHas4Hints.class,
+	ThreadMapingHints.class,
+	UrgentQueuePrecedenceHints.class,
+	EntryQueueNotFIFOHints.class,
+	UrgentQueueNotFIFOHints.class,
 })
 	
 
 //@MaxValue(50)
-public class S24Assignment0_2Suite {
+public class S24Assignment0_2_HintsSuite {
 //	public static final String ROOT_CLASS = "ConcurrentOddNumbers";
 //	public static final String DISPATCHER_CLASS = "OddNumbersDispatcher";
 //
@@ -39,7 +44,7 @@ public class S24Assignment0_2Suite {
 //			setCheckStyleConfiguration("unc_checks_533_A0_1.xml");
 			AbstractHint.setCheckIfPrecedingTestIsCorrect(false);
 			AbstractHint.setCheckIfPrecedingHintHasBeenExecuted(true);
-			BasicJUnitUtils.interactiveTest(S24Assignment0_2Suite.class);
+			BasicJUnitUtils.interactiveTest(S24Assignment0_2_HintsSuite.class);
 
 
 		} catch (Exception e) {
