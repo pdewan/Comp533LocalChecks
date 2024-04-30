@@ -14,7 +14,7 @@ import gradingTools.comp533s19.assignment2.testcases.RMINIOOneClientConnection;
 import gradingTools.comp533s19.assignment2.testcases.RMINIOOneClientReadWriteAtomic;
 import gradingTools.comp533s19.assignment2.testcases.RMINIOOneClientReadWriteNonAtomic;
 import gradingTools.comp533s19.assignment2.testcases.RMINIOStaticArguments;
-import gradingTools.comp533s19.flexible.testcases.FlexibleStaticArgumentsTestCase;
+import gradingTools.comp533s19.flexible.testcases.S19FlexibleStaticArgumentsTestCase;
 import util.tags.DistributedTags;
 
 @RunWith(Suite.class)
@@ -26,22 +26,22 @@ public class Assignment2OneClientSuite {
 	private static final String DEFAULT_PORT_RMI = "" + Registry.REGISTRY_PORT;
 
 	public static void oneClientSetupProcesses(boolean doGIPC) {
-		Assignment2OneClientSuite.oneClientSetupProcesses(FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS,
-				FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS, true, doGIPC);
+		Assignment2OneClientSuite.oneClientSetupProcesses(S19FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS,
+				S19FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS, true, doGIPC);
 	}
 
 	public static void oneClientSetupProcessesRMI() {
-		Assignment2OneClientSuite.oneClientSetupProcesses(FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS,
-				FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS, true, false);
+		Assignment2OneClientSuite.oneClientSetupProcesses(S19FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS,
+				S19FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS, true, false);
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client"));
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setProcesses("RegistryBasedDistributedProgram", Arrays.asList("Registry", "Server", "Client"));
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Registry", Arrays.asList("Registry"));
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Server", Arrays.asList("Server"));
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Client", Arrays.asList("Client"));
-//	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Registry", FlexibleStaticArgumentsTestCase.TEST_REGISTRY_ARGS);
-//	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Server", FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS);
-//	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client", FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS);
+//	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Registry", S19FlexibleStaticArgumentsTestCase.TEST_REGISTRY_ARGS);
+//	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Server", S19FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS);
+//	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client", S19FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS);
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Registry", 500);
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Server", 2000);
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Client", 5000);
@@ -141,7 +141,7 @@ public class Assignment2OneClientSuite {
 	}
 
 	public static void setupProcesses() {
-		Assignment2OneClientSuite.oneClientSetupProcesses(FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS,
-				FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS, true, false);
+		Assignment2OneClientSuite.oneClientSetupProcesses(S19FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS,
+				S19FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS, true, false);
 	}
 }

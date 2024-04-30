@@ -103,8 +103,8 @@ public class FlexibleOneClientCorrectConnectionTestCase extends PassFailJUnitTes
 		Assignment2OneClientSuite.oneClientSetupProcesses(doGIPC);
 
 //		Assignment2OneClientSuite.oneClientSetupProcesses(
-//				FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS.toArray(new String[] {}), 
-//				FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS.toArray(new String[] {}), true, false);
+//				S19FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS.toArray(new String[] {}), 
+//				S19FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS.toArray(new String[] {}), true, false);
 		
 //		ExecutionSpecificationSelector.getExecutionSpecification().setProcessTeams(Arrays.asList("RegistryBasedDistributedProgram"));
 //		ExecutionSpecificationSelector.getExecutionSpecification().setTerminatingProcesses("RegistryBasedDistributedProgram", Arrays.asList("Client"));

@@ -9,9 +9,10 @@ import gradingTools.comp533s20.assignment4.testcases.RMITwoClientReadWriteAtomic
 import gradingTools.comp533s20.assignment4.testcases.RMITwoClientReadWriteNonAtomic;
 import gradingTools.comp533s20.assignment5.Assignment5TwoClientSuite;
 import gradingTools.comp533s20.assignment6.Assignment6TwoClientSuite;
+import gradingTools.comp533s20.flexible.testcases.FlexibleStaticArgumentsTestCase;
 import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
 //import gradingTools.comp533s19.assignment3.Assignment3TwoClientSuite;
-import gradingTools.comp533s19.flexible.testcases.FlexibleStaticArgumentsTestCase;
+//import gradingTools.comp533s19.flexible.testcases.S19FlexibleStaticArgumentsTestCase;
 
 import java.util.Arrays;
 import java.util.List;
@@ -65,10 +66,10 @@ public static void twoClientSetupProcesses() {
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Server", aServerTags);
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Client_0", aClientTags);
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Client_1", aClientTags);
-//	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Registry", FlexibleStaticArgumentsTestCase.TEST_REGISTRY_ARGS);
-//	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Server", FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS);
-//	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client_0", FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS);
-//	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client_1", FlexibleStaticArgumentsTestCase.TEST_CLIENT_1_ARGS);
+//	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Registry", S19FlexibleStaticArgumentsTestCase.TEST_REGISTRY_ARGS);
+//	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Server", S19FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS);
+//	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client_0", S19FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS);
+//	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client_1", S19FlexibleStaticArgumentsTestCase.TEST_CLIENT_1_ARGS);
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Registry", 500);
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Server", 2000);
 //	BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setSleepTime("Client_0", 5000);

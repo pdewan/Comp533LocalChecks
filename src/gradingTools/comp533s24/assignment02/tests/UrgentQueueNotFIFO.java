@@ -10,9 +10,9 @@ import util.annotations.Explanation;
 import util.annotations.MaxValue;
 
 @MaxValue(5)
-@Explanation("Checks file <urfifo.out> to see if urgent queue is not emptied in FIFO order")
+@Explanation("Checks file <uqf.out> to see if urgent queue is not emptied in FIFO order")
 public class UrgentQueueNotFIFO extends MonitorQueueTest{
-	private String fileName = "eqf.out";
+	private String fileName = "uqf.out";
 	int size = 4;
 	protected String getFileName() {
 		return fileName;

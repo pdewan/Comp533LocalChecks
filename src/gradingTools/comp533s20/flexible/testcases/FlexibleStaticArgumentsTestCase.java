@@ -19,6 +19,7 @@ import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.comp533.flexible.PortNumbers;
 import gradingTools.comp533s20.assignment4.Assignment4OneClientSuite;
 import gradingTools.comp533s20.assignment4.Assignment4Suite;
 import gradingTools.comp533s20.flexible.testcases.FlexibleStaticArgumentsTestInputGenerator;
@@ -30,12 +31,19 @@ public class FlexibleStaticArgumentsTestCase extends PassFailJUnitTestCase {
 	private static final int GUI_RUNTIME = 20;
 	private static final int INTER_TEST_DELAY = 5000;
 
-	private static final int TEST_PORT_NIO_START = 5000;
-	private static final int TEST_PORT_NIO_END = 6000;
-	private static final int TEST_PORT_RMI_START = 6000;
-	private static final int TEST_PORT_RMI_END = 7000;
-	private static final int TEST_PORT_GIPC_START = 7000;
-	private static final int TEST_PORT_GIPC_END = 8000;
+//	private static final int TEST_PORT_NIO_START = 5000;
+//	private static final int TEST_PORT_NIO_END = 6000;
+//	private static final int TEST_PORT_RMI_START = 6000;
+//	private static final int TEST_PORT_RMI_END = 7000;
+//	private static final int TEST_PORT_GIPC_START = 7000;
+//	private static final int TEST_PORT_GIPC_END = 8000;
+	
+	private static final int TEST_PORT_NIO_START = PortNumbers.getTestPortNIOStart();
+	private static final int TEST_PORT_NIO_END = PortNumbers.getTestPortNIOEnd();
+	private static final int TEST_PORT_RMI_START = PortNumbers.getTestPortRMIStart();
+	private static final int TEST_PORT_RMI_END = PortNumbers.getTestPortRMIEnd();
+	private static final int TEST_PORT_GIPC_START = PortNumbers.getTestPortGIPCStart();
+	private static final int TEST_PORT_GIPC_END = PortNumbers.getTestPortGIPCEnd();
 	
 	private static final String DEFAULT_HOST = "localhost";
 	private static final String DEFAULT_PORT_NIO = ""+ServerPort.SERVER_PORT;

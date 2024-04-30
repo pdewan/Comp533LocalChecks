@@ -11,7 +11,7 @@ import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
 //import grader.execution.ExecutionSpecificationSelector;
 import gradingTools.comp533s19.assignment1.testcases.SingleClassTagListTestCase;
-import gradingTools.comp533s19.flexible.testcases.FlexibleStaticArgumentsTestCase;
+import gradingTools.comp533s19.flexible.testcases.S19FlexibleStaticArgumentsTestCase;
 import gradingTools.comp533s19.flexible.testcases.FlexibleTwoClientCorrectReadWriteTestInputGenerator;
 import gradingTools.utils.RunningProjectUtils;
 import util.trace.Tracer;
@@ -237,10 +237,10 @@ TagCaseDependentTestCase
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Client_0", toEntryTags(clientTaggedTestCase));
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setEntryTags("Client_1", toEntryTags(clientTaggedTestCase));
 		
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Registry", FlexibleStaticArgumentsTestCase.TEST_REGISTRY_ARGS);
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Server", FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS);
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client_0", FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS);
-		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client_1", FlexibleStaticArgumentsTestCase.TEST_CLIENT_1_ARGS);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Registry", S19FlexibleStaticArgumentsTestCase.TEST_REGISTRY_ARGS);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Server", S19FlexibleStaticArgumentsTestCase.TEST_SERVER_ARGS);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client_0", S19FlexibleStaticArgumentsTestCase.TEST_CLIENT_0_ARGS);
+		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setArgs("Client_1", S19FlexibleStaticArgumentsTestCase.TEST_CLIENT_1_ARGS);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Registry", 500);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Server", 2000);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setGraderResourceReleaseTime("Client_0", 5000);

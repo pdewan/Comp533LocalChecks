@@ -25,7 +25,7 @@ import gradingTools.comp533s19.flexible.testcases.FlexibleStaticArgumentsTestInp
 import gradingTools.utils.RunningProjectUtils;
 import util.trace.Tracer;
 
-public class FlexibleStaticArgumentsTestCase extends PassFailJUnitTestCase {
+public class S19FlexibleStaticArgumentsTestCase extends PassFailJUnitTestCase {
 	private static final int HEADLESS_RUNTIME = 7;
 	private static final int GUI_RUNTIME = 20;
 	private static final int INTER_TEST_DELAY = 5000;
@@ -119,7 +119,7 @@ public class FlexibleStaticArgumentsTestCase extends PassFailJUnitTestCase {
 	private final boolean doGIPC;
 	
 	
-	public FlexibleStaticArgumentsTestCase(boolean doNIO, boolean doRMI, boolean doGIPC) {
+	public S19FlexibleStaticArgumentsTestCase(boolean doNIO, boolean doRMI, boolean doGIPC) {
 //		super("Static arguments test case");
 
 		this.doNIO = doNIO;
