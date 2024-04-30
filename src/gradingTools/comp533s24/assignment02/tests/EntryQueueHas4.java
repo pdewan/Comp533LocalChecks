@@ -10,7 +10,7 @@ import util.annotations.Explanation;
 import util.annotations.MaxValue;
 
 @MaxValue(5)
-@Explanation("Checks file <uq4.out> to see if entry queue ever had at least 4 elements")
+@Explanation("Checks file <eq4.out> to see if entry queue ever had at least 4 elements")
 public class EntryQueueHas4 extends MonitorQueueTest{
 	private String fileName = "eq4.out";
 	int size = 4;
