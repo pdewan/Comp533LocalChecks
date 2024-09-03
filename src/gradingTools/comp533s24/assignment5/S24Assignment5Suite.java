@@ -22,6 +22,8 @@ import gradingTools.comp533s24.assignment5.style.A5SpecificStyleSuite;
 	A5GeneralStyleSuite.class,
 	A5SpecificStyleSuite.class
 })
+//1.5, 2.6, 3.3, 4.6
+//20
 public class S24Assignment5Suite extends Assignment1Suite{
 	public static void configureProperties() {
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().

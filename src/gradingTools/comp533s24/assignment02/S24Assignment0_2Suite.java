@@ -22,6 +22,7 @@ import gradingTools.shared.testcases.concurrency.oddNumbers.hints.AbstractHint;
 	MonitorTests.class,
 	
 })
+// 7
 	
 
 //@MaxValue(50)

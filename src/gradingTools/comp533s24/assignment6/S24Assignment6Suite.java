@@ -26,6 +26,8 @@ import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
 	A6SpecificStyleSuite.class,
 	A6GeneralStyleSuite.class
 })
+// 1.3, 2.4, 3.6, 4.6
+//19
 public class S24Assignment6Suite extends Assignment2Suite{
 	public static void configureProperties() {
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().

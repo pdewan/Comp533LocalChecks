@@ -25,6 +25,8 @@ import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
 	A7GeneralStyleSuite.class,
 	A7SpecificStyleSuite.class
 })
+//1.8, 2.4, 3.6, 4.3
+//21
 public class S24Assignment7Suite extends Assignment2Suite{
 	
 	public static void configureProperties() {

@@ -50,7 +50,7 @@ import gradingTools.shared.testcases.concurrency.oddNumbers.hints.HangingHintsSu
 	
 })
 	
-
+// 1.1, 2.2, 3.5 = 8
 //@MaxValue(50)
 public class S24Assignment0_1Suite extends ConcurrencySuiteSkeleton{
 //	public static final String ROOT_CLASS = "ConcurrentOddNumbers";

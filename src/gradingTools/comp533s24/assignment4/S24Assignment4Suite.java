@@ -21,6 +21,8 @@ import gradingTools.comp533s24.assignment4.style.A4SpecificStyleSuite;
 	A4SpecificStyleSuite.class,
 	A4GeneralStyleSuite.class
 })
+//1.2, 2.6, 3.3, 4.5
+//16
 public class S24Assignment4Suite extends Assignment1Suite{
 	public static void configureProperties() {
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().

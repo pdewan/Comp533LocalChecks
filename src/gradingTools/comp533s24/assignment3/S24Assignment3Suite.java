@@ -29,7 +29,8 @@ import gradingTools.comp533s21.assignment3.style.A3SpecificStyleSuite;
 	DistributedPartitionedReduce.class,
 	BasicDistributedFacebookMapReduce.class
 })
-	
+//1.4, 2.6, 3.5, 4.1, 5.2, 6.5, 7.5, 
+//28
 
 	
 public class S24Assignment3Suite extends Assignment1Suite{

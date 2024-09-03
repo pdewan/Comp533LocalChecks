@@ -26,7 +26,8 @@ import gradingTools.comp533s22.assignment1.SingleThreadTokenCount;
 	A1SpecificStyleSuite.class
 })
 	
-
+//1.4, 2.5, 3.3, 4.4, 5.6, 6.1, 7.6
+// 29
 	
 public class S24Assignment1Suite extends Assignment0Suite{
 	public static void configureProperties() {
