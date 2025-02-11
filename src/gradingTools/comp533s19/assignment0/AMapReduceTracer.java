@@ -14,6 +14,7 @@ public abstract class AMapReduceTracer {
 	public static String ADD = "add:";
 	public static String REDUCE = "reduce:";
 	public static String NEW_MAPPER = "new mapper:";
+	public static String NEW_SINGLETON = "new singleton:";
 	public static String MODEL = "Model"; // value returned by toString() method of model
 	public static String VIEW = "View"; // value returned by toString() method of view
 	public static String CONTROLLER = "Controller"; // value returned by toString() method of controller
@@ -96,7 +97,7 @@ public abstract class AMapReduceTracer {
 		if (aNewSingleton == null) {
 			System.out.println("Null new singleton");
 		} else {
-		System.out.println(INFO_PREFIX + Thread.currentThread() + ":" + aFactoryClass + ":" + NEW_MAPPER +  aNewSingleton);
+		System.out.println(INFO_PREFIX + Thread.currentThread() + ":" + aFactoryClass + ":" + NEW_SINGLETON +  aNewSingleton);
 		}
 	}
 	

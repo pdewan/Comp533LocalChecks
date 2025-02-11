@@ -11,7 +11,7 @@ import gradingTools.basics.sharedTestCase.checkstyle.VariableHasClassTypeRatioCh
 import gradingTools.comp533s21.assignment2.A2ConfigurationProvided;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
-@MaxValue(15)
+@MaxValue(5)
 @IsExtra(true)
 public class A2MnemonicNames extends MnemonicNameRatioTestCase{
 	 public A2MnemonicNames() {

@@ -9,6 +9,7 @@ import gradingTools.comp533s21.assignment1.A1ConfigurationProvided;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 @MaxValue(1)
+@IsExtra(true)
 public class A1NamedConstants extends NamedConstantsRatioCheck{
 	 public A1NamedConstants() {
 		 super();

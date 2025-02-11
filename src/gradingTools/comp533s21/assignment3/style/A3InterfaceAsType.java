@@ -10,7 +10,7 @@ import gradingTools.basics.sharedTestCase.checkstyle.VariableHasClassTypeRatioCh
 import gradingTools.comp533s21.assignment3.A3ConfigurationProvided;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
-@MaxValue(10)
+@MaxValue(5)
 public class A3InterfaceAsType extends VariableHasClassTypeRatioCheck{
 	 public A3InterfaceAsType() {
 		 super();

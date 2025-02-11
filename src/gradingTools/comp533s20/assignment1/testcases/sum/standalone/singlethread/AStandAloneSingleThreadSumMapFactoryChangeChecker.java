@@ -9,7 +9,9 @@ import util.trace.port.rpc.RemoteCallWaitingForReturnValue;
 public class AStandAloneSingleThreadSumMapFactoryChangeChecker extends ASubstringSequenceChecker{
 	//make sure receives from both clients take place, need to ensure alternatibg, cannot with regular expressions
 	public  final String[] MY_SUBSTRINGS = {
-				toRegex(AMapReduceTracer.NEW_MAPPER)				
+//				toRegex(AMapReduceTracer.NEW_MAPPER)
+				toRegex(AMapReduceTracer.NEW_SINGLETON)				
+
 
 				//				"View:java.beans.PropertyChangeEvent.propertyName=Result; oldValue=null; newValue=.*Potter=2.*",
 //			)

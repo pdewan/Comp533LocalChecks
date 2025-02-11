@@ -14,7 +14,8 @@ import gradingTools.comp533s21.assignment1.A1ConfigurationProvided;
 import gradingTools.comp533s21.assignment4.style.A4TaggedClassesDefined;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
-@MaxValue(20)
+//@MaxValue(20)
+@MaxValue(5)
 public class A1ExpectedCalls extends ExpectedCallsRatioCheck{
 	 public A1ExpectedCalls() {
 		 super();

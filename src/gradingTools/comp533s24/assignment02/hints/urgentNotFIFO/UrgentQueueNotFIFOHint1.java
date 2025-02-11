@@ -40,9 +40,9 @@ public class UrgentQueueNotFIFOHint1 extends AbstractHint{
 
 	@Override
 	protected String hint() {
-		String aLine1 = "Make sure the urgent queue has 4 threads - see hints on how do to that if necessary\n";
+		String aLine1 = "Make sure the urgent queue has 4 threads - see hints on how to do that if necessary\n";
 		String aLine2 = "Release the monitor occupant if necessary\n";	
-		String aLine3 = "Use the history comamnd to verify non FIFO behavior\n";
+		String aLine3 = "Use the history command to verify non FIFO behavior\n";
 		return "\n" + aLine1 + aLine2 + aLine3;
 	}
 
