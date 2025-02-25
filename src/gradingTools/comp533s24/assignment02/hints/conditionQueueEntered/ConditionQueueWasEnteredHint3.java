@@ -1,4 +1,4 @@
-package gradingTools.comp533s24.assignment02.hints.entryQueueNotFIFO;
+package gradingTools.comp533s24.assignment02.hints.conditionQueueEntered;
 
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
@@ -9,24 +9,18 @@ import gradingTools.shared.testcases.concurrency.oddNumbers.hints.AbstractHint;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
 
-@Explanation("The idea of in-turn threads and history command")
-public class EntryQueueNotFIFOHint1 extends AbstractHint{
+@Explanation("How to create an out of turn thread")
+public class ConditionQueueWasEnteredHint3 extends AbstractHint{
+	static Class[] PREVIOUS_HINTS = {
+			ConditionQueueWasEnteredHint2.class	
+			};
 	
-	
-
-	
-	@Override
-	protected Class[] previousHints() {
-		// TODO Auto-generated method stub
-		return noPreviousHints();
-	}
 //	@Override
 //	public TestCaseResult test(Project aProject, boolean autoGrade)
 //			throws NotAutomatableException, NotGradableException {
 //		try {
-//			String aLine1 = "Make 5 different ready threads enter the monitor entery queue\n";
-//			String aLine2 = "Four of them should be in the entry queue\n";		
-//			System.out.println(aLine1 + aLine2);
+//			String aLine1 = "Make four consumer threads enter the monitor queue at the start of the program to create four out of turn threads\n";
+//			System.out.println(aLine1);
 //			return pass ("Please see console output for hints");			
 //
 //		} catch (Exception e) {
@@ -36,13 +30,17 @@ public class EntryQueueNotFIFOHint1 extends AbstractHint{
 //		}
 //	}
 
+	@Override
+	protected Class[] previousHints() {
+		// TODO Auto-generated method stub
+		return PREVIOUS_HINTS;
+	}
 
 	@Override
 	protected String hint() {
-		String aLine1 = "Make sure the entry queue has 4 threads whose turn it is\n";
-		String aLine2 = "Release each of them in turn\n";	
-		String aLine3 = "Use the history command to check the entry and exit orders\n";
-		return "\n" + aLine1 + aLine2 + aLine3;
+		String aLine1 = "Make a consumer threads enter the monitor queue at the start of the program to create an out of turn thread\n";
+		return "\n" + aLine1;
+
 	}
 
 }

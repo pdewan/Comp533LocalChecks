@@ -5,7 +5,7 @@ import util.annotations.Explanation;
 import util.annotations.MaxValue;
 
 @MaxValue(5)
-@Explanation("First Hint on Urgent Queue Precedence")
+@Explanation("Relationship with condition queue and entry queue")
 public class UrgentQueuePrecedenceHint1 extends AbstractHint{	
 	@Override
 	protected Class[] previousHints() {

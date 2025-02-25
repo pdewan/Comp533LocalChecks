@@ -37,11 +37,12 @@ public class UrgentQueueHas4Hint1 extends AbstractHint{
 //	}
 	@Override
 	protected String hint() {
-		String aLine1 = "Create a situation in which similatenously there are 4 threads in the condition queue and a thread in the monitor that can notifyall\n";
-		String aLine2 = "Release the monitor occupying thread\n";
-		String aLine3 = "Look at the history\n";
-		String aLine4 = "You should see that 4 threads entered the urgent queue and one has left it\n";
-		return "\n"+  aLine1 + aLine2 + aLine3 + aLine4;
+		String aLine1 = "Create a situation in which similatenously there are 4 threads in the condition queue and a thread in the monitor (which will notifyall)\n";
+		String aLine2 = "See the hints on conditionaQueueHas4 on how to do this \n";
+		String aLine3 = "Release the monitor occupant\n";
+		String aLine4 = "Look at the history\n";
+		String aLine5 = "You should see that 4 threads entered the urgent queue and one has left it\n";
+		return "\n"+  aLine1 + aLine2 + aLine3 + aLine4 + aLine5;
 	}
 
 }

@@ -10,7 +10,7 @@ import util.annotations.Explanation;
 import util.annotations.MaxValue;
 
 @MaxValue(5)
-@Explanation("First Hint on Urgent Queue Not FIFO")
+@Explanation("The relationship between condition queue and urgent queue")
 public class UrgentQueueNotFIFOHint1 extends AbstractHint{
 	
 	
@@ -41,7 +41,7 @@ public class UrgentQueueNotFIFOHint1 extends AbstractHint{
 	@Override
 	protected String hint() {
 		String aLine1 = "Make sure the urgent queue has 4 threads - see hints on how to do that if necessary\n";
-		String aLine2 = "Release the monitor occupant if necessary\n";	
+		String aLine2 = "Execute release commands to see in what order they enter the monitor\n";	
 		String aLine3 = "Use the history command to verify non FIFO behavior\n";
 		return "\n" + aLine1 + aLine2 + aLine3;
 	}

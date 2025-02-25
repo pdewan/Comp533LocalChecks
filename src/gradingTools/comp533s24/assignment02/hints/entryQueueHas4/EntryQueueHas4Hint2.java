@@ -11,7 +11,7 @@ import util.annotations.Explanation;
 import util.annotations.MaxValue;
 
 @MaxValue(5)
-@Explanation("Second Hint on Entry Queue Has 4")
+@Explanation("How to use the ready and enter commands")
 public class EntryQueueHas4Hint2 extends AbstractHint{
 	static Class[] PREVIOUS_HINTS = {
 			EntryQueueHas4Hint1.class	
@@ -47,7 +47,7 @@ public class EntryQueueHas4Hint2 extends AbstractHint{
 	@Override
 	protected String hint() {
 		String aLine1 = "Use the threads command to see which threads are ready\n";
-		String aLine2 = "Use the enter comand to make threads enter the entry queue\n";	
+		String aLine2 = "Use the enter comand to make threads enter the monior\n";	
 		String aLine3 = "Use the queue comand to see the status of queues\n";		
 		return "\n" + aLine1 + aLine2 + aLine3;
 

@@ -1,31 +1,32 @@
-package gradingTools.comp533s24.assignment02.hints.entryQueueNotFIFO;
+package gradingTools.comp533s24.assignment02.hints.conditionQueueEntered;
 
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
-import grader.basics.testcase.PassFailJUnitTestCase;
 import gradingTools.shared.testcases.concurrency.oddNumbers.hints.AbstractHint;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
 
-@Explanation("The idea of in-turn threads and history command")
-public class EntryQueueNotFIFOHint1 extends AbstractHint{
-	
-	
+@Explanation("Definition of in-turn and out of turn threads")
+public class ConditionQueueWasEnteredHint2 extends AbstractHint{
+	static Class[] PREVIOUS_HINTS = {
+			ConditionQueueWasEnteredHint1.class	
+			};
 
 	
 	@Override
 	protected Class[] previousHints() {
 		// TODO Auto-generated method stub
-		return noPreviousHints();
+		return PREVIOUS_HINTS;
 	}
+//	
 //	@Override
 //	public TestCaseResult test(Project aProject, boolean autoGrade)
 //			throws NotAutomatableException, NotGradableException {
 //		try {
-//			String aLine1 = "Make 5 different ready threads enter the monitor entery queue\n";
-//			String aLine2 = "Four of them should be in the entry queue\n";		
+//			String aLine1 = "An out of turn thread is a producer if the last value printed by the monitor was a consumption\n";
+//			String aLine2 = "An out of turn thread is a consumer if the monitor has not yet printed a value or has printed a production\n";
 //			System.out.println(aLine1 + aLine2);
 //			return pass ("Please see console output for hints");			
 //
@@ -39,10 +40,9 @@ public class EntryQueueNotFIFOHint1 extends AbstractHint{
 
 	@Override
 	protected String hint() {
-		String aLine1 = "Make sure the entry queue has 4 threads whose turn it is\n";
-		String aLine2 = "Release each of them in turn\n";	
-		String aLine3 = "Use the history command to check the entry and exit orders\n";
-		return "\n" + aLine1 + aLine2 + aLine3;
+		String aLine1 = "\nAn out of turn thread is a producer if the last value printed by the monitor was a consumption\n";
+		String aLine2 = "An out of turn thread is a consumer if the monitor has not yet printed a value or has printed a production\n";
+		return "\n" + aLine1 + aLine2;
 	}
 
 }

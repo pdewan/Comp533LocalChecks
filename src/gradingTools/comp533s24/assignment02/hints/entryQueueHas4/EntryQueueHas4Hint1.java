@@ -10,7 +10,7 @@ import util.annotations.Explanation;
 import util.annotations.MaxValue;
 
 @MaxValue(5)
-@Explanation("First Hint on Entry Queue Has 4")
+@Explanation("The concept of requests to enter being granted one at a time")
 public class EntryQueueHas4Hint1 extends AbstractHint{
 	
 	
@@ -40,7 +40,7 @@ public class EntryQueueHas4Hint1 extends AbstractHint{
 
 	@Override
 	protected String hint() {
-		String aLine1 = "Make 5 different ready threads enter the monitor entery queue\n";
+		String aLine1 = "Try make 5 different ready threads enter the monitor\n";
 		String aLine2 = "Four of them should be in the entry queue\n";		
 		return "\n" + aLine1 + aLine2;
 	}

@@ -1,4 +1,4 @@
-package gradingTools.comp533s24.assignment02.hints.conditionQueueHas4;
+package gradingTools.comp533s24.assignment02.hints.conditionQueueEntered;
 
 import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
@@ -10,7 +10,7 @@ import util.annotations.Explanation;
 import util.annotations.MaxValue;
 
 @Explanation("The idea of in-turn and out of turn threads")
-public class ConditionQueueHas4Hint1 extends AbstractHint{
+public class ConditionQueueWasEnteredHint1 extends AbstractHint{
 	
 //	
 //	@Override
@@ -38,10 +38,10 @@ public class ConditionQueueHas4Hint1 extends AbstractHint{
 
 	@Override
 	protected String hint() {
-		String aLine1 = "Try to make four out of turn threads and one thread whose turn it is enter the monitor\n";
-		String aLine2 = "Make the in-turn thread leave the monitor\n";
+		String aLine1 = "Try to make one out of turn thread and one thread whose turn it is enter the monitor\n";
+		String aLine2 = "If the monitor is occupied release it\n";
 		String aLine3 = "Look at the history\n";
-		String aLine4 = "You should see that 4 threads entered the condition queue\n";
+		String aLine4 = "You should see that 1 thread entered the condition queue\n";
 		return "\n" + aLine1 + aLine2 + aLine3 + aLine4;
 	}
 

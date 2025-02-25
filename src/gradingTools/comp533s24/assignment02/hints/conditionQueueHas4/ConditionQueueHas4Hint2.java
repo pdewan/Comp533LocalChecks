@@ -9,7 +9,7 @@ import util.annotations.Explanation;
 import util.annotations.MaxValue;
 
 @MaxValue(5)
-@Explanation("second Hint on Condition Queue Has 4")
+@Explanation("Definition of in-turn and out of turn threads")
 public class ConditionQueueHas4Hint2 extends AbstractHint{
 	static Class[] PREVIOUS_HINTS = {
 			ConditionQueueHas4Hint1.class	

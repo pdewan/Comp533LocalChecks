@@ -16,10 +16,13 @@ import gradingTools.shared.testcases.concurrency.oddNumbers.FairAllocationLarger
 import gradingTools.shared.testcases.concurrency.oddNumbers.FairAllocationSmallProblem;
 import gradingTools.shared.testcases.concurrency.oddNumbers.ForkJoinLargerProblem;
 import gradingTools.shared.testcases.concurrency.oddNumbers.ForkJoinSmallProblem;
+import gradingTools.shared.testcases.concurrency.oddNumbers.HelperTestsOddNumbers;
 import gradingTools.shared.testcases.concurrency.oddNumbers.LargerNumberOfRandoms;
 import gradingTools.shared.testcases.concurrency.oddNumbers.LargerNumberSuite;
+import gradingTools.shared.testcases.concurrency.oddNumbers.LargerNumberTests;
 import gradingTools.shared.testcases.concurrency.oddNumbers.SmallNumberOfRandoms;
 import gradingTools.shared.testcases.concurrency.oddNumbers.SmallNumberSuite;
+import gradingTools.shared.testcases.concurrency.oddNumbers.SmallNumberTests;
 import gradingTools.shared.testcases.concurrency.oddNumbers.SynchronizationLargerProblem;
 import gradingTools.shared.testcases.concurrency.oddNumbers.SynchronizationSmallProblem;
 import gradingTools.shared.testcases.concurrency.oddNumbers.hints.FairAllocationHintsSuite;
@@ -31,23 +34,9 @@ import gradingTools.shared.testcases.concurrency.oddNumbers.hints.HangingHintsSu
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	SmallNumberSuite.class,
-	LargerNumberSuite.class,
-	ForkJoinHintsSuite.class,
-	FairAllocationHintsSuite.class,
-	SynchronizationHintsSuite.class,
-	HangingHintsSuite.class
-//	SmallNumberOfRandoms.class,
-//	LargerNumberOfRandoms.class,
-//	ForkJoinSmallProblem.class,
-//	BasicsSmallProblem.class,
-//	FairAllocationSmallProblem.class,
-//	SynchronizationSmallProblem.class,
-//	ForkJoinLargerProblem.class,
-//	BasicsLargerProblem.class,
-//	SynchronizationLargerProblem.class,
-//	FairAllocationLargerProblem.class,
-	
+	HelperTestsOddNumbers.class,
+	SmallNumberTests.class,
+	LargerNumberTests.class,	
 })
 	
 // 1.1, 2.2, 3.5 = 8

@@ -8,10 +8,14 @@ import org.junit.runners.Suite;
 import grader.basics.junit.BasicJUnitUtils;
 import grader.basics.output.observer.ObservablePrintStream;
 import grader.basics.output.observer.ObservablePrintStreamFactory;
+import grader.basics.testcase.PassFailJUnitTestCase;
+import gradingTools.shared.testcases.concurrency.oddNumbers.AbstractOddNumbersExecution;
 import gradingTools.shared.testcases.concurrency.oddNumbers.HelperTestsOddNumbers;
 import gradingTools.shared.testcases.concurrency.oddNumbers.LargerNumberTests;
 import gradingTools.shared.testcases.concurrency.oddNumbers.SmallNumberTests;
+import gradingTools.shared.testcases.concurrency.oddNumbers.SynchronizationSmallProblem;
 import gradingTools.shared.testcases.concurrency.oddNumbers.context.OddNumbersPiazzaPostSuite;
+import gradingTools.shared.testcases.concurrency.oddNumbers.context.SynchronizationProblemPiazzaMessage;
 import gradingTools.shared.testcases.concurrency.oddNumbers.hanging.OddNumbersPiazzaPosts;
 
 
@@ -49,6 +53,11 @@ public class S25Assignment0_1_PP_Suite {
 		ObservablePrintStream anOservablePrintStream = ObservablePrintStreamFactory.getObservablePrintStream();
 		anOservablePrintStream.setRedirectionFrozen(true);
 		System.setOut((PrintStream) anOservablePrintStream);
+		SynchronizationProblemPiazzaMessage.setSynchronizationTestClass(SynchronizationSmallProblem.class);
+		if (!AbstractOddNumbersExecution.isDoTests()) {
+		PassFailJUnitTestCase.setTimeToStart(2025, 02, 25, 12, 30);
+		}
+	
 	}
 	
 }

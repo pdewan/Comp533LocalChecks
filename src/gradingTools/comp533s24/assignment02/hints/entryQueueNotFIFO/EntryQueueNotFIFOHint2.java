@@ -11,7 +11,7 @@ import util.annotations.Explanation;
 import util.annotations.MaxValue;
 
 @MaxValue(5)
-@Explanation("Second Hint on Entry Queue Not FIFO")
+@Explanation("How to create in-turn producers and consumers")
 public class EntryQueueNotFIFOHint2 extends AbstractHint{
 	static Class[] PREVIOUS_HINTS = {
 			EntryQueueNotFIFOHint1.class	
@@ -48,7 +48,7 @@ public class EntryQueueNotFIFOHint2 extends AbstractHint{
 	protected String hint() {
 		String aLine1 = "Put alternating consumers and producers in the entry queue using the enter commands\n";
 		String aLine2 = "Make the first thread a producer\n";	
-		String aLine3 = "Do not release the producer until the entry queue has been filled with 4 other aletrnating threads\n";		
+		String aLine3 = "Do not release the producer until the entry queue has been filled with 4 other alternating threads\n";		
 		return "\n" + aLine1 + aLine2 + aLine3;
 
 	}

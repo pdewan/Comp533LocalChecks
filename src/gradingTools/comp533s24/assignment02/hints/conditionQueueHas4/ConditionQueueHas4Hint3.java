@@ -10,7 +10,7 @@ import util.annotations.Explanation;
 import util.annotations.MaxValue;
 
 @MaxValue(5)
-@Explanation("Third Hint on Condition Queue Has 4")
+@Explanation("How to create an out of turn thread")
 public class ConditionQueueHas4Hint3 extends AbstractHint{
 	static Class[] PREVIOUS_HINTS = {
 			ConditionQueueHas4Hint2.class	
