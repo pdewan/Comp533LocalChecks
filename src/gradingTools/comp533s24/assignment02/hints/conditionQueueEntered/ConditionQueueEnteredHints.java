@@ -7,14 +7,14 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-	ConditionQueueWasEnteredHint1.class,
-	ConditionQueueWasEnteredHint2.class,
-	ConditionQueueWasEnteredHint3.class,	
+	ConditionQueueEnteredHint1.class,
+//	ConditionQueueWasEnteredHint2.class,
+//	ConditionQueueWasEnteredHint3.class,	
 })
 	
 
 //@MaxValue(50)
-public class ConditionQueueWasEnteredHints {
+public class ConditionQueueEnteredHints {
 
 	
 }

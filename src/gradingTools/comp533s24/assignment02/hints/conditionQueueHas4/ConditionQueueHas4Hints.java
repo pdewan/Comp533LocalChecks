@@ -8,8 +8,8 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	ConditionQueueHas4Hint1.class,
-	ConditionQueueHas4Hint2.class,
-	ConditionQueueHas4Hint3.class,	
+//	ConditionQueueHas4Hint2.class,
+//	ConditionQueueHas4Hint3.class,	
 })
 	
 

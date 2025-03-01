@@ -4,8 +4,8 @@ import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
-import gradingTools.comp533s24.assignment02.LogGrader;
-import gradingTools.comp533s24.assignment02.MonitorQueueTest;
+import gradingTools.comp533s24.assignment02.grader.LogGrader;
+import gradingTools.comp533s24.assignment02.grader.MonitorQueueTest;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
 
@@ -26,9 +26,9 @@ public class ThreadMappingChanges extends MonitorQueueTest{
 			if (aScore == 1.0) {
 				return pass();
 			} else if (aScore == 0) {
-				return fail("Did not have main thread separated by at least two entries in entry list");
+				return fail("Reassignment did not occur");
 			} else {
-				return partialPass(aScore, "Reassignment did not occur despite recommended main thread separation");
+				return partialPass(aScore, "Reassignment did not occur despite recommended operatons");
 			}
 //			if (aResult) {
 //				return pass();

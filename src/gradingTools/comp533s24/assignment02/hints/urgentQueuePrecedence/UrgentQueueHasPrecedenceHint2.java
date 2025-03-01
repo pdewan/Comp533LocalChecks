@@ -11,10 +11,10 @@ import util.annotations.MaxValue;
 
 @MaxValue(5)
 @Explanation("Operational help")
-public class UrgentQueuePrecedenceHint2 extends AbstractHint{
+public class UrgentQueueHasPrecedenceHint2 extends AbstractHint{
 	
 	static Class[] PREVIOUS_HINTS = {
-			UrgentQueuePrecedenceHint1.class
+			UrgentQueueHasPrecedenceHint1.class
 			};
 
 	

@@ -4,9 +4,9 @@ import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
-import gradingTools.comp533s24.assignment02.LogGrader;
-import gradingTools.comp533s24.assignment02.MonitorQueueTest;
-import gradingTools.comp533s24.assignment02.Orders;
+import gradingTools.comp533s24.assignment02.grader.LogGrader;
+import gradingTools.comp533s24.assignment02.grader.MonitorQueueTest;
+import gradingTools.comp533s24.assignment02.grader.Orders;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
 

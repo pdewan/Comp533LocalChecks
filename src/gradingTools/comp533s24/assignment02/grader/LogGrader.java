@@ -1,4 +1,4 @@
-package gradingTools.comp533s24.assignment02;
+package gradingTools.comp533s24.assignment02.grader;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -189,7 +189,9 @@ public class LogGrader {
 	public static double testUrgentQueuePrecedence(String fileName) throws FileNotFoundException {
 		Orders orders = Orders.extraOrdersFromFile(fileName);
 		int aStart = findIndexOflMaximumQueueBuildup(orders.getUrgentEnterOrders(), orders.getUrgentExitOrders());
-		int anEnd = findIndexOfQueuesEqual(orders.getUrgentEnterOrders(), orders.getUrgentExitOrders(), aStart);
+//		int anEnd = findIndexOfQueuesEqual(orders.getUrgentEnterOrders(), orders.getUrgentExitOrders(), aStart);
+		int anEnd = findIndexOfQueueExit(orders.getUrgentEnterOrders(), orders.getUrgentExitOrders(), aStart);
+
 		List<List<String>> aMonitorEnterOrders = orders.getMonitorEnterOrders();
 		List<List<String>> aMonitorExitOrders = orders.getMonitorExitOrders();
 		int anInitialSize = queueSizeAtIndex(aStart, aMonitorEnterOrders, aMonitorExitOrders );
@@ -209,7 +211,7 @@ public class LogGrader {
 
 		boolean aNoChange = checkNoChange(aStart, anEnd, orders.getMonitorExitOrders());
 		if (!aNoChange) {
-			System.out.println("Entry queue changed wheile urgent quere emptied!");
+			System.out.println("Entry queue changed wheile urgent quere exited!");
 			return 0.9;
 
 		} else {
@@ -297,6 +299,21 @@ public class LogGrader {
 		}
 		return -1;
 	}
+	public static int findIndexOfQueueExit(List<List<String>> anEntryOrders, List<List<String>> anExitOrders,
+			int from) {
+		int numOrders = numOrders(anEntryOrders, anExitOrders);
+		for (int anIndex = from; anIndex < numOrders; anIndex++) {
+//			int anEntrySize = anEntryOrders.get(anIndex).size();
+			int anExitSize = anExitOrders.get(anIndex).size();
+			if (anExitSize > 0) {
+				return anIndex;				
+			}
+			
+		}
+		return -1;
+	}
+	
+	
 
 	public static boolean checkNoChange(int from, int to, List<List<String>> anOrders) {
 		for (int anIndex = from; anIndex < to - 1; anIndex++) {

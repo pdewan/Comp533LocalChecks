@@ -11,7 +11,7 @@ import util.annotations.Explanation;
 import util.annotations.MaxValue;
 
 @MaxValue(5)
-@Explanation("How to use the ready and enter commands")
+@Explanation("The concept of in-turn and out of turn threds")
 public class EntryQueueHas4Hint2 extends AbstractHint{
 	static Class[] PREVIOUS_HINTS = {
 			EntryQueueHas4Hint1.class	
@@ -24,32 +24,15 @@ public class EntryQueueHas4Hint2 extends AbstractHint{
 		return PREVIOUS_HINTS;
 	}
 	
-//	@Override
-//	public TestCaseResult test(Project aProject, boolean autoGrade)
-//			throws NotAutomatableException, NotGradableException {
-//		try {
-//			String aLine1 = "Use the threads command to see which threads are ready\n";
-//			String aLine2 = "Use the enter comand to make threads enter the entry queue\n";	
-//			String aLine3 = "Use the queue comand to see the status of queues\n";		
-//
-//			System.out.println(aLine1 + aLine2 + aLine3);
-//			return pass ("Please see console output for hints");			
-//
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//			return fail(e.getMessage());
-//		}
-//	}
-
-	
 
 	@Override
 	protected String hint() {
-		String aLine1 = "Use the threads command to see which threads are ready\n";
-		String aLine2 = "Use the enter comand to make threads enter the monior\n";	
-		String aLine3 = "Use the queue comand to see the status of queues\n";		
-		return "\n" + aLine1 + aLine2 + aLine3;
+		String aLine1 = "Initially producers are in-turn and consumers are out-of-turn";
+		String aLine2 = "After a production the opposite is true";
+		String aLine3 = "Use the thread (t), enter (e), and queue (q) commands";	
+
+		return "\n" + aLine1 + "\n" + aLine2 + "\n" + aLine3 + "\n";
+		
 
 	}
 

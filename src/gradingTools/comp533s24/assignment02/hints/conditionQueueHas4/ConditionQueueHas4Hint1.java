@@ -9,7 +9,7 @@ import gradingTools.shared.testcases.concurrency.oddNumbers.hints.AbstractHint;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
 
-@Explanation("The idea of in-turn and out of turn threads")
+@Explanation("The idea of multiple out of turn threads")
 public class ConditionQueueHas4Hint1 extends AbstractHint{
 	
 //	
@@ -38,11 +38,11 @@ public class ConditionQueueHas4Hint1 extends AbstractHint{
 
 	@Override
 	protected String hint() {
-		String aLine1 = "Try to make four out of turn threads and one thread whose turn it is enter the monitor\n";
-		String aLine2 = "Make the in-turn thread leave the monitor\n";
-		String aLine3 = "Look at the history\n";
-		String aLine4 = "You should see that 4 threads entered the condition queue\n";
-		return "\n" + aLine1 + aLine2 + aLine3 + aLine4;
+		String aLine1 = "Try to make four out of turn threads enter the monitor";
+		String aLine2 = "Make any monitor occupant leave the monitor using the release command";
+		String aLine3 = "Look at the history";
+		String aLine4 = "You should see that 4 threads entered the condition queue";
+		return "\n" + aLine1 + "\n" + aLine2 + "\n" + aLine3 + "\n" + aLine4 + "\n";
 	}
 
 }

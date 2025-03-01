@@ -9,40 +9,21 @@ import gradingTools.shared.testcases.concurrency.oddNumbers.hints.AbstractHint;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
 
-@MaxValue(5)
-@Explanation("The concept of requests to enter being granted one at a time")
-public class EntryQueueHas4Hint1 extends AbstractHint{
-	
-	
-
-	
+@Explanation("In-turn requests to enter are granted one at a time")
+public class EntryQueueHas4Hint1 extends AbstractHint{	
 	@Override
 	protected Class[] previousHints() {
-		// TODO Auto-generated method stub
 		return noPreviousHints();
 	}
-//	@Override
-//	public TestCaseResult test(Project aProject, boolean autoGrade)
-//			throws NotAutomatableException, NotGradableException {
-//		try {
-//			String aLine1 = "Make 5 different ready threads enter the monitor entery queue\n";
-//			String aLine2 = "Four of them should be in the entry queue\n";		
-//			System.out.println(aLine1 + aLine2);
-//			return pass ("Please see console output for hints");			
-//
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//			return fail(e.getMessage());
-//		}
-//	}
-
-
 	@Override
 	protected String hint() {
-		String aLine1 = "Try make 5 different ready threads enter the monitor\n";
-		String aLine2 = "Four of them should be in the entry queue\n";		
-		return "\n" + aLine1 + aLine2;
+		String aLine1 = "Try make an 1 in-turn thread request monitor entry using the e command";
+		String aLine2 = "Now make four more threads request monitor entry using the e command";
+		String aLine3 = "See ConditionQueueEnteredHints for in-turn vs out of turn threds";
+
+
+
+		return "\n" +  aLine1 + "\n" + aLine2 + "\n" + aLine3 + "\n";
 	}
 
 }

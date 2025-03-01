@@ -1,4 +1,4 @@
-package gradingTools.comp533s24.assignment02;
+package gradingTools.comp533s24.assignment02.grader;
 
 public enum OrderType {
     MONITOR("Monitor"),

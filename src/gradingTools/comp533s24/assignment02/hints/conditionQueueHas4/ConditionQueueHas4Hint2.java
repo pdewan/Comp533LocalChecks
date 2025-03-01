@@ -41,9 +41,9 @@ public class ConditionQueueHas4Hint2 extends AbstractHint{
 
 	@Override
 	protected String hint() {
-		String aLine1 = "\nAn out of turn thread is a producer if the last value printed by the monitor was a consumption\n";
-		String aLine2 = "An out of turn thread is a consumer if the monitor has not yet printed a value or has printed a production\n";
-		return "\n" + aLine1 + aLine2;
+		String aLine1 = "An out of turn thread is a producer if the last value printed by the monitor was a consumption";
+		String aLine2 = "An out of turn thread is a consumer if the monitor has not yet printed a value or has printed a production";
+		return "\n" + aLine1 + "\n" + aLine2 + "\n";
 	}
 
 }

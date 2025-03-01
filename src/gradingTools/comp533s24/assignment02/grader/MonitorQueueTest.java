@@ -1,4 +1,4 @@
-package gradingTools.comp533s24.assignment02;
+package gradingTools.comp533s24.assignment02.grader;
 
 import java.io.File;
 import java.io.IOException;

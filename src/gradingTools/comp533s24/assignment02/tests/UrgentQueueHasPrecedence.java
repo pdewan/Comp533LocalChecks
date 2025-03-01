@@ -4,13 +4,13 @@ import grader.basics.junit.NotAutomatableException;
 import grader.basics.junit.TestCaseResult;
 import grader.basics.project.NotGradableException;
 import grader.basics.project.Project;
-import gradingTools.comp533s24.assignment02.LogGrader;
-import gradingTools.comp533s24.assignment02.MonitorQueueTest;
+import gradingTools.comp533s24.assignment02.grader.LogGrader;
+import gradingTools.comp533s24.assignment02.grader.MonitorQueueTest;
 import util.annotations.Explanation;
 import util.annotations.MaxValue;
 
 @MaxValue(5)
-@Explanation("Checks file <urp.out> to see if urgent queue gets precedence ove entry queue")
+@Explanation("Checks file <uqp.out> to see if urgent queue gets precedence ove entry queue")
 public class UrgentQueueHasPrecedence extends MonitorQueueTest{
 	private String fileName = "uqp.out";
 	int size = 4;
