@@ -9,7 +9,7 @@ import gradingTools.basics.sharedTestCase.checkstyle.PublicMethodsOverrideRatioC
 import gradingTools.basics.sharedTestCase.checkstyle.VariableHasClassTypeRatioCheck;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
-@MaxValue(10)
+@MaxValue(5)
 public class A7InterfaceAsType extends VariableHasClassTypeRatioCheck{
 	 public A7InterfaceAsType() {
 		 super();

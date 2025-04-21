@@ -18,10 +18,12 @@ import java.util.List;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+import util.annotations.IsExtra;
 import util.tags.DistributedTags;
 
 
 @RunWith(Suite.class)
+@IsExtra(true)
 @Suite.SuiteClasses({
 //	RMINIOStaticArguments.class,
 	GIPCRMINIOTwoClientConnection.class,

@@ -17,9 +17,10 @@ import gradingTools.comp533s20.assignment7.testcases.GIPCRMINIOOneClientReadWrit
 import gradingTools.comp533s20.assignment7.testcases.GIPCRMINIOStaticArguments;
 import gradingTools.comp533s20.flexible.testcases.FlexibleStaticArgumentsTestCase;
 import gradingTools.comp533s21.codeReuseHelper.TagsFactory;
+import util.annotations.IsExtra;
 import util.tags.DistributedTags;
 
-
+@IsExtra(true)
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 	GIPCRMINIOStaticArguments.class,

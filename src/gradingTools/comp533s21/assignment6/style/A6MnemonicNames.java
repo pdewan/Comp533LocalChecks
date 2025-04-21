@@ -10,7 +10,7 @@ import gradingTools.basics.sharedTestCase.checkstyle.PublicMethodsOverrideRatioC
 import gradingTools.basics.sharedTestCase.checkstyle.VariableHasClassTypeRatioCheck;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
-@MaxValue(15)
+@MaxValue(5)
 public class A6MnemonicNames extends MnemonicNameRatioTestCase{
 	 public A6MnemonicNames() {
 		 super();

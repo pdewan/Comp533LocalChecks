@@ -255,6 +255,9 @@ public class LogGrader {
 	}
 
 	public static int findSizeOfMaximumQueueBuildup(List<List<String>> anEntryOrders, List<List<String>> anExitOrders) {
+		if (anEntryOrders.size() == 0) {
+			return 0;
+		}
 		int anIndex = findIndexOflMaximumQueueBuildup(anEntryOrders, anExitOrders);
 		List<String> anEntryQueue = anEntryOrders.get(anIndex);
 		List<String> anExitQueue = anExitOrders.get(anIndex);
@@ -283,7 +286,7 @@ public class LogGrader {
 				retIndex = anIndex;
 			}
 		}
-		System.out.println("Maximmum urgent queue size:" + aThreshold);
+//		System.out.println("Maximmum urgent queue size:" + aThreshold);
 		return retIndex;
 
 	}

@@ -7,9 +7,11 @@ import grader.basics.junit.BasicJUnitUtils;
 import gradingTools.comp533s21.assignment7.style.A7ExpectedCalls;
 import gradingTools.comp533s21.assignment7.style.A7ExpectedSignatures;
 import gradingTools.comp533s21.assignment7.style.A7TaggedClassesDefined;
+import util.annotations.IsExtra;
 
 
 @RunWith(Suite.class)
+@IsExtra(true)
 @Suite.SuiteClasses({
 	A7TaggedClassesDefined.class,
 //	A7ExpectedInterfaces.class,

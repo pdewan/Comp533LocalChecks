@@ -33,16 +33,12 @@ public class S25Assignment0_2SuiteWithHints {
 
 	public static void setTestMagicString(String aString) {
 		PassFailJUnitTestCase.setTesterRunMagic(aString);
-
 	}
 	public static void main (String[] args) {
 		try {
-
 			AbstractHint.setCheckIfPrecedingTestIsCorrect(false);
 			AbstractHint.setCheckIfPrecedingHintHasBeenExecuted(true);
 			BasicJUnitUtils.interactiveTest(S25Assignment0_2SuiteWithHints.class);
-
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -52,9 +48,6 @@ public class S25Assignment0_2SuiteWithHints {
 		PassFailJUnitTestCase.setTimeToStart(2025, 03, 04, 12, 30);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLogOutput(false);
 		BasicExecutionSpecificationSelector.getBasicExecutionSpecification().setLogSource(false);
-
-
-
 	}
 	
 }

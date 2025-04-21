@@ -24,7 +24,7 @@ import util.annotations.IsExtra;
 import util.annotations.MaxValue;
 import util.trace.Tracer;
 @IsExtra(true) 
-@MaxValue(20)
+@MaxValue(10)
 //@Group("Test group name")
 public class GIPCRMIServerMetaStateBroadcast extends FlexibleMetaStateBroadcastTestCase {
 

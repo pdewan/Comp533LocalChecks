@@ -5,7 +5,7 @@ import gradingTools.shared.testcases.utils.TaggedClassesDefined;
 import util.annotations.MaxValue;
 import util.annotations.Tags;
 import util.tags.DistributedTags;
-@MaxValue(10)
+@MaxValue(5)
 public class A7TaggedClassesDefined extends TaggedClassesDefined{
 //	String[][] classesTags = {			
 //

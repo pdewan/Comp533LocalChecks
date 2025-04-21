@@ -4,9 +4,11 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 import grader.basics.junit.BasicJUnitUtils;
+import util.annotations.IsExtra;
 
 
 @RunWith(Suite.class)
+@IsExtra(true)
 @Suite.SuiteClasses({
 	A7NoCheckstyleWarnings.class,
 	A7NamedConstants.class,

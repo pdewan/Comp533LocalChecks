@@ -13,7 +13,7 @@ import gradingTools.basics.sharedTestCase.checkstyle.VariableHasClassTypeRatioCh
 import gradingTools.comp533s19.assignment0.testcases.ConfigurationProvided;
 import util.annotations.IsExtra;
 import util.annotations.MaxValue;
-@MaxValue(20)
+@MaxValue(10)
 public class A4ExpectedCalls extends ExpectedCallsRatioCheck{
 	 public A4ExpectedCalls() {
 		 super();

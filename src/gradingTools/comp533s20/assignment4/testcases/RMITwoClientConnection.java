@@ -3,7 +3,7 @@ package gradingTools.comp533s20.assignment4.testcases;
 import gradingTools.comp533s20.flexible.testcases.FlexibleTwoClientCorrectConnectionTestCase;
 import util.annotations.MaxValue;
 
-@MaxValue(20)
+@MaxValue(25)
 //@Group("Test group name")
 public class RMITwoClientConnection extends FlexibleTwoClientCorrectConnectionTestCase {
 	

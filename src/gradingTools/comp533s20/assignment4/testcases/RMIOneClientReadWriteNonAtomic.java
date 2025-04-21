@@ -15,7 +15,7 @@ import gradingTools.comp533s19.flexible.testcases.FlexibleOneClientCorrectReadWr
 import gradingTools.utils.RunningProjectUtils;
 import util.annotations.MaxValue;
 import util.trace.Tracer;
-@MaxValue(20)
+@MaxValue(35)
 public class RMIOneClientReadWriteNonAtomic extends FlexibleOneClientCorrectReadWriteTestCase {
 
 	public RMIOneClientReadWriteNonAtomic() {
